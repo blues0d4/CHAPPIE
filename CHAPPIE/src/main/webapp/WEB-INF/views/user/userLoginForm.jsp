@@ -1,5 +1,5 @@
-<%-- <%@page import="kr.co.smh.commons.Keys"%> --%>
-<%-- <%@page import="kr.co.smh.commons.URLs"%> --%>
+<%@page import="kr.co.syteam.commons.KEYs"%>
+<%@page import="kr.co.syteam.commons.URIs"%>
 <%-- <%@page import="kr.co.smh.commons.Pages"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -33,15 +33,18 @@
 			</div>
 			<div class="col-md-3">
 				<div class="login-box well"> <!-- ../../users/loginchk -->
-					<form role="form" method="post" action="null">
+					<form role="form" method="post" action="${URIs.URI_USER_LOGIN }">
+<!-- 					<form role="form" method="post" action="../user/userLogin"> -->
 						<legend>로그인</legend>
 						<div class="form-group">
 							<label for="userid">이메일 or 아이디</label>
-							<input name="null" value='' id="userid" placeholder="E-mail or Username" type="text" class="form-control" />
+							<input name="user_id" value='' id="userid" placeholder="E-mail or Username" type="text" class="form-control" />
+<%-- 							<input name="${KEYs.KEY_USERID_PARAM}" value='' id="userid" placeholder="E-mail or Username" type="text" class="form-control" /> --%>
 						</div>
 						<div class="form-group">
 							<label for="password">비밀번호</label>
-							<input name="null" id="password" value='' placeholder="Password" type="password" class="form-control" />
+							<input name="user_pw" id="password" value='' placeholder="Password" type="password" class="form-control" />
+<%-- 							<input name="${KEYs.KEY_USERPW_PARAM}" id="password" value='' placeholder="Password" type="password" class="form-control" /> --%>
 						</div>
 						<div class="form-group">
 							<input type="submit"
