@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.syteam.commons.URIs;
+
 /**
  * Handles requests for the application home page.
  */
@@ -21,7 +23,7 @@ public class MainController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(kr.co.syteam.commons.URIs.URI_MAIN)
+	@RequestMapping(URIs.URI_MAIN)
 	public String main(Locale locale, Model model) {
 		logger.info("Welcome CHAPPIE! The client locale is {}.", locale);
 		

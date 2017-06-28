@@ -29,7 +29,7 @@ public class UserController {
 		
 //		return "/user/userJoin";
 		logger.info("JOINUSER_FORM");
-		return URIs.URI_USER_JOIN_FULL;
+		return URIs.URI_USER_JOIN_FORM_FULL;
 	}
 	
 	//회원가입

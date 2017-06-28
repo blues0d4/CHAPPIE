@@ -11,22 +11,22 @@ public class URIs {
 
 	//USER URI
 
-	public static final String URI_USER_LOGIN_FORM = "/joinform";
+	public static final String URI_USER_LOGIN_FORM = "/userLoginForm";
 	public static final String URI_USER_LOGIN_FORM_FULL = user_default + URI_USER_LOGIN_FORM;
 	
-	public static final String URI_USER_LOGIN = "/login";
+	public static final String URI_USER_LOGIN = "/userLogin";
 	public static final String URI_USER_LOGIN_FULL = user_default + URI_USER_LOGIN;
 	
-	public static final String URI_USER_LOGOUT = "/logout";
+	public static final String URI_USER_LOGOUT = "/userLogout";
 	public static final String URI_USER_LOGOUT_FULL = user_default + URI_USER_LOGOUT;
 
-	public static final String URI_USER_LOGIN_CHK = "/loginchk";
+	public static final String URI_USER_LOGIN_CHK = "/userLoginChk";
 	public static final String URI_USER_LOGIN_CHK_FULL = user_default + URI_USER_LOGIN_CHK;
 	
 	public static final String URI_USER_JOIN = "/userJoin";
 	public static final String URI_USER_JOIN_FULL = user_default + URI_USER_JOIN;
 	
-	public static final String URI_USER_JOIN_FORM = "/joinform";
+	public static final String URI_USER_JOIN_FORM = "/userJoinForm";
 	public static final String URI_USER_JOIN_FORM_FULL = user_default + URI_USER_JOIN_FORM;
 
 	

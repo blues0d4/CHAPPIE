@@ -64,13 +64,12 @@
                     </li>
 
                     <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">
+                        <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
                           <span class ="glyphicon glyphicon-user"> 로그인</span></a>
                     </li>
                     <li>
                         <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
                     </li>
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
