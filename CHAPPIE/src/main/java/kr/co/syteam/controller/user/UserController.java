@@ -1,5 +1,7 @@
 package kr.co.syteam.controller.user;
 
+import java.sql.SQLException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.user.dto.UserDTO;
@@ -34,11 +37,14 @@ public class UserController {
 	}
 	
 	//회원가입 (테스트 미완료)
-	@RequestMapping(value = URIs.URI_USER_JOIN)
-	public String doUserJoin() throws Exception {
-
+	@RequestMapping(value = URIs.URI_USER_JOIN, method = RequestMethod.POST)
+	public String doUserJoin(Model model, UserDTO userDTO) throws Exception {
+		int joinResult = userService.userJoin(userDTO);
+		
+		System.out.println(joinResult);
+		
 		logger.info("doUserJoin");
-		return "/";
+		return "redirect:/";
 //		return URIs.URI_JOINUSER_FULL;
 	}
 	
@@ -52,7 +58,7 @@ public class UserController {
 			return URIs.URI_USER_LOGIN_FORM_FULL;
 		}
 	
-	//로그인 (테스트 미완료)
+	//로그인 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_LOGIN, method = RequestMethod.POST)
 	public String doLogin(Model model, UserDTO userDTO) throws Exception {
 		LoginVO loginVO = userService.userLogin(userDTO);
@@ -74,4 +80,14 @@ public class UserController {
 		request.getSession().invalidate();
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value="/userIdCheck", method=RequestMethod.GET)
+	@ResponseBody
+	public LoginVO doUserIdCheck(UserDTO userDTO, Model model) throws Exception{
+	      LoginVO loginVO = new LoginVO();
+	      String checkResult = userService.userIdCheck(userDTO.getUser_id());
+	      loginVO.setUser_id(checkResult);
+	      System.out.println("test");
+	      return loginVO;
+	   }
 }

@@ -20,8 +20,8 @@ public class URIs {
 	public static final String URI_USER_LOGOUT = "/userLogout";
 	public static final String URI_USER_LOGOUT_FULL = user_default + URI_USER_LOGOUT;
 
-	public static final String URI_USER_LOGIN_CHK = "/userLoginChk";
-	public static final String URI_USER_LOGIN_CHK_FULL = user_default + URI_USER_LOGIN_CHK;
+	public static final String URI_USER_ID_CHECK = "/userIdCheck";
+	public static final String URI_USER_ID_CHECK_FULL = user_default + URI_USER_ID_CHECK;
 	
 	public static final String URI_USER_JOIN = "/userJoin";
 	public static final String URI_USER_JOIN_FULL = user_default + URI_USER_JOIN;

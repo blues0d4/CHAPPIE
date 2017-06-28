@@ -7,7 +7,7 @@ public interface IUserDAO {
 
 	public int userJoin(UserDTO userDTO) throws Exception;
 	public LoginVO userLogin(UserDTO userDTO) throws Exception;
-	public int userIdCheck(String userid) throws Exception;
+	public String userIdCheck(String userid) throws Exception;
 	public int userModify(UserDTO userDTO) throws Exception;
 	public int userDelete(String userid) throws Exception;
 }

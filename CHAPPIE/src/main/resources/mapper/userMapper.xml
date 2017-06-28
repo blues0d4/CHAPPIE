@@ -10,6 +10,7 @@
   	]]>
   </insert>
   
+<!--   <select id="userLogin"> -->
   <select id="userLogin" parameterType="kr.co.syteam.domain.user.dto.UserDTO" resultType="kr.co.syteam.domain.user.vo.LoginVO">
  	<![CDATA[
   		SELECT USER_ID, USER_NAME, SYSDATE AS logindate 
@@ -24,6 +25,14 @@
  			WHERE USER_ID = #{user_id}
  	]]>
   </delete>
+  
+  <select id="userIdCheck" resultType="String">
+  	<![CDATA[
+ 			SELECT USER_ID 
+			FROM USER_TABLE 
+			WHERE USER_ID = #{user_id}
+ 	]]>
+  </select>
 
 
 </mapper>

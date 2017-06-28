@@ -28,9 +28,8 @@ public class UserDAOImpl implements IUserDAO{
 	}
 
 	@Override
-	public int userIdCheck(String userid) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public String userIdCheck(String userid) throws Exception {
+		return sqlSession.selectOne(namespace+"userIdCheck", userid);
 	}
 
 	@Override

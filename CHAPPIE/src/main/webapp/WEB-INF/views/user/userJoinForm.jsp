@@ -17,6 +17,32 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
+<script type="text/javascript">
+      $(document).ready(function(){
+      $("#user_id").on({
+         "blur":function(){
+         var user_id = $(this).serialize();
+            $.ajax({
+               url:"/user/userIdCheck",
+               data:user_id,
+               type: "get",
+               dataType:"json",
+               success:function(result){
+                  console.log(result.user_id);
+                  if(result.user_id==$("#user_id").val()){
+                  $("#idcheck").text("아이디가 중복되었습니다.");
+                  $("#idcheck").css("color", "red");
+                  }                  
+                  else{
+                     $("#idcheck").text("사용가능한 아이디입니다.");
+                     $("#idcheck").css("color", "green");
+                  }
+               }      
+            });
+         }   
+      });
+   }); 
+</script>
 </head>
 <body>
 
@@ -69,13 +95,17 @@
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
-     <form role="form" method="post" action="${URIs.URI_USER_JOIN_FULL}">
+<%--      <form role="form" method="post" action="${URIs.URI_USER_JOIN}"> --%>
+     <form role="form" method="post" action="/userJoin">
        <h4 class="w3-center"><b>회원가입</b></h4>
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
+       
        <form action="/action_page.php" target="_blank">
          <div class="w3-section">
+         
            <label>이메일</label>
            <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required>
+           <div id="idcheck"></div>
          </div>
 
          <div class="w3-section">
@@ -94,7 +124,7 @@
          </div>
          <div class="w3-section">
            <label>휴대폰번호</label>
-           <input class="w3-input w3-border" type="number" value='' id="user_phone" name="user_phone" placeholder="휴대폰번호"required>
+           <input class="w3-input w3-border" type="number" value='' id="user_phone" name="user_phone" placeholder="휴대폰번호" required>
          </div>
          
          <div class="form-group">

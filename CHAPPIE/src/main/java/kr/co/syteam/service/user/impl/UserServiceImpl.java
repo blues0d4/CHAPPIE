@@ -25,4 +25,10 @@ public class UserServiceImpl implements IUserService {
 		return userDAO.userLogin(userDTO);
 	}
 
+	@Override
+	public String userIdCheck(String userid) throws Exception {
+		// TODO Auto-generated method stub
+		return userDAO.userIdCheck(userid);
+	}
+
 }

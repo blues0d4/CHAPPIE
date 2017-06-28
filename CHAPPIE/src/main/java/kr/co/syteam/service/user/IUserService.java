@@ -7,4 +7,5 @@ public interface IUserService {
 
 	public int userJoin(UserDTO userDTO) throws Exception;
 	public LoginVO userLogin(UserDTO userDTO) throws Exception;
+	public String userIdCheck(String userid) throws Exception;
 }
