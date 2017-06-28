@@ -37,8 +37,8 @@ public class UserDAOTest {
 			userDTO.setUser_pw("testpw");
 			LoginVO loginVO = userDAO.userLogin(userDTO);
 			
-			System.out.println("loginId : " + loginVO.getUserid());
-			System.out.println("loginName : " + loginVO.getUsername());
+			System.out.println("loginId : " + loginVO.getUser_id());
+			System.out.println("loginName : " + loginVO.getUser_name());
 			System.out.println("loginDate : " + loginVO.getLogindate());
 		}
 	

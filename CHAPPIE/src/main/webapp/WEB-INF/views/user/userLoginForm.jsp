@@ -1,6 +1,5 @@
 <%@page import="kr.co.syteam.commons.KEYs"%>
 <%@page import="kr.co.syteam.commons.URIs"%>
-<%-- <%@page import="kr.co.smh.commons.Pages"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,27 +23,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="page-header">
-<%-- 				<%	if(request.getAttribute(Keys.KEY_USERID_PARAM) == null) {%> --%>
-<!-- 					<h2>로그인 하세요</h2> -->
-<%-- 				<%	}else{ %> --%>
-<%-- 					<h2><%= request.getAttribute(Keys.KEY_USERID_PARAM) + "으로 로그인 불가능 합니다. 다시 로그인 시도 해주세요" %></h2> --%>
-<%-- 				<%	} %> --%>
 				
 			</div>
 			<div class="col-md-3">
-				<div class="login-box well"> <!-- ../../users/loginchk -->
+				<div class="login-box well"> 
 					<form role="form" method="post" action="${URIs.URI_USER_LOGIN }">
-<!-- 					<form role="form" method="post" action="../user/userLogin"> -->
 						<legend>로그인</legend>
 						<div class="form-group">
 							<label for="userid">이메일 or 아이디</label>
 							<input name="user_id" value='' id="userid" placeholder="E-mail or Username" type="text" class="form-control" />
-<%-- 							<input name="${KEYs.KEY_USERID_PARAM}" value='' id="userid" placeholder="E-mail or Username" type="text" class="form-control" /> --%>
 						</div>
 						<div class="form-group">
 							<label for="password">비밀번호</label>
 							<input name="user_pw" id="password" value='' placeholder="Password" type="password" class="form-control" />
-<%-- 							<input name="${KEYs.KEY_USERPW_PARAM}" id="password" value='' placeholder="Password" type="password" class="form-control" /> --%>
 						</div>
 						<div class="form-group">
 							<input type="submit"

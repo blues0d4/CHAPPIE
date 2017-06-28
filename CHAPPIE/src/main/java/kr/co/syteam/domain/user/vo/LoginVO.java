@@ -2,20 +2,21 @@ package kr.co.syteam.domain.user.vo;
 
 public class LoginVO {
 
-	private String userid;
-	private String username;
+	private String user_id;
+	private String user_name;
 	private String logindate;
-	public String getUserid() {
-		return userid;
+	
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getUsername() {
-		return username;
+	public String getUser_name() {
+		return user_name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 	public String getLogindate() {
 		return logindate;

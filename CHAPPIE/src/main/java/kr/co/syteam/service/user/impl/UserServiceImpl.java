@@ -22,7 +22,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public LoginVO userLogin(UserDTO userDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return userDAO.userLogin(userDTO);
 	}
 
 }

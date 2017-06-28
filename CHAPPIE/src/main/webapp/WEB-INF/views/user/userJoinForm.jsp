@@ -47,14 +47,14 @@
                   </li>
                   <li>
                       <a class="page-scroll" href="#contact">Contact</a>
-                  </li>
+                  </li> 
 
                   <li>
                       <a class="page-scroll" href="#sign_up">
                         <span class ="glyphicon glyphicon-user"> 로그인</span></a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="${URIs.URI_JOINUSER_FORM}">회원가입</a>
+                      <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
                   </li>
 
               </ul>
@@ -69,7 +69,7 @@
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
-     <form role="form" method="post" action="${URIs.URI_JOINUSER_FULL}">
+     <form role="form" method="post" action="${URIs.URI_USER_JOIN_FULL}">
        <h4 class="w3-center"><b>회원가입</b></h4>
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
        <form action="/action_page.php" target="_blank">
