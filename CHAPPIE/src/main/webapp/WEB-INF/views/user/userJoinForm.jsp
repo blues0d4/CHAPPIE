@@ -45,7 +45,7 @@
 </script>
 </head>
 
-<body>
+<body> 
 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
       <div class="container">
@@ -62,13 +62,13 @@
                       <a href="#page-top"></a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="#services">Services</a>
+                      <a class="page-scroll" href="../#services">Services</a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="#about">About</a>
+                      <a class="page-scroll" href="../#about">About</a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="#contact">Contact</a>
+                      <a class="page-scroll" href="../#contact">Contact</a>
                   </li> 
 
                    <li>
@@ -92,7 +92,7 @@
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
 <%--      <form role="form" method="post" action="${URIs.URI_USER_JOIN}"> --%>
-     <form role="form" method="post" action="/userJoin">
+     <form role="form" method="post" action="${URIs.URI_USER_JOIN}">
      <br>
      <br>
        <h4 class="w3-center"><b>회원가입</b></h4>
