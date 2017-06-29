@@ -18,7 +18,7 @@ public class DataSourceTest {
    @Autowired
    private DataSource ds;
 
-   @Test
+   @Test 
    public void test()  {
          try(Connection conn = ds.getConnection()){
             System.out.println(conn);
