@@ -1,6 +1,6 @@
 package kr.co.syteam.commons;
 
-public class URIs {
+public class URIs { 
 	 
 	//Main URI
 	public static final String URI_MAIN = "/";
