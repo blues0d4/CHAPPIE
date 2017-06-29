@@ -75,8 +75,8 @@
                       <a class="page-scroll" href="#contact">Contact</a>
                   </li> 
 
-                  <li>
-                      <a class="page-scroll" href="#sign_up">
+                 <li>
+                      <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
                         <span class ="glyphicon glyphicon-user"> 로그인</span></a>
                   </li>
                   <li>

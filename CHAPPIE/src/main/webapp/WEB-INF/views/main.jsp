@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="../../resources/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -79,11 +79,8 @@
 
     <!-- Header -->
     
-    
-    <div class="imgTopic">
- <h1 class="title" ><a href="#">큰 제목</a></h1>
- <p class="content"><a href="#"><img src="../resources/img/bg.jpg" alt="" /><span class="date">2013년02월27일 오후3:00</span></a></p>
-</div>
+   
+
     
     
     <header id="top" class="header">
