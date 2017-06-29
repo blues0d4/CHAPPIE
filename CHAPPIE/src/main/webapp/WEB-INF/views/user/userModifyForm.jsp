@@ -45,13 +45,6 @@
                       <a class="page-scroll" href="#contact">Contact</a>
                   </li> 
 
-                   <li>
-                      <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
-                        <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
-                  </li>
 
               </ul>
           </div>
@@ -66,7 +59,7 @@
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
 <%--      <form role="form" method="post" action="${URIs.URI_USER_JOIN}"> --%>
-     <form role="form" method="post" action="/userJoin">
+     <form role="form" method="post" action="/userModify">
      <br>
      <br>
        <h4 class="w3-center"><b>회원정보수정</b></h4>
@@ -77,7 +70,7 @@
          <div class="w3-section">
          
            <label>이메일</label>
-           <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required readonly>
+           <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required >
            <div id="idcheck"></div>
          </div>
 

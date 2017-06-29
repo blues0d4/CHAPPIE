@@ -55,25 +55,25 @@ public class UserDAOTest {
 //		}
 	
 		//유저 정보 수정 (테스트 완료)
-//		@Test
-//		public void userModify() throws Exception{
-//			UserDTO userDTO = new UserDTO();
-//			userDTO.setUser_id("stan");
-//			userDTO.setUser_pw("test2");
-//			userDTO.setUser_name("test2");
-//			userDTO.setUser_phone("test2");
-//			
-//			int result = userService.userModify(userDTO);
-//			System.out.println(result);
-//		}
-		
 		@Test
-		public void userDelete() throws Exception{
-			String userid = "stan";
-			int result = userService.userDelete(userid);
+		public void userModify() throws Exception{
+			UserDTO userDTO = new UserDTO();
+			userDTO.setUser_id("123");
+			userDTO.setUser_pw("test2");
+			userDTO.setUser_name("test2");
+			userDTO.setUser_phone("test2");
 			
+			int result = userService.userModify(userDTO);
 			System.out.println(result);
 		}
 		
+//		@Test
+//		public void userDelete() throws Exception{
+//			String userid = "stan";
+//			int result = userService.userDelete(userid);
+//			
+//			System.out.println(result);
+//		}
+//		
 	
 }
