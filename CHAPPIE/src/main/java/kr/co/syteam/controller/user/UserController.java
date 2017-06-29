@@ -63,7 +63,7 @@ public class UserController {
 	public String doLogin(Model model, UserDTO userDTO) throws Exception {
 		LoginVO loginVO = userService.userLogin(userDTO);
 		model.addAttribute("login", loginVO);
-
+ 
 		logger.info("doLogin");
 		
 		
