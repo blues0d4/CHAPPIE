@@ -91,7 +91,7 @@
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
-    </header>
+	</header>
 
     <!-- About -->
     <section id="about" class="about">
@@ -104,7 +104,11 @@
                     <br>
                     <h2> 팀원소개 </h2>
                     <br>
-
+					<br /><h2>"how is the weather in sunnyvale"</h2><br />
+		<iframe width="350" height="430"
+			src="https://console.api.ai/api-client/demo/embedded/ad805c6c-889c-4c68-b0e6-668a13eed289">
+		</iframe>
+		
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>한청화</span><br><br>
