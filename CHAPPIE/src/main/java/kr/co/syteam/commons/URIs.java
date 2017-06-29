@@ -29,6 +29,12 @@ public class URIs {
 	public static final String URI_USER_JOIN_FORM = "/userJoinForm";
 	public static final String URI_USER_JOIN_FORM_FULL = user_default + URI_USER_JOIN_FORM;
 
+	public static final String URI_USER_MODIFY = "/userModify";
+	public static final String URI_USER_MODIFY_FULL = user_default + URI_USER_MODIFY;
+	
+	public static final String URI_USER_MODIFY_FORM = "/userModifyForm";
+	public static final String URI_USER_MODIFY_FORM_FULL = user_default + URI_USER_MODIFY_FORM;
+
 	
 	//BOARD URI
 	public static final String URI_BOARD_LIST = "/boardList";

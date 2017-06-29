@@ -73,6 +73,15 @@ public class UserController {
 		
 		return "redirect:/";
 	}
+
+	//회원정보 수정 폼 (테스트 미완료)
+		@RequestMapping(value = URIs.URI_USER_MODIFY_FORM)
+		public String doModifyForm() throws Exception {
+			
+//			return "/user/userJoin";
+			logger.info("doModifyForm");
+			return URIs.URI_USER_MODIFY_FORM_FULL;
+		}
 	
 	//로그아웃 (테스트 미완료)  
 	@RequestMapping(value = "/logout")
@@ -81,13 +90,4 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value="/userIdCheck", method=RequestMethod.GET)
-	@ResponseBody
-	public LoginVO doUserIdCheck(UserDTO userDTO, Model model) throws Exception{
-	      LoginVO loginVO = new LoginVO();
-	      String checkResult = userService.userIdCheck(userDTO.getUser_id());
-	      loginVO.setUser_id(checkResult);
-	      System.out.println("test");
-	      return loginVO;
-	   }
 }
