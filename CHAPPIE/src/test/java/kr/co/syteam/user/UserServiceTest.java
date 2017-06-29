@@ -13,7 +13,7 @@ import kr.co.syteam.service.user.IUserService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 (locations={"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
-public class UserDAOTest {
+public class UserServiceTest {
 	@Autowired
 	private IUserDAO userDAO;
 	
@@ -29,7 +29,7 @@ public class UserDAOTest {
 //		userVO.setUser_name("testName");
 //		userVO.setUser_phone("testphone");
 //		
-//		userDAO.userJoin(userVO);
+//		userService.userJoin(userVO);
 //	}
 	
 	//로그인 테스트(완료)
@@ -38,7 +38,7 @@ public class UserDAOTest {
 //			UserDTO userDTO = new UserDTO();
 //			userDTO.setUser_id("testId");
 //			userDTO.setUser_pw("testpw");
-//			LoginVO loginVO = userDAO.userLogin(userDTO);
+//			LoginVO loginVO = userService.userLogin(userDTO);
 //			
 //			System.out.println("loginId : " + loginVO.getUser_id());
 //			System.out.println("loginName : " + loginVO.getUser_name());
@@ -49,7 +49,7 @@ public class UserDAOTest {
 //		@Test
 //		public void userIdCheck() throws Exception{
 //			String userid = "stan";
-//			String result = userDAO.userIdCheck(userid);
+//			String result = userService.userIdCheck(userid);
 //			
 //			System.out.println(result);
 //		}

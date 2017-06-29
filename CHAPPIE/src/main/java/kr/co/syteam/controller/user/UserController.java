@@ -70,7 +70,7 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	// 회원정보 수정 폼 (테스트 미완료)
+	// 회원정보 수정 폼 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY_FORM)
 	public String doModifyForm() throws Exception {
 
@@ -79,7 +79,7 @@ public class UserController {
 		return URIs.URI_USER_MODIFY_FORM_FULL;
 	}
 
-	// 회원정보 수정 (테스트 미완료)
+	// 회원정보 수정 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY, method = RequestMethod.POST)
 	public String doModify(Model model, UserDTO userDTO) throws Exception {
 
