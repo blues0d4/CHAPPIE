@@ -31,4 +31,6 @@ public class UserDTO {
 		this.user_phone = user_phone;
 	}
 	
+	
+	
 }

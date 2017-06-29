@@ -31,4 +31,14 @@ public class UserServiceImpl implements IUserService {
 		return userDAO.userIdCheck(userid);
 	}
 
+	@Override
+	public int userModify(UserDTO userDTO) throws Exception {
+		return userDAO.userModify(userDTO);
+	}
+
+	@Override
+	public int userDelete(String userid) throws Exception {
+		return userDAO.userDelete(userid);
+	}
+
 }

@@ -34,13 +34,12 @@ public class UserDAOImpl implements IUserDAO{
 
 	@Override
 	public int userModify(UserDTO userDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(namespace+"userModify", userDTO);
 	}
 
 	@Override
 	public int userDelete(String userid) throws Exception {
-		return sqlSession.delete(namespace+"userDelete"); 
+		return sqlSession.delete(namespace+"userDelete", userid); 
 	}
 
 
