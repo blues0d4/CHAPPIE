@@ -44,6 +44,7 @@
    }); 
 </script>
 </head>
+
 <body>
 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -51,12 +52,7 @@
 
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-              </button>
-
-
-              <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">Ssangyoung Company</a>
+              <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,7 +71,7 @@
                       <a class="page-scroll" href="#contact">Contact</a>
                   </li> 
 
-                 <li>
+                   <li>
                       <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
                         <span class ="glyphicon glyphicon-user"> 로그인</span></a>
                   </li>
@@ -89,7 +85,7 @@
       </div>
       <!-- /.container-fluid -->
   </nav>
-  <<!-- Sign up -->
+  <!-- Sign up -->
   <section id="sign_up" class="sign_up">
 
   <!-- Contact section -->
@@ -97,8 +93,11 @@
      <div class="w3-content" style="max-width:600px">
 <%--      <form role="form" method="post" action="${URIs.URI_USER_JOIN}"> --%>
      <form role="form" method="post" action="/userJoin">
+     <br>
+     <br>
        <h4 class="w3-center"><b>회원가입</b></h4>
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
+   
        
        <form action="/action_page.php" target="_blank">
          <div class="w3-section">
@@ -133,9 +132,9 @@
 				value="가입완료" />
 				
 		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
-
-       
        </div>
+      
+       </form>
        </form>
      </div>
    </div>

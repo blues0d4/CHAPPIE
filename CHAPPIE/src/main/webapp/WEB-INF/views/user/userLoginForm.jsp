@@ -49,12 +49,8 @@
 
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-              </button>
-
-
-              <a class="navbar-brand page-scroll" href="#page-top">Ssangyoung Company</a>
+       
+              <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -93,6 +89,7 @@
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
+     <br>
        <h4 class="w3-center"><b>로그인</b></h4>
        <p class = "w3-center"> </p>
        <form action="/action_page.php" target="_blank">
@@ -129,10 +126,9 @@
                    </div>
            </div>
 			
-		<div class ="button"></div>
-		
+		<div class ="button">
          <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom w3-round" >로그인</button>
-         <input class="w3-button w3-block w3-black w3-margin-bottom w3-round" type="button" href="${URIs.URI_USER_JOIN_FORM}">회원가입</button>
+         <button type="button" class="w3-button w3-block w3-black w3-margin-bottom w3-round" onclick="location.href='${URIs.URI_USER_JOIN_FORM}'">회원가입</button>
          
          <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom w3-round">취소</button>
 		</div>
