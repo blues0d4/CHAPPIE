@@ -22,7 +22,7 @@ public class BoardServiceTest {
 	@Test
 	public void testBoardInsert() throws Exception{
 		BoardDTO boardDTO = new BoardDTO();
-		boardDTO.setBoard_writer("testId1");
+		boardDTO.setUser_id("testId1");
 		boardDTO.setBoard_title("test Title1");
 		boardDTO.setBoard_contents("test Contents");
 		

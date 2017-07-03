@@ -176,7 +176,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">1 min</span>
         
-        <h4>${boardVO.board_writer }</h4><br>
+        <h4>${boardVO.user_id }</h4><br>
           
         <hr class="w3-clear">
         <p>${boardVO.board_title }</p>

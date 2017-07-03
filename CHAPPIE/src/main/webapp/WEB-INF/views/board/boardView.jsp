@@ -33,7 +33,7 @@
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td>${board.board_writer }</td>
+					<td>${board.user_id}</td>
 				</tr>
 				<tr>
 					<th>조회수</th>

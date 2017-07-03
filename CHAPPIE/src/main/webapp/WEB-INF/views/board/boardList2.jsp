@@ -46,7 +46,7 @@
 							<tr>
 								<td>${boardVO.board_no }</td>
 								<td><a href="/board/view/${boardVO.board_no }">${boardVO.board_title }</a></td>
-								<td>${ boardVO.board_writer }</td>
+								<td>${ boardVO.user_id }</td>
 								<td>${ boardVO.board_write_date }</td>
 								<td>${ boardVO.board_count }</td>
 							</tr>

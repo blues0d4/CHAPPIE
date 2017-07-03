@@ -7,14 +7,14 @@
 
 	<insert id="boardWrite" parameterType="kr.co.syteam.domain.board.dto.BoardDTO">
 		<![CDATA[
-			INSERT INTO BOARD_TABLE(BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, BOARD_WRITER, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
-			VALUES (board_seq.nextval, #{board_title}, #{board_contents}, #{board_writer}, sysdate, sysdate)
+			INSERT INTO BOARD_TABLE(BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
+			VALUES (board_seq.nextval, #{board_title}, #{board_contents}, #{user_id}, sysdate, sysdate)
 		]]>
 	</insert>
 	
 	<select id="boardList" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_COUNT
+			SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_COUNT
 			FROM BOARD_TABLE
 			ORDER BY BOARD_NO DESC
 		]]>
@@ -22,7 +22,7 @@
 	
 	<select id="boardView" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, BOARD_WRITER, BOARD_WRITE_DATE, BOARD_COUNT
+			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_COUNT
 			FROM BOARD_TABLE
 			WHERE BOARD_NO = #{board_no}
 		]]>
