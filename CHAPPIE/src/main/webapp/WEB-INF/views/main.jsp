@@ -89,6 +89,8 @@
             <h1>Start Ssangyoung</h1>
             <h3>Free Bootstrap Themes &amp; Templates</h3>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <br>
+            <a href="/board" class="btn btn-dark btn-lg">게시판</a>
         </div>
 	</header>
 
