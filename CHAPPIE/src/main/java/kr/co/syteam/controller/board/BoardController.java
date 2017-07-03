@@ -42,7 +42,7 @@ public class BoardController {
 		List<BoardVO> boardList = boardService.boardList();
 		model.addAttribute("boardList", boardList);
 		
-		return "/board/boardList";
+		return "board/boardList";
 	}
 	
 	
