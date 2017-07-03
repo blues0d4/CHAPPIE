@@ -139,7 +139,7 @@
                         <ul style="list-style-type:none; float: right">
                         <br>
                         <li> 백엔드개발자 </li>
-                        <li> jin98003@gmail.com </li>
+                        <li> blues0d4@gmail.com </li>
                         </ul>
                         <div class="w3-row w3-opacity">
                           <div class="w3-half">
