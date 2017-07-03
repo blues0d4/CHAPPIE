@@ -104,7 +104,7 @@
                     <br>
                     <h2> 팀원소개 </h2>
                     <br>
-					<br /><h2>"how is the weather in sunnyvale"</h2><br />
+					<br /><h2>"how is the weather in 서울"</h2><br />
 		<iframe width="350" height="430"
 			src="https://console.api.ai/api-client/demo/embedded/ad805c6c-889c-4c68-b0e6-668a13eed289">
 		</iframe>
