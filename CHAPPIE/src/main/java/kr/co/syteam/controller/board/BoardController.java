@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.service.board.BoardService;
 
@@ -35,14 +36,14 @@ public class BoardController {
 //		return "board/boardView";
 //	}
 	
-	@RequestMapping(value = "/board", method = RequestMethod.GET)
+	@RequestMapping(value = URIs.BOARD_DEFAULT, method = RequestMethod.GET)
 	public String boardList(Model model) throws Exception {
 		logger.info("Welcome CHAPPIE! This is BoardController");
 		
 		List<BoardVO> boardList = boardService.boardList();
 		model.addAttribute("boardList", boardList);
 		
-		return "board/boardList";
+		return URIs.URI_BOARD_LIST_FULL;
 	}
 	
 	
@@ -52,10 +53,10 @@ public class BoardController {
 		BoardVO boardVO = boardService.boardView(board_no);
 		
 		if(boardVO == null){
-			
+			return "redirect:/";
 		}
 		model.addAttribute("board", boardVO);
 		return "board/boardView";
 	}
 	
-}
+}  

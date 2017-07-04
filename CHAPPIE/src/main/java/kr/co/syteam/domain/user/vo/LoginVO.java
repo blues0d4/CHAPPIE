@@ -24,6 +24,10 @@ public class LoginVO {
 	public void setLogindate(String logindate) {
 		this.logindate = logindate;
 	}
+	@Override
+	public String toString() {
+		return "LoginVO [user_id=" + user_id + ", user_name=" + user_name + ", logindate=" + logindate + "]";
+	}
 	
 	
 }
