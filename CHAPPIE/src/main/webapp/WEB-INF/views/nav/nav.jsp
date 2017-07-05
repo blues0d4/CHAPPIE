@@ -13,6 +13,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                	
+			<c:choose>
+				<c:when test="${ empty login }">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -25,21 +28,28 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
-
+					
                     <li>
                         <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
-                          <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_MODIFY_FORM}">
-                          <span class ="glyphicon glyphicon-user"> 회원정보수정</span></a>
+                          <span class ="glyphicon glyphicon-user">로그인</span></a>
                     </li>
                     
                     <li>
                         <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
                     </li>
                 </ul>
+                </c:when>
+				<c:otherwise>
+					<li>
+                        <a class="page-scroll" href="${URIs.URI_USER_MODIFY_FORM}">
+                          <span class ="glyphicon glyphicon-user">${ login.user_name }</span></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="${URIs.URI_USER_LOGOUT}">
+                          <span class ="glyphicon glyphicon-user">로그아웃</span></a>
+                    </li>
+				</c:otherwise>
+			</c:choose>
             </div>
             <!-- /.navbar-collapse -->
         </div>

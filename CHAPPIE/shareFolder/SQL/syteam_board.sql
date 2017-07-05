@@ -44,6 +44,7 @@ drop sequence board_seq;
 
 commit;
 
+
 --board Ãß°¡ Äõ¸®
 INSERT INTO BOARD_TABLE(CATEGORY_ID,BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
 VALUES (2001 ,board_seq.nextval, 'TITLE 01', 'CONTENTS 01', '1', sysdate, sysdate);

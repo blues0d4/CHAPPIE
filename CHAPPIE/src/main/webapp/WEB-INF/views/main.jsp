@@ -1,4 +1,5 @@
 <%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -31,10 +32,10 @@
 </head>
 <body>
 <body id="page-top" class="index">
-
+	
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    	<jsp:include page ="nav/nav.jsp" flush="false" />
+    	<jsp:include page ="../${PAGEs.VIEW_NAV}" flush="false" />
 <!--         /.container-fluid -->
     </nav>
 
