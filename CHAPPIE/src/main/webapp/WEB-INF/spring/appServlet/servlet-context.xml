@@ -23,6 +23,20 @@
 	
 	<context:component-scan base-package="kr.co.syteam" />
 	
+	<beans:bean class="kr.co.syteam.interceptor.user.LoginInterceptor" id="loginInterceptor"></beans:bean>
+	
+	<!-- 인터셉터 등록 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/userLogin"/>
+			<beans:bean class="kr.co.syteam.interceptor.user.LoginInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/board/**"/>
+			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 	
 	
 </beans:beans>

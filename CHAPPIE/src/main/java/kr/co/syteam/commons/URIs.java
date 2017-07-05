@@ -6,56 +6,56 @@ public class URIs {
 	public static final String URI_MAIN = "/";
 	
 	//default URI
-	private static final String user_default = "/user";
-	private static final String board_default = "/board";
+	public static final String USER_DEFAULT = "/user";
+	public static final String BOARD_DEFAULT = "/board";
 
 	//USER URI
 
 	public static final String URI_USER_LOGIN_FORM = "/userLoginForm";
-	public static final String URI_USER_LOGIN_FORM_FULL = user_default + URI_USER_LOGIN_FORM;
+	public static final String URI_USER_LOGIN_FORM_FULL = USER_DEFAULT + URI_USER_LOGIN_FORM;
 	
 	public static final String URI_USER_LOGIN = "/userLogin";
-	public static final String URI_USER_LOGIN_FULL = user_default + URI_USER_LOGIN;
+	public static final String URI_USER_LOGIN_FULL = USER_DEFAULT + URI_USER_LOGIN;
 	
 	public static final String URI_USER_LOGOUT = "/userLogout";
-	public static final String URI_USER_LOGOUT_FULL = user_default + URI_USER_LOGOUT;
+	public static final String URI_USER_LOGOUT_FULL = USER_DEFAULT + URI_USER_LOGOUT;
 
 	public static final String URI_USER_ID_CHECK = "/userIdCheck";
-	public static final String URI_USER_ID_CHECK_FULL = user_default + URI_USER_ID_CHECK;
+	public static final String URI_USER_ID_CHECK_FULL = USER_DEFAULT + URI_USER_ID_CHECK;
 	
 	public static final String URI_USER_JOIN = "/userJoin";
-	public static final String URI_USER_JOIN_FULL = user_default + URI_USER_JOIN;
+	public static final String URI_USER_JOIN_FULL = USER_DEFAULT + URI_USER_JOIN;
 	
 	public static final String URI_USER_JOIN_FORM = "/userJoinForm";
-	public static final String URI_USER_JOIN_FORM_FULL = user_default + URI_USER_JOIN_FORM;
+	public static final String URI_USER_JOIN_FORM_FULL = USER_DEFAULT + URI_USER_JOIN_FORM;
 
 	public static final String URI_USER_MODIFY = "/userModify";
-	public static final String URI_USER_MODIFY_FULL = user_default + URI_USER_MODIFY;
+	public static final String URI_USER_MODIFY_FULL = USER_DEFAULT + URI_USER_MODIFY;
 	
 	public static final String URI_USER_MODIFY_FORM = "/userModifyForm";
-	public static final String URI_USER_MODIFY_FORM_FULL = user_default + URI_USER_MODIFY_FORM;
+	public static final String URI_USER_MODIFY_FORM_FULL = USER_DEFAULT + URI_USER_MODIFY_FORM;
 
 	
 	//BOARD URI
 	public static final String URI_BOARD_LIST = "/boardList";
-	public static final String URI_BOARD_LIST_FULL = board_default + URI_BOARD_LIST;
+	public static final String URI_BOARD_LIST_FULL = BOARD_DEFAULT + URI_BOARD_LIST;
 	
-	public static final String URI_BOARD_CONTENTS = "/board";
-	public static final String URI_BOARD_CONTENTS_FULL = board_default + URI_BOARD_CONTENTS;
+	public static final String URI_BOARD_VIEW = "/boardView";
+	public static final String URI_BOARD_VIEW_FULL = BOARD_DEFAULT + URI_BOARD_VIEW;
 	
 	public static final String URI_BOARD_WRITE = "/boardInsert";
-	public static final String URI_BOARD_WRITE_FULL = board_default + URI_BOARD_WRITE;
+	public static final String URI_BOARD_WRITE_FULL = BOARD_DEFAULT + URI_BOARD_WRITE;
 	
-	public static final String URI_BOARD_WRITE_PAGE = "/boardWrite";
-	public static final String URI_BOARD_WRITE_PAGE_FULL = board_default + URI_BOARD_WRITE_PAGE;
+	public static final String URI_BOARD_WRITE_FORM = "/boardWrite";
+	public static final String URI_BOARD_WRITE_FORM_FULL = BOARD_DEFAULT + URI_BOARD_WRITE_FORM;
 	
 	public static final String URI_BOARD_UPDATE = "/boardUpdate";
-	public static final String URI_BOARD_UPDATE_FULL = board_default + URI_BOARD_UPDATE;
+	public static final String URI_BOARD_UPDATE_FULL = BOARD_DEFAULT + URI_BOARD_UPDATE;
 	
-	public static final String URI_BOARD_MODIFY_PAGE = "/boardModify";
-	public static final String URI_BOARD_MODIFY_PAGE_FULL = board_default + URI_BOARD_MODIFY_PAGE;
+	public static final String URI_BOARD_MODIFY_FORM = "/boardModify";
+	public static final String URI_BOARD_MODIFY_FORM_FULL = BOARD_DEFAULT + URI_BOARD_MODIFY_FORM;
 	
 	public static final String URI_BOARD_DELETE = "/boardDelete";
-	public static final String URI_BOARD_DELETE_FULL = board_default + URI_BOARD_DELETE;
+	public static final String URI_BOARD_DELETE_FULL = BOARD_DEFAULT + URI_BOARD_DELETE;
 	
 }

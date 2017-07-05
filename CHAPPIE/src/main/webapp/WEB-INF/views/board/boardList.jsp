@@ -1,22 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<title>SSangyoung_borad_list</title>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+<link 	rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link 	rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="/resources/js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<title>CHAPPIE 게시판</title>
+</head>
+<body>
+<div>
+		<div class="row">
+			<div class="panel panel-primary filterable">
+				<div class="panel-heading">
+					<h3 class="panel-title">Board</h3>
+					<div class="pull-right">
+						<button class="btn btn-default btn-xs btn-filter">
+							<span class="glyphicon glyphicon-filter"></span> Filter
+						</button>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr class="filters">
+							<th style="width: 5%; margin: auto;"><input type="text"
+								class="form-control" placeholder="글번호" disabled></th>
+							<th style="width: 60%;"><input type="text"
+								class="form-control" placeholder="제목" disabled></th>
+							<th style="width: 10%; margin: auto;"><input type="text"
+								class="form-control" placeholder="아이디" disabled></th>
+							<th style="width: 15%; margin: auto;"><input type="text"
+								class="form-control" placeholder="작성일자" disabled></th>
+							<th style="width: 10%; margin: auto;"><input type="text"
+								class="form-control" placeholder="조회수" disabled></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${ boardList }" var="boardVO">
+							<tr>
+								<td>${boardVO.board_no }</td>
+								<td><a href="/board/view/${boardVO.board_no }">${boardVO.board_title }</a></td>
+								<td>${ boardVO.user_id }</td>
+								<td>${ boardVO.board_write_date }</td>
+								<td>${ boardVO.board_count }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
+<<<<<<< HEAD
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -90,5 +130,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   </table>
 
 
+=======
+		<a class="btn btn-warning" href="/doException">예외 테스트</a>
+		
+		<c:if test="${ not empty login }">
+			<a class="btn btn-warning" href="#">게시글 작성하기</a>
+		</c:if>
+		
+	</div>
+>>>>>>> branch 'master' of https://github.com/blues0d4/CHAPPIE
 </body>
 </html>

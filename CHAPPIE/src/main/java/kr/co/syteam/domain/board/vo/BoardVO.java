@@ -5,7 +5,7 @@ public class BoardVO {
 	private String board_title;
 	private String board_no;
 	private String board_contents;
-	private String board_writer;
+	private String user_id;
 	private String board_write_date;
 	private String board_modify_date;
 	private String board_count;
@@ -33,11 +33,13 @@ public class BoardVO {
 	public void setBoard_contents(String board_contents) {
 		this.board_contents = board_contents;
 	}
-	public String getBoard_writer() {
-		return board_writer;
+	
+	
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setBoard_writer(String board_writer) {
-		this.board_writer = board_writer;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 	public String getBoard_write_date() {
 		return board_write_date;

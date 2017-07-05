@@ -33,7 +33,7 @@
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td>${board.board_writer }</td>
+					<td>${board.user_id}</td>
 				</tr>
 				<tr>
 					<th>조회수</th>
@@ -49,7 +49,7 @@
 					<td colspan="2">
 						<a href="/" class="btn btn-default"style="float: right; margin-right: 5px;">HOME</a>
 						<a href="#" class="btn btn-success" style="float: right; margin-right: 5px;">글 쓰기</a>
-						<c:if test="${login.user_id eq board.board_writer }">
+						<c:if test="${login.user_id eq board.user_id }">
 							<a href="#" class="btn btn-danger" style="float: right; margin-right: 5px;">글 삭제하기</a>
 							<a href="#" class="btn btn-info" style="float: right; margin-right: 5px;">글 수정하기</a>
 						</c:if>

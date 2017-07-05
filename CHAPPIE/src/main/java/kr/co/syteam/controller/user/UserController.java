@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.user.dto.UserDTO;
@@ -66,7 +67,6 @@ public class UserController {
 		System.out.println("loginId : " + loginVO.getUser_id());
 		System.out.println("loginName : " + loginVO.getUser_name());
 		System.out.println("loginDate : " + loginVO.getLogindate());
-
 		return "redirect:/";
 	}
 

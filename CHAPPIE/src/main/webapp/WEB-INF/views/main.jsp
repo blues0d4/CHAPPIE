@@ -86,8 +86,9 @@
     
     <header id="top" class="header">
         <div class="text-vertical-center">
+        
             <h1>Start Ssangyoung</h1>
-            <h3>Free Bootstrap Themes &amp; Templates</h3>
+            <h3>${sessionScope.login.user_id}Free Bootstrap Themes &amp; Templates</h3>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
             <br>
             <a href="/board" class="btn btn-dark btn-lg">게시판</a>
