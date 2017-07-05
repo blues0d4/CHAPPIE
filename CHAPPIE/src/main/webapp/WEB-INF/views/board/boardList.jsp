@@ -56,7 +56,6 @@
 			</div>
 		</div>
 
-<<<<<<< HEAD
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
@@ -130,7 +129,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   </table>
 
 
-=======
 		<a class="btn btn-warning" href="/doException">예외 테스트</a>
 		
 		<c:if test="${ not empty login }">
@@ -138,6 +136,5 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 		</c:if>
 		
 	</div>
->>>>>>> branch 'master' of https://github.com/blues0d4/CHAPPIE
 </body>
 </html>
