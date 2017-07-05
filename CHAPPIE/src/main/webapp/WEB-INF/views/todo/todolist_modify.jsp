@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
-<title>SSangyoung_todolist_list</title>
+<title>SSangyoung_todolist_modify</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,11 +27,16 @@
 
 
 <style>
+
 .calendar-group{
 }
+
 .calendar-group_common{
   float: left;
 }
+
+
+
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
 <body class="w3-theme-l5">
@@ -146,92 +152,143 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <br>
 
 
+
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div>
+
     <!-- End Left Column -->
     </div>
 
     <!-- Middle Column -->
     <div class="w3-col m7">
-
-          <!-- Tabs -->
-          <div id="Notice" class="w3-container w3-padding-16 myLink">
-
-            <div class="w3-bar w3-black">
-              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Notice');"><i class="fa fa-bullhorn"></i> 할일목록 </button>
-              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-book"></i> 할일작성 </button>
-            </div>
-
-            <div class="w3-container w3-card-2 w3-white w3-round"><br>
-
-              <fieldset>
-                <legend style="margin-left:20px">To Do List</legend>
-
-                    <select id="select" style="margin-left:20px">
-                      <option>정렬기준</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
 
 
-
-                <div>
-                <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 할 일 목록 </label><br><br>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-10" style="margin:10px">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="" style="float:left;width: 550px;height: 35px;">
-
-                  <!-- checkbox -->
-                  <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-                </div>
-                </div>
-                <br>
+        <!-- Forms
+          ================================================== -->
+          <div class="bs-docs-section" style="margin-right:20px">
 
 
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
+            <div class="row">
+                  <form class="form-horizontal">
+                    <fieldset>
+                      <legend style="margin-left:20px">To Do List 수정</legend>
 
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
+                          <select id="select" style="margin-left:20px">
+                            <option>카테고리</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                      </div>
 
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
+                      <div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 할 일 </label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="">
+                        </div>
+                      </div>
+                      </div><br>
 
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
 
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
 
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
+                      <!-- Alert Box -->
+                      <section id="calendar" class="calendar">
+                      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+                        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+                          <i class="fa fa-remove"></i>
+                        </span>
+                        <p><strong>Hey!</strong></p>
+                        <p>People are looking at your profile. Find out who.</p>
+                      </div>
+                    </section>
 
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
 
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-                <br><br><br>
-              </div>
-              </div>
-            </div>
 
-              </fieldset>
+
+                    <div>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
+                        <i class="fa fa-calendar" style="margin-left:10px"></i> </label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="">
+                      </div>
+                    </div>
+                    </div><br>
+
+                      <div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
+                          <i class="fa fa-calendar" style="margin-left:10px"></i> </label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="">
+                        </div>
+                      </div>
+                      </div><br>
+
+                      <div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 담당자 </label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="">
+                        </div>
+                      </div>
+                      </div><br><br>
+
+                      <div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 중요도 </label>
+                        <div class="col-lg-10">
+                          <select id="select" style="margin-3px">
+                            <option> 상 </option>
+                            <option> 중 </option>
+                            <option> 하 </option>
+                          </select>
+                        </div>
+                      </div>
+                      </div><br>
+
+                      <div>
+                      <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 알림 </label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="">
+                        </div>
+                      </div>
+                      </div><br>
+
+                      <div class="form-group">
+                        <br>
+                        <label for="textArea" class="col-lg-2 control-label" style="margin-top:5px">비고</label>
+                        <div class="col-lg-10">
+                          <textarea class="form-control" rows="10" id="textArea" placeholder="내용을 입력하세요"></textarea>
+                          <br>
+                        </div>
+
+                      </div>
+
+                      <div class="form-group" style="text-align:center">
+                        <div class="col-lg-10 col-lg-offset-2" style="margin-bottom:30px">
+                          <br>
+                          <button type="submit" class="btn btn-primary">등록</button>
+                          <button type="reset" class="btn btn-default">취소</button>
+
+                        </div>
+                      </div>
+                    </fieldset>
+
+                  </form>
+
                 </div>
 
               </div>
