@@ -20,4 +20,10 @@ public class ProjectVO {
 		this.project_name = project_name;
 	}
 
+	@Override
+	public String toString() {
+		return "ProjectVO [project_id=" + project_id + ", project_name=" + project_name + "]";
+	}
+
+	
 }
