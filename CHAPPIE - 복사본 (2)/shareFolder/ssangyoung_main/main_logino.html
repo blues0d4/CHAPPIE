@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>SSangyoung_main_logino</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/stylish-portfolio.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+
+
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand page-scroll" href="#page-top">Ssangyoung Company</a>
+        </div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+            <a href="#page-top"></a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#services">Services</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#about">About</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#contact">Contact</a>
+        </li>
+
+        <li>
+            <a class="page-scroll" href="#sign_up">
+              <span class ="glyphicon glyphicon-user"> 로그인</span></a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#join">회원가입</a>
+        </li>
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Accordion -->
+      <div class="w3-card-2 w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-user-circle-o"></i> My Project </button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <ul>
+              <li>
+              <button style="padding:5px; border:0px; background-color:#FFFFFF">My Project</button>
+              </li>
+              <li>
+              <button style="padding:5px; border:0px; background-color:#FFFFFF">Create Project</button>
+              </li>
+              <li>
+              <button style="padding:5px; border:0px; background-color:#FFFFFF">Post</button>
+              </li>
+          </div>
+
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw"></i> Share Project</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <ul>
+            <li>
+            <button style="padding:5px; border:0px; background-color:#FFFFFF">Post</button>
+            </li>
+            <li>
+            <button style="padding:5px; border:0px; background-color:#FFFFFF">To do list</button>
+            </li>
+            <li>
+            <button style="padding:5px; border:0px; background-color:#FFFFFF">Progression rate</button>
+            </li>
+        </div>
+
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-gear"></i> Management </button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div>
+
+    <!-- End Left Column -->
+    </div>
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+
+
+          <!-- Tabs -->
+          <div id="Notice" class="w3-container w3-white w3-padding-16 myLink">
+            <div class="w3-bar" style="color:white; background-color:#d9b3ff">
+              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Notice');"><i class="fa fa-bullhorn"></i> 공지사항</button>
+              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-book"></i> 게시물별</button>
+            </div>
+
+            <div class="w3-container w3-card-2 w3-white w3-round"><br>
+              <img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+              <span class="w3-right w3-opacity">1 min</span>
+              <h4>John Doe</h4><br>
+              <hr class="w3-clear">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="w3-row-padding" style="margin:0 -16px">
+                  <div class="w3-half">
+                    <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+                  </div>
+                  <div class="w3-half">
+                    <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+                </div>
+              </div>
+              <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+              <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+            </div>
+          </div>
+
+
+      <!-- TO DO List -->
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card-2 w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <div class="box box-primary">
+                <div class="box-header">
+
+                  <div class="box-tools pull-right">
+                    <ul class="pagination pagination-sm inline">
+                      <li><a href="#">&laquo;</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">&raquo;</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                  <i class="ion ion-clipboard"></i>
+          <h3><i class="fa fa-calendar"></i> To Do List</h3>
+
+          <br><br>
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">CHANCHAN</div>
+            <div class="panel-body">
+              <ul class="todo-list" style="list-style-type:none">
+                <li>
+                  <!-- drag handle -->
+                      <span class="handle">
+                      </span>
+                  <!-- checkbox -->
+                  <input type="checkbox" value="" style="display:table-col; vertical-align:-3px;" >
+                  <!-- todo text -->
+                  <span class="text w3-margin-right" align="middle">Design a nice theme</span>
+                  <!-- Emphasis label -->
+                  <a href="#"> <span class="badge">2 mins</span></a>
+                  <small class="label label-danger"><i class="fa fa-clock-o" style="display:table-col;vertical-align:middle"></i> 2 mins</small>
+                  <!-- General tools such as edit or delete-->
+                    <button class="w3-right"><i class="fa fa-edit"></i></button>
+                    <i class="fa fa-trash-o w3-right"></i>
+                </li>
+            </div>
+          </div>
+
+
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <ul class="todo-list" style="list-style-type:none">
+            <li>
+              <!-- drag handle -->
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <!-- checkbox -->
+              <input type="checkbox" value="">
+              <!-- todo text -->
+              <span class="text w3-margin-right">Design a nice theme</span>
+              <!-- Emphasis label -->
+              <small class="label label-danger"><i class="fa fa-clock-o "></i> 2 mins</small>
+              <!-- General tools such as edit or delete-->
+                <button class="w3-right"><i class="fa fa-edit"></i></button>
+                <i class="fa fa-trash-o w3-right"></i>
+            </li>
+
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text w3-margin-right">Make the theme responsive</span>
+              <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+              <div class="tools">
+                <i class="fa fa-edit w3-right"></i>
+                <i class="fa fa-trash-o w3-right"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Let theme shine like a star</span>
+              <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Let theme shine like a star</span>
+              <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Check your messages and notifications</span>
+              <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+            <li>
+                  <span class="handle">
+                    <i class="fa fa-ellipsis-v"></i>
+                    <i class="fa fa-ellipsis-v"></i>
+                  </span>
+              <input type="checkbox" value="">
+              <span class="text">Let theme shine like a star</span>
+              <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+              <div class="tools">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix no-border">
+          <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+        </div>
+      </div>
+      <!-- /.box -->
+</div>
+</div><br>
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Notice');"><i class="fa fa-area-chart"></i> 진척도 </button>
+</div>
+      <div class="w3-container w3-card-2 w3-white w3-round"><br><h4>General Stats</h4><br>
+          <hr>
+            <div class="w3-container">
+                <p>New Visitors</p>
+                  <div class="w3-grey">
+                      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
+                  </div>
+
+                <p>New Users</p>
+                  <div class="w3-grey">
+                      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
+                  </div>
+
+                <p>Bounce Rate</p>
+                  <div class="w3-grey">
+                    <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
+                  </div>
+          </div>
+        <hr>
+      </div>
+    </div>
+    </div>
+
+    <br><br><br><br>
+
+    <!-- End Middle Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      <div class="w3-card-2 w3-round w3-white w3-center">
+        <div class="w3-container">
+
+          <!-- DIRECT CHAT -->
+          <div class="box box-warning direct-chat direct-chat-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Direct Chat</h3>
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <!-- Conversations are loaded here -->
+              <div class="direct-chat-messages">
+                <!-- Message. Default to the left -->
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    Is this template really for free? That's unbelievable!
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+
+                <!-- Message to the right -->
+                <div class="direct-chat-msg right">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                    <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    You better believe it!
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+
+                <!-- Message. Default to the left -->
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    Working with AdminLTE on a great new app! Wanna join?
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+
+                <!-- Message to the right -->
+                <div class="direct-chat-msg right">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                    <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    I would love to.
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+              </div>
+              <!--/.direct-chat-messages-->
+            </div>
+      <br>
+    </div>
+    <!-- End Right Column -->
+    </div>
+  <!-- End Grid -->
+  </div>
+
+<!-- End Page Container -->
+</div>
+
+<!-- End Right Var -->
+</div>
+
+<br>
+
+
+
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 package kr.co.syteam.controller.project;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.syteam.domain.project.dto.ProjectDTO;
+import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.project.ProjectService;
 
 @Controller
@@ -47,5 +51,15 @@ public class ProjectController {
 		logger.info("doProjectCreate");
 		projectService.projectManagerInsert(projectDTO, request);
 		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/projectList")
+	public String doProjectList(Model model, HttpServletRequest request) throws Exception{
+		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+		String user_id = loginVO.getUser_id();
+		logger.info("doProjectList");
+		List<ProjectVO> projectList = projectService.projectList(user_id);
+		model.addAttribute("projectList", projectList);
+		return "project/projectList";
 	}
 }

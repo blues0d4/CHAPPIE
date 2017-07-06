@@ -53,6 +53,8 @@
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
             <br>
             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a>
+            <br>
+            <a href="/projectList" class="btn btn-dark btn-lg">프로젝트 리스트</a>
         </div>
 	</header>
 

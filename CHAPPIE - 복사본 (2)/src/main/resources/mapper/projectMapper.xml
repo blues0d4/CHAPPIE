@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.syteam.mapper.ProjectMapper">
+
+	<select id="projectEmptyCheck" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*)
+			FROM PROJECT_TABLE P, MEMBER_TABLE M
+			WHERE P.PROJECT_ID = M.PROJECT_ID
+		    AND M.USER_ID = #{user_id}
+		]]>
+	</select>
+	
+	<insert id="projectCreate">
+		<![CDATA[
+			INSERT INTO PROJECT_TABLE(PROJECT_ID, PROJECT_NAME) 
+			VALUES(PROJECT_SEQ.nextval, #{project_name})
+		]]>
+	</insert>
+	
+	<select id="projectGetId" resultType="String">
+		<![CDATA[
+			SELECT PROJECT_ID 
+			FROM PROJECT_TABLE 
+			WHERE PROJECT_NAME = #{project_name}
+		]]>
+	</select>
+	
+	<insert id="projectMemberInsert" >
+		<![CDATA[
+			INSERT INTO MEMBER_TABLE(PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID)
+			VALUES(#{project_id}, #{member_nickname}, #{member_rank}, #{user_id})
+		]]>
+	</insert>
+</mapper>

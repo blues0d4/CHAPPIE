@@ -1,12 +1,14 @@
 package kr.co.syteam.project;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.syteam.domain.project.dto.ProjectDTO;
+import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.service.project.ProjectService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,16 +40,30 @@ public class ProjectServiceTest{
 //	}
 	
 	//프로젝트 managerInsert (테스트 완료)
+//	@Test
+//	public void testProjectManagerInsert() throws Exception{
+//		ProjectDTO projectDTO = new ProjectDTO();
+//		projectDTO.setProject_name("SY32");
+//		projectDTO.setUser_id("1");
+//		projectDTO.setMember_nickname("nick1");
+//		projectDTO.setMember_rank("Y");
+//		projectService.projectMemberInsert(projectDTO);
+//		System.out.println("testProjectManagerInsert");
+//		System.out.println(projectDTO);
+//	}
+	
+	//프로젝트 리스트 (테스트 완료)
 	@Test
-	public void testProjectManagerInsert() throws Exception{
-		ProjectDTO projectDTO = new ProjectDTO();
-		projectDTO.setProject_name("SY32");
-		projectDTO.setUser_id("1");
-		projectDTO.setMember_nickname("nick1");
-		projectDTO.setMember_rank("Y");
-		projectService.projectMemberInsert(projectDTO);
-		System.out.println("testProjectManagerInsert");
-		System.out.println(projectDTO);
+	public void testProjectList() throws Exception{
+		String user_id = "1";
+		List<ProjectVO> projectList = projectService.projectList(user_id);
+		for(ProjectVO projectVO : projectList){
+		System.out.println(projectVO.getProject_id());
+		System.out.println(projectVO.getProject_name());
+		System.out.println(projectVO.getMember_rank());
+		System.out.println(projectVO.getMember_nickname());
+		System.out.println(projectVO.getUser_id());
+		}
 	}
 
 }
