@@ -20,12 +20,18 @@
 		]]>
 	</insert>
 	
-	<select id="projectSelectId" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+	<select id="projectGetId" resultType="String">
 		<![CDATA[
 			SELECT PROJECT_ID 
 			FROM PROJECT_TABLE 
 			WHERE PROJECT_NAME = #{project_name}
 		]]>
 	</select>
-
+	
+	<insert id="projectMemberInsert" >
+		<![CDATA[
+			INSERT INTO MEMBER_TABLE(PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID)
+			VALUES(#{project_id}, #{member_nickname}, #{member_rank}, #{user_id})
+		]]>
+	</insert>
 </mapper>
