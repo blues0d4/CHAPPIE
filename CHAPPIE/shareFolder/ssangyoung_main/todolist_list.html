@@ -164,8 +164,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
               <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-book"></i> 할일작성 </button>
             </div>
 
-            <div class="w3-container w3-card-2 w3-white w3-round" style="align:right"><br>
-              <button type="button" style="w3-indigo float" class="btn btn-default" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus-circle"></i></button>
+            <div class="w3-container w3-card-2 w3-white w3-round" style="align:right"><br>              
               <div class="modal fade" id="todolist_plus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -206,7 +205,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                 <li>
                                 <div>
                                 <div class="form-group">
-                                  <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 시작일자
+                                  <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px; padding: 0px"> 시작일자
                                   <button type="button" value="시작일자" onClick="datePicker(event, 'target_date')" onFocus="this.blur();"><i class="fa fa-calendar"></i></button></label>
                                   <div class="col-lg-10">
                                     <input type="text" name="target_date" class="form-control" id="inputEmail" placeholder="">
@@ -218,7 +217,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                               <li>
                                   <div>
                                   <div class="form-group">
-                                    <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
+                                    <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px; padding: 0px"> 종료일자
                                       <button type="button" value="종료일자" onClick="datePicker(event, 'target_date2')" onFocus="this.blur();"><i class="fa fa-calendar"></i></button></label>
                                       <div class="modal fade" id="Startdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                                         <div class="modal-dialog">
@@ -308,16 +307,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
               <fieldset>
                 <legend style="margin-left:20px">To Do List</legend>
-
-                    <select id="select" style="margin-left:20px">
-                      <option>정렬기준</option>
+                  <div class="row">
+                    <div class="col-xs-2">
+                     <select class="form-control input-sm" id="select" style="margin-left:20px">
+                      <option>category</option>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
                       <option>5</option>
                     </select>
+                    </div>
+                    <div class="col-xs-2">
+                      <button type="button" style="w3-indigo float" class="btn btn-default" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus-circle"></i></button>
+                    </div>
+                    </div>
 
+                    
                 <div class="w3-panel">
                   <div class="w3-row-padding" style="margin:0 -16px">
 
@@ -372,7 +378,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                               <li>
                                               <div>
                                               <div class="form-group">
-                                                <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 시작일자
+                                                <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px; padding: 0px"> 시작일자
                                                 <button type="button" value="시작일자" onClick="datePicker(event, 'target_date')" onFocus="this.blur();"><i class="fa fa-calendar"></i></button></label>
                                                 <div class="col-lg-10">
                                                   <input type="text" name="target_date" class="form-control" id="inputEmail" placeholder="">
@@ -384,7 +390,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                                             <li>
                                                 <div>
                                                 <div class="form-group">
-                                                  <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
+                                                  <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px; padding: 0px"> 종료일자
                                                     <button type="button" value="종료일자" onClick="datePicker(event, 'target_date2')" onFocus="this.blur();"><i class="fa fa-calendar"></i></button></label>
                                                     <div class="modal fade" id="Startdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                                                       <div class="modal-dialog">

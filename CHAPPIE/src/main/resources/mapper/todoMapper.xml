@@ -47,5 +47,16 @@
 		]]>
 	
 	</select>
+	
+	<update id="todoCompleteYes">
+		<![CDATA[
+			UPDATE TODO_LIST_TABLE SET TODO_COMPLETE='1' WHERE TODO_NO=#{todo_no}
+		]]>
+	</update>
+	<update id="todoCompleteNo">
+		<![CDATA[
+			UPDATE TODO_LIST_TABLE SET TODO_COMPLETE='0' WHERE TODO_NO=#{todo_no}
+		]]>
+	</update>
 
 </mapper>

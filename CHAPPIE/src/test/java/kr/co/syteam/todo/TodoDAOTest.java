@@ -62,16 +62,16 @@ public class TodoDAOTest {
 //		todoDAO.todoMemberWrite(dto);
 //	}
 	
-	@Test
-	public void testTodoView() throws Exception{
-		List<TodoVO> list = todoDAO.todoView("1010");
-		
-		System.out.println("todo 한개 : " + list.get(0).toString());	
-		
-		for(TodoVO todoVO : list){
-			System.out.println("todo nickname : " + todoVO.getMember_nickname());
-		}
-	}	
+//	@Test
+//	public void testTodoView() throws Exception{
+//		List<TodoVO> list = todoDAO.todoView("1010");
+//		
+//		System.out.println("todo 한개 : " + list.get(0).toString());	
+//		
+//		for(TodoVO todoVO : list){
+//			System.out.println("todo nickname : " + todoVO.getMember_nickname());
+//		}
+//	}	
 
 //	@Test
 //	public void testTodoListView() throws Exception{
@@ -84,5 +84,10 @@ public class TodoDAOTest {
 //			System.out.println("todo_complete : " + todoVO.getTodo_complete());
 //		}
 //	}	
+	
+	@Test
+	public void testTodoCompleteYes() throws Exception{
+		todoDAO.todoCompleteYes("1009");
+	}
 	
 }

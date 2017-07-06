@@ -62,13 +62,11 @@ public class TodoDAOImpl implements TodoDAO {
 	}
 	@Override
 	public int todoCompleteYes(String todo_no) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(namespace+"todoCompleteYes", todo_no);
 	}
 	@Override
 	public int todoCompleteNo(String todo_no) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(namespace+"todoCompleteNo", todo_no);
 	}
 
 	
