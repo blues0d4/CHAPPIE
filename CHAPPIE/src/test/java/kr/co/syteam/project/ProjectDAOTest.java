@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.co.syteam.dao.project.ProjectDAO;
-import kr.co.syteam.domain.project.dto.ProjectDTO;
+import kr.co.syteam.domain.project.vo.ProjectVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
@@ -23,10 +23,18 @@ public class ProjectDAOTest{
 //		projectDAO.projectCreate("projectTest02");
 //	}
 	
-	//프로젝트 ID찾기 (테스트 미완료)
+	//프로젝트 ID찾기 (테스트 완료)
+//	@Test
+//	public void testProjectSelectId() throws Exception{
+//		ProjectVO projectVO = projectDAO.projectSelectId("ptest01");
+//		System.out.println(projectVO);
+//	}
+	
+	//프로젝트 Empty 체크 (테스트 완료)
 	@Test
-	public void testProjectSelectId() throws Exception{
-		projectDAO.projectSelectId("ptest01");
+	public void testProjectEmptyCheck() throws Exception{
+		int result = projectDAO.projectEmptyCheck("1");
+		System.out.println(result);
 	}
 
 }

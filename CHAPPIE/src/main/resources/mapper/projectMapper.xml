@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.syteam.mapper.ProjectMapper">
 
-	<select id="projectEmptyCheck">
+	<select id="projectEmptyCheck" resultType="int">
 		<![CDATA[
 			SELECT COUNT(*)
 			FROM PROJECT_TABLE P, MEMBER_TABLE M
