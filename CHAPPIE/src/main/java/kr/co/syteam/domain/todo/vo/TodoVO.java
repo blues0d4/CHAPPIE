@@ -11,6 +11,12 @@ public class TodoVO {
 	private String todo_complete;
 	private String member_nickname;
 	
+	@Override
+	public String toString() {
+		return "TodoVO [todo_no=" + todo_no + ", category_id=" + category_id + ", todo_list=" + todo_list
+				+ ", todo_start_date=" + todo_start_date + ", todo_end_date=" + todo_end_date + ", todo_priority="
+				+ todo_priority + ", todo_note=" + todo_note + ", todo_complete=" + todo_complete + "]";
+	}
 	public String getTodo_no() {
 		return todo_no;
 	}

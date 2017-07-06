@@ -11,11 +11,41 @@
 			#{todo_start_date}, #{todo_end_date}, #{todo_priority}, #{todo_note}, #{todo_complete})		
 		]]>
 	</insert>
+	
+	<select id="todoSelect" resultType="String">
+		<![CDATA[
+			SELECT MAX(TODO_NO) 
+			FROM TODO_LIST_TABLE 
+		]]>
+	</select>
   
   	<insert id="todoMemberWrite">
   		<![CDATA[
-  			
+  			INSERT INTO TODO_MEMBER_TABLE 
+			VALUES (#{todo_no}, #{member_nickname})
   		]]>
   	</insert>
+  	
+  	
+  	
+  	<select id="todoView" resultType="kr.co.syteam.domain.todo.vo.TodoVO">
+  		<![CDATA[
+  			SELECT M.TODO_NO, L.CATEGORY_ID, L.TODO_LIST, L.TODO_START_DATE, 
+  				L.TODO_END_DATE, L.TODO_PRIORITY, L.TODO_NOTE, L.TODO_COMPLETE, M.MEMBER_NICKNAME 
+			FROM TODO_LIST_TABLE L, TODO_MEMBER_TABLE M 
+			WHERE L.TODO_NO = M.TODO_NO AND 
+			M.TODO_NO = #{todo_no}
+  		]]>
+  	</select>
+
+	<select id="todoListView" resultType="kr.co.syteam.domain.todo.vo.TodoVO">
+		<![CDATA[
+			SELECT TODO_NO, TODO_LIST, TODO_PRIORITY, TODO_COMPLETE 
+			FROM TODO_LIST_TABLE 
+			WHERE CATEGORY_ID = #{category_id} 
+			ORDER BY TODO_NO DESC
+		]]>
+	
+	</select>
 
 </mapper>
