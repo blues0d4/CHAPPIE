@@ -26,7 +26,7 @@ public class ProjectDAOTest{
 	//프로젝트 ID찾기 (테스트 미완료)
 	@Test
 	public void testProjectSelectId() throws Exception{
-		projectDAO.projectSelectId("SYTEAM");
+		projectDAO.projectSelectId("ptest01");
 	}
 
 }

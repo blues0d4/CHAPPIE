@@ -21,7 +21,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 
 	@Override
 	public void projectSelectId(String project_name) throws Exception {
-		sqlSession.selectOne(namespace+"projectSelect", project_name);
+		sqlSession.selectOne(namespace+"projectSelectId", project_name);
 		
 	}
 

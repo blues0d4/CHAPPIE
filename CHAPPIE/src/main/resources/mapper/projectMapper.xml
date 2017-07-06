@@ -20,10 +20,10 @@
 		]]>
 	</insert>
 	
-	<select id="projectSelectId">
+	<select id="projectSelectId" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
 		<![CDATA[
-			SELECT PROJECT_ID
-			FROM PROJECT_TABLE
+			SELECT PROJECT_ID 
+			FROM PROJECT_TABLE 
 			WHERE PROJECT_NAME = #{project_name}
 		]]>
 	</select>
