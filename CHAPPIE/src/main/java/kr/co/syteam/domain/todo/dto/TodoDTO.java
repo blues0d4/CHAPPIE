@@ -1,6 +1,8 @@
 package kr.co.syteam.domain.todo.dto;
 
 public class TodoDTO {
+	private String todo_no;
+	
 	private String category_id;
 	private String todo_list;
 	private String todo_start_date;
@@ -10,6 +12,12 @@ public class TodoDTO {
 	private String todo_note;
 	private String todo_complete;
 	
+	public String getTodo_no() {
+		return todo_no;
+	}
+	public void setTodo_no(String todo_no) {
+		this.todo_no = todo_no;
+	}
 	public String getCategory_id() {
 		return category_id;
 	}
