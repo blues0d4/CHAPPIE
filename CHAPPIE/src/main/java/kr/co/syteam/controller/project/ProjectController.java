@@ -24,4 +24,10 @@ public class ProjectController {
 //		model.addAttribute("board", boardVO);
 		return "project/projectView";
 	}
+	
+	@RequestMapping(value = "/projectCreateForm")
+	public String doProjectCreateForm() throws Exception{
+		logger.info("doProjectCreateForm");
+		return "project/projectCreateForm";
+	}
 }

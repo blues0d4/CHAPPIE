@@ -4,5 +4,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.syteam.mapper.ProjectMapper">
 
+	<select id="projectEmptyCheck">
+		<![CDATA[
+			SELECT COUNT(*)
+			FROM PROJECT_TABLE P, MEMBER_TABLE M
+			WHERE P.PROJECT_ID = M.PROJECT_ID
+		    AND M.USER_ID = #{user_id}
+		]]>
+	</select>
+	
+	<insert id="projectCreate">
+		<![CDATA[
+			INSERT INTO PROJECT_TABLE(PROJECT_ID, PROJECT_NAME) 
+			VALUES(PROJECT_SEQ.nextval, #{project_name})
+		]]>
+	</insert>
+	
+	<select id="projectSelectId">
+		<![CDATA[
+			SELECT PROJECT_ID
+			FROM PROJECT_TABLE
+			WHERE PROJECT_NAME = #{project_name}
+		]]>
+	</select>
 
 </mapper>
