@@ -39,4 +39,4 @@ select * from category_table;
 commit;
 
 INSERT INTO CATEGORY_TABLE
-VALUES(CATEGORY_SEQ.NEXTVAL, '공지', 1001, 'Y', 'B');
+VALUES(CATEGORY_SEQ.NEXTVAL, '기타', 1001, 'B');
