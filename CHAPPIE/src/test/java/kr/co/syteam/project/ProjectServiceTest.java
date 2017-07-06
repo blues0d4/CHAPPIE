@@ -45,7 +45,7 @@ public class ProjectServiceTest{
 		projectDTO.setUser_id("1");
 		projectDTO.setMember_nickname("nick1");
 		projectDTO.setMember_rank("Y");
-		projectService.projectManagerInsert(projectDTO);
+		projectService.projectMemberInsert(projectDTO);
 		System.out.println("testProjectManagerInsert");
 		System.out.println(projectDTO);
 	}
