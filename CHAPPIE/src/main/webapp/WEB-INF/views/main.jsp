@@ -52,7 +52,7 @@
             <h3>${sessionScope.login.user_id}Free Bootstrap Themes &amp; Templates</h3>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
             <br>
-            <a href="/board" class="btn btn-dark btn-lg">게시판</a>
+            <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a>
         </div>
 	</header>
 
