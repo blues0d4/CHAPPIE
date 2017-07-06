@@ -1,4 +1,5 @@
 <%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -31,51 +32,11 @@
 </head>
 <body>
 <body id="page-top" class="index">
-
+	
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-        
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-
-                    <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
-                          <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_MODIFY_FORM}">
-                          <span class ="glyphicon glyphicon-user"> 회원정보수정</span></a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+    	<jsp:include page ="../${PAGEs.VIEW_NAV}" flush="false" />
+<!--         /.container-fluid -->
     </nav>
 
     <!-- Header -->
@@ -91,7 +52,7 @@
             <h3>${sessionScope.login.user_id}Free Bootstrap Themes &amp; Templates</h3>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
             <br>
-            <a href="/board" class="btn btn-dark btn-lg">게시판</a>
+            <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a>
         </div>
 	</header>
 

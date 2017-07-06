@@ -25,4 +25,5 @@ commit;
 INSERT INTO PROJECT_TABLE(PROJECT_ID, PROJECT_NAME)
 VALUES(PROJECT_SEQ.nextval, 'SSANGYONG');
 
-select * from project_Table;
+select *
+from project_table;

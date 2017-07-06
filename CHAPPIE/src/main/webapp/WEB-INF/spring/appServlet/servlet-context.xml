@@ -32,7 +32,7 @@
 			<beans:bean class="kr.co.syteam.interceptor.user.LoginInterceptor"/>
 		</interceptor>
 		<interceptor>
-			<mapping path="/board/**"/>
+			<mapping path="/project*/**"/>
 			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/>
 		</interceptor>
 	</interceptors>

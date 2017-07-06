@@ -90,7 +90,7 @@ public class UserController {
 	}
 
 	// 로그아웃 (테스트 미완료)
-	@RequestMapping(value = "/logout")
+	@RequestMapping(value = URIs.URI_USER_LOGOUT)
 	public String doLogout(HttpServletRequest request) {
 		request.getSession().invalidate();
 		return "redirect:/";
