@@ -28,7 +28,7 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
-<body class="w3-theme-l5">
+<body class="">
 
 <!-- Navbar -->
 
@@ -111,7 +111,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
               </li>
           </div>
 
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw"></i> Share Project</button>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align" ><i class="fa fa-users fa-fw"></i> Share Project</button>
           <div id="Demo2" class="w3-hide w3-container">
             <ul>
             <li>
@@ -136,20 +136,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 
 
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Hey!</strong></p>
-        <p>People are looking at your profile. Find out who.</p>
-      </div>
+
 
     <!-- End Left Column -->
     </div>
     <!-- Middle Column -->
     <div class="w3-col m7">
-<div style="border: 5px inset #48BAE4; height: auto; margin-left:20px; margin-right:15px;">
+<div class="w3-bar btn btn-dark btn-lg" style="height: auto; margin-left:20px; margin-right:15px; background-color:White">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
               <li class="hidden">
@@ -196,8 +189,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
           <!-- Tabs -->
           <div id="Notice" class="w3-container w3-padding-16 myLink">
 
-            <div class="w3-bar w3-black">
-              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Notice');"><i class="fa fa-bullhorn"></i> 공지사항</button>
+
+            <div>
+              <button class="w3-bar-item w3-button tablink " onclick="openLink(event, 'Notice');"><i class="fa fa-bullhorn"></i> 공지사항</button>
               <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-book"></i> 게시물별</button>
             </div>
         <div class="w3-container w3-card-2 w3-white w3-round"><br>
@@ -313,7 +307,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     <i class="fa fa-trash-o w3-right"></i>
                 </li>
 
-                
+
 
             </div>
           </div>
@@ -355,26 +349,62 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
     <br><br><br><br>
 
-    <!-- End Middle Column -->
-    </div>
 
     <!-- Right Column -->
     <div class="w3-col m2">
       <div class="w3-card-2 w3-round w3-white w3-center">
-        <div class="w3-container">
+        <div class="w3-container" style="background-color:orange">
+          <!-- DIRECT CHAT -->
+            <div class="box-header with-border">
+              <strong><h3 class="box-title" style="color:White">History</h3></strong>
 
+            </div>
+          </div>
+        </div>
+            <!-- /.box-header -->
+            <div class="w3-card-2 w3-round w3-white">
+              <!-- Conversations are loaded here -->
+                <!-- /.panel-heading -->
+                      <div class="panel-body">
+                          <ul class="chat" style="list-style:none; padding-left:0px;">
+                              <li>
+                                  <div class="chat-body clearfix">
+                                          <strong class="primary-font">Jack Sparrow</strong>
+                                          <small class="pull-right text-muted">
+                                              <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                          </small>
+
+                                  </div>
+                                  <p>누가누가뭘했다</p>
+                              </li>
+                              <li class="right clearfix">
+
+                                  <div class="chat-body clearfix">
+
+                                          <strong class="primary-font">Bhaumik Patel</strong>
+                                          <small class="pull-right text-muted">
+                                              <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+
+                                          </div>
+                                      <p>
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                      </p>
+                              </li>
+
+
+                          </ul>
+                      </div>
+
+
+    <!-- End Middle Column -->
     </div>
-    <!-- End Right Column -->
-    </div>
-  <!-- End Grid -->
-  </div>
+
+
 
 <!-- End Page Container -->
 </div>
 
 <!-- End Right Var -->
-</div>
-
 <br>
 
 
