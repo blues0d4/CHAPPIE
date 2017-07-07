@@ -14,7 +14,7 @@
 	
 	<select id="boardList" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_COUNT
+			SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT
 			FROM BOARD_TABLE
 			ORDER BY BOARD_NO DESC
 		]]>
@@ -22,7 +22,7 @@
 	
 	<select id="boardView" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_COUNT
+			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_HITCOUNT
 			FROM BOARD_TABLE
 			WHERE BOARD_NO = #{board_no}
 		]]>
@@ -31,7 +31,7 @@
 	<update id="boardHitCount">
 		<![CDATA[
 			UPDATE BOARD_TABLE
-			SET BOARD_COUNT = BOARD_COUNT + 1
+			SET BOARD_HITCOUNT = BOARD_HITCOUNT + 1
 			WHERE BOARD_NO = #{board_no}
 		]]>
 	</update>

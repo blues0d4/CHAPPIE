@@ -48,7 +48,7 @@
 								<td><a href="/board/view/${boardVO.board_no }">${boardVO.board_title }</a></td>
 								<td>${ boardVO.user_id }</td>
 								<td>${ boardVO.board_write_date }</td>
-								<td>${ boardVO.board_count }</td>
+								<td>${ boardVO.board_hitcount }</td>
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -16,7 +16,7 @@ import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.service.board.BoardService;
 
 @Controller
-//@RequestMapping("/board")
+@RequestMapping("*/")
 public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);

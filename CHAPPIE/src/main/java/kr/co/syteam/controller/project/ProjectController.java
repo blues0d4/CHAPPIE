@@ -9,12 +9,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.exceptions.ErrorInfo;
+import kr.co.syteam.exceptions.ProjectNotFoundException;
 import kr.co.syteam.service.project.ProjectService;
 
 //"/{project}"
@@ -35,10 +39,12 @@ public class ProjectController {
 //			return "redirect:/"; //해당 project_id가 없을 경우 페이지가 없습니다.
 //		}
 //		model.addAttribute("board", boardVO);
+		logger.info("doProjectView");
 		
 		ProjectVO projectVO = projectService.projectSelect(project_name);
-
-		logger.info("doProjectView");
+		if(projectVO == null){
+			return "redirect:/";
+		}
 		System.out.println(projectVO);
 		
 		return "project/projectMain";
@@ -69,4 +75,5 @@ public class ProjectController {
 		model.addAttribute("projectList", projectList);
 		return "project/projectList";
 	}
+	
 }
