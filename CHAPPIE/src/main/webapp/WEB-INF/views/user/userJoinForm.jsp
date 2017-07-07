@@ -1,4 +1,5 @@
 <%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -48,42 +49,8 @@
 <body> 
 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-      <div class="container">
-
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header page-scroll">
-              <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE</a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                  <li class="hidden">
-                      <a href="#page-top"></a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="../#services">Services</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="../#about">About</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="../#contact">Contact</a>
-                  </li> 
-
-                   <li>
-                      <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
-                        <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
-                  </li>
-
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
+     
+    	<jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
   </nav>
   <!-- Sign up -->
   <section id="sign_up" class="sign_up">
@@ -99,7 +66,6 @@
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
    
        
-       <form action="/action_page.php" target="_blank">
          <div class="w3-section">
          
            <label>이메일</label>
@@ -134,7 +100,6 @@
 		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
        </div>
       
-       </form>
        </form>
      </div>
    </div>

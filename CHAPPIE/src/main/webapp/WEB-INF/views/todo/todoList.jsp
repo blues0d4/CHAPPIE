@@ -1,3 +1,5 @@
+<%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,10 +20,10 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="css/stylish-portfolio.css" rel="stylesheet">
+<link href="../../resources/css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -46,42 +48,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <!-- Navbar -->
 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container">
-
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Ssangyoung Company</a>
-        </div>
-
-<!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-        <li class="hidden">
-            <a href="#page-top"></a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#services">Services</a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#about">About</a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#contact">Contact</a>
-        </li>
-
-        <li>
-            <a class="page-scroll" href="#sign_up">
-              <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#join">회원가입</a>
-        </li>
-
-    </ul>
-</div>
+    	<jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
 </nav>
 
 <!-- Navbar on small screens -->

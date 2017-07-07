@@ -46,7 +46,7 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="${URIs.URI_USER_LOGOUT}">
-                          <span class ="glyphicon glyphicon-user">로그아웃</span></a>
+                          <span class ="glyphicon ">로그아웃</span></a>
                     </li>
 				</c:otherwise>
 			</c:choose>
