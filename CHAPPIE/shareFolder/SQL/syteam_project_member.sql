@@ -51,9 +51,16 @@ VALUES(1003, 'qqq', 'n', 'user_id');
 --추후 기능(닉네임 중복 금지시키고 추가 시 null로 추가 후 null값이면 프로젝트 선택 시 닉네임을 설정하도록 페이지 구현)
 
 --유저가 가진 프로젝트 리스트
-select *
+select distinct *
 from PROJECT_TABLE p, MEMBER_TABLE m
 where p.PROJECT_ID = m.PROJECT_ID
     and m.USER_ID = '1';
+    
+    
+--유저가 선택한 프로젝트
+select distinct *
+from PROJECT_TABLE p, MEMBER_TABLE m
+where p.PROJECT_ID = m.PROJECT_ID
+    and p.project_name = 'ptest01';
 
 ROLLBACK;

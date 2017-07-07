@@ -11,7 +11,7 @@
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-	<title>SSangyoung</title> 
+	<title>CHAPPIE</title> 
 	
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -48,11 +48,13 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
         
-            <h1>Start Ssangyoung</h1>
-            <h3>${sessionScope.login.user_id}Free Bootstrap Themes &amp; Templates</h3>
+            <h1>Start CHAPPIE</h1>
+            <h3>Free Bootstrap Themes &amp; Templates</h3>
             <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
             <br>
             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a>
+            <br>
+            <a href="/projectList" class="btn btn-dark btn-lg">프로젝트 리스트</a>
         </div>
 	</header>
 
@@ -61,17 +63,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2> 회사소개 </h2><br>
+                    <h2> CHAPPIE 소개 </h2><br>
                     <p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한 협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p>
                     <br>
-                    <br>
-                    <h2> 팀원소개 </h2>
                     <br>
 					<br /><h2>"how is the weather in 서울"</h2><br />
 		<iframe width="350" height="430"
 			src="https://console.api.ai/api-client/demo/embedded/ad805c6c-889c-4c68-b0e6-668a13eed289">
 		</iframe>
 		
+                    <h2>팀원 </h2>
+                    <br>
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>한청화</span><br><br>
