@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
@@ -43,37 +44,37 @@ public class ProjectController {
 		
 		ProjectVO projectVO = projectService.projectSelect(project_name);
 		if(projectVO == null){
-			return "redirect:/";
+			return URIs.URI_MAIN_REDIRECT;
 		}
 		System.out.println(projectVO);
 		
-		return "project/projectMain";
+		return URIs.URI_PROJECT_MAIN_FULL;
 	}
 	
-	@RequestMapping(value = "/projectCreateForm")
+	@RequestMapping(value = URIs.URI_PROJECT_CREATE_FORM)
 	public String doProjectCreateForm() throws Exception{
 		logger.info("doProjectCreateForm");
 		
 		
-		return "project/projectCreateForm";
+		return URIs.URI_PROJECT_CREATE_FORM_FULL;
 	}
 	
-	@RequestMapping(value = "/projectCreate")
+	@RequestMapping(value = URIs.URI_PROJECT_CREATE)
 	public String doProjectCreate(ProjectDTO projectDTO, HttpServletRequest request) throws Exception{
 
 		logger.info("doProjectCreate");
 		projectService.projectManagerInsert(projectDTO, request);
-		return "redirect:/";
+		return URIs.URI_MAIN_REDIRECT;
 	}
 
-	@RequestMapping(value = "/projectList")
+	@RequestMapping(value = URIs.URI_PROJECT_LIST)
 	public String doProjectList(Model model, HttpServletRequest request) throws Exception{
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		logger.info("doProjectList");
 		List<ProjectVO> projectList = projectService.projectList(user_id);
 		model.addAttribute("projectList", projectList);
-		return "project/projectList";
+		return URIs.URI_PROJECT_LIST_FULL;
 	}
 	
 }

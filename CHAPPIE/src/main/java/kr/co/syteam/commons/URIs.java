@@ -4,11 +4,16 @@ public class URIs {
 	 
 	//Main URI
 	public static final String URI_MAIN = "/";
+	public static final String URI_MAIN_REDIRECT = "redirect:" + URI_MAIN;
 	
 	//default URI
+	public static final String MAIN_DEFAULT = "/main";
 	public static final String USER_DEFAULT = "/user";
 	public static final String BOARD_DEFAULT = "/board";
+	public static final String PROJECT_DEFAULT = "/project";
 
+	//MAIN URI
+	public static final String URI_MAIN_FULL = MAIN_DEFAULT + "/main";
 	//USER URI
 
 	public static final String URI_USER_LOGIN_FORM = "/userLoginForm";
@@ -57,5 +62,19 @@ public class URIs {
 	
 	public static final String URI_BOARD_DELETE = "/boardDelete";
 	public static final String URI_BOARD_DELETE_FULL = BOARD_DEFAULT + URI_BOARD_DELETE;
+	
+	
+	//PROJECT URI
+	public static final String URI_PROJECT_MAIN  = "/projectMain";
+	public static final String URI_PROJECT_MAIN_FULL  = PROJECT_DEFAULT + URI_PROJECT_MAIN;
+	
+	public static final String URI_PROJECT_CREATE_FORM = "/projectCreateForm";
+	public static final String URI_PROJECT_CREATE_FORM_FULL = PROJECT_DEFAULT + URI_PROJECT_CREATE_FORM;
+	
+	public static final String URI_PROJECT_CREATE = "/projectCreate";
+	public static final String URI_PROJECT_CREATE_FULL = PROJECT_DEFAULT + URI_PROJECT_CREATE;
+	
+	public static final String URI_PROJECT_LIST = "/projectList";
+	public static final String URI_PROJECT_LIST_FULL = PROJECT_DEFAULT + URI_PROJECT_LIST;
 	
 }

@@ -42,7 +42,7 @@ public class UserController {
 		System.out.println(joinResult);
 
 		logger.info("doUserJoin");
-		return "redirect:/";
+		return URIs.URI_MAIN_REDIRECT;
 		// return URIs.URI_JOINUSER_FULL;
 	}
 
@@ -67,7 +67,7 @@ public class UserController {
 		System.out.println("loginId : " + loginVO.getUser_id());
 		System.out.println("loginName : " + loginVO.getUser_name());
 		System.out.println("loginDate : " + loginVO.getLogindate());
-		return "redirect:/";
+		return URIs.URI_MAIN_REDIRECT;
 	}
 
 	// 회원정보 수정 폼 (테스트 완료)
@@ -86,14 +86,14 @@ public class UserController {
 		int modifyResult = userService.userModify(userDTO);
 
 		logger.info("doModify");
-		return "redirect:/";
+		return URIs.URI_MAIN_REDIRECT;
 	}
 
 	// 로그아웃 (테스트 미완료)
 	@RequestMapping(value = URIs.URI_USER_LOGOUT)
 	public String doLogout(HttpServletRequest request) {
 		request.getSession().invalidate();
-		return "redirect:/";
+		return URIs.URI_MAIN_REDIRECT;
 	}
 
 }
