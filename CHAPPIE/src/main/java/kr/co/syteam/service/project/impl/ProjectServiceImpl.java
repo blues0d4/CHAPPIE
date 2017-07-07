@@ -53,4 +53,9 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.projectList(user_id);
 	}
 
+	@Override
+	public ProjectVO projectSelect(String project_name) throws Exception {
+		return projectDAO.projectSelect(project_name);
+	}
+
 }

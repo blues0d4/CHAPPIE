@@ -11,4 +11,5 @@ public interface ProjectService {
 	public void projectMemberInsert(ProjectDTO projectDTO) throws Exception;
 	public void projectManagerInsert(ProjectDTO projectDTO, HttpServletRequest request) throws Exception;
 	public List<ProjectVO> projectList(String user_id) throws Exception;
+	public ProjectVO projectSelect(String project_name) throws Exception; 
 }

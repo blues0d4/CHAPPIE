@@ -11,4 +11,5 @@ public interface ProjectDAO {
 	public String projectGetId(String project_name) throws Exception;
 	public void projectMemberInsert(ProjectDTO projectDTO) throws Exception;
 	public List<ProjectVO> projectList(String user_id) throws Exception;
+	public ProjectVO projectSelect(String project_name) throws Exception; 
 }

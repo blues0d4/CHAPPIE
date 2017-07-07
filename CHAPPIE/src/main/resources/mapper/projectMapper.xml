@@ -43,4 +43,13 @@
 	    AND M.USER_ID = #{user_id}
 	]]>
 	</select>
+	
+	<select id="projectSelect" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+	<![CDATA[
+		SELECT DISTINCT P.PROJECT_NAME, P.PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID 
+		FROM PROJECT_TABLE P, MEMBER_TABLE M
+		WHERE P.PROJECT_ID = M.PROJECT_ID
+	    AND P.PROJECT_NAME = #{project_name}
+	]]>
+	</select>
 </mapper>

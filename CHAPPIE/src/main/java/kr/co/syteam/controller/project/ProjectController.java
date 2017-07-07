@@ -35,6 +35,10 @@ public class ProjectController {
 //		}
 //		model.addAttribute("board", boardVO);
 		
+		ProjectVO projectVO = projectService.projectSelect(project_name);
+
+		logger.info("doProjectView");
+		System.out.println(projectVO);
 		
 		return "project/projectView";
 	}

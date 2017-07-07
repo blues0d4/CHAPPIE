@@ -44,5 +44,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return sqlSession.selectList(namespace+"projectList", user_id);
 	}
 
+	@Override
+	public ProjectVO projectSelect(String project_name) throws Exception {
+		return sqlSession.selectOne(namespace+"projectSelect", project_name);
+	}
+
 
 }

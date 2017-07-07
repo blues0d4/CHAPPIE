@@ -55,5 +55,12 @@ select distinct *
 from PROJECT_TABLE p, MEMBER_TABLE m
 where p.PROJECT_ID = m.PROJECT_ID
     and m.USER_ID = '1';
+    
+    
+--유저가 선택한 프로젝트
+select distinct *
+from PROJECT_TABLE p, MEMBER_TABLE m
+where p.PROJECT_ID = m.PROJECT_ID
+    and p.project_name = 'ptest01';
 
 ROLLBACK;
