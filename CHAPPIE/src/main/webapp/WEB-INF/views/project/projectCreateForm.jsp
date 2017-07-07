@@ -22,7 +22,7 @@
 <body> 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    	<jsp:include page ="../../${PAGEs.VIEW_NAV}" flush="false" />
+    	<jsp:include page ="../../${PAGEs.VIEW_NAV_MAIN}" flush="false" />
 <!--         /.container-fluid -->
     </nav>
   <!-- Sign up -->
