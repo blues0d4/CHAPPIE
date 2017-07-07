@@ -23,7 +23,7 @@ public class MainController {
 		logger.info("Welcome CHAPPIE! This is MainController");
 		
 		
-		return "main";
+		return "main/main";
 	}
 	
 }

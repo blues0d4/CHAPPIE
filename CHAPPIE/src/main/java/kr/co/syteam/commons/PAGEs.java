@@ -1,9 +1,25 @@
 package kr.co.syteam.commons;
 
 public class PAGEs {
-	private static final String default_path = "/views";
+	
+	private static final String default_path = "../../views";
 	private static final String nav_path = default_path + "/nav";
+	private static final String aside_path = default_path + "/aside";
+	private static final String error_path = default_path + "/error";
+	private static final String footer_path = default_path + "/footer";
+	private static final String todo_path = default_path + "/todo";
+	private static final String board_path = default_path + "/board";
+	
 	
 	public static final String VIEW_NAV_MAIN = nav_path + "/navMain.jsp";
 	public static final String VIEW_NAV_PROJECT= nav_path + "/navProject.jsp";
+	
+	public static final String VIEW_ASIDE_LEFT = aside_path + "/asideProjectLeft.jsp";
+	public static final String VIEW_ASIDE_RIGHT= aside_path + "/asideProjectRight.jsp";
+	
+	public static final String VIEW_BOARD_LIST = board_path + "";
+	public static final String VIEW_BOARD_VIEW = board_path + "";
+	
+	public static final String VIEW_FOOTER_PROJECT = default_path + "";
+	
 }
