@@ -17,6 +17,7 @@ import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.project.ProjectService;
 
+//"/{project}"
 @Controller
 public class ProjectController {
 
@@ -26,7 +27,7 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	//ProjectMain (미완성)
-	@RequestMapping(value = "{project_name}")
+	@RequestMapping(value = "/{project_name}")
 	public String doProjectView(@PathVariable("project_name") String project_name, Model model)throws Exception{
 //		BoardVO boardVO = boardService.boardView(board_no);
 //		
@@ -40,7 +41,7 @@ public class ProjectController {
 		logger.info("doProjectView");
 		System.out.println(projectVO);
 		
-		return "project/projectView";
+		return "project/projectMain";
 	}
 	
 	@RequestMapping(value = "/projectCreateForm")
