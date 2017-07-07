@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <title>SSangyoung_todolist_list</title>
 <meta charset="UTF-8">
@@ -27,6 +30,7 @@
 
 
 <style>
+
 .calendar-group{
 }
 .calendar-group_common{
@@ -34,6 +38,9 @@
 }
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
+
+
+
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -46,8 +53,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-
-
             <a class="navbar-brand page-scroll" href="#page-top">Ssangyoung Company</a>
         </div>
 
@@ -145,109 +150,206 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </div>
       </div>
       <br>
-
-
     <!-- End Left Column -->
     </div>
 
     <!-- Middle Column -->
     <div class="w3-col m7">
-
-          <!-- Tabs -->
-          <div id="Notice" class="w3-container w3-padding-16 myLink">
-
-            <div class="w3-bar w3-black">
-              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Notice');"><i class="fa fa-bullhorn"></i> 할일목록 </button>
-              <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Hotel');"><i class="fa fa-book"></i> 할일작성 </button>
-            </div>
-
-            <div class="w3-container w3-card-2 w3-white w3-round"><br>
-
-              <fieldset>
-                <legend style="margin-left:20px">To Do List</legend>
-
-                    <select id="select" style="margin-left:20px">
-                      <option>정렬기준</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-
-
-
-                <div>
-                <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 할 일 목록 </label><br><br>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-10" style="margin:10px">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="" style="float:left;width: 550px;height: 35px;">
-
-                  <!-- checkbox -->
-                  <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-                </div>
-                </div>
-                <br>
-
-
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
-
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
-
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
-
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
-
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
-
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-              </div>
-              </div>
-              <br>
-
-              <div class="form-group">
-                <div class="col-lg-10" style="margin:10px">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="" style="float: left;width: 550px;height: 35px;">
-
-                <!-- checkbox -->
-                <input type="checkbox" value="" style="display:table-col; vertical-align:-3px; float:left; margin-left:10px; margin-top:10px" >
-                <br><br><br>
-              </div>
+     <!-- Tabs -->
+     <div id="Notice" class="w3-container myLink">       
+       <div class="w3-container w3-card-2 w3-white w3-round" style="align:right"><br>
+       	 <fieldset><legend style="margin-left:20px">To Do List</legend></fieldset>           
+             <div class="row">
+               <div class="col-xs-2">
+                <select class="form-control input-sm" id="select" style="margin-left:20px">
+                 <option>category</option>
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>
+               </select>
+           	  </div>
+              <div class="col-xs-2">
+               	<button type="button" style="w3-indigo float" class="btn btn-default" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus-circle"></i></button>
               </div>
             </div>
-
-              </fieldset>
-                </div>
-
+               
+	        <div class="w3-panel">
+               <div class="w3-row-padding" style="margin:0 -16px">
+                 <table class="w3-table w3-striped w3-white" >
+                    <tr>
+                   	 <td width="70px"></td>
+                     <td><strong>할 일 목록</strong></td>
+                     <td width="50px"><strong>완료</strong></td>
+                    </tr>
+					<c:forEach items="${ todoList }" var="todoVO">
+						<tr>
+							<td width="70px"><button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check">
+		                     	<i class="fa fa-circle"></i></button>
+		                    </td>
+							<td style="padding-top:15px">${todoVO.todo_list}</td>								
+							<c:choose>
+								<c:when test="${todoVO.todo_complete == '1' }">
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" checked></td>
+								</c:when>
+								<c:otherwise>
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px"></td>
+								</c:otherwise>
+							</c:choose>
+						</tr>
+					</c:forEach>                   
+                  </table>
               </div>
+            </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+  <!-- End Grid -->
+<!-- End Page Container -->
 
+
+
+<div class="modal fade" id="todolist_check" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+ <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header" style="height:50px">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
       </div>
 
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <fieldset>          
+            <select style="margin-left:20px">
+            <option>category</option>
+            <option>1</option>
+            <option>2</option>
+            </select>
+          </fieldset>
+       	   	<div class="modal-body">
+       	   		<table class="w3-table w3-white">
+       	   			<tr>
+       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
+       	   				<td><input type="text" class="form-control" id="inputEmail"></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
+			         		<button type="button" value="시작일자" onClick="datePicker(event, 'target_date')" onFocus="this.blur();">
+			         		<i class="fa fa-calendar"></i></button></label>
+		         		</td>
+			         	<td><input type="text" name="target_date" class="form-control" id="inputEmail"></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
+			                <button type="button" value="종료일자" onClick="datePicker(event, 'target_date2')" onFocus="this.blur();">
+			                <i class="fa fa-calendar"></i></button></label>
+		                </td>
+		                <td>
+		               		<input type="text" name="target_date2" class="form-control" id="inputEmail">
+		                </td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
+       	   				<td>
+	       	   				<select style="margin:3px">
+				                <option> 상 </option>
+				                <option> 중 </option>
+				                <option> 하 </option>
+		               		</select>
+	               		</td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
+       	   				<td><textarea class="form-control" rows="10" id="textArea"></textarea></td>
+       	   			</tr>
+       	   		</table>
+       	   		<div class="form-group" style="text-align:center">
+             		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
+             			<br/>
+	                 	<button type="submit" class="btn btn-primary">수정</button>
+	                  	<button type="reset" class="btn btn-default">취소</button>
+           			</div>
+           		</div>
+			</div>        
+		</form>
+      </div>
     </div>
-
-
-  <!-- End Grid -->
-
-
-<!-- End Page Container -->
+  </div>
 </div>
-<br>
+
+
+<div class="modal fade" id="todolist_plus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+           <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header" style="height:50px">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <fieldset>          
+            <select style="margin-left:20px">
+            <option>category</option>
+            <option>1</option>
+            <option>2</option>
+            </select>
+          </fieldset>
+       	   	<div class="modal-body">
+       	   		<table class="w3-table w3-white">
+       	   			<tr>
+       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
+       	   				<td><input type="text" class="form-control" id="inputEmail" placeholder=""></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
+			         		<button type="button" value="시작일자" onClick="datePicker(event, 'target_date')" onFocus="this.blur();">
+			         		<i class="fa fa-calendar"></i></button></label>
+		         		</td>
+			         	<td><input type="text" name="target_date" class="form-control" id="inputEmail" placeholder=""></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
+			                <button type="button" value="종료일자" onClick="datePicker(event, 'target_date2')" onFocus="this.blur();">
+			                <i class="fa fa-calendar"></i></button></label>
+		                </td>
+		                <td>
+		               		<input type="text" name="target_date2" class="form-control" id="inputEmail" placeholder="">
+		                </td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
+       	   				<td>
+	       	   				<select style="margin:3px">
+				                <option> 상 </option>
+				                <option> 중 </option>
+				                <option> 하 </option>
+		               		</select>
+	               		</td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
+       	   				<td><textarea class="form-control" rows="10" id="textArea" placeholder="내용을 입력하세요"></textarea></td>
+       	   			</tr>
+       	   		</table>
+       	   		<div class="form-group" style="text-align:center">
+             		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
+             			<br/>
+	                 	<button type="submit" class="btn btn-primary">등록</button>
+	                  	<button type="reset" class="btn btn-default">취소</button>
+           			</div>
+           		</div>
+			</div>        
+		</form>
+      </div>
+	  </div>
+	</div>
+</div>
 
 
 
@@ -275,6 +377,209 @@ function openNav() {
     }
 }
 </script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js -->
+<script language="JavaScript" src="/include/date_picker.js"></script>
 
+<script>
+// Calendar Script
+// Licence : GPL (http://www.gnu.org/licenses/licenses.html#GPL)
+// Update & Download  : http://www.ziwoo.net/zb/view.php?boardid=zb_ziwoo_javascript&uid=129
+// This page was last modified on 2011.12.15 (Since 2010.04.11)
+
+//ex1 : datePicker(event, 'targetFieldName');
+//ex2 : datePicker(event, 'targetFieldName', 2);
+//세번째 인자는 날짜를 입력할 타겟의 필드명이 복수인 경우를 위한 배열키.(기본값:0)
+
+function datePicker(e, elm) {
+	currentElement = (arguments[2])?document.getElementsByName(elm)[arguments[2]]:document.getElementsByName(elm)[0];
+	var event = e || window.event;
+
+	if(document.getElementById('currentDiv')) {
+		document.getElementById("currentDiv").parentNode.removeChild(document.getElementById("currentDiv"));
+	}
+
+	if(arguments[0]){
+		var eventX = event.clientX;
+		var eventY = event.clientY;
+		if(eventX>document.body.offsetWidth-182-40) eventX = document.body.offsetWidth-182-40;
+		if(eventY>document.body.offsetHeight-158-40) eventY = document.body.offsetHeight-158-40;
+		var calDivObj = document.createElement("div");
+		calDivObj.setAttribute("id","currentDiv");
+		calDivObj.style.width = '145px';
+		calDivObj.style.height = '115px';
+		calDivObj.style.border = "1px solid #D0D0D0";
+		calDivObj.style.position = "absolute";
+		calDivObj.style.top = eventY+document.body.scrollTop+10+'px';
+		calDivObj.style.left = eventX+10+'px';
+		calDivObj.style.zIndex = 100000;
+		document.body.appendChild(calDivObj);
+		fBuildHtml();
+	}
+}
+
+function fBuildHtml() {
+	// 기존 입력된 날짜 표시
+	if(currentElement.value.length==10){
+		var arrayOldDate = currentElement.value.split(/[^0-9]/);
+		var currentDate = new Date(arrayOldDate[0], arrayOldDate[1]-1, arrayOldDate[2], 0, 0);
+	}else{
+		var currentDate = new Date();
+	}
+	var igYear = currentDate.getFullYear();
+	var igMonth = currentDate.getMonth() + 1;
+
+	var gMonths = new Array("1","2","3","4","5","6","7","8","9","10","11","12");
+	var calHtml = "<table border='0' bgcolor='#C0C0C0'>";
+	calHtml += "<tr style='font-size:9pt'>";
+	calHtml += "<td valign='middle' align='center'>";
+	calHtml += "<input type='button' name='PrevMonth' value='<' style='height:20px; width:20px; font:9pt Fixedsys;' onClick='fPrevMonth()'>";
+	calHtml += " <select name='tbSelYear' style='font-size:9pt;' onChange='fUpdateCal(tbSelYear.value, tbSelMonth.value)'>";
+	for(i=1970;i<2030;i++) calHtml += "<OPTION value='"+i+"'>"+i+"</OPTION>";
+	calHtml += "</select>";
+	calHtml += " <select name='tbSelMonth' style='font-size:9pt' onChange='fUpdateCal(tbSelYear.value, tbSelMonth.value)'>";
+	for (i=0; i<12; i++) calHtml += "<option value='"+(i+1)+"'>"+gMonths[i]+"</option>";
+	calHtml += "</select>";
+	calHtml += " <input type='button' name='PrevMonth' value='>' style='height:20px; width:20px; font:9pt Fixedsys;' onclick='fNextMonth()'>";
+	calHtml += "</td>";
+	calHtml += "</tr><tr>";
+	calHtml += "<td align='center'>";
+	calHtml += "<DIV><table width='100%' border='0' cellspacing='1' cellpadding='2'>";
+	calHtml += fDrawCal(igYear,igMonth);
+	calHtml += "</table></DIV>";
+	calHtml += "</td>";
+	calHtml += "</tr>";
+	calHtml += "</td></tr>";
+	calHtml += "</table>";
+
+	document.getElementById('currentDiv').innerHTML = calHtml;
+	fSetYearMon(igYear,igMonth);
+}
+
+function fDrawCal(iYear, iMonth) {
+	var WeekDay = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+	var calHtml = "<tr>";
+
+	for(i=0; i<7; i++) calHtml += "<td bgcolor='White' width='20' valign='middle' align='center' style='font:bold 10px Tahoma; color:#C0C0C0; ' >" + WeekDay[i] + "</td>";
+	calHtml += "</tr>";
+	var i = 0;
+	for (w = 1; w < 7; w++) {
+		calHtml += "<tr>";
+		for (d = 0; d < 7; d++) {
+			if(w==6 && d==6){
+				calHtml += "<td bgcolor='#C0C0C0' width='20' valign='middle' align='center' style='padding:1px 0 0 3px; cursor:pointer;' onClick='datePicker()'>";
+				calHtml += "<font color='White' face='Tahoma'>X</font>";
+				calHtml += "</td>";
+			}else{
+				calHtml += "<td bgcolor='White' width='20' valign='middle' align='center' style='font:bold 10px Tahoma; cursor:pointer;' onMouseOver=\"this.bgColor='Pink'\" onMouseOut=\"this.bgColor='White'\" onClick='fSetSelected(this)'>";
+				calHtml += "<font id='cellText_"+i+"'></font>";
+				calHtml += "</td>";
+			}
+			i++;
+		}
+		calHtml += "</tr>";
+	}
+	return calHtml;
+}
+
+function fSetYearMon(iYear, iMon){
+	var tbSelYear = document.getElementsByName('tbSelYear')[0];
+	var tbSelMonth = document.getElementsByName('tbSelMonth')[0];
+	tbSelMonth.options[iMon-1].selected = true;
+	for (i = 0; i < tbSelYear.length; i++) if (tbSelYear.options[i].value == iYear) tbSelYear.options[i].selected = true;
+	fUpdateCal(iYear, iMon);
+}
+
+function fPrevMonth(){
+	var iMon = document.getElementsByName('tbSelMonth')[0].value;
+	var iYear = document.getElementsByName('tbSelYear')[0].value;
+	if (--iMon<1) {
+		iMon = 12;
+		iYear--;
+	}
+	fSetYearMon(iYear, iMon);
+}
+
+function fNextMonth(){
+	var iMon = document.getElementsByName('tbSelMonth')[0].value;
+	var iYear = document.getElementsByName('tbSelYear')[0].value;
+	if (++iMon>12) {
+		iMon = 1;
+		iYear++;
+	}
+	fSetYearMon(iYear, iMon);
+}
+
+function fUpdateCal(iYear, iMonth) {
+	myMonth = fBuildCal(iYear, iMonth);
+	// 기존 입력된 날짜 표시
+	if(currentElement.value.length==10){
+		var arrayOldDate = currentElement.value.split(/[^0-9]/);
+		var currentDate = new Date(arrayOldDate[0], arrayOldDate[1]-1, arrayOldDate[2], 0, 0);
+	}else{
+		var currentDate = new Date();
+	}
+	var igYear = currentDate.getFullYear();
+	var igMonth = currentDate.getMonth() + 1;
+	var igDate = currentDate.getDate();
+	var i = 0;
+	for (w = 0; w < 6; w++) for (d = 0; d < 7; d++) if(w!=5 || d!=6) {
+		with (document.getElementById('cellText_'+parseInt((7*w)+d))) {
+			if (myMonth[w+1][d]<0) {
+				color = "#808080";
+				innerHTML = -myMonth[w+1][d];
+			}else{
+				if(d==0) color = "red";
+				else if(d==6) color = "blue";
+				else color = "black";
+				innerHTML = myMonth[w+1][d];
+				if(iYear==igYear && iMonth==igMonth && innerHTML==igDate){
+					parentNode.style.backgroundColor='#D8FF00';
+				}else{
+					parentNode.style.backgroundColor='';
+				}
+			}
+		}
+	}
+}
+
+function fBuildCal(iYear, iMonth) {
+	var aMonth=new Array();
+	for(i=1;i<7;i++) aMonth[i]=new Array(i);
+	var dCalDate=new Date(iYear, iMonth-1, 1);
+	var iDayOfFirst=dCalDate.getDay();
+	var iDaysInMonth=new Date(iYear, iMonth, 0).getDate();
+	var iOffsetLast=new Date(iYear, iMonth-1, 0).getDate()-iDayOfFirst+1;
+	var iDate = 1;
+	var iNext = 1;
+	for (d = 0; d < 7; d++) aMonth[1][d] = (d<iDayOfFirst)?-(iOffsetLast+d):iDate++;
+	for (w = 2; w < 7; w++) for (d = 0; d < 7; d++) if(w!=6 || d!=6) aMonth[w][d] = (iDate<=iDaysInMonth)?iDate++:-(iNext++);
+	return aMonth;
+}
+
+function fSetSelected(aCell){
+	var tbSelYear = document.getElementsByName('tbSelYear')[0];
+	var tbSelMonth = document.getElementsByName('tbSelMonth')[0];
+	var iOffset = 0;
+	var iYear = parseInt(tbSelYear.value);
+	var iMonth = parseInt(tbSelMonth.value);
+	with (aCell.firstChild){
+		var iDay = parseInt(innerHTML);
+		if(aCell.parentNode.rowIndex<2 && iDay>15) iMonth--;
+		if(aCell.parentNode.rowIndex>4 && iDay<15) iMonth++;
+		if (iMonth<1) {
+			iYear--;
+			iMonth = 12;
+		}else if (iMonth>12){
+			iYear++;
+			iMonth = 1;
+		}
+	}
+	currentElement.value = iYear+"-"+(parseInt(iMonth+100).toString().substring(1,3))+"-"+(parseInt(iDay+100)).toString().substring(1,3);
+	document.getElementById("currentDiv").parentNode.removeChild(document.getElementById("currentDiv"));
+}
+</script>
 </body>
 </html>

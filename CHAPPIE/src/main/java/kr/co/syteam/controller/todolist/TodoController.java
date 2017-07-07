@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.todo.vo.TodoVO;
 import kr.co.syteam.service.todo.TodoService;
 
@@ -29,12 +28,16 @@ public class TodoController {
 	public String boardList(Model model, HttpServletRequest request) throws Exception {
 		logger.info("This is TodoList!!");
 		
-		String category_id = (String)request.getSession().getAttribute("category_id");
+//		String category_id = (String)request.getSession().getAttribute("category_id");
+		
+		String category_id = "2001";
 		
 		List<TodoVO> todoList = todoService.todoListViewService(category_id);
-//		model.addAttribute("boardList", boardList);
+
+		System.out.println("@@@ TodoVO : " + todoList);
+		model.addAttribute("todoList", todoList);
 		
-		return URIs.URI_BOARD_LIST_FULL;
+		return "/todo/todoList";
 	}	
 	
 	
