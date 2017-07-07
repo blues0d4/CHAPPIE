@@ -26,14 +26,16 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	//ProjectMain (미완성)
-	@RequestMapping(value = "{project_id}")
-	public String doProjectMain(@PathVariable("project_id") String project_id, Model model)throws Exception{
+	@RequestMapping(value = "{project_name}")
+	public String doProjectView(@PathVariable("project_name") String project_name, Model model)throws Exception{
 //		BoardVO boardVO = boardService.boardView(board_no);
 //		
 //		if(boardVO == null){
 //			return "redirect:/"; //해당 project_id가 없을 경우 페이지가 없습니다.
 //		}
 //		model.addAttribute("board", boardVO);
+		
+		
 		return "project/projectView";
 	}
 	
