@@ -35,6 +35,8 @@
 		<interceptor>
 			<mapping path="/project*/**"/>
 			<mapping path="/*/board**" />
+			<mapping path="/*/**" />
+			<exclude-mapping path="/user*/**" />
 			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/>
 		</interceptor>
 	</interceptors>

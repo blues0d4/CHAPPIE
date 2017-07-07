@@ -20,6 +20,6 @@ public class PAGEs {
 	public static final String VIEW_BOARD_LIST = board_path + "";
 	public static final String VIEW_BOARD_VIEW = board_path + "";
 	
-	public static final String VIEW_FOOTER_PROJECT = default_path + "";
+	public static final String VIEW_FOOTER_PROJECT = footer_path + "/footerProject.jsp";
 	
 }

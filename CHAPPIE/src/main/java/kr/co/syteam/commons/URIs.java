@@ -77,4 +77,7 @@ public class URIs {
 	public static final String URI_PROJECT_LIST = "/projectList";
 	public static final String URI_PROJECT_LIST_FULL = PROJECT_DEFAULT + URI_PROJECT_LIST;
 	
+	public static final String URI_PROJECT_SELECT = "/projectSelect";
+	public static final String URI_PROJECT_SELECT_FULL = PROJECT_DEFAULT + URI_PROJECT_SELECT;
+	
 }

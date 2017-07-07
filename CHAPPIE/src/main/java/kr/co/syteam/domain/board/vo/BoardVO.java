@@ -1,7 +1,7 @@
 package kr.co.syteam.domain.board.vo;
 
 public class BoardVO {
-	private String board_category_id;
+	private String category_id;
 	private String board_title;
 	private String board_no;
 	private String board_contents;
@@ -18,12 +18,12 @@ public class BoardVO {
 		this.board_hitcount = board_hitcount;
 	}
 
-	public String getBoard_category_id() {
-		return board_category_id;
+	public String getCategory_id() {
+		return category_id;
 	}
 
-	public void setBoard_category_id(String board_category_id) {
-		this.board_category_id = board_category_id;
+	public void setCategory_id(String category_id) {
+		this.category_id = category_id;
 	}
 
 	public String getBoard_title() {

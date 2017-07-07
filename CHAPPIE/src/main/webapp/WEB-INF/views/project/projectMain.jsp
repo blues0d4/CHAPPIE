@@ -1,4 +1,5 @@
 <%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -46,7 +47,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="/" class="logo treeview-menu">
+    <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>CHAPPIE</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -56,13 +57,13 @@
     <!-- Header Navbar: style can be found in header.less -->
     
 	<nav class="navbar navbar-static-top">
-    <jsp:include page ="../nav/navProject.jsp" flush="false" />
+    <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-    <jsp:include page ="../aside/asideProjectLeft.jsp" flush="false" />
+    <jsp:include page ="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
     <!-- /.sidebar -->
   </aside>
 
@@ -75,19 +76,21 @@
 <!--         <small>Control panel</small> -->
       </h1>
 
+   	 <jsp:include page ="../board/boardIncludeTest.jsp" flush="false" />
     </section>
 
     <!-- Main content -->
     <section class="content">
-
+		
 		section
+		
 
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-   	 <jsp:include page ="../footer/footerProject.jsp" flush="false" />
+   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
     
   </footer>
 
@@ -95,7 +98,7 @@
   
 	<aside class="control-sidebar control-sidebar-dark">
 		
-   	 <jsp:include page ="../aside/asideProjectRight.jsp" flush="false" />
+   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
 	
  	</aside>
   <!-- /.control-sidebar -->

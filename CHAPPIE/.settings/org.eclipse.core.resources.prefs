@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/views/board/boardIncludeTest.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/nav/navMain.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/project/projectCreateForm.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/todo/todoCheck.jsp=UTF-8

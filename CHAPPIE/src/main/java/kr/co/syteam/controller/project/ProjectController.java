@@ -31,15 +31,10 @@ public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
 	
-	//ProjectMain (미완성)
+	//프로젝트 메인
+	//프로젝트 선택
 	@RequestMapping(value = "/{project_name}")
 	public String doProjectView(@PathVariable("project_name") String project_name, Model model)throws Exception{
-//		BoardVO boardVO = boardService.boardView(board_no);
-//		
-//		if(boardVO == null){
-//			return "redirect:/"; //해당 project_id가 없을 경우 페이지가 없습니다.
-//		}
-//		model.addAttribute("board", boardVO);
 		logger.info("doProjectView");
 		
 		ProjectVO projectVO = projectService.projectSelect(project_name);
@@ -51,6 +46,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_MAIN_FULL;
 	}
 	
+	//프로젝트 생성 폼
 	@RequestMapping(value = URIs.URI_PROJECT_CREATE_FORM)
 	public String doProjectCreateForm() throws Exception{
 		logger.info("doProjectCreateForm");
@@ -59,6 +55,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CREATE_FORM_FULL;
 	}
 	
+	//프로젝트 생성
 	@RequestMapping(value = URIs.URI_PROJECT_CREATE)
 	public String doProjectCreate(ProjectDTO projectDTO, HttpServletRequest request) throws Exception{
 
@@ -66,7 +63,8 @@ public class ProjectController {
 		projectService.projectManagerInsert(projectDTO, request);
 		return URIs.URI_MAIN_REDIRECT;
 	}
-
+	
+	//프로젝트 리스트
 	@RequestMapping(value = URIs.URI_PROJECT_LIST)
 	public String doProjectList(Model model, HttpServletRequest request) throws Exception{
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");

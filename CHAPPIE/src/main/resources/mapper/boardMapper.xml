@@ -7,8 +7,8 @@
 
 	<insert id="boardWrite" parameterType="kr.co.syteam.domain.board.dto.BoardDTO">
 		<![CDATA[
-			INSERT INTO BOARD_TABLE(BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
-			VALUES (board_seq.nextval, #{board_title}, #{board_contents}, #{user_id}, sysdate, sysdate)
+			INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
+			VALUES (#{category_id}, board_seq.nextval, #{board_title}, #{board_contents}, #{user_id}, sysdate, sysdate)
 		]]>
 	</insert>
 	

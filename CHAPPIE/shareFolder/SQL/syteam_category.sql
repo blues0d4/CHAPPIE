@@ -12,21 +12,21 @@ ALTER TABLE CATEGORY_TABLE DROP(CATEGORY_NOTICE);
 
 commit;
 
---PK ¼³Á¤ CATEGORY_TABLE(CATEGORY_ID)
+--PK ï¿½ï¿½ï¿½ï¿½ CATEGORY_TABLE(CATEGORY_ID)
 ALTER TABLE CATEGORY_TABLE
 ADD CONSTRAINT PK_CATEGORY_ID PRIMARY KEY(CATEGORY_ID);
 
---FK ¼³Á¤ CATEGORY_TABLE(PROJECT_ID)
+--FK ï¿½ï¿½ï¿½ï¿½ CATEGORY_TABLE(PROJECT_ID)
 ALTER TABLE CATEGORY_TABLE
 ADD CONSTRAINT FK_PROJECT_ID FOREIGN KEY(PROJECT_ID) REFERENCES PROJECT_TABLE;
 
 
---CATEGORY_NO ½ÃÄö½º
-CREATE SEQUENCE CATEGORY_SEQ -- ½ÃÄö½º ÀÌ¸§
-START WITH 2000  --2000ºÎÅÍ ½ÃÀÛ
-INCREMENT BY 1 --1¾¿ Áõ°¡
-NOMAXVALUE  --ÇÑ°è°¡ ¾øÀÌ
-NOMINVALUE; --ÃÖ¼Ò°ª X
+--CATEGORY_NO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+CREATE SEQUENCE CATEGORY_SEQ -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+START WITH 2000  --2000ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+INCREMENT BY 1 --1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+NOMAXVALUE  --ï¿½Ñ°è°¡ ï¿½ï¿½ï¿½ï¿½
+NOMINVALUE; --ï¿½Ö¼Ò°ï¿½ X
 
 alter table category_table 
 add CATEGORY_NOTICE varchar2(10) default 'N';
@@ -38,5 +38,18 @@ select * from category_table;
 
 commit;
 
-INSERT INTO CATEGORY_TABLE
-VALUES(CATEGORY_SEQ.NEXTVAL, '±âÅ¸', 1001, 'B');
+select *
+from category_table;
+
+--ì¹´í…Œê³ ë¦¬ ë¦¬ìŠ¤íŠ¸
+select CATEGORY_NAME
+from category_table c, project_table p
+where c.PROJECT_ID = p.PROJECT_ID
+and p.PROJECT_ID = '1032'
+and c.CATEGORY_KIND = 'B';
+
+
+INSERT INTO CATEGORY_TABLE(CATEGORY_ID, CATEGORY_NAME, PROJECT_ID, CATEGORY_KIND)
+VALUES(CATEGORY_SEQ.NEXTVAL, 'ê¸°íƒ€', 1032, 'B');
+
+rollback;
