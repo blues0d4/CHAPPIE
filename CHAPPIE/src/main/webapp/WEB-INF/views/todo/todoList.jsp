@@ -271,7 +271,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
              		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
              			<br/>
 	                 	<button type="submit" class="btn btn-primary">수정</button>
-	                  	<button type="reset" class="btn btn-default">취소</button>
+	                  	<button type="button" data-dismiss="modal" class="btn btn-default">취소</button>
            			</div>
            		</div>
 			</div>        
@@ -341,7 +341,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
              		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
              			<br/>
 	                 	<button type="submit" class="btn btn-primary">등록</button>
-	                  	<button type="reset" class="btn btn-default">취소</button>
+	                  	<button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
            			</div>
            		</div>
 			</div>        

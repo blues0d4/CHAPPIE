@@ -55,6 +55,9 @@
             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a>
             <br>
             <a href="/projectList" class="btn btn-dark btn-lg">프로젝트 리스트</a>
+            <br>
+            <a href="/todo/todoList" class="btn btn-dark btn-lg">todoList</a>
+            <br>
         </div>
 	</header>
 
