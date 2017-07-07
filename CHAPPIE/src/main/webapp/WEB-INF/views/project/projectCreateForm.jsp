@@ -38,7 +38,6 @@
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
    
        
-       <form action="/action_page.php" target="_blank">
          <div class="w3-section">
          
            <label>프로젝트 이름</label>
@@ -55,7 +54,6 @@
 		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
        </div>
       
-       </form>
        </form>
      </div>
    </div>

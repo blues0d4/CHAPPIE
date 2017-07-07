@@ -41,6 +41,7 @@
 		FROM PROJECT_TABLE P, MEMBER_TABLE M
 		WHERE P.PROJECT_ID = M.PROJECT_ID
 	    AND M.USER_ID = #{user_id}
+	    ORDER BY P.PROJECT_ID DESC
 	]]>
 	</select>
 	

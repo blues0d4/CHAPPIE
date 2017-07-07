@@ -40,7 +40,7 @@ public class ProjectController {
 		logger.info("doProjectView");
 		System.out.println(projectVO);
 		
-		return "project/projectView";
+		return "project/projectMain";
 	}
 	
 	@RequestMapping(value = "/projectCreateForm")
