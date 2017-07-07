@@ -1,4 +1,4 @@
---BOARD_TABLE »ý¼º
+--BOARD_TABLE ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE BOARD_TABLE(
 CATEGORY_ID NUMBER,
 BOARD_TITLE VARCHAR2(100) NOT NULL,
@@ -10,16 +10,16 @@ BOARD_MODIFY_DATE date NOT NULL,
 BOARD_HITCOUNT number DEFAULT 0 NOT NULL
 );
 
---FK ¼³Á¤ BOARD_TABLE(USER_ID)
+--FK ï¿½ï¿½ï¿½ï¿½ BOARD_TABLE(USER_ID)
 ALTER TABLE BOARD_TABLE
 ADD CONSTRAINT FK_BOARD_USER_ID FOREIGN KEY(USER_ID) REFERENCES USER_TABLE;
 
 
---FK ¼³Á¤ CATEGORY_TABLE(CATEGORY_ID)
+--FK ï¿½ï¿½ï¿½ï¿½ CATEGORY_TABLE(CATEGORY_ID)
 ALTER TABLE BOARD_TABLE
 ADD CONSTRAINT FK_BOARD_CATEGORY_ID FOREIGN KEY(CATEGORY_ID) REFERENCES CATEGORY_TABLE;
 
---Å×ÀÌºí ÄÃ·³¸í º¯°æ
+--ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 ALTER TABLE BOARD_TABLE
 RENAME COLUMN BOARD_CATEGORY_ID TO CATEGORY_ID;
 
@@ -34,48 +34,48 @@ ADD BOARD_NOTICE VARCHAR2(20);
 
 commit;
 
---PK ¼³Á¤ BOARD_TABLE(BOARD_NO)
+--PK ï¿½ï¿½ï¿½ï¿½ BOARD_TABLE(BOARD_NO)
 ALTER TABLE BOARD_TABLE
 ADD CONSTRAINT PK_BOARD_NO PRIMARY KEY(BOARD_NO);
 
 
---BOARD_NO ½ÃÄö½º
-CREATE SEQUENCE BOARD_SEQ -- ½ÃÄö½º ÀÌ¸§
-START WITH 1  --1ºÎÅÍ ½ÃÀÛ
-INCREMENT BY 1 --1¾¿ Áõ°¡
-NOMAXVALUE  --ÇÑ°è°¡ ¾øÀÌ
-NOMINVALUE; --ÃÖ¼Ò°ª X
+--BOARD_NO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+CREATE SEQUENCE BOARD_SEQ -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+START WITH 1  --1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+INCREMENT BY 1 --1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+NOMAXVALUE  --ï¿½Ñ°è°¡ ï¿½ï¿½ï¿½ï¿½
+NOMINVALUE; --ï¿½Ö¼Ò°ï¿½ X
 
 drop sequence board_seq;
 
 commit;
 
 
---CATEGORY_ID Ã£±â
+--CATEGORY_ID Ã£ï¿½ï¿½
 --SELECT *
 --FROM BOARD_TABLE B, CATEGORY_TABLE C
 --WHERE B.CATEGORY_ID = C.CATEGORY_ID AND
---C.CATEGORY_NAME = '°øÁö' AND
+--C.CATEGORY_NAME = 'ï¿½ï¿½ï¿½ï¿½' AND
 --C.PROJECT_ID = 1001;
 
 
---board Ãß°¡ Äõ¸®
+--board ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½
 INSERT INTO BOARD_TABLE (CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT, BOARD_NOTICE)
 VALUES (2001 ,board_seq.nextval, 'TITLE 01', 'CONTENTS 01', '1', sysdate, sysdate, 0, 'N');
 
 select * from BOARD_TABLE;
             
---board ¸®½ºÆ® Äõ¸®
+--board ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 SELECT BOARD_TITLE, BOARD_WRITER, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_COUNT
 FROM BOARD_TABLE
 ORDER BY BOARD_NO DESC;
 
---board È®ÀÎ Äõ¸®
+--board È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, BOARD_WRITER, BOARD_WRITE_DATE, BOARD_COUNT
 FROM BOARD_TABLE
 WHERE BOARD_NO = 4;
 
---board Á¶È¸¼ö Äõ¸®
+--board ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 UPDATE BOARD_TABLE
 SET BOARD_COUNT = BOARD_COUNT + 1
 WHERE BOARD_NO = 4;
@@ -85,4 +85,7 @@ select *
 from board_table;
 
 commit;
+
+		INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
+			VALUES (1032, board_seq.nextval, 'titleTest01', 'contentsTest01', '1', sysdate, sysdate);
 
