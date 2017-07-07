@@ -44,8 +44,7 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		
 		return URIs.URI_BOARD_LIST_FULL;
-	}
-	
+	}	
 	
 	@RequestMapping(value = "/board/view/{board_no}")
 	public String doBoardView(@PathVariable("board_no") String board_no, Model model)throws Exception{
