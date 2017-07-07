@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/nav/nav.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/project/projectCreateForm.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/todo/todolist_check.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/todo/todolist_list.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/todo/todolist_modify.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/todo/todolist_write.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/todo/todoCheck.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/todo/todoList.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/todo/todoModify.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/todo/todoWrite.jsp=UTF-8
 encoding/<project>=UTF-8
