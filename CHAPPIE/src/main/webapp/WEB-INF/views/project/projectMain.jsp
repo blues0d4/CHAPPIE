@@ -11,6 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <head>
 	<title>CHAPPIE</title> 
 	
@@ -32,7 +33,10 @@
 	
 </head>
 
-<body> 
+<body>
+	<aside>
+		<jsp:include page ="../aside/aside.jsp" flush="false"/>
+	</aside> 
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
     	<jsp:include page ="../../${PAGEs.VIEW_NAV}" flush="false" />
 <!--         /.container-fluid -->
@@ -69,4 +73,5 @@
   </section>
 
 </body>
+
 </html>
