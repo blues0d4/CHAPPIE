@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <section class="sidebar">
+     <section class="sidebar" >
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -53,8 +53,15 @@
 <!--         <li class="treeview"> -->
         <li class="active treeview">
           <a href="#">
-<!--             <i class="fa fa-dashboard"></i> <span>CATEGORY</span> -->
-            <i class="fa fa-dashboard"></i> <span>#${category.category_name}</span>
+			<c:choose>
+				<c:when test="${empty category}">
+	            <i class="fa fa-dashboard"></i> <span>#CATEGORIES</span>
+	            </c:when>
+	            <c:otherwise>
+	            <i class="fa fa-dashboard"></i> <span>#${category.category_name}</span>
+	            
+	            </c:otherwise>
+            </c:choose>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -62,8 +69,7 @@
           <ul class="treeview-menu">
 <!--      	    <li class="active"> -->
 			<c:forEach items="${categoryList}" var="boardVO">
-			
-			<c:choose>
+	            <c:choose>
 				<c:when test="${boardVO.category_name eq category.category_name}">
 				<li class="active">
 				<a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
@@ -77,6 +83,10 @@
 			</c:choose>
 			
 			</c:forEach>
+				<li>
+<!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
+				<a href="#">+ Add Categories</a>
+				</li>
           </ul>
         </li>
 <!--         <li class="treeview"> -->
