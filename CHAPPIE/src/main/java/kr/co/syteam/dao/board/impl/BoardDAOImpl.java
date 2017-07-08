@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import kr.co.syteam.dao.board.BoardDAO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
 import kr.co.syteam.domain.board.vo.BoardVO;
-import kr.co.syteam.domain.category.dto.CategorySelectDTO;
+import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 
 @Repository
@@ -46,8 +46,13 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public CategoryVO boardCategorySelect(CategorySelectDTO categorySelectDTO) throws Exception {
-		return sqlSession.selectOne(namespace+"boardCategorySelect", categorySelectDTO);
+	public CategoryVO boardCategorySelect(CategoryDTO categoryDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"boardCategorySelect", categoryDTO);
+	}
+
+	@Override
+	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception {
+		return sqlSession.selectList(namespace+"boardCategoryListView", categoryDTO);
 	}
 	
 	

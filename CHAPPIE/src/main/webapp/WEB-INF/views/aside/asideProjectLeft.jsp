@@ -51,7 +51,7 @@
 <!--         <li class="treeview"> -->
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>${project.project_name}</span>
+            <i class="fa fa-dashboard"></i> <span>CATEGORY</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -60,7 +60,7 @@
 <!--      	    <li class="active"> -->
 			<c:forEach items="${categoryList}" var="boardVO">
 			<li>
-            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> ${boardVO.category_name}</a>
+            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
             </li>
 			</c:forEach>
           </ul>

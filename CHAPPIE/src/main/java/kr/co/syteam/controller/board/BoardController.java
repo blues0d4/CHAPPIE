@@ -1,5 +1,7 @@
 package kr.co.syteam.controller.board;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.vo.BoardVO;
-import kr.co.syteam.domain.category.dto.CategorySelectDTO;
+import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.service.board.BoardService;
@@ -63,17 +65,25 @@ public class BoardController {
 		}
 		String project_name = projectVO.getProject_name();
 		
-		CategorySelectDTO categorySelectDTO = new CategorySelectDTO();
+		CategoryDTO categoryDTO = new CategoryDTO();
 		
-		categorySelectDTO.setCategory_name(category_name);
-		categorySelectDTO.setProject_name(project_name);
+		categoryDTO.setCategory_name(category_name);
+		categoryDTO.setProject_name(project_name);
 		
-		CategoryVO categoryVO = boardService.boardCategorySelect(categorySelectDTO);
+		CategoryVO categoryVO = boardService.boardCategorySelect(categoryDTO);
+		if(categoryVO == null){
+			return URIs.URI_MAIN_REDIRECT;
+		}
+		request.getSession().setAttribute("category", categoryVO);
+		
+		List<BoardVO> boardList = boardService.boardCategoryListView(categoryDTO);
+		model.addAttribute("boardList", boardList);
 //		System.out.println("------");
 //		System.out.println(categoryVO);
 //		System.out.println("------");
 		
-		request.getSession().setAttribute("category", categoryVO);
+		
+		
 //		System.out.println(projectVO);
 //		System.out.println("----");
 //		System.out.println(project_name);
@@ -86,16 +96,16 @@ public class BoardController {
 		return "board/boardList";
 	}
 	
-	@RequestMapping(value = "/board/view/{board_no}")
-	public String doBoardView(@PathVariable("board_no") String board_no, Model model)throws Exception{
-		
-		BoardVO boardVO = boardService.boardView(board_no);
-		
-		if(boardVO == null){
-			return "redirect:/";
-		}
-		model.addAttribute("board", boardVO);
-		return "board/boardView";
-	}
+//	@RequestMapping(value = "/board/view/{board_no}")
+//	public String doBoardView(@PathVariable("board_no") String board_no, Model model)throws Exception{
+//		
+//		BoardVO boardVO = boardService.boardView(board_no);
+//		
+//		if(boardVO == null){
+//			return "redirect:/";
+//		}
+//		model.addAttribute("board", boardVO);
+//		return "board/boardView";
+//	}
 	
 }  

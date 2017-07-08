@@ -1,6 +1,6 @@
 package kr.co.syteam.domain.category.dto;
 
-public class CategorySelectDTO {
+public class CategoryDTO {
 	private String category_name;
 	private String project_name;
 	public String getCategory_name() {

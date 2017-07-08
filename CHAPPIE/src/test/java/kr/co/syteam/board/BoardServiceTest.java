@@ -1,15 +1,17 @@
 package kr.co.syteam.board;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.syteam.domain.category.dto.CategorySelectDTO;
+import kr.co.syteam.domain.board.vo.BoardVO;
+import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.service.board.BoardService;
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
@@ -46,21 +48,37 @@ public class BoardServiceTest {
 //		System.out.println(result);
 //	}
 	
-	//카테고리 선택 테스트()
-	@Test
-	public void testBoardCategorySelect() throws Exception{
-		CategorySelectDTO categorySelectDTO = new CategorySelectDTO();
-		CategoryVO categoryVO = new CategoryVO();
-		String project_name = "프로젝트테스트01";
-		String category_name = "기타";
+	//카테고리 선택 테스트(완료)
+//	@Test
+//	public void testBoardCategorySelect() throws Exception{
+//		CategoryDTO categorySelectDTO = new CategoryDTO();
+//		CategoryVO categoryVO = new CategoryVO();
+//		String project_name = "프로젝트테스트01";
+//		String category_name = "기타";
+//		
+//		categorySelectDTO.setCategory_name(category_name);
+//		categorySelectDTO.setProject_name(project_name);
+//		
+//		categoryVO = boardService.boardCategorySelect(categorySelectDTO);
+//		
+//		System.out.println(categoryVO);
+//	}
+	
+	//카테고리 리스트 테스트 (완료)
+//	@Test
+//	public void testBoardCategorySelectView() throws Exception{
+//		CategoryDTO categoryDTO = new CategoryDTO();
+//		CategoryVO categoryVO = new CategoryVO();
+//		String project_name = "프로젝트테스트01";
+//		String category_name = "기타";
+//		
+//		categoryDTO.setCategory_name(category_name);
+//		categoryDTO.setProject_name(project_name);
+//		
+//		List<BoardVO> result = boardService.boardCategoryListView(categoryDTO);
+//		
+//		System.out.println(result);
+//	}
 		
-		categorySelectDTO.setCategory_name(category_name);
-		categorySelectDTO.setProject_name(project_name);
 		
-		categoryVO = boardService.boardCategorySelect(categorySelectDTO);
-		
-		System.out.println(categoryVO);
-		
-		
-	}
 }
