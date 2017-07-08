@@ -13,7 +13,7 @@
 		<org.aspectj-version>1.8.10</org.aspectj-version>
 		<org.slf4j-version>1.7.21</org.slf4j-version>
 	</properties> 
-
+ 
 	<!-- 오라클 저장소 추가 -->
 	<repositories>
 		<repository> 
