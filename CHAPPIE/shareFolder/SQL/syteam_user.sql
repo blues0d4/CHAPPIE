@@ -54,4 +54,4 @@ delete TODO_MEMBER_TABLE;
 
 
 select *
-from project_table;
+from user_table;

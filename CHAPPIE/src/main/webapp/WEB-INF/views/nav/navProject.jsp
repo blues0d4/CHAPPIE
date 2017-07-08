@@ -1,3 +1,4 @@
+<%@page import="kr.co.syteam.commons.URIs"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -5,7 +6,7 @@
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
-
+ 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
@@ -22,7 +23,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -47,7 +48,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="resources/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/resources/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -59,7 +60,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="resources/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/resources/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -204,13 +205,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">${ login.user_name }</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/resources/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   ${ login.user_name } - Web Developer
@@ -238,8 +239,8 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
+                  <a href="${URIs.URI_USER_LOGOUT}" class="btn btn-default btn-flat">Sign out</a>
+                </div> 
               </li>
             </ul>
           </li>

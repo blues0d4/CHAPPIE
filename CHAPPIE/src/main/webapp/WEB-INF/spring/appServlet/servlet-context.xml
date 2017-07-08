@@ -14,7 +14,31 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	<resources mapping="/bootstrap/**" location="/resources/bootstrap/" />
+	<resources mapping="/build/**" location="/resources/build/" />
+	<resources mapping="/css/**" location="/resources/css/" />
+	<resources mapping="/dist/**" location="/resources/dist/" />
+	<resources mapping="/documentation/**" location="/resources/documentation/" />
+	<resources mapping="/font-awesome/**" location="/resources/font-awesome/" />
+	<resources mapping="/fonts/**" location="/resources/fonts/" />
+	<resources mapping="/img/**" location="/resources/img/" />
+	<resources mapping="/js/**" location="/resources/js/" />
+	<resources mapping="/pages/**" location="/resources/pages/" />
+	<resources mapping="/plugins/**" location="/resources/plugins/" />
+	
+	<resources mapping="resources/**" location="/resources/" />
+	<resources mapping="bootstrap/**" location="/resources/bootstrap/" />
+	<resources mapping="build/**" location="/resources/build/" />
+	<resources mapping="css/**" location="/resources/css/" />
+	<resources mapping="dist/**" location="/resources/dist/" />
+	<resources mapping="documentation/**" location="/resources/documentation/" />
+	<resources mapping="font-awesome/**" location="/resources/font-awesome/" />
+	<resources mapping="fonts/**" location="/resources/fonts/" />
+	<resources mapping="img/**" location="/resources/img/" />
+	<resources mapping="js/**" location="/resources/js/" />
+	<resources mapping="pages/**" location="/resources/pages/" />
+	<resources mapping="plugins/**" location="/resources/plugins/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />

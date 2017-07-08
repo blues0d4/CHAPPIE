@@ -37,13 +37,14 @@ public class BoardController {
 //	}
 	
 	@RequestMapping(value = URIs.BOARD_DEFAULT, method = RequestMethod.GET)
-	public String boardList(Model model) throws Exception {
-		logger.info("Welcome CHAPPIE! This is BoardController");
+	public String doBoardList(Model model) throws Exception {
+		logger.info("doBoardList");
 		
 		List<BoardVO> boardList = boardService.boardList();
 		model.addAttribute("boardList", boardList);
-		
-		return URIs.URI_BOARD_LIST_FULL;
+		System.out.println(boardList);
+//		return URIs.URI_BOARD_LIST_FULL;
+		return "/board/boardList";
 	}	
 	
 	@RequestMapping(value = "/board/view/{board_no}")

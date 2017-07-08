@@ -26,8 +26,9 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="header">MAIN NAVIGATION </li>
+        <li class="treeview">
+<!--         <li class="active treeview"> -->
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Project</span>
             <span class="pull-right-container">
@@ -35,10 +36,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active">
-            <a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a>
+<!--        <li class="active"> -->
+			<li>
+            <a href="${project_name}/board"><i class="fa fa-circle-o"></i> ${project_name}board 1</a>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> board 2</a></li>
           </ul>
         </li>
 <!--         <li class="treeview"> -->
@@ -184,7 +186,7 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level  Three</a></li>
                   </ul>
                 </li>
               </ul>

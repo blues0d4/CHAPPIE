@@ -79,7 +79,7 @@ public class UserController {
 		return URIs.URI_USER_MODIFY_FORM_FULL;
 	}
 
-	// 회원정보 수정 (테스트 완료)
+	// 회원정보 수정 (테스트 미완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY, method = RequestMethod.POST)
 	public String doModify(Model model, UserDTO userDTO) throws Exception {
 
@@ -89,9 +89,12 @@ public class UserController {
 		return URIs.URI_MAIN_REDIRECT;
 	}
 
-	// 로그아웃 (테스트 미완료)
+	// 로그아웃 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_LOGOUT)
 	public String doLogout(HttpServletRequest request) {
+
+		logger.info("doLogout");
+		
 		request.getSession().invalidate();
 		return URIs.URI_MAIN_REDIRECT;
 	}

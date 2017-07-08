@@ -74,4 +74,13 @@ public class BoardVO {
 		this.board_modify_date = board_modify_date;
 	}
 
+	@Override
+	public String toString() {
+		return "BoardVO [category_id=" + category_id + ", board_title=" + board_title + ", board_no=" + board_no
+				+ ", board_contents=" + board_contents + ", user_id=" + user_id + ", board_write_date="
+				+ board_write_date + ", board_modify_date=" + board_modify_date + ", board_hitcount=" + board_hitcount
+				+ "]";
+	}
+
+	
 }

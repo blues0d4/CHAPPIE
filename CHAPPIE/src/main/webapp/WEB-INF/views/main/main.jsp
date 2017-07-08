@@ -11,7 +11,7 @@
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-	<title>CHAPPIE</title> 
+	<title>CHAPPIE</title>  
 	
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -25,7 +25,7 @@
     <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	
@@ -75,7 +75,7 @@
 			src="https://console.api.ai/api-client/demo/embedded/ad805c6c-889c-4c68-b0e6-668a13eed289">
 		</iframe>
 		
-                    <h2>팀원 </h2>
+                    <h2>팀원 소개 </h2>
                     <br>
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
@@ -291,10 +291,10 @@
     </footer>
     </section>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 
     <!-- Custom Theme JavaScript -->
