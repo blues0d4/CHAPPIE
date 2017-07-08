@@ -2,6 +2,8 @@ package kr.co.syteam.controller.board;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.vo.BoardVO;
+import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.service.board.BoardService;
 
 @Controller
@@ -37,13 +40,17 @@ public class BoardController {
 //	}
 	
 	@RequestMapping(value = URIs.BOARD_DEFAULT, method = RequestMethod.GET)
-	public String doBoardList(Model model) throws Exception {
+	public String doBoardList(Model model, HttpServletRequest request) throws Exception {
 		logger.info("doBoardList");
 		
 		List<BoardVO> boardList = boardService.boardList();
 		model.addAttribute("boardList", boardList);
 		System.out.println(boardList);
 //		return URIs.URI_BOARD_LIST_FULL;
+
+		ProjectVO projectVO = (ProjectVO)request.getSession().getAttribute("project");
+		System.out.println(projectVO);
+		
 		return "/board/boardList";
 	}	
 	

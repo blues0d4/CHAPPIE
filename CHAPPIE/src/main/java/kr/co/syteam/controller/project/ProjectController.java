@@ -30,7 +30,7 @@ public class ProjectController {
 	//프로젝트 메인
 	//프로젝트 선택
 	@RequestMapping(value = "/{project_name}")
-	public String doProjectView(@PathVariable("project_name") String project_name, Model model)throws Exception{
+	public String doProjectView(@PathVariable("project_name") String project_name, Model model, HttpServletRequest request)throws Exception{
 	
 		logger.info("doProjectView");
 		
@@ -38,7 +38,8 @@ public class ProjectController {
 		if(projectVO == null){
 			return URIs.URI_MAIN_REDIRECT;
 		}
-		model.addAttribute("project", projectVO);
+//		model.addAttribute("project", projectVO);
+		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
 		
 		return URIs.URI_PROJECT_MAIN_FULL;
@@ -73,8 +74,11 @@ public class ProjectController {
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		List<ProjectVO> projectList = projectService.projectList(user_id);
-		model.addAttribute("projectList", projectList);
+		System.out.println(projectList);
+//		model.addAttribute("projectList", projectList);
+		request.getSession().setAttribute("projectList", projectList);
 		return URIs.URI_PROJECT_LIST_FULL;
+ 
 	}
 	
 }
