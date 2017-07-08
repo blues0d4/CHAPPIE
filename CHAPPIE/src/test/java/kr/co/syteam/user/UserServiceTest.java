@@ -21,16 +21,16 @@ public class UserServiceTest {
 	private IUserService userService;
 	
 	//회원가입 테스트(완료)
-//	@Test
-//	public void testUserJoin() throws Exception{
-//		UserDTO userVO = new UserDTO();
-//		userVO.setUser_id("testId");
-//		userVO.setUser_pw("testpw");
-//		userVO.setUser_name("testName");
-//		userVO.setUser_phone("testphone");
-//		
-//		userService.userJoin(userVO);
-//	}
+	@Test
+	public void testUserJoin() throws Exception{
+		UserDTO userVO = new UserDTO();
+		userVO.setUser_id("testId");
+		userVO.setUser_pw("testpw");
+		userVO.setUser_name("testName");
+		userVO.setUser_phone("testphone");
+		
+		userService.userJoin(userVO);
+	}
 	
 	//로그인 테스트(완료)
 //		@Test

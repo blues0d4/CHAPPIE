@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../resources/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -81,7 +81,7 @@
                       <div class="w3-container w3-quarter padding-5">
                         <span>한청화</span><br><br>
                         
-                        <img src="../resources/img/hch.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/hch.jpg" alt="Avatar" style="width:70%"><br>
                         <ul style="list-style-type:none; float: right">
                         <br>
                         <li> 팀장 & 챗봇 개발자 </li>
@@ -101,7 +101,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>이용현</span><br><br>
-                        <img src="../resources/img/profile-1.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/profile-1.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>
@@ -122,7 +122,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>김용현</span><br><br>
-                        <img src="../resources/img/kyh.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/kyh.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>
@@ -144,7 +144,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>장예찬</span><br><br>
-                        <img src="../resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>

@@ -14,8 +14,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 	
-			<c:choose>
-				<c:when test="${ empty login }">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -29,6 +27,8 @@
                         <a class="page-scroll" href="/#contact">Contact</a>
                     </li>
 					
+			<c:choose>
+				<c:when test="${ empty login }">
                     <li>
                         <a class="page-scroll" href="${URIs.URI_USER_LOGIN_FORM}">
                           <span class ="glyphicon glyphicon-user">로그인</span></a>
