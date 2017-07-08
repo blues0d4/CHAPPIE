@@ -2,6 +2,7 @@ package kr.co.syteam.domain.board.vo;
 
 public class BoardVO {
 	private String category_id;
+	private String category_name;
 	private String board_title;
 	private String board_no;
 	private String board_contents;
@@ -24,6 +25,14 @@ public class BoardVO {
 
 	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
+	}
+
+	public String getCategory_name() {
+		return category_name;
+	}
+
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
 	}
 
 	public String getBoard_title() {
@@ -76,10 +85,10 @@ public class BoardVO {
 
 	@Override
 	public String toString() {
-		return "BoardVO [category_id=" + category_id + ", board_title=" + board_title + ", board_no=" + board_no
-				+ ", board_contents=" + board_contents + ", user_id=" + user_id + ", board_write_date="
-				+ board_write_date + ", board_modify_date=" + board_modify_date + ", board_hitcount=" + board_hitcount
-				+ "]";
+		return "BoardVO [category_id=" + category_id + ", category_name=" + category_name + ", board_title="
+				+ board_title + ", board_no=" + board_no + ", board_contents=" + board_contents + ", user_id=" + user_id
+				+ ", board_write_date=" + board_write_date + ", board_modify_date=" + board_modify_date
+				+ ", board_hitcount=" + board_hitcount + "]";
 	}
 
 	

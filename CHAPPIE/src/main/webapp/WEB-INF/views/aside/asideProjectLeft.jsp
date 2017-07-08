@@ -48,20 +48,21 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION </li>
-        <li class="treeview">
-<!--         <li class="active treeview"> -->
+<!--         <li class="treeview"> -->
+        <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Project</span>
+            <i class="fa fa-dashboard"></i> <span>${project.project_name}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-<!--        <li class="active"> -->
+<!--      	    <li class="active"> -->
+			<c:forEach items="${categoryList}" var="boardVO">
 			<li>
-            <a href="${project_name}/board"><i class="fa fa-circle-o"></i> ${project_name}board 1</a>
+            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> ${boardVO.category_name}</a>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> board 2</a></li>
+			</c:forEach>
           </ul>
         </li>
 <!--         <li class="treeview"> -->

@@ -45,12 +45,19 @@ from category_table;
 select CATEGORY_NAME
 from category_table c, project_table p
 where c.PROJECT_ID = p.PROJECT_ID
-and p.PROJECT_ID = '1032'
-and c.CATEGORY_KIND = 'B';
+and p.PROJECT_NAME = '프로젝트테스트01';
 
 commit;
 
 INSERT INTO CATEGORY_TABLE(CATEGORY_ID, CATEGORY_NAME, PROJECT_ID)
 VALUES(CATEGORY_SEQ.NEXTVAL, '기타', 1000);
+
+--카테고리 선택
+select c.CATEGORY_ID, c.CATEGORY_NAME
+from category_table c, project_table p
+where c.PROJECT_ID = p.PROJECT_ID
+and p.PROJECT_NAME = '프로젝트테스트01'
+and c.CATEGORY_NAME = '기타'
+;
 
 rollback;

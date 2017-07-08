@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import kr.co.syteam.dao.board.BoardDAO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
 import kr.co.syteam.domain.board.vo.BoardVO;
+import kr.co.syteam.domain.category.dto.CategorySelectDTO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -36,6 +38,16 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void boardHitCount(String board_no) throws Exception {
 		int update_cnt = sqlSession.update(namespace+"boardHitCount", board_no);
+	}
+
+	@Override
+	public List<BoardVO> boardCategoryList(String project_name) throws Exception {
+		return sqlSession.selectList(namespace+"boardCategoryList", project_name);
+	}
+
+	@Override
+	public CategoryVO boardCategorySelect(CategorySelectDTO categorySelectDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"boardCategorySelect", categorySelectDTO);
 	}
 	
 	

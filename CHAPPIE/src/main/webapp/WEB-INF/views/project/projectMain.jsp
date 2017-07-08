@@ -42,14 +42,14 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
+<div class="wrapper" style="height: auto;">
 
   <header class="main-header">
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>CHAPPIE</b></span>
+      <span class="logo-mini"><b></b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CHAPPIE</b></span>
     </a>
@@ -81,9 +81,8 @@
     <!-- Main content -->
     <section class="content">
 		
-		Contentt   
+		Content
 		
-
     </section>
     <!-- /.content -->
   </div>
@@ -144,5 +143,8 @@
 <script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
+<!-- SlimScroll 1.3.0 -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="/resources/documentation/docs.js"></script>
 </body>
 </html>

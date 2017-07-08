@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import kr.co.syteam.dao.board.BoardDAO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
 import kr.co.syteam.domain.board.vo.BoardVO;
+import kr.co.syteam.domain.category.dto.CategorySelectDTO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.service.board.BoardService;
 
 @Service
@@ -29,6 +31,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVO boardView(String board_no) throws Exception {
 		return boardDAO.boardView(board_no);
+	}
+
+	@Override
+	public List<BoardVO> boardCategoryList(String project_name) throws Exception {
+		return boardDAO.boardCategoryList(project_name);
+	}
+
+	@Override
+	public CategoryVO boardCategorySelect(CategorySelectDTO categorySelectDTO) throws Exception {
+		return boardDAO.boardCategorySelect(categorySelectDTO);
 	}
 	
 

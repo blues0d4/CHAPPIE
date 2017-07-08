@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.syteam.commons.URIs;
+import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.board.BoardService;
 import kr.co.syteam.service.project.ProjectService;
 
 //"/{project}"
@@ -27,6 +29,9 @@ public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
 	
+	@Autowired
+	private BoardService boardService;
+	
 	//프로젝트 메인
 	//프로젝트 선택
 	@RequestMapping(value = "/{project_name}")
@@ -34,13 +39,25 @@ public class ProjectController {
 	
 		logger.info("doProjectView");
 		
+		//로그인이 안되어 있을 때 "main"으로 리턴
+		if(request.getSession().getAttribute("login") == null){
+			return URIs.URI_MAIN_REDIRECT;
+		}
+		
+		//선택한 project가 있는지 체크
 		ProjectVO projectVO = projectService.projectSelect(project_name);
+		//없으면 "main"으로 리턴
 		if(projectVO == null){
 			return URIs.URI_MAIN_REDIRECT;
 		}
 //		model.addAttribute("project", projectVO);
+		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
+		
+		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
+		System.out.println(categoryList);
+		request.getSession().setAttribute("categoryList", categoryList);
 		
 		return URIs.URI_PROJECT_MAIN_FULL;
 	}
