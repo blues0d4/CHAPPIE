@@ -58,7 +58,7 @@ public class ProjectController {
 		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
-		
+		request.getSession().removeAttribute("category");
 		return URIs.URI_PROJECT_MAIN_FULL;
 	}
 	

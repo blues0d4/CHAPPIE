@@ -87,7 +87,7 @@ from board_table;
 commit;
 
 		INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
-			VALUES (2000, board_seq.nextval, 'titleTest02', 'contentsTest02', '1', sysdate, sysdate);
+			VALUES (2023, board_seq.nextval, 'titleTest24', 'contentsTest02', '1', sysdate, sysdate);
 
 SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT
 			FROM BOARD_TABLE

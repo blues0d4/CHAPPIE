@@ -44,7 +44,6 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 <div class="wrapper" style="height: auto;">
-
   <header class="main-header">
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
@@ -79,10 +78,9 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" >
 		
-		Content
-		
+		content 
     </section>
     <!-- /.content -->
   </div>

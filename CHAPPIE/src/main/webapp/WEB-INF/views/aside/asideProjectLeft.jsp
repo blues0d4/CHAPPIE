@@ -25,6 +25,7 @@
           <ul class="treeview-menu">
 <!--        <li class="active"> -->
 			<c:forEach items="${projectList }" var="projectVO">
+			
 			<li>
             <a href="/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a>
             </li>
@@ -47,11 +48,13 @@
       
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION </li>
+        <li class="header">Categories </li>
+<!--         <li class="header"><br><br> </li> -->
 <!--         <li class="treeview"> -->
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>CATEGORY</span>
+<!--             <i class="fa fa-dashboard"></i> <span>CATEGORY</span> -->
+            <i class="fa fa-dashboard"></i> <span>#${category.category_name}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -59,9 +62,20 @@
           <ul class="treeview-menu">
 <!--      	    <li class="active"> -->
 			<c:forEach items="${categoryList}" var="boardVO">
-			<li>
-            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
-            </li>
+			
+			<c:choose>
+				<c:when test="${boardVO.category_name eq category.category_name}">
+				<li class="active">
+				<a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+           		 </li>
+				</c:when>
+				<c:otherwise>
+				<li>
+	            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+	            </li>
+				</c:otherwise>
+			</c:choose>
+			
 			</c:forEach>
           </ul>
         </li>
