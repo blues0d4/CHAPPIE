@@ -1,14 +1,12 @@
 package kr.co.syteam.project;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.service.project.ProjectService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -73,5 +71,20 @@ public class ProjectServiceTest{
 //		ProjectVO result = projectService.projectSelect(project_name);
 //		System.out.println(result.getProject_id());
 //	}
+	
+	//프로젝트 카테고리 생성 테스트()
+	@Test
+	public void testProjectCategoryCreate() throws Exception{
+		String project_id = "1000";
+		String category_name = "테스트";
+		
+		CategoryCreateDTO categoryCreateDTO = new CategoryCreateDTO();
+		
+		categoryCreateDTO.setCategory_name(category_name);
+		categoryCreateDTO.setProject_id(project_id);
+		
+		
+		projectService.projectCategoryCreate(categoryCreateDTO);
+	}
 
 }

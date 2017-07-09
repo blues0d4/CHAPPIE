@@ -36,21 +36,28 @@
 	</insert>
 	
 	<select id="projectList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
-	<![CDATA[
-		SELECT DISTINCT P.PROJECT_NAME, P.PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID 
-		FROM PROJECT_TABLE P, MEMBER_TABLE M
-		WHERE P.PROJECT_ID = M.PROJECT_ID
-	    AND M.USER_ID = #{user_id}
-	    ORDER BY P.PROJECT_ID DESC
-	]]>
+		<![CDATA[
+			SELECT DISTINCT P.PROJECT_NAME, P.PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID 
+			FROM PROJECT_TABLE P, MEMBER_TABLE M
+			WHERE P.PROJECT_ID = M.PROJECT_ID
+		    AND M.USER_ID = #{user_id}
+		    ORDER BY P.PROJECT_ID DESC
+		]]>
 	</select>
 	
 	<select id="projectSelect" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
-	<![CDATA[
-		SELECT DISTINCT P.PROJECT_NAME, P.PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID 
-		FROM PROJECT_TABLE P, MEMBER_TABLE M
-		WHERE P.PROJECT_ID = M.PROJECT_ID
-	    AND P.PROJECT_NAME = #{project_name}
-	]]>
+		<![CDATA[
+			SELECT DISTINCT P.PROJECT_NAME, P.PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID 
+			FROM PROJECT_TABLE P, MEMBER_TABLE M
+			WHERE P.PROJECT_ID = M.PROJECT_ID
+		    AND P.PROJECT_NAME = #{project_name}
+		]]>
 	</select>
+	
+	<insert id="projectCategoryCreate">
+		<![CDATA[
+			INSERT INTO CATEGORY_TABLE(CATEGORY_ID, CATEGORY_NAME, PROJECT_ID)
+			VALUES(CATEGORY_SEQ.NEXTVAL, #{category_name}, #{project_id})
+		]]>
+	</insert>
 </mapper>

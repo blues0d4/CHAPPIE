@@ -98,4 +98,15 @@ public class ProjectController {
  
 	}
 	
+	//프로젝트 카테고리 추가 Form
+	@RequestMapping(value = "/{project_name}/categoryCreateForm")
+	public String doProjectCategoryCreateForm() throws Exception{
+		
+		logger.info("doProjectCategoryCreate");
+		
+		
+		return "/project/projectCategoryCreateForm";
+	}
+	
+	
 }
