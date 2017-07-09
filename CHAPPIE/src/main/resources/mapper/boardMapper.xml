@@ -42,6 +42,7 @@
 			FROM CATEGORY_TABLE C, PROJECT_TABLE P
 			WHERE C.PROJECT_ID = P.PROJECT_ID
 			AND P.PROJECT_name = #{project_name}
+		    ORDER BY P.PROJECT_ID ASC
 		]]>
 	</select>
 	

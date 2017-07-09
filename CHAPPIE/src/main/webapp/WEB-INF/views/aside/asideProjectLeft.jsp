@@ -43,6 +43,14 @@
 			</c:forEach>
           </ul>
        </li>
+         <li class="treeview">
+         <a href="#">
+            <i class="glyphicon glyphicon-cog"></i> <span>Project Settings</span>
+            
+<!--             <span class="pull-right-container"> -->
+<!--             </span> -->
+          </a>
+       </li>
       </ul>
       
 <!--       search form -->

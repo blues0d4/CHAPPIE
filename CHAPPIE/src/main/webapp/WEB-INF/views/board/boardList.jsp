@@ -82,7 +82,7 @@
     <section class="content">
 		
 		section
-   		 <jsp:include page ="../board/boardIncludeTest3.jsp" flush="false" />
+   		 <jsp:include page ="../board/boardIncludeTest4.jsp" flush="false" />
 		
 
     </section>

@@ -96,16 +96,16 @@ public class BoardController {
 		return "board/boardList";
 	}
 	
-//	@RequestMapping(value = "/board/view/{board_no}")
-//	public String doBoardView(@PathVariable("board_no") String board_no, Model model)throws Exception{
-//		
-//		BoardVO boardVO = boardService.boardView(board_no);
-//		
-//		if(boardVO == null){
-//			return "redirect:/";
-//		}
-//		model.addAttribute("board", boardVO);
-//		return "board/boardView";
-//	}
+	@RequestMapping(value = "/board/view/{board_no}")
+	public String doBoardView(@PathVariable("board_no") String board_no, Model model)throws Exception{
+		
+		BoardVO boardVO = boardService.boardView(board_no);
+		
+		if(boardVO == null){
+			return "redirect:/";
+		}
+		model.addAttribute("board", boardVO);
+		return "board/boardView";
+	}
 	
 }  
