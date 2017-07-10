@@ -1,5 +1,6 @@
 package kr.co.syteam.controller.project;
 
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.vo.BoardVO;
+import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
+import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.board.BoardService;
@@ -43,9 +46,16 @@ public class ProjectController {
 		if(request.getSession().getAttribute("login") == null){
 			return URIs.URI_MAIN_REDIRECT;
 		}
+
+		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+		String user_id = loginVO.getUser_id();
+		
+		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
+		projectSelectDTO.setProject_name(project_name);
+		projectSelectDTO.setUser_id(user_id);
 		
 		//선택한 project가 있는지 체크
-		ProjectVO projectVO = projectService.projectSelect(project_name);
+		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
 		//없으면 "main"으로 리턴
 		if(projectVO == null){
 			return URIs.URI_MAIN_REDIRECT;
@@ -102,10 +112,26 @@ public class ProjectController {
 	@RequestMapping(value = "/project/{project_name}/categoryCreateForm")
 	public String doProjectCategoryCreateForm() throws Exception{
 		
-		logger.info("doProjectCategoryCreate");
-		
-		
+		logger.info("doProjectCategoryCreateForm");
+
 		return "/project/projectCategoryCreateForm";
+	}
+	
+	@RequestMapping(value = "/project/categoryCreate")
+	public String doProjectCategoryCreate(String category_name, HttpServletRequest request) throws Exception{
+		
+		logger.info("doProjectCategoryCreate");
+
+		ProjectVO projectVO = (ProjectVO) request.getSession().getAttribute("project");
+		String project_id = projectVO.getProject_id();
+		String project_name = projectVO.getProject_name();
+		project_name = URLEncoder.encode(project_name, "UTF-8");
+		CategoryCreateDTO categoryCreateDTO = new CategoryCreateDTO();
+		categoryCreateDTO.setCategory_name(category_name);
+		categoryCreateDTO.setProject_id(project_id);
+		
+		projectService.projectCategoryCreate(categoryCreateDTO);
+		return "redirect:/project/"+project_name;
 	}
 	
 	

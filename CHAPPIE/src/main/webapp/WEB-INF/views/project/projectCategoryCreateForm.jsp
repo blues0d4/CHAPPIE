@@ -81,7 +81,7 @@
     <section class="content" >
 		
 <!-- 		content  -->
-		<jsp:include page="../../views/project/projectCategoryCreateFormInclude.jsp" flush="false" />
+		<jsp:include page="projectCategoryCreateFormInclude.jsp" flush="false" />
     </section>
     <!-- /.content -->
   </div>

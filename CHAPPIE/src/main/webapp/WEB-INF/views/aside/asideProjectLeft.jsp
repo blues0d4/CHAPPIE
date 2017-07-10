@@ -104,7 +104,7 @@
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-				<a href="/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+				<a href="/project/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
 				</li>
           </ul>
         </li>

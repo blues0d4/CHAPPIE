@@ -27,7 +27,7 @@
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
-     <form role="form" method="post" action="/projectCategoryCreate">
+     <form role="form" method="post" action="/project/categoryCreate">
      <br>
      <br>
        <h1 class="w3-center"><b>카테고리 생성</b></h1>

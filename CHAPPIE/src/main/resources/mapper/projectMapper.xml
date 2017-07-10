@@ -51,6 +51,7 @@
 			FROM PROJECT_TABLE P, MEMBER_TABLE M
 			WHERE P.PROJECT_ID = M.PROJECT_ID
 		    AND P.PROJECT_NAME = #{project_name}
+		    AND USER_ID = #{user_id}
 		]]>
 	</select>
 	

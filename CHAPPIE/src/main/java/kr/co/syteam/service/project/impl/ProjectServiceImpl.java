@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.syteam.dao.project.ProjectDAO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
+import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.project.ProjectService;
@@ -55,8 +55,8 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public ProjectVO projectSelect(String project_name) throws Exception {
-		return projectDAO.projectSelect(project_name);
+	public ProjectVO projectSelect(ProjectSelectDTO projectSelectDTO) throws Exception {
+		return projectDAO.projectSelect(projectSelectDTO);
 	}
 
 	@Override
