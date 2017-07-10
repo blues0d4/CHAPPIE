@@ -39,8 +39,8 @@ public class TodoDAOImpl implements TodoDAO {
 	}
 
 	@Override
-	public List<TodoVO> todoView(String todo_no) throws Exception {
-		return sqlSession.selectList(namespace+"todoView", todo_no);
+	public TodoVO todoView(String todo_no) throws Exception {
+		return sqlSession.selectOne(namespace+"todoView", todo_no);
 	}
 
 	@Override
@@ -51,8 +51,7 @@ public class TodoDAOImpl implements TodoDAO {
 
 	@Override
 	public int todoModify(TodoDTO todoDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update(namespace+"todoModify", todoDTO);
 	}
 
 	@Override
@@ -67,6 +66,10 @@ public class TodoDAOImpl implements TodoDAO {
 	@Override
 	public int todoCompleteNo(String todo_no) throws Exception {
 		return sqlSession.update(namespace+"todoCompleteNo", todo_no);
+	}
+	@Override
+	public int todoCompleteSelect(String todo_no) throws Exception {
+		return sqlSession.selectOne(namespace+"todoCompleteSelect", todo_no);
 	}
 
 	

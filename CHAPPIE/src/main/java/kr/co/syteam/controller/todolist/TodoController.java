@@ -43,20 +43,46 @@ public class TodoController {
 	}	
 	
 	@RequestMapping(value = "/todoView", method= RequestMethod.GET)
-	@ResponseBody
-	public List<TodoVO> todoView(String todo_no) throws Exception{
-		System.out.println("todoView !!!!!!!!!! " );
-		List<TodoVO> todoVO = todoService.todoViewService(todo_no);	
+	public String todoView(Model model, String todo_no) throws Exception{
 		
 		
-		return todoVO;
+		TodoVO todoVO = new TodoVO();
+		todoVO = todoService.todoViewService(todo_no);
+		todoVO.setTodo_no(todo_no);
+		System.out.println("todoView !!!!!!!!!! todo_no : " + todoVO );	
+		
+		model.addAttribute("todoView", todoVO);
+		
+		return "/todo/todoCheck";
 	}
 	
 	@RequestMapping(value="/todoWrite", method= RequestMethod.POST)
-	public String todoWrite(List<TodoDTO> todoDTO) throws Exception{
+	public String todoWrite(TodoDTO todoDTO) throws Exception{
+		System.out.println("todoWrite!!!!!!!!! : " + todoDTO);
+		todoDTO.setCategory_id("2023");
+		
+		todoService.todoWriteService(todoDTO);
 		
 		return "redirect:/todo/todoList";
 	}
 	
+	@RequestMapping(value="/todoModify", method= RequestMethod.POST)
+	public String todoModify(TodoDTO todoDTO, String todo_no) throws Exception{
+
+		todoDTO.setTodo_no(todo_no);
+		System.out.println("todoModify!!!!!!!!! : " + todoDTO);
+		
+		todoService.todoModifyService(todoDTO);
+		
+		return "redirect:/todo/todoList";
+	}
+	
+	@RequestMapping(value="/todoComplete", method= RequestMethod.GET)
+	@ResponseBody
+	public int todoComplete(String todo_no) throws Exception{
+		System.out.println("todoComplete!!!!!! : " + todo_no);
+		
+		return todoService.todoCompleteService(todo_no);
+	}
 	
 }  

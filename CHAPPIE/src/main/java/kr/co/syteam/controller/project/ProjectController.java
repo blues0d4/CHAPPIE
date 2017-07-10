@@ -34,33 +34,33 @@ public class ProjectController {
 	
 	//프로젝트 메인
 	//프로젝트 선택
-	@RequestMapping(value = "/{project_name}")
-	public String doProjectView(@PathVariable("project_name") String project_name, Model model, HttpServletRequest request)throws Exception{
-	
-		logger.info("doProjectView");
-		
-		//로그인이 안되어 있을 때 "main"으로 리턴
-		if(request.getSession().getAttribute("login") == null){
-			return URIs.URI_MAIN_REDIRECT;
-		}
-		
-		//선택한 project가 있는지 체크
-		ProjectVO projectVO = projectService.projectSelect(project_name);
-		//없으면 "main"으로 리턴
-		if(projectVO == null){
-			return URIs.URI_MAIN_REDIRECT;
-		}
-//		model.addAttribute("project", projectVO);
-		//세션에 선택한 project를 VO로 저장
-		request.getSession().setAttribute("project", projectVO);
-		System.out.println(projectVO);
-		
-		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
-		System.out.println(categoryList);
-		request.getSession().setAttribute("categoryList", categoryList);
-		request.getSession().removeAttribute("category");
-		return URIs.URI_PROJECT_MAIN_FULL;
-	}
+//	@RequestMapping(value = "/{project_name}")
+//	public String doProjectView(@PathVariable("project_name") String project_name, Model model, HttpServletRequest request)throws Exception{
+//	
+//		logger.info("doProjectView");
+//		
+//		//로그인이 안되어 있을 때 "main"으로 리턴
+//		if(request.getSession().getAttribute("login") == null){
+//			return URIs.URI_MAIN_REDIRECT;
+//		}
+//		
+//		//선택한 project가 있는지 체크
+//		ProjectVO projectVO = projectService.projectSelect(project_name);
+//		//없으면 "main"으로 리턴
+//		if(projectVO == null){
+//			return URIs.URI_MAIN_REDIRECT;
+//		}
+////		model.addAttribute("project", projectVO);
+//		//세션에 선택한 project를 VO로 저장
+//		request.getSession().setAttribute("project", projectVO);
+//		System.out.println(projectVO);
+//		
+//		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
+//		System.out.println(categoryList);
+//		request.getSession().setAttribute("categoryList", categoryList);
+//		request.getSession().removeAttribute("category");
+//		return URIs.URI_PROJECT_MAIN_FULL;
+//	}
 	
 	//프로젝트 생성 폼
 	@RequestMapping(value = URIs.URI_PROJECT_CREATE_FORM)

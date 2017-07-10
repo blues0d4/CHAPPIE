@@ -6,7 +6,9 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+<head>
 <title>SSangyoung_todolist_list</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,9 +42,7 @@
 }
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
-
-
-
+</head>
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -152,17 +152,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     </tr>
 					<c:forEach items="${ todoList }" var="todoVO">
 						<tr>
-							<td width="70px">
-								<button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check" id="testTodo">
-		                     	<i class="fa fa-circle"></i></button>
+							<td width="70px">								
+		                     	<a href="/todo/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-circle"></i></a>	                     									
 		                    </td>
-							<td style="padding-top:15px">${todoVO.todo_list}</td>								
+							<td style="padding-top:15px">${todoVO.todo_list}	</td>
+														
 							<c:choose>
 								<c:when test="${todoVO.todo_complete == '1' }">
-									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" checked></td>
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
 								</c:when>
 								<c:otherwise>
-									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px"></td>
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
 								</c:otherwise>
 							</c:choose>
 						</tr>
@@ -179,7 +179,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <!-- End Page Container -->
 
 
-
+<!-- 
 <div class="modal fade" id="todolist_check" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
  <div class="modal-dialog">
   <div class="modal-content">
@@ -248,7 +248,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     </div>
   </div>
 </div>
-
+-->
 
 <div class="modal fade" id="todolist_plus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
            <div class="modal-dialog">
@@ -258,42 +258,43 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </div>
 
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="/todo/todoWrite">
           <fieldset>          
             <select style="margin-left:20px">
             <option>category</option>
-            <option>1</option>
-            <option>2</option>
+            <option>todo</option>
+            <option>what</option>
+            <option>chappie</option>
             </select>
           </fieldset>
        	   	<div class="modal-body">
        	   		<table class="w3-table w3-white">
        	   			<tr>
        	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
-       	   				<td><input type="text" class="form-control" id="todo_list" placeholder=""></td>
+       	   				<td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px">
        	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
-			         		<button type="button" value="시작일자" onClick="datePicker(event, 'target_date3')" onFocus="this.blur();">
+			         		<button type="button" value="시작일자" onClick="datePicker(event, 'todo_start_date')" onFocus="this.blur();">
 			         		<i class="fa fa-calendar"></i></button></label>
 		         		</td>
-			         	<td><input type="text" name="target_date3" class="form-control" id="start_date" placeholder=""></td>
+			         	<td><input type="text" name="todo_start_date" class="form-control" id="start_date" placeholder=""></td>
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px">
        	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
-			                <button type="button" value="종료일자" onClick="datePicker(event, 'target_date4')" onFocus="this.blur();">
+			                <button type="button" value="종료일자" onClick="datePicker(event, 'todo_end_date')" onFocus="this.blur();">
 			                <i class="fa fa-calendar"></i></button></label>
 		                </td>
 		                <td>
-		               		<input type="text" name="target_date4" class="form-control" id="end_date" placeholder="">
+		               		<input type="text" name="todo_end_date" class="form-control" id="end_date" placeholder="">
 		                </td>
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
        	   				<td>
-	       	   				<select style="margin:3px">
+	       	   				<select style="margin:3px" name="todo_priority">
 				                <option> 상 </option>
 				                <option> 중 </option>
 				                <option> 하 </option>
@@ -302,7 +303,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
-       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요"></textarea></td>
+       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요" name="todo_note"></textarea></td>
        	   			</tr>
        	   		</table>
        	   		<div class="form-group" style="text-align:center">
@@ -320,50 +321,24 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </div>
 
 <script type="text/javascript">
-	$("#testTodo").click(function(){		
-		var param = $(this).serialize();
-			$.ajax({
-				url:"/todo/todoView",
-				data: param,
-				type: "get",
-				dataType:"json",
-				success:function(result){
-					alert("dd");
-					console.log(result.todo_list);
-					if(result.userid==$("#name").val()){
-					$("#idcheck").text("아이디가 중복되었습니다.");
-					$("#idcheck").css("color", "red");
-					$("#submit").hide();
-					}					
-				}				
-			});			
+function complete(chk)
+{	
+	var allData = { "todo_no": chk };
+	$.ajax({
+		url: "/todo/todoComplete",
+		data: allData,
+		type: "get",
+		dataType:"String",
+		success:function(result){
+			alert("aa");
+		}		
 	});	
-</script>
-
-<script>
-// Accordion
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-theme-d1";
-    } else {
-        x.className = x.className.replace("w3-show", "");
-        x.previousElementSibling.className =
-        x.previousElementSibling.className.replace(" w3-theme-d1", "");
-    }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
 }
 </script>
+
+
+
+
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->

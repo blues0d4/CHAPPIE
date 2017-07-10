@@ -3,6 +3,7 @@ package kr.co.syteam.domain.todo.dto;
 public class TodoDTO {
 	private String todo_no;
 	
+	
 	private String category_id;
 	private String todo_list;
 	private String todo_start_date;
@@ -11,6 +12,14 @@ public class TodoDTO {
 	private String todo_priority;
 	private String todo_note;
 	private String todo_complete;
+	
+	@Override
+	public String toString() {
+		return "TodoDTO [todo_no=" + todo_no + ", category_id=" + category_id + ", todo_list=" + todo_list
+				+ ", todo_start_date=" + todo_start_date + ", todo_end_date=" + todo_end_date + ", member_nickname="
+				+ member_nickname + ", todo_priority=" + todo_priority + ", todo_note=" + todo_note + ", todo_complete="
+				+ todo_complete + "]";
+	}
 	
 	public String getTodo_no() {
 		return todo_no;
