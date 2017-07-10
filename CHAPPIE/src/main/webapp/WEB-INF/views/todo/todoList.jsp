@@ -26,7 +26,7 @@
 <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -153,7 +153,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 					<c:forEach items="${ todoList }" var="todoVO">
 						<tr>
 							<td width="70px">
-								<button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check" id="${todoVO.todo_no}">
+								<button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check" id="testTodo">
 		                     	<i class="fa fa-circle"></i></button>
 		                    </td>
 							<td style="padding-top:15px">${todoVO.todo_list}</td>								
@@ -320,8 +320,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#${todoVO.todo_no}").click({		
+	$("#testTodo").click(function(){		
 		var param = $(this).serialize();
 			$.ajax({
 				url:"/todo/todoView",
@@ -335,22 +334,10 @@ $(document).ready(function(){
 					$("#idcheck").text("아이디가 중복되었습니다.");
 					$("#idcheck").css("color", "red");
 					$("#submit").hide();
-					}
-					else if($("#name").val() == ""){
-						$("#idcheck").text("아이디를 입력하세요.");
-						$("#idcheck").css("color", "red");
-						$("#submit").hide();
-					}
-					else{
-						$("#idcheck").text("사용가능한 아이디입니다.");
-						$("#idcheck").css("color", "green");
-						$("#submit").show();
-					}
+					}					
 				}				
 			});			
-			//$("#idcheck").css("backgroundColor", "yellow");	
 	});	
-}); 
 </script>
 
 <script>

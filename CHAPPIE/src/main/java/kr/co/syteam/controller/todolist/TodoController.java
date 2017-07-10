@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
 import kr.co.syteam.service.todo.TodoService;
 
@@ -31,7 +32,7 @@ public class TodoController {
 		
 //		String category_id = (String)request.getSession().getAttribute("category_id");
 		
-		String category_id = "2001";
+		String category_id = "2023";
 		
 		List<TodoVO> todoList = todoService.todoListViewService(category_id);
 
@@ -44,11 +45,17 @@ public class TodoController {
 	@RequestMapping(value = "/todoView", method= RequestMethod.GET)
 	@ResponseBody
 	public List<TodoVO> todoView(String todo_no) throws Exception{
-		List<TodoVO> todoVO = todoService.todoViewService(todo_no);
+		System.out.println("todoView !!!!!!!!!! " );
+		List<TodoVO> todoVO = todoService.todoViewService(todo_no);	
 		
-		System.out.println("todoView : " + todoVO);
 		
 		return todoVO;
+	}
+	
+	@RequestMapping(value="/todoWrite", method= RequestMethod.POST)
+	public String todoWrite(List<TodoDTO> todoDTO) throws Exception{
+		
+		return "redirect:/todo/todoList";
 	}
 	
 	
