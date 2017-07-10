@@ -64,10 +64,14 @@ public class UserController {
 
 		logger.info("doLogin");
 
-		System.out.println("loginId : " + loginVO.getUser_id());
-		System.out.println("loginName : " + loginVO.getUser_name());
-		System.out.println("loginDate : " + loginVO.getLogindate());
-		return URIs.URI_MAIN_REDIRECT;
+//		System.out.println("loginId : " + loginVO.getUser_id());
+//		System.out.println("loginName : " + loginVO.getUser_name());
+//		System.out.println("loginDate : " + loginVO.getLogindate());
+		
+		
+		
+//		return URIs.URI_MAIN_REDIRECT;
+		return "redirect:/projectList";
 	}
 
 	// 회원정보 수정 폼 (테스트 완료)
