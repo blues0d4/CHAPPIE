@@ -7,7 +7,7 @@
 
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE</a>
+                <a class="navbar-brand page-scroll" href="${URIs.URI_MAIN}">CHAPPIE </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,10 +18,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/#services">Services</a>
+                        <a class="page-scroll" href="/#top">Home</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#services">Services</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/#contact">Contact</a>
@@ -35,19 +38,19 @@
                     </li>
                     
                     <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">회원가입</a>
+                        <a class="page-scroll" href="${URIs.URI_USER_JOIN_FORM}">
+                          <span class ="glyphicon glyphicon-user">회원가입</span></a>
                     </li>
                 </ul>
                 </c:when>
 				<c:otherwise>
-					<li>
-                        <a class="page-scroll" href="${URIs.URI_USER_MODIFY_FORM}">
-                          <span class ="glyphicon glyphicon-user">${ login.user_name }</span></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="${URIs.URI_USER_LOGOUT}">
-                          <span class ="glyphicon ">로그아웃</span></a>
-                    </li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#"><span class ="glyphicon glyphicon-user">${ login.user_name }</span><span class="caret "></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="${URIs.URI_USER_MODIFY_FORM}">회원 정보 수정</a></li>
+							<li><a href="${URIs.URI_USER_LOGOUT }">로그아웃</a></li>
+						</ul>
+					</li>
 				</c:otherwise>
 			</c:choose>
             </div>
