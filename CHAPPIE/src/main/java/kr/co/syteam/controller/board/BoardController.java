@@ -96,7 +96,7 @@ public class BoardController {
 		return "board/boardList";
 	}
 
-	@RequestMapping(value = "/board/view/{board_no}")
+	@RequestMapping(value = "/board/boardView/{board_no}")
 	public String doBoardView(@PathVariable("board_no") String board_no, Model model) throws Exception {
 
 		BoardVO boardVO = boardService.boardView(board_no);
@@ -107,5 +107,19 @@ public class BoardController {
 		model.addAttribute("board", boardVO);
 		return "board/boardView";
 	}
-
+	
+	@RequestMapping(value = "/board/boardWriteForm")
+	public String doBoardWriteForm(){
+		logger.info("doBoardWriteForm");
+		
+		return "board/boardWriteForm";
+	}
+	
+	@RequestMapping(value = "/board/boardWrite")
+	public String doBoardWrite(@PathVariable("category_name") String category_name){
+		
+		
+		
+		return null;
+	}
 }

@@ -70,9 +70,10 @@
   <!-- Content Wrapper. Contains page content -->
   <!-- Contents -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) --> 
     <section class="content-header">
-      <h1> Dashboard
+    
+      <h1> #${category.category_name }
 <!--         <small>Control panel</small> -->
       </h1>
 
@@ -81,8 +82,7 @@
     <!-- Main content -->
     <section class="content">
 		
-		section
-   		 <jsp:include page ="../board/boardIncludeTest4.jsp" flush="false" />
+   		 <jsp:include page ="../board/boardIncludeTest3.jsp" flush="false" />
 		
 
     </section>
