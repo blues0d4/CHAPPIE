@@ -43,6 +43,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 <div class="wrapper " style="height: auto;">
   <header class="main-header">
@@ -72,7 +73,7 @@
 
     <!-- Main content -->
     <section class="content" >
-    	<div class="col-md-6">
+    	<div class="col-md-7">
     	<div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Todo</h3>
@@ -85,25 +86,29 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">할 일</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-9">
                     <input type="text" class="form-control" id="todo_list" name="todo_list" value="${todoVO.todo_list }">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">시작 일자</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="todo_start_date" name="todo_start_date"value="${todoVO.todo_start_date }">
+                  <label for="inputPassword3" class="col-sm-2 control-label">시작 일자 <i class="fa fa-calendar"></i></label>
+                  <div class="col-sm-9">
+                <div class="input-group date">
+                    <input type="text" class="form-control pull-right" id="datepicker" name="todo_start_date" value="${todoVO.todo_start_date }">
+                  </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">종료 일자</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="todo_end_date" name="todo_end_date" value="${todoVO.todo_end_date }">
+                  <label for="inputPassword3" class="col-sm-2 control-label">종료 일자 <i class="fa fa-calendar"></i></label>
+                  <div class="col-sm-9">
+                    <div class="input-group date">
+                    <input type="text" class="form-control pull-right" id="datepicker2" name="todo_end_date" value="${todoVO.todo_end_date }">
+                  </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">중요도</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-9">
                     <select class="form-control" id="todo_priority" name="todo_priority">
                     <option>상</option>
                     <option>중</option>
@@ -113,7 +118,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-9">
                     <textarea class="form-control" rows="5" id="todo_note" name="todo_note">${todoVO.todo_note }</textarea>
                   </div>
                 </div>                
@@ -127,6 +132,7 @@
             </form>
           </div>
          </div>
+         
     </section>
     <!-- /.content -->
   </div>
@@ -146,47 +152,106 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery 2.2.3 -->
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/resources/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/resources/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
+<!-- Select2 -->
+<script src="/resources/plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- date-range-picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
+<!-- bootstrap datepicker -->
 <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
+<!-- bootstrap color picker -->
+<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 <!-- FastClick -->
 <script src="/resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
-<!-- <script src="/resources/dist/js/app.js"></script> -->
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
-<!-- SlimScroll 1.3.0 -->
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    <script src="/resources/documentation/docs.js"></script>
+<!-- Page script -->
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $(".select2").select2();
+
+    //Datemask dd/mm/yyyy
+    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+    //Datemask2 mm/dd/yyyy
+    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+    //Money Euro
+    $("[data-mask]").inputmask();
+
+    //Date range picker
+    $('#reservation').daterangepicker();
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+        {
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate: moment()
+        },
+        function (start, end) {
+          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+    );
+
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+    $('#datepicker2').datepicker({
+        autoclose: true
+      });
+    
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+    });
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+
+    //Colorpicker
+    $(".my-colorpicker1").colorpicker();
+    //color picker with addon
+    $(".my-colorpicker2").colorpicker();
+
+    //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+  });
+</script>
+    
 </body>
 </html>

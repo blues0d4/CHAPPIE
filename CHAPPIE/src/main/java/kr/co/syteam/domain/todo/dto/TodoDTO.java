@@ -1,13 +1,15 @@
 package kr.co.syteam.domain.todo.dto;
 
+import java.util.Date;
+
 public class TodoDTO {
 	private String todo_no;
 	
 	
 	private String category_id;
 	private String todo_list;
-	private String todo_start_date;
-	private String todo_end_date;
+	private Date todo_start_date;
+	private Date todo_end_date;
 	private String member_nickname;
 	private String todo_priority;
 	private String todo_note;
@@ -19,8 +21,27 @@ public class TodoDTO {
 				+ ", todo_start_date=" + todo_start_date + ", todo_end_date=" + todo_end_date + ", member_nickname="
 				+ member_nickname + ", todo_priority=" + todo_priority + ", todo_note=" + todo_note + ", todo_complete="
 				+ todo_complete + "]";
-	}
+	}	
 	
+	public Date getTodo_start_date() {
+		return todo_start_date;
+	}
+
+	public void setTodo_start_date(Date todo_start_date) {
+		this.todo_start_date = todo_start_date;
+	}
+
+
+	public Date getTodo_end_date() {
+		return todo_end_date;
+	}
+
+
+	public void setTodo_end_date(Date todo_end_date) {
+		this.todo_end_date = todo_end_date;
+	}
+
+
 	public String getTodo_no() {
 		return todo_no;
 	}
@@ -39,18 +60,7 @@ public class TodoDTO {
 	public void setTodo_list(String todo_list) {
 		this.todo_list = todo_list;
 	}
-	public String getTodo_start_date() {
-		return todo_start_date;
-	}
-	public void setTodo_start_date(String todo_start_date) {
-		this.todo_start_date = todo_start_date;
-	}
-	public String getTodo_end_date() {
-		return todo_end_date;
-	}
-	public void setTodo_end_date(String todo_end_date) {
-		this.todo_end_date = todo_end_date;
-	}
+	
 	public String getMember_nickname() {
 		return member_nickname;
 	}
