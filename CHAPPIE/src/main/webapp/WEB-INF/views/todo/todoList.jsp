@@ -185,7 +185,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                     </tr>
 					<c:forEach items="${ todoList }" var="todoVO">
 						<tr>
-							<td width="70px"><button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check">
+							<td width="70px">
+								<button type="button" style="w3-indigo" class="btn btn-default" data-toggle="modal" data-target="#todolist_check" id="${todoVO.todo_no}">
 		                     	<i class="fa fa-circle"></i></button>
 		                    </td>
 							<td style="padding-top:15px">${todoVO.todo_list}</td>								
@@ -302,24 +303,24 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
        	   		<table class="w3-table w3-white">
        	   			<tr>
        	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
-       	   				<td><input type="text" class="form-control" id="inputEmail" placeholder=""></td>
+       	   				<td><input type="text" class="form-control" id="todo_list" placeholder=""></td>
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px">
        	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
-			         		<button type="button" value="시작일자" onClick="datePicker(event, 'target_date')" onFocus="this.blur();">
+			         		<button type="button" value="시작일자" onClick="datePicker(event, 'target_date3')" onFocus="this.blur();">
 			         		<i class="fa fa-calendar"></i></button></label>
 		         		</td>
-			         	<td><input type="text" name="target_date" class="form-control" id="inputEmail" placeholder=""></td>
+			         	<td><input type="text" name="target_date3" class="form-control" id="start_date" placeholder=""></td>
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px">
        	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
-			                <button type="button" value="종료일자" onClick="datePicker(event, 'target_date2')" onFocus="this.blur();">
+			                <button type="button" value="종료일자" onClick="datePicker(event, 'target_date4')" onFocus="this.blur();">
 			                <i class="fa fa-calendar"></i></button></label>
 		                </td>
 		                <td>
-		               		<input type="text" name="target_date2" class="form-control" id="inputEmail" placeholder="">
+		               		<input type="text" name="target_date4" class="form-control" id="end_date" placeholder="">
 		                </td>
        	   			</tr>
        	   			<tr>
@@ -334,7 +335,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
        	   			</tr>
        	   			<tr>
        	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
-       	   				<td><textarea class="form-control" rows="10" id="textArea" placeholder="내용을 입력하세요"></textarea></td>
+       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요"></textarea></td>
        	   			</tr>
        	   		</table>
        	   		<div class="form-group" style="text-align:center">
@@ -351,7 +352,39 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 	</div>
 </div>
 
-
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#${todoVO.todo_no}").click({		
+		var param = $(this).serialize();
+			$.ajax({
+				url:"/todo/todoView",
+				data: param,
+				type: "get",
+				dataType:"json",
+				success:function(result){
+					alert("dd");
+					console.log(result.todo_list);
+					if(result.userid==$("#name").val()){
+					$("#idcheck").text("아이디가 중복되었습니다.");
+					$("#idcheck").css("color", "red");
+					$("#submit").hide();
+					}
+					else if($("#name").val() == ""){
+						$("#idcheck").text("아이디를 입력하세요.");
+						$("#idcheck").css("color", "red");
+						$("#submit").hide();
+					}
+					else{
+						$("#idcheck").text("사용가능한 아이디입니다.");
+						$("#idcheck").css("color", "green");
+						$("#submit").show();
+					}
+				}				
+			});			
+			//$("#idcheck").css("backgroundColor", "yellow");	
+	});	
+}); 
+</script>
 
 <script>
 // Accordion

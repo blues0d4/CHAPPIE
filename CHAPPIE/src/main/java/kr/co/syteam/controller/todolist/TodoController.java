@@ -46,6 +46,8 @@ public class TodoController {
 	public List<TodoVO> todoView(String todo_no) throws Exception{
 		List<TodoVO> todoVO = todoService.todoViewService(todo_no);
 		
+		System.out.println("todoView : " + todoVO);
+		
 		return todoVO;
 	}
 	
