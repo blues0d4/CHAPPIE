@@ -91,7 +91,7 @@
 	            <c:choose>
 				<c:when test="${boardVO.category_name eq category.category_name}">
 				<li class="active">
-				<a href="/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+				<a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
            		 </li>
 				</c:when>
 				<c:otherwise>

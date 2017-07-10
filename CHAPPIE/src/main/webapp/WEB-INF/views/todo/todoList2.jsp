@@ -81,7 +81,7 @@
     <!-- Main content -->
     <section class="content">
 		
-		section2<div class="box box-primary">
+		<div class="box box-primary">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
               <i class="ion ion-clipboard"></i>
 
