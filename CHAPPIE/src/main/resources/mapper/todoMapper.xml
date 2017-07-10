@@ -8,7 +8,7 @@
 		<![CDATA[
 			INSERT INTO TODO_LIST_TABLE 
 			VALUES (TODO_SEQ.NEXTVAL ,#{category_id}, #{todo_list}, 
-			#{todo_start_date}, #{todo_end_date}, #{todo_priority}, #{todo_note}, #{todo_complete})		
+			#{todo_start_date}, #{todo_end_date}, #{todo_priority}, #{todo_note}, '0')		
 		]]>
 	</insert>
 	
@@ -25,16 +25,13 @@
 			VALUES (#{todo_no}, #{member_nickname})
   		]]>
   	</insert>
-  	
-  	
-  	
+  	  	
   	<select id="todoView" resultType="kr.co.syteam.domain.todo.vo.TodoVO">
   		<![CDATA[
-  			SELECT M.TODO_NO, L.CATEGORY_ID, L.TODO_LIST, L.TODO_START_DATE, 
-  				L.TODO_END_DATE, L.TODO_PRIORITY, L.TODO_NOTE, L.TODO_COMPLETE, M.MEMBER_NICKNAME 
-			FROM TODO_LIST_TABLE L, TODO_MEMBER_TABLE M 
-			WHERE L.TODO_NO = M.TODO_NO AND 
-			M.TODO_NO = #{todo_no}
+  			SELECT TODO_LIST, TO_CHAR(todo_start_date, 'mm/dd/yyyy') TODO_START_DATE, 
+  			TO_CHAR(todo_start_date, 'mm/dd/yyyy') TODO_END_DATE, TODO_PRIORITY, TODO_NOTE 
+			FROM TODO_LIST_TABLE 
+			WHERE TODO_NO=#{todo_no}
   		]]>
   	</select>
 
@@ -44,10 +41,21 @@
 			FROM TODO_LIST_TABLE 
 			WHERE CATEGORY_ID = #{category_id} 
 			ORDER BY TODO_NO DESC
-		]]>
-	
+		]]>	
 	</select>
 	
+	<update id="todoModify" parameterType="kr.co.syteam.domain.todo.dto.TodoDTO">
+		<![CDATA[
+			UPDATE TODO_LIST_TABLE SET TODO_LIST=#{todo_list}, TODO_START_DATE=#{todo_start_date}, 
+			TODO_END_DATE=#{todo_end_date}, TODO_PRIORITY=#{todo_priority}, TODO_NOTE=#{todo_note} WHERE TODO_NO=#{todo_no}
+		]]>
+	</update>
+	
+	<select id="todoCompleteSelect" resultType="int">
+		<![CDATA[
+			SELECT TODO_COMPLETE FROM TODO_LIST_TABLE WHERE TODO_NO = #{todo_no}
+		]]>
+	</select>
 	<update id="todoCompleteYes">
 		<![CDATA[
 			UPDATE TODO_LIST_TABLE SET TODO_COMPLETE='1' WHERE TODO_NO=#{todo_no}

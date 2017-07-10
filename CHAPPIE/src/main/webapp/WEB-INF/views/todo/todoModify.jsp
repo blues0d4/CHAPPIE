@@ -1,336 +1,147 @@
+<%@page import="kr.co.syteam.commons.URIs"%>
+<%@page import="kr.co.syteam.commons.PAGEs"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <!DOCTYPE html>
 <html>
-<title>SSangyoung_todolist_modify</title>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CHAPPIE</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="/resources/dist/css/skins/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/resources/plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="/resources/plugins/morris/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="/resources/plugins/datepicker/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
+<div class="wrapper " style="height: auto;">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b></b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>CHAPPIE</b></span>
+    </a>    
+    <!-- Header Navbar: style can be found in header.less -->
+    
+	<nav class="navbar navbar-static-top">
+    <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <jsp:include page ="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
+    <!-- /.sidebar -->
+  </aside>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Content Wrapper. Contains page content -->
+  <!-- Contents -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+<!--     <section class="content-header"> -->
+<!--       <h1> Content-header -->
+<!--         <small>Control panel</small> -->
+<!--       </h1> -->
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--     </section> -->
 
-<!-- Custom CSS -->
-<link href="css/stylish-portfolio.css" rel="stylesheet">
+    <!-- Main content -->
+    <section class="content" >
+		
+		content 
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />    
+  </footer>
 
-<!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-
-<style>
-
-.calendar-group{
-}
-
-.calendar-group_common{
-  float: left;
-}
-
-
-
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-<body class="w3-theme-l5">
-
-<!-- Navbar -->
-
-<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container">
-
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-            </button>
-
-
-            <a class="navbar-brand page-scroll" href="#page-top">Ssangyoung Company</a>
-        </div>
-
-<!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-        <li class="hidden">
-            <a href="#page-top"></a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#services">Services</a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#about">About</a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#contact">Contact</a>
-        </li>
-
-        <li>
-            <a class="page-scroll" href="#sign_up">
-              <span class ="glyphicon glyphicon-user"> 로그인</span></a>
-        </li>
-        <li>
-            <a class="page-scroll" href="#join">회원가입</a>
-        </li>
-
-    </ul>
+  <!-- Control Sidebar -->
+  
+	<aside class="control-sidebar control-sidebar-dark">
+		
+   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
+	
+ 	</aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
 </div>
-</nav>
+<!-- ./wrapper -->
 
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-</div>
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
-  <!-- The Grid -->
-  <div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-      <div class="w3-card-2 w3-round w3-white">
-        <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
-        </div>
-      </div>
-      <br>
-
-      <!-- Accordion -->
-      <div class="w3-card-2 w3-round">
-        <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-user-circle-o"></i> My Project </button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <ul>
-              <li>
-              <button style="padding:5px; border:0px; background-color:#FFFFFF">My Project</button>
-              </li>
-              <li>
-              <button style="padding:5px; border:0px; background-color:#FFFFFF">Create Project</button>
-              </li>
-              <li>
-              <button style="padding:5px; border:0px; background-color:#FFFFFF">Post</button>
-              </li>
-          </div>
-
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw"></i> Share Project</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <ul>
-            <li>
-            <button style="padding:5px; border:0px; background-color:#FFFFFF">Post</button>
-            </li>
-            <li>
-            <button style="padding:5px; border:0px; background-color:#FFFFFF">To do list</button>
-            </li>
-            <li>
-            <button style="padding:5px; border:0px; background-color:#FFFFFF">Progression rate</button>
-            </li>
-        </div>
-
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-gear"></i> Management </button>
-          <div id="Demo3" class="w3-hide w3-container">
-         <div class="w3-row-padding">
-         </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-
-
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Hey!</strong></p>
-        <p>People are looking at your profile. Find out who.</p>
-      </div>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-
-
-        <!-- Forms
-          ================================================== -->
-          <div class="bs-docs-section" style="margin-right:20px">
-
-
-            <div class="row">
-                  <form class="form-horizontal">
-                    <fieldset>
-                      <legend style="margin-left:20px">To Do List 수정</legend>
-
-                          <select id="select" style="margin-left:20px">
-                            <option>카테고리</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div>
-                      <div class="form-group">
-                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 할 일 </label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" id="inputEmail" placeholder="">
-                        </div>
-                      </div>
-                      </div><br>
-
-
-
-                      <!-- Alert Box -->
-                      <section id="calendar" class="calendar">
-                      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-                          <i class="fa fa-remove"></i>
-                        </span>
-                        <p><strong>Hey!</strong></p>
-                        <p>People are looking at your profile. Find out who.</p>
-                      </div>
-                    </section>
-
-
-
-
-                    <div>
-                    <div class="form-group">
-                      <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
-                        <i class="fa fa-calendar" style="margin-left:10px"></i> </label>
-                      <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="">
-                      </div>
-                    </div>
-                    </div><br>
-
-                      <div>
-                      <div class="form-group">
-                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 종료일자
-                          <i class="fa fa-calendar" style="margin-left:10px"></i> </label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" id="inputEmail" placeholder="">
-                        </div>
-                      </div>
-                      </div><br>
-
-                      <div>
-                      <div class="form-group">
-                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 담당자 </label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" id="inputEmail" placeholder="">
-                        </div>
-                      </div>
-                      </div><br><br>
-
-                      <div>
-                      <div class="form-group">
-                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 중요도 </label>
-                        <div class="col-lg-10">
-                          <select id="select" style="margin-3px">
-                            <option> 상 </option>
-                            <option> 중 </option>
-                            <option> 하 </option>
-                          </select>
-                        </div>
-                      </div>
-                      </div><br>
-
-                      <div>
-                      <div class="form-group">
-                        <label for="inputEmail" class="col-lg-2 control-label" style="margin-top:5px"> 알림 </label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" id="inputEmail" placeholder="">
-                        </div>
-                      </div>
-                      </div><br>
-
-                      <div class="form-group">
-                        <br>
-                        <label for="textArea" class="col-lg-2 control-label" style="margin-top:5px">비고</label>
-                        <div class="col-lg-10">
-                          <textarea class="form-control" rows="10" id="textArea" placeholder="내용을 입력하세요"></textarea>
-                          <br>
-                        </div>
-
-                      </div>
-
-                      <div class="form-group" style="text-align:center">
-                        <div class="col-lg-10 col-lg-offset-2" style="margin-bottom:30px">
-                          <br>
-                          <button type="submit" class="btn btn-primary">등록</button>
-                          <button type="reset" class="btn btn-default">취소</button>
-
-                        </div>
-                      </div>
-                    </fieldset>
-
-                  </form>
-
-                </div>
-
-              </div>
-
-      </div>
-
-    </div>
-
-
-  <!-- End Grid -->
-
-
-<!-- End Page Container -->
-</div>
-<br>
-
-
-
+<!-- jQuery 2.2.3 -->
+<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-// Accordion
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-theme-d1";
-    } else {
-        x.className = x.className.replace("w3-show", "");
-        x.previousElementSibling.className =
-        x.previousElementSibling.className.replace(" w3-theme-d1", "");
-    }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+  $.widget.bridge('uibutton', $.ui.button);
 </script>
-
+<!-- Bootstrap 3.3.6 -->
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="/resources/plugins/morris/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="/resources/plugins/knob/jquery.knob.js"></script>
+<!-- daterangepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/resources/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/resources/dist/js/app.min.js"></script>
+<!-- <script src="/resources/dist/js/app.js"></script> -->
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="/resources/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/resources/dist/js/demo.js"></script>
+<!-- SlimScroll 1.3.0 -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="/resources/documentation/docs.js"></script>
 </body>
 </html>
