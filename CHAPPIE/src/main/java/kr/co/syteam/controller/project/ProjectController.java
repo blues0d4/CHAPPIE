@@ -34,7 +34,7 @@ public class ProjectController {
 	
 	//프로젝트 메인
 	//프로젝트 선택
-	@RequestMapping(value = "/{project_name}")
+	@RequestMapping(value = "/project/{project_name}")
 	public String doProjectView(@PathVariable("project_name") String project_name, Model model, HttpServletRequest request)throws Exception{
 	
 		logger.info("doProjectView");
@@ -99,7 +99,7 @@ public class ProjectController {
 	}
 	
 	//프로젝트 카테고리 추가 Form
-	@RequestMapping(value = "/{project_name}/categoryCreateForm")
+	@RequestMapping(value = "/project/{project_name}/categoryCreateForm")
 	public String doProjectCategoryCreateForm() throws Exception{
 		
 		logger.info("doProjectCategoryCreate");

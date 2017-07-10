@@ -43,8 +43,8 @@
 			<mapping path="/userLogin"/>
 			<beans:bean class="kr.co.syteam.interceptor.user.LoginInterceptor"/>
 		</interceptor>
-<!-- 		<interceptor> -->
-<!-- 			<mapping path="/project*/**"/> -->
+		<interceptor>
+			<mapping path="/project*/**"/>
 <!-- 			<mapping path="/*/board**" /> -->
 <!-- 			<mapping path="/**/**" /> -->
 <!-- 			<exclude-mapping path="/" /> -->
@@ -53,8 +53,8 @@
 <!-- 			<exclude-mapping path="/userLogin/**" /> -->
 <!-- 			<exclude-mapping path="/userLoginForm/**" /> -->
 <!-- 			<exclude-mapping path="/user**/**" /> -->
-<!-- 			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/> -->
-<!-- 		</interceptor> -->
+			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/>
+		</interceptor>
 	</interceptors>
 	
 	

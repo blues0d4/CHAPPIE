@@ -48,7 +48,7 @@
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b></span>
+      <span class="logo-mini"><b><i class="glyphicon glyphicon-home"></i></b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CHAPPIE</b></span>
     </a>

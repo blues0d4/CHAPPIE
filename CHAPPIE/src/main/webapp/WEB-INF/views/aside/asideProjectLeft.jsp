@@ -7,6 +7,7 @@
       <div class="user-panel">
         <div class="pull-left image">
           <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+<!-- 			<i class="glyphicon glyphicon-user pull-left"></i> -->
         </div>
         <div class="pull-left info">
           <p>${ login.user_name }</p>
@@ -34,7 +35,7 @@
           			</c:when>
           			<c:otherwise>
 					<li>
-         			<a href="/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a>
+         			<a href="/project/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a>
           			</li>
           			
           			
@@ -90,12 +91,12 @@
 	            <c:choose>
 				<c:when test="${boardVO.category_name eq category.category_name}">
 				<li class="active">
-				<a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+				<a href="/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
            		 </li>
 				</c:when>
 				<c:otherwise>
 				<li>
-	            <a href="/${project.project_name}/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+	            <a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
 	            </li>
 				</c:otherwise>
 			</c:choose>
@@ -108,7 +109,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="/todo/todoList">
             <i class="fa fa-check-square-o"></i>
             <span>To-Do List</span>
             <span class="pull-right-container">
