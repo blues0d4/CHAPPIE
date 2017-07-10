@@ -21,27 +21,22 @@
 
 <body> 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    	<jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
-<!--         /.container-fluid -->
-    </nav>
   <!-- Sign up -->
-  <section id="project_create" class="project_create">
+  <section id="category_create" class="category_create">
 
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
-     <form role="form" method="post" action="/projectCreate">
+     <form role="form" method="post" action="/projectCategoryCreate">
      <br>
      <br>
-       <h1 class="w3-center"><b>프로젝트 생성</b></h1>
-       <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
+       <h1 class="w3-center"><b>카테고리 생성</b></h1>
    
        
          <div class="w3-section">
          
-           <label>프로젝트 이름</label>
-           <input class="w3-input w3-border" type="text" value='' id="project_name" name="project_name" placeholder="프로젝트 이름" required>
+           <label>카테고리 이름</label>
+           <input class="w3-input w3-border" type="text" value='' id="category_name" name="category_name" placeholder="카테고리 이름" required>
          </div>
 
          
@@ -49,9 +44,9 @@
          <div class="form-group">
          <input type="submit"
 				class="w3-button w3-block w3-black w3-margin-bottom w3-round"
-				value="프로젝트 생성" />
+				value="카테고리 생성" />
 				
-		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
+		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="/${project.project_name}">취소</a>
        </div>
       
        </form>

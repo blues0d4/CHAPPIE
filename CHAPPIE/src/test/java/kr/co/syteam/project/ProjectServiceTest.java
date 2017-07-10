@@ -1,14 +1,12 @@
 package kr.co.syteam.project;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.service.project.ProjectService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -53,17 +51,40 @@ public class ProjectServiceTest{
 //	}
 	
 	//프로젝트 리스트 (테스트 완료)
+//	@Test
+//	public void testProjectList() throws Exception{
+//		String user_id = "1";
+//		List<ProjectVO> projectList = projectService.projectList(user_id);
+//		for(ProjectVO projectVO : projectList){
+//		System.out.println(projectVO.getProject_id());
+//		System.out.println(projectVO.getProject_name());
+//		System.out.println(projectVO.getMember_rank());
+//		System.out.println(projectVO.getMember_nickname());
+//		System.out.println(projectVO.getUser_id());
+//		}
+//	}
+//	
+	//프로젝트 셀렉트 테스트 완료
+//	@Test
+//	public void testProjectSelect() throws Exception{
+//		String project_name = "ptest01";
+//		ProjectVO result = projectService.projectSelect(project_name);
+//		System.out.println(result.getProject_id());
+//	}
+	
+	//프로젝트 카테고리 생성 테스트()
 	@Test
-	public void testProjectList() throws Exception{
-		String user_id = "1";
-		List<ProjectVO> projectList = projectService.projectList(user_id);
-		for(ProjectVO projectVO : projectList){
-		System.out.println(projectVO.getProject_id());
-		System.out.println(projectVO.getProject_name());
-		System.out.println(projectVO.getMember_rank());
-		System.out.println(projectVO.getMember_nickname());
-		System.out.println(projectVO.getUser_id());
-		}
+	public void testProjectCategoryCreate() throws Exception{
+		String project_id = "1000";
+		String category_name = "테스트";
+		
+		CategoryCreateDTO categoryCreateDTO = new CategoryCreateDTO();
+		
+		categoryCreateDTO.setCategory_name(category_name);
+		categoryCreateDTO.setProject_id(project_id);
+		
+		
+		projectService.projectCategoryCreate(categoryCreateDTO);
 	}
 
 }

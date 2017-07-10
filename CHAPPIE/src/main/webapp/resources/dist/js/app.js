@@ -73,7 +73,7 @@ $.AdminLTE.options = {
     //The sidebar selector
     selector: ".control-sidebar",
     //Enable slide over content
-    slide: true
+    slide: true 
   },
   //Box Widget Plugin. Enable this plugin
   //to allow boxes to be collapsed and/or removed
@@ -104,7 +104,7 @@ $.AdminLTE.options = {
   },
   //Define the set of colors to use globally around the website
   colors: {
-    lightBlue: "#3c8dbc",
+    lightBlue: "#1495e0",
     red: "#f56954",
     green: "#00a65a",
     aqua: "#00c0ef",

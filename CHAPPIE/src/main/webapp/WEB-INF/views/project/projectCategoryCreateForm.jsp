@@ -43,7 +43,7 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
-<div class="wrapper " style="height: auto;">
+<div class="wrapper" style="height: auto;">
   <header class="main-header">
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
@@ -71,7 +71,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 <!--     <section class="content-header"> -->
-<!--       <h1> Content-header -->
+<!--       <h1> Content-header  -->
 <!--         <small>Control panel</small> -->
 <!--       </h1> -->
 
@@ -80,7 +80,8 @@
     <!-- Main content -->
     <section class="content" >
 		
-		content 
+<!-- 		content  -->
+		<jsp:include page="../../views/project/projectCategoryCreateFormInclude.jsp" flush="false" />
     </section>
     <!-- /.content -->
   </div>
@@ -137,7 +138,6 @@
 <script src="/resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
-<!-- <script src="/resources/dist/js/app.js"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->

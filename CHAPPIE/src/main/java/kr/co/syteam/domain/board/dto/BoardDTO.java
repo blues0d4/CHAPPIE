@@ -1,9 +1,18 @@
 package kr.co.syteam.domain.board.dto;
 
 public class BoardDTO {
+	private String category_id;
 	private String board_title;
 	private String board_contents;
 	private String user_id;
+
+	public String getCategory_id() {
+		return category_id;
+	}
+
+	public void setCategory_id(String category_id) {
+		this.category_id = category_id;
+	}
 
 	public String getBoard_title() {
 		return board_title;

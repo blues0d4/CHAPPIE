@@ -1,4 +1,4 @@
---USER_TABLE »ý¼º
+--USER_TABLE ï¿½ï¿½ï¿½ï¿½
 CREATE TABLE USER_TABLE(
 USER_ID VARCHAR2(50) NOT NULL,
 USER_PW VARCHAR2(20) NOT NULL,
@@ -7,31 +7,31 @@ USER_PHONE VARCHAR2(20),
 USER_JOINDATE DATE NOT NULL
 );
 
---PK ¼³Á¤ USER_TABLE(USER_ID)
+--PK ï¿½ï¿½ï¿½ï¿½ USER_TABLE(USER_ID)
 ALTER TABLE USER_TABLE
 ADD CONSTRAINT PK_USER_ID PRIMARY KEY(USER_ID);
 
 commit;
 
---À¯Àú È¸¿ø°¡ÀÔ Äõ¸®
+--ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 INSERT INTO USER_TABLE(USER_ID, USER_PW, USER_NAME, USER_PHONE, USER_JOINDATE)
-VALUES('5', '1', 'stanname´Ð³×ÀÓ', 'phone012345-67890', sysdate);
+VALUES('5', '1', 'stannameï¿½Ð³ï¿½ï¿½ï¿½', 'phone012345-67890', sysdate);
 
---À¯Àú »èÁ¦ Äõ¸®
+--ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 DELETE FROM USER_TABLE
 WHERE USER_ID = 'testId';
 
---À¯Àú ·Î±×ÀÎ Äõ¸®
+--ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 SELECT USER_ID, USER_NAME, SYSDATE AS LOGINDATE
 FROM USER_TABLE
 WHERE USER_ID = 'stan' AND USER_PW = 'stan';
 
---À¯Àú È¸¿ø°¡ÀÔ Áßº¹Ã¼Å© Äõ¸®
+--ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½Ã¼Å© ï¿½ï¿½ï¿½ï¿½
 SELECT USER_ID
 FROM USER_TABLE
 WHERE USER_ID = 'stan';
 
---À¯Àú È¸¿øÁ¤º¸ ¼öÁ¤ Äõ¸®
+--ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 UPDATE USER_TABLE
 SET
 USER_PW = 'stan2',
@@ -45,6 +45,13 @@ rollback;
 commit;
 
 delete user_table;
+delete board_table;
+delete project_table;
+delete member_table;
+delete category_table;
+delete TODO_LIST_TABLE;
+delete TODO_MEMBER_TABLE;
+
 
 select *
-from USER_TABLE;
+from user_table;

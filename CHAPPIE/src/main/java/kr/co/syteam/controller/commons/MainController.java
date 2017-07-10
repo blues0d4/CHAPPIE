@@ -19,11 +19,11 @@ public class MainController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(URIs.URI_MAIN)
-	public String main() {
-		logger.info("Welcome CHAPPIE! This is MainController");
+	public String doMain() {
+		logger.info("doMain");
 		
 		
-		return "main";
+		return URIs.URI_MAIN_FULL;
 	}
 	
 }

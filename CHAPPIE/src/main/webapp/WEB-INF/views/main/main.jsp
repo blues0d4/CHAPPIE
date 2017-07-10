@@ -11,7 +11,7 @@
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-	<title>CHAPPIE</title> 
+	<title>CHAPPIE</title>  
 	
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap Core CSS -->
-    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../../resources/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	
@@ -35,7 +35,7 @@
 	
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-    	<jsp:include page ="../${PAGEs.VIEW_NAV_MAIN}" flush="false" />
+    	<jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
 <!--         /.container-fluid -->
     </nav>
 
@@ -75,13 +75,13 @@
 			src="https://console.api.ai/api-client/demo/embedded/ad805c6c-889c-4c68-b0e6-668a13eed289">
 		</iframe>
 		
-                    <h2>팀원 </h2>
+                    <h2>팀원 소개 </h2>
                     <br>
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>한청화</span><br><br>
                         
-                        <img src="../resources/img/hch.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/hch.jpg" alt="Avatar" style="width:70%"><br>
                         <ul style="list-style-type:none; float: right">
                         <br>
                         <li> 팀장 & 챗봇 개발자 </li>
@@ -101,7 +101,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>이용현</span><br><br>
-                        <img src="../resources/img/profile-1.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/profile-1.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>
@@ -122,7 +122,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>김용현</span><br><br>
-                        <img src="../resources/img/kyh.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/kyh.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>
@@ -144,7 +144,7 @@
                     <div class="w3-card-2 w3-round w3-white w3-center">
                       <div class="w3-container w3-quarter padding-5">
                         <span>장예찬</span><br><br>
-                        <img src="../resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br>
+                        <img src="/resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br>
 
                         <ul style="list-style-type:none; float: right">
                         <br>
@@ -291,10 +291,10 @@
     </footer>
     </section>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 
     <!-- Custom Theme JavaScript -->
