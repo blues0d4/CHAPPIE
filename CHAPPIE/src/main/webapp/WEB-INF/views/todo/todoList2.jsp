@@ -37,6 +37,8 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -82,12 +84,13 @@
 
     <!-- Main content -->
     <section class="content">
-		
+		<div class="col-md-7">
 		<div class="box box-primary">
             
             <!-- /.box-header -->
             <div class="box-body">
-            <div class="col-xs-2">
+            <div class="row">
+            <div class="col-xs-3">
                 <select class="form-control input-sm" id="select" style="margin-left:20px">
                  <option>category</option>
                  <option>1</option>
@@ -97,102 +100,45 @@
                  <option>5</option>
                </select>
            	  </div>
-           	  <div class="col-xs-2">
-               	<button type="button" style="w3-indigo float" class="btn btn-default" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus-circle"></i></button>
+           	  
+              <div class="w3-panel">
+               <div class="w3-row-padding" style="margin:0 -16px">
+                 <table class="w3-table w3-striped w3-white" >
+                    <tr>
+                   	 <td width="70px"></td>
+                     <td><strong>할 일 목록</strong></td>
+                     <td width="50px"><strong>완료</strong></td>
+                    </tr>
+					<c:forEach items="${ todoList }" var="todoVO">
+						<tr>
+							<td width="70px">								
+		                     	<a href="/todo/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
+		                    </td>
+							<td style="padding-top:15px">${todoVO.todo_list}	</td>
+														
+							<c:choose>
+								<c:when test="${todoVO.todo_complete == '1' }">
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
+								</c:when>
+								<c:otherwise>
+									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
+								</c:otherwise>
+							</c:choose>
+						</tr>
+					</c:forEach>                   
+                  </table>
               </div>
-              <ul class="todo-list ui-sortable">
-                <li>
-                  <!-- drag handle -->
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Design a nice theme</span>
-                  <!-- Emphasis label -->
-                  <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Make the theme responsive</span>
-                  <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Check your messages and notifications</span>
-                  <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle ui-sortable-handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
+            </div>
+              </div>
+              
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+              <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
 		
-
+		</div>
     </section>
     <!-- /.content -->
   </div>
@@ -218,41 +164,169 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
+<div class="modal fade" id="todolist_plus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+           <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header" style="height:50px">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="modal-body">
+        <form class="form-horizontal" method="post" action="/todo/todoWrite">
+          
+       	   	<div class="modal-body">
+       	   		<table class="w3-table w3-white">
+       	   			<tr>
+       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
+       	   				<td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
+			         		<i class="fa fa-calendar"></i></label>
+		         		</td>
+			         	<td><div class="input-group date">
+                    <input type="text" class="form-control pull-right" id="datepicker3" name="todo_start_date">
+                  </div></td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px">
+       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
+			                <i class="fa fa-calendar"></i></label>
+		                </td>
+		                <td>
+		               		<input type="text" name="todo_end_date" class="form-control" id="datepicker4" placeholder="">
+		                </td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
+       	   				<td>
+	       	   				<select style="margin:3px" name="todo_priority">
+				                <option> 상 </option>
+				                <option> 중 </option>
+				                <option> 하 </option>
+		               		</select>
+	               		</td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
+       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요" name="todo_note"></textarea></td>
+       	   			</tr>
+       	   		</table>
+       	   		<div class="form-group" style="text-align:center">
+             		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
+             			<br/>
+	                 	<button type="submit" class="btn btn-primary">등록</button>
+	                  	<button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
+           			</div>
+           		</div>
+			</div>        
+		</form>
+      </div>
+	  </div>
+	</div>
+</div>
+
+
+
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/resources/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/resources/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
+<!-- Select2 -->
+<script src="/resources/plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- date-range-picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
+<!-- bootstrap datepicker -->
 <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
+<!-- bootstrap color picker -->
+<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 <!-- FastClick -->
 <script src="/resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
+<!-- Page script -->
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $(".select2").select2();
+
+    //Datemask dd/mm/yyyy
+    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+    //Datemask2 mm/dd/yyyy
+    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+    //Money Euro
+    $("[data-mask]").inputmask();
+
+    //Date range picker
+    $('#reservation').daterangepicker();
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+        {
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate: moment()
+        },
+        function (start, end) {
+          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+    );
+
+    //Date picker
+    $('#datepicker3').datepicker({
+      autoclose: true
+    });
+    $('#datepicker4').datepicker({
+        autoclose: true
+      });
+    
+    //iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+    });
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+
+    //Colorpicker
+    $(".my-colorpicker1").colorpicker();
+    //color picker with addon
+    $(".my-colorpicker2").colorpicker();
+
+    //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+  });
+</script>
 </body>
 </html>
