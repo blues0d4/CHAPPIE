@@ -28,7 +28,10 @@ public class ChartController {
 	
 	@RequestMapping(value = "/progress", method = RequestMethod.GET)
 	public String todoList(Model model, HttpServletRequest request) throws Exception {
-		logger.info("This is Progress Chart !!!!");
+		logger.info("This is Progress Chart !!!!");		
+		
+		
+		
 		
 
 		return "/chart/chart";

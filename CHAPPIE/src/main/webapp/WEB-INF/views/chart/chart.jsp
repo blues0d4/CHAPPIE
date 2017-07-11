@@ -69,22 +69,33 @@
     <!-- Main content -->
     <section class="content" >
 		
-		<!-- DONUT CHART -->
+		<div class="row">
+        <div class="col-md-6">
+          
+
+          <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
               <h3 class="box-title">Donut Chart</h3>
 
               <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <div class="box-body">
-              <canvas id="pieChart" style="height:256" height="256"></canvas>
+            <div class="box-body chart-responsive">
+              <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
+        </div>
+        
+      </div>
+      <!-- /.row -->
+
     </section>
     <!-- /.content -->
   </div>
@@ -106,71 +117,40 @@
 <!-- ./wrapper -->
 
 <!-- jQuery UI 1.11.4 -->
-<script>
-	$(document).ready(function(){
-		var ctx=$("#pieChart").get(0).getContext("2d");
-		
-		var data = [
-			{
-				value: 270,
-				color: "cornflowerblue",
-				highlight: "lightskyblue",
-				label: "Corn Flower Blue"
-			},
-			{
-				value: 50,
-				color: "lightgreen",
-				highlight: "yellowgreen",
-				label: "Lightgreen"
-			},
-			{
-				value: 40,
-				color: "orange",
-				highlight: "darkorange",
-				label: "Orange"
-			}
-		];
-		
-		var piechart = new Chart(ctx).pie(data); 
-	});
-</script>
 
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.6 -->
 <!-- jQuery 2.2.3 -->
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Select2 -->
-<script src="/resources/plugins/select2/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
-<!-- date-range-picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
-<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="/resources/plugins/iCheck/icheck.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="../../plugins/morris/morris.min.js"></script>
 <!-- FastClick -->
-<script src="/resources/plugins/fastclick/fastclick.js"></script>
+<script src="../../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="/resources/dist/js/app.min.js"></script>
+<script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="/resources/dist/js/demo.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    "use strict";
 
+    //DONUT CHART
+    var donut = new Morris.Donut({
+      element: 'sales-chart',
+      resize: true,
+      colors: ["#3c8dbc", "#f56954", "#00b656"],
+      data: [
+        {label: "Download Sales", value: 12},
+        {label: "In-Store Sales", value: 30},
+        {label: "Mail-Order Sales", value: 20}
+      ],
+      hideHover: 'auto'
+    });
+    
+  });
+</script>
 
 </body>
 </html>

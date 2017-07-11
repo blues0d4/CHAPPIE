@@ -107,22 +107,31 @@
 				<a href="/project/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
 				</li>
           </ul>
-        </li>
+        </li>        
+        
         <li class="treeview">
-          <a href="/todo/todoList">
-            <i class="fa fa-check-square-o"></i>
-            <span>To-Do List</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+          <a href="#">
+	        <i class="fa fa-check-square-o"></i><span>To-Do List</span>
+            	<span class="pull-right-container">
+             	 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-<!--           <ul class="treeview-menu"> -->
-<!--             <li><a href="#"><i class="fa fa-circle-o"></i> Top Navigation</a></li> -->
-<!--             <li><a href="#"><i class="fa fa-circle-o"></i> Boxed</a></li> -->
-<!--             <li><a href="#"><i class="fa fa-circle-o"></i> Fixed</a></li> -->
-<!--             <li><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> -->
-<!--           </ul> -->
+          <ul class="treeview-menu">
+<!--      	    <li class="active"> -->
+			<c:forEach items="${categoryList}" var="boardVO">
+					<li>
+		            <a href="/project/${project.project_name}/todo/${boardVO.category_name}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
+		            </li>
+			</c:forEach>
+				<li>
+<!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
+					<a href="/project/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+				</li>
+          </ul>
         </li>
+       
+       
+        
 <!--         <li> -->
 <!--           <a href="#"> -->
 <!--             <i class="fa fa-th"></i> <span>Widgets</span> -->
