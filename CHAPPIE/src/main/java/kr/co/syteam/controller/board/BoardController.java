@@ -107,6 +107,7 @@ public class BoardController {
 
 		List<BoardVO> boardList = boardService.boardCategoryListView(categoryDTO);
 		model.addAttribute("boardList", boardList);
+		System.out.println(boardList);
 		// System.out.println("------");
 		// System.out.println(categoryVO);
 		// System.out.println("------");

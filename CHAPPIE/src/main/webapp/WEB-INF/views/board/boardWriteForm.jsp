@@ -1,7 +1,7 @@
 <%@page import="kr.co.syteam.commons.KEYs"%>
 <%@page import="kr.co.syteam.commons.URIs"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,25 +22,25 @@
 		<form action="/project/${project.project_name }/board/${category.category_name }/boardWrite" method="post">
 			<table class="table table-bordered"> 
 				<thead>
-					<caption>╠ш╬╡╠Б</caption>
+					<caption>Й╦─Л⌠╟Й╦╟</caption>
 				</thead>
 				<tbody>
 					<tr>
-						<th>а╕╦Я:</th>
-						<td><input type="text" placeholder="а╕╦Яю╩ ют╥бго╪╪©Д. "
+						<th>Л═°К╙╘:</th>
+						<td><input type="text" placeholder="Л═°К╙╘Л²└ Л·┘К═╔М∙≤Л└╦Л ■. "
 							name="board_title" class="form-control" /></td>
 					</tr>
 					<tr>
-						<th>Ё╩©К:</th>
-						<td><textarea cols="100" placeholder="Ё╩©Кю╩ ют╥бго╪╪©Д. " rows="10"
+						<th>К┌╢Л ╘:</th>
+						<td><textarea cols="100" placeholder="К┌╢Л ╘Л²└ Л·┘К═╔М∙≤Л└╦Л ■. " rows="10"
 								name="board_contents" class="form-control"></textarea></td>
 					</tr>
 					<tr>
 <%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
 					<input type="hidden" value=${category.category_id } name = "category_id">
 					<input type="hidden" value=${login.user_id } name = "user_id">
-						<td colspan="2"><a href="/project/${project.project_name}/board/${category_name}" class="btn btn-default" style="float: left">╠ш ╦Я╥ою╦╥н ╟║╠Б</a>
-						<input type="submit" value="╠ш╬╡╠Б" class="btn btn-default" style="float: right"></td>
+						<td colspan="2"><a href="/project/${project.project_name}/board/${category_name}" class="btn btn-default" style="float: left">Й╦─ К╙╘К║²Л°╪К║° Й╟─Й╦╟</a>
+						<input type="submit" value="Й╦─Л⌠╟Й╦╟" class="btn btn-default" style="float: right"></td>
 					</tr>
 				</tbody>
 			</table>
