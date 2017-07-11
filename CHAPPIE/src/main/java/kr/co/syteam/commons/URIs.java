@@ -48,10 +48,10 @@ public class URIs {
 	public static final String URI_BOARD_VIEW = "/boardView";
 	public static final String URI_BOARD_VIEW_FULL = BOARD_DEFAULT + URI_BOARD_VIEW;
 	
-	public static final String URI_BOARD_WRITE = "/boardInsert";
+	public static final String URI_BOARD_WRITE = "/boardWrite";
 	public static final String URI_BOARD_WRITE_FULL = BOARD_DEFAULT + URI_BOARD_WRITE;
 	
-	public static final String URI_BOARD_WRITE_FORM = "/boardWrite";
+	public static final String URI_BOARD_WRITE_FORM = "/boardWriteForm";
 	public static final String URI_BOARD_WRITE_FORM_FULL = BOARD_DEFAULT + URI_BOARD_WRITE_FORM;
 	
 	public static final String URI_BOARD_UPDATE = "/boardUpdate";

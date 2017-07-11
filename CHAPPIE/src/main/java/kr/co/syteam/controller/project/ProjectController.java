@@ -43,9 +43,9 @@ public class ProjectController {
 		logger.info("doProjectView");
 		
 		//로그인이 안되어 있을 때 "main"으로 리턴
-		if(request.getSession().getAttribute("login") == null){
-			return URIs.URI_MAIN_REDIRECT;
-		}
+//		if(request.getSession().getAttribute("login") == null){
+//			return URIs.URI_MAIN_REDIRECT;
+//		}
 
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
@@ -118,7 +118,7 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value = "/project/categoryCreate")
-	public String doProjectCategoryCreate(String category_name, HttpServletRequest request) throws Exception{
+	public String doProjectCategoryCreate(@PathVariable String category_name, HttpServletRequest request) throws Exception{
 		
 		logger.info("doProjectCategoryCreate");
 

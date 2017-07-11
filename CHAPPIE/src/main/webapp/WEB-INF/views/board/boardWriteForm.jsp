@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Write something else you want</title>
+<title>CHAPPIE</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet"
@@ -19,8 +19,8 @@
 </head>
 <body>
 	<div class="container">
-		<form action="<%=URIs.URI_BOARD_WRITE_FULL%>" method="post">
-			<table class="table table-bordered">
+		<form action="/project/${project.project_name }/board/${category.category_name }/boardWrite" method="post">
+			<table class="table table-bordered"> 
 				<thead>
 					<caption>글쓰기</caption>
 				</thead>
@@ -37,7 +37,9 @@
 					</tr>
 					<tr>
 <%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
-						<td colspan="2"><a href="/project/${project.project_name}" class="btn btn-default" style="float: left">글 목록으로 가기</a>
+					<input type="hidden" value=${category.category_id } name = "category_id">
+					<input type="hidden" value=${login.user_id } name = "user_id">
+						<td colspan="2"><a href="/project/${project.project_name}/board/${category_name}" class="btn btn-default" style="float: left">글 목록으로 가기</a>
 						<input type="submit" value="글쓰기" class="btn btn-default" style="float: right"></td>
 					</tr>
 				</tbody>

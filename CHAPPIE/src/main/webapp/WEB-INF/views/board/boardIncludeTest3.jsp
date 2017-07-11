@@ -68,7 +68,7 @@
 
     <div>
     	
-		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/boardWriteForm">Write</a>
+		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/${category_name }/boardWriteForm">Write</a>
 	</div>
     <!-- END timeline item -->
 
