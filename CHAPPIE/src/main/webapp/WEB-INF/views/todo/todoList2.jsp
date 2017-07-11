@@ -37,6 +37,7 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,7 +61,7 @@
     
     <!-- Header Navbar: style can be found in header.less -->
     
-	<nav class="navbar navbar-static-top">
+   <nav class="navbar navbar-static-top">
     <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
     </nav>
   </header>
@@ -84,12 +85,12 @@
 
     <!-- Main content -->
     <section class="content">
-		<div class="col-md-7">
+      
+      <div class="col-md-7">
 		<div class="box box-primary">
             
             <!-- /.box-header -->
             <div class="box-body">
-            <div class="row">
             <div class="col-xs-3">
                 <select class="form-control input-sm" id="select" style="margin-left:20px">
                  <option>category</option>
@@ -131,7 +132,6 @@
             </div>
               </div>
               
-            </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
@@ -139,194 +139,67 @@
           </div>
 		
 		</div>
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
+       <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
     
   </footer>
 
   <!-- Control Sidebar -->
   
-	<aside class="control-sidebar control-sidebar-dark">
-		
-   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-	
- 	</aside>
+   <aside class="control-sidebar control-sidebar-dark">
+      
+       <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
+   
+    </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-	
+   
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<div class="modal fade" id="todolist_plus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-           <div class="modal-dialog">
-             <div class="modal-content">
-                 <div class="modal-header" style="height:50px">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-      </div>
-
-      <div class="modal-body">
-        <form class="form-horizontal" method="post" action="/todo/todoWrite">
-          
-       	   	<div class="modal-body">
-       	   		<table class="w3-table w3-white">
-       	   			<tr>
-       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
-       	   				<td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px">
-       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
-			         		<i class="fa fa-calendar"></i></label>
-		         		</td>
-			         	<td><div class="input-group date">
-                    <input type="text" class="form-control pull-right" id="datepicker3" name="todo_start_date">
-                  </div></td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px">
-       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
-			                <i class="fa fa-calendar"></i></label>
-		                </td>
-		                <td>
-		               		<input type="text" name="todo_end_date" class="form-control" id="datepicker4" placeholder="">
-		                </td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
-       	   				<td>
-	       	   				<select style="margin:3px" name="todo_priority">
-				                <option> 상 </option>
-				                <option> 중 </option>
-				                <option> 하 </option>
-		               		</select>
-	               		</td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
-       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요" name="todo_note"></textarea></td>
-       	   			</tr>
-       	   		</table>
-       	   		<div class="form-group" style="text-align:center">
-             		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
-             			<br/>
-	                 	<button type="submit" class="btn btn-primary">등록</button>
-	                  	<button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
-           			</div>
-           		</div>
-			</div>        
-		</form>
-      </div>
-	  </div>
-	</div>
-</div>
-
-
-
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Select2 -->
-<script src="/resources/plugins/select2/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
-<!-- date-range-picker -->
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="/resources/plugins/morris/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="/resources/plugins/knob/jquery.knob.js"></script>
+<!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
+<!-- datepicker -->
 <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
+<!-- Bootstrap WYSIHTML5 -->
+<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 <!-- FastClick -->
 <script src="/resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
-<!-- Page script -->
-<script>
-  $(function () {
-    //Initialize Select2 Elements
-    $(".select2").select2();
-
-    //Datemask dd/mm/yyyy
-    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-    //Datemask2 mm/dd/yyyy
-    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-    //Money Euro
-    $("[data-mask]").inputmask();
-
-    //Date range picker
-    $('#reservation').daterangepicker();
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-        {
-          ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          },
-          startDate: moment().subtract(29, 'days'),
-          endDate: moment()
-        },
-        function (start, end) {
-          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-        }
-    );
-
-    //Date picker
-    $('#datepicker3').datepicker({
-      autoclose: true
-    });
-    $('#datepicker4').datepicker({
-        autoclose: true
-      });
-    
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass: 'iradio_minimal-blue'
-    });
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass: 'iradio_minimal-red'
-    });
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass: 'iradio_flat-green'
-    });
-
-    //Colorpicker
-    $(".my-colorpicker1").colorpicker();
-    //color picker with addon
-    $(".my-colorpicker2").colorpicker();
-
-    //Timepicker
-    $(".timepicker").timepicker({
-      showInputs: false
-    });
-  });
-</script>
 </body>
 </html>

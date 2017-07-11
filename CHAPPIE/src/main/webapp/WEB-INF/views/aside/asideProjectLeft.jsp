@@ -132,7 +132,7 @@
 <!--           </a> -->
 <!--         </li> -->
         <li class="treeview">
-          <a href="#">
+          <a href="/chart/progress">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span> 
             <span class="pull-right-container">

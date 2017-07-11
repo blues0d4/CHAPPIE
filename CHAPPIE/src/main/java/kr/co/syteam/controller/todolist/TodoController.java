@@ -39,7 +39,7 @@ public class TodoController {
 		System.out.println("@@@ TodoVO : " + todoList);
 		model.addAttribute("todoList", todoList);
 		
-		return "/todo/todoList2";
+		return "/todo/todoList";
 	}	
 	
 	@RequestMapping(value = "/todoView", method= RequestMethod.GET)
@@ -84,5 +84,7 @@ public class TodoController {
 		
 		return todoService.todoCompleteService(todo_no);
 	}
+	
+	
 	
 }  
