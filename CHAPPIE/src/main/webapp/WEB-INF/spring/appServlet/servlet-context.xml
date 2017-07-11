@@ -55,6 +55,10 @@
 <!-- 			<exclude-mapping path="/user**/**" /> -->
 			<beans:bean class="kr.co.syteam.interceptor.user.AuthInterceptor"/>
 		</interceptor>
+<!-- 		<interceptor> -->
+<!-- 			<mapping path="/project*/*/board/*"/> -->
+<!-- 			<beans:bean class="kr.co.syteam.interceptor.board.BoardAuthInterceptor"/> -->
+<!-- 		</interceptor> -->
 	</interceptors>
 	
 	

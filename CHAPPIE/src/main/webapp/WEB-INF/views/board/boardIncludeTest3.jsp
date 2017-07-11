@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <ul class="timeline">
 
@@ -33,11 +34,19 @@
     </li>
  <!-- timeline time label -->
  				<c:forEach items="${boardList }" var="boardVO" varStatus="status">
+ 				
+ 				<c:choose>
+ 				
+                <c:when test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
+		
     <li class="time-label">
         <span class="bg-red">
-           ${boardVO.board_write_date}
+           ${boardVO.board_write_date_yyyy}, ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
         </span>
     </li>
+				</c:when>
+ 				</c:choose>
+				
     <!-- /.timeline-label -->
 
     <!-- timeline item -->
@@ -50,7 +59,13 @@
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>${boardVO.board_title }</h3>
 
             <div class="timeline-body">
-                ...
+                ...test0122555511
+<%--                 	 <c:if test="${!status.last }"> --%>
+<%--                 	 </c:if> --%>
+<%--                 <c:if test="${boardList[status.index+1].board_title ne null}"> --%>
+				haha
+<%-- 				</c:if> --%>
+<%-- 		${boardList[status.index].user_id } --%>
                 Content goes here
             </div>
 
@@ -68,7 +83,7 @@
 
     <div>
     	
-		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/boardWriteForm">Write</a>
+		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/${category_name }/boardWriteForm">Write</a>
 	</div>
     <!-- END timeline item -->
 
