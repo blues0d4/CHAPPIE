@@ -54,7 +54,14 @@
             <br>
             <br>
             <br>
+            <c:choose>
+            <c:when test="${empty login }">
+            <a href="/userLoginForm" class="btn btn-dark btn-lg">Get Started</a>
+            </c:when>
+            <c:otherwise>
             <a href="/projectList" class="btn btn-dark btn-lg">Get Started</a>
+            </c:otherwise>
+            </c:choose>
 <!--             <br> -->
 <!--             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a> -->
 <!--             <br> -->
