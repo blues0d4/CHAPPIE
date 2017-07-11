@@ -20,10 +20,10 @@
 <body>
 	<div class="container">
 		<form action="/project/${project.project_name }/board/${category.category_name }/boardWrite" method="post">
-			<table class="table table-bordered"> 
-				<thead>
-					<caption>글쓰기</caption>
-				</thead>
+			<table class="table table-bordered">
+			<thead>
+			<h3>글 작성</h3>
+			</thead>
 				<tbody>
 					<tr>
 						<th>제목:</th>
@@ -39,8 +39,10 @@
 <%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
 					<input type="hidden" value=${category.category_id } name = "category_id">
 					<input type="hidden" value=${login.user_id } name = "user_id">
-						<td colspan="2"><a href="/project/${project.project_name}/board/${category_name}" class="btn btn-default" style="float: left">글 목록으로 가기</a>
-						<input type="submit" value="글쓰기" class="btn btn-default" style="float: right"></td>
+					<div>
+						<td colspan="2"><input type="submit" value="Write" class="btn btn-default" style="float: left">
+			<a href="/project/${project.project_name}/board/${category.category_name}" class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
+					</div>
 					</tr>
 				</tbody>
 			</table>

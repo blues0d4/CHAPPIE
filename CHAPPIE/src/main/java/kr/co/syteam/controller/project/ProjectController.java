@@ -89,7 +89,7 @@ public class ProjectController {
 		logger.info("doProjectCreate");
 		
 		projectService.projectManagerInsert(projectDTO, request);
-		return URIs.URI_MAIN_REDIRECT;
+		return "redirect:/projectList";
 	}
 	
 	//프로젝트 리스트

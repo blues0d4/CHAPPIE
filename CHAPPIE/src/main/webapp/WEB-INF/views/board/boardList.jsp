@@ -119,7 +119,7 @@
 		
     <li class="time-label">
         <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}, ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
         </span>
     </li>
 				</c:when>

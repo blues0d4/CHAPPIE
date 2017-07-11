@@ -42,6 +42,9 @@
           			</c:otherwise>
 				</c:choose>
 			</c:forEach>
+				<li>
+         			<a href="/projectCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
+       			</li>
           </ul>
        </li>
          <li class="treeview">
@@ -71,11 +74,11 @@
         <li class="header">MENU</li>
 <!--         <li class="header"><br><br> </li> -->
 <!--         <li class="treeview"> -->
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
 			<c:choose>
 				<c:when test="${empty category}">
-	         	   <i class="fa fa-slack"></i> <span>#CATEGORIES </span>
+	         	   <i class="fa fa-slack"></i> <span>Timeline </span>
 	            </c:when>
 	            <c:otherwise>
            			<i class="fa fa-slack"></i> <span>#${category.category_name}</span>
@@ -111,7 +114,7 @@
         
         <li class="treeview">
           <a href="#">
-	        <i class="fa fa-check-square-o"></i><span>To-Do List</span>
+	        <i class="fa fa-check-square-o"></i> <span>To-Do List</span>
             	<span class="pull-right-container">
              	 <i class="fa fa-angle-left pull-right"></i>
             </span>
