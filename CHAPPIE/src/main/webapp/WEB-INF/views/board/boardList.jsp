@@ -72,8 +72,9 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) --> 
     <section class="content-header">
-    
-      <h1> #${category.category_name }
+    <div>
+      <h1> <b>#${category.category_name }</b>
+    </div>
 <!--         <small>Control panel</small> -->
       </h1>
 
@@ -96,13 +97,12 @@
         <!-- timeline icon -->
         <i class="fa fa-envelope bg-blue"></i>
         <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+            <span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
 
-            <h3 class="timeline-header"><a href="#">Support Team</a> ...</h3>
+            <h3 class="timeline-header"><a href="#">SY Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
 
             <div class="timeline-body">
-                ...
-                Content goes here
+                	<b>#${category.category_name}</b> 게시판 공지입니다.
             </div>
 
             <div class="timeline-footer">
@@ -130,7 +130,7 @@
     <!-- timeline item -->
     <li>
         <!-- timeline icon -->
-        <i class="fa fa-envelope bg-blue"></i>
+        <i class="fa fa-user bg-aqua"></i>
         <div class="timeline-item">
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
