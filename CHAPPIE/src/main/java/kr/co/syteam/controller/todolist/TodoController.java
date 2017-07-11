@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +19,7 @@ import kr.co.syteam.domain.todo.vo.TodoVO;
 import kr.co.syteam.service.todo.TodoService;
 
 @Controller
-@RequestMapping("/todo")
+@RequestMapping("/project/*/todo")
 public class TodoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(TodoController.class);
@@ -26,8 +27,8 @@ public class TodoController {
 	@Autowired
 	private TodoService todoService;
 	
-	@RequestMapping(value = "/todoList", method = RequestMethod.GET)
-	public String todoList(Model model, HttpServletRequest request) throws Exception {
+	@RequestMapping(value = "/{category_name}", method = RequestMethod.GET)
+	public String todoList(@PathVariable("category_name") String category_name, Model model, HttpServletRequest request) throws Exception {
 		logger.info("This is TodoList!!");
 		
 //		String category_id = (String)request.getSession().getAttribute("category_id");
@@ -39,7 +40,7 @@ public class TodoController {
 		System.out.println("@@@ TodoVO : " + todoList);
 		model.addAttribute("todoList", todoList);
 		
-		return "/todo/todoList2";
+		return "/todo/todoList";
 	}	
 	
 	@RequestMapping(value = "/todoView", method= RequestMethod.GET)
@@ -84,5 +85,7 @@ public class TodoController {
 		
 		return todoService.todoCompleteService(todo_no);
 	}
+	
+	
 	
 }  
