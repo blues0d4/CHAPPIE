@@ -6,6 +6,8 @@
  <!DOCTYPE html>
 <html>
 <head>
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CHAPPIE</title>
@@ -82,23 +84,22 @@
     <section class="content">
 		
 		<div class="box box-primary">
-            <div class="box-header ui-sortable-handle" style="cursor: move;">
-              <i class="ion ion-clipboard"></i>
-
-              <h3 class="box-title">To Do List</h3>
-
-              <div class="box-tools pull-right">
-                <ul class="pagination pagination-sm inline">
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
-              </div>
-            </div>
+            
             <!-- /.box-header -->
             <div class="box-body">
+            <div class="col-xs-2">
+                <select class="form-control input-sm" id="select" style="margin-left:20px">
+                 <option>category</option>
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>
+               </select>
+           	  </div>
+           	  <div class="col-xs-2">
+               	<button type="button" style="w3-indigo float" class="btn btn-default" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus-circle"></i></button>
+              </div>
               <ul class="todo-list ui-sortable">
                 <li>
                   <!-- drag handle -->
