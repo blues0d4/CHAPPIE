@@ -35,7 +35,7 @@
           			</c:when>
           			<c:otherwise>
 					<li>
-         			<a href="/project/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a>
+         			<a href="/project/${projectVO.project_name}"><i class="fa fa-folder"></i> ${projectVO.project_name}</a>
           			</li>
           			
           			
@@ -91,12 +91,12 @@
 	            <c:choose>
 				<c:when test="${boardVO.category_name eq category.category_name}">
 				<li class="active">
-				<a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+				<a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
            		 </li>
 				</c:when>
-				<c:otherwise>
+				<c:otherwise> 
 				<li>
-	            <a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-circle-o"></i> #${boardVO.category_name}</a>
+	            <a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
 	            </li>
 				</c:otherwise>
 			</c:choose>
@@ -134,7 +134,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>Charts</span> 
             <span class="pull-right-container">
 <!--               <i class="fa fa-angle-left pull-right"></i> -->
             </span>
