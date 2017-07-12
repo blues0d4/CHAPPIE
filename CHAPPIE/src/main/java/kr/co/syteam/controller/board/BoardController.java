@@ -60,7 +60,7 @@ public class BoardController {
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
-		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
+		List<CategoryVO> categoryList= projectService.projectCategoryList(project_name);
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
@@ -72,7 +72,7 @@ public class BoardController {
 		categoryDTO.setCategory_name(category_name);
 		categoryDTO.setProject_name(project_name);
 
-		CategoryVO categoryVO = boardService.boardCategorySelect(categoryDTO);
+		CategoryVO categoryVO = projectService.projectCategorySelect(categoryDTO);
 		if (categoryVO == null) {
 			return URIs.URI_MAIN_REDIRECT;
 		}

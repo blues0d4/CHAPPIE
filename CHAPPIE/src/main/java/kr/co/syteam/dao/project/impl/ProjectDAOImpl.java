@@ -63,5 +63,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return sqlSession.selectOne(namespace+"projectCategorySelect", categoryDTO);
 	}
 
+	@Override
+	public List<CategoryVO> projectCategoryList(String project_name) throws Exception {
+		return sqlSession.selectList(namespace+"projectCategoryList", project_name);
+	}
+
 
 }

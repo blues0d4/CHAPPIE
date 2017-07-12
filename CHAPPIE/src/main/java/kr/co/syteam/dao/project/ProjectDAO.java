@@ -18,4 +18,5 @@ public interface ProjectDAO {
 	public ProjectVO projectSelect(ProjectSelectDTO projectSelectDTO) throws Exception; 
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception;
 	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
+	public List<CategoryVO> projectCategoryList(String project_name) throws Exception;
 }

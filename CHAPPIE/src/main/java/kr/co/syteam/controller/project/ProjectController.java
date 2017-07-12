@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.syteam.commons.URIs;
-import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -65,7 +65,7 @@ public class ProjectController {
 		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
 		
-		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
+		List<CategoryVO> categoryList= projectService.projectCategoryList(project_name);
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");

@@ -72,7 +72,7 @@
 		]]>
 	</select>
 	
-	<select id="projectCategoryList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+	<select id="projectCategoryList" resultType="kr.co.syteam.domain.category.vo.CategoryVO">
 		<![CDATA[
 			SELECT CATEGORY_NAME
 			FROM CATEGORY_TABLE C, PROJECT_TABLE P
@@ -82,13 +82,4 @@
 		]]>
 	</select>
 	
-	<select id="projectCategoryList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
-		<![CDATA[
-			SELECT CATEGORY_NAME
-			FROM CATEGORY_TABLE C, PROJECT_TABLE P
-			WHERE C.PROJECT_ID = P.PROJECT_ID
-			AND P.PROJECT_name = #{project_name}
-		    ORDER BY P.PROJECT_ID DESC
-		]]>
-	</select>
 </mapper>

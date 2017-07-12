@@ -67,15 +67,13 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public CategoryVO boardCategorySelect(CategoryDTO categoryDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception {
+		return projectDAO.projectCategorySelect(categoryDTO);
 	}
 
 	@Override
-	public List<ProjectVO> boardCategoryList(String project_name) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CategoryVO> projectCategoryList(String project_name) throws Exception {
+		return projectDAO.projectCategoryList(project_name);
 	}
 
 }

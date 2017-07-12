@@ -18,6 +18,6 @@ public interface ProjectService {
 	public List<ProjectVO> projectList(String user_id) throws Exception;
 	public ProjectVO projectSelect(ProjectSelectDTO projectSelectDTO) throws Exception; 
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception;
-	public CategoryVO boardCategorySelect(CategoryDTO categoryDTO) throws Exception;
-	public List<ProjectVO> boardCategoryList(String project_name) throws Exception;
+	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
+	public List<CategoryVO> projectCategoryList(String project_name) throws Exception;
 }
