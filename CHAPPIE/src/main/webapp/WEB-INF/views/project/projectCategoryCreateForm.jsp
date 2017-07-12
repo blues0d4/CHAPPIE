@@ -81,7 +81,32 @@
     <section class="content" >
 		
 <!-- 		content  -->
-		<jsp:include page="projectCategoryCreateFormInclude.jsp" flush="false" />
+
+  <!-- Contact section -->
+   <div class="row">
+   <div class="col-md-8">
+     <div class="box box-primary">
+            <div class="box-header with-border">
+              <h1 class="box-title">카테고리 생성</h1>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="/project/categoryCreate">
+              <div class="box-body">
+                <div class="form-group">
+                  <label>카테고리 이름</label>
+                  <input type="text" class="form-control" id="category_name" name="category_name" placeholder="카테고리 이름">
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+   </div>
+   </div>
     </section>
     <!-- /.content -->
   </div>

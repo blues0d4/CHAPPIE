@@ -118,7 +118,7 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value = "/project/categoryCreate")
-	public String doProjectCategoryCreate(@PathVariable String category_name, HttpServletRequest request) throws Exception{
+	public String doProjectCategoryCreate(String category_name, HttpServletRequest request) throws Exception{
 		
 		logger.info("doProjectCategoryCreate");
 
