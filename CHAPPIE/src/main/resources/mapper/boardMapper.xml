@@ -42,7 +42,7 @@
 			FROM CATEGORY_TABLE C, PROJECT_TABLE P
 			WHERE C.PROJECT_ID = P.PROJECT_ID
 			AND P.PROJECT_name = #{project_name}
-		    ORDER BY P.PROJECT_ID ASC
+		    ORDER BY P.PROJECT_ID DESC
 		]]>
 	</select>
 	
@@ -66,7 +66,7 @@
 			WHERE B.CATEGORY_ID = C.CATEGORY_ID
 			AND C.CATEGORY_NAME = #{category_name}
 			AND P.PROJECT_NAME = #{project_name}
-			ORDER BY BOARD_NO 
+			ORDER BY BOARD_NO DESC
 		]]>
 	</select>
 	

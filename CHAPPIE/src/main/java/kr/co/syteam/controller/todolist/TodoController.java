@@ -14,12 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.syteam.commons.URIs;
+import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
+import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
+import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.project.ProjectService;
 import kr.co.syteam.service.todo.TodoService;
 
 @Controller
-@RequestMapping("/project/*/todo")
+//@RequestMapping("")
 public class TodoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(TodoController.class);
@@ -27,18 +32,34 @@ public class TodoController {
 	@Autowired
 	private TodoService todoService;
 	
-	@RequestMapping(value = "/{category_name}", method = RequestMethod.GET)
-	public String todoList(@PathVariable("category_name") String category_name, Model model, HttpServletRequest request) throws Exception {
+	@Autowired
+	private ProjectService projectService;
+	
+	@RequestMapping(value = "/project/{project_name}/todo/{category_name}", method = RequestMethod.GET)
+	public String todoList(@PathVariable("project_name")String project_name, @PathVariable("category_name") String category_name, Model model, HttpServletRequest request) throws Exception {
 		logger.info("This is TodoList!!");
 		
-//		String category_id = (String)request.getSession().getAttribute("category_id");
-		
-		String category_id = "2023";
-		
-		List<TodoVO> todoList = todoService.todoListViewService(category_id);
+		// 세션에서 user_id를 가져온다.
+		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+		String user_id = loginVO.getUser_id();
 
-		System.out.println("@@@ TodoVO : " + todoList);
-		model.addAttribute("todoList", todoList);
+		// DTO에 project_name과 user_id를 넣어준다.
+		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
+		projectSelectDTO.setProject_name(project_name);
+		projectSelectDTO.setUser_id(user_id);
+
+		// 선택한 project가 있는지 체크
+		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
+		// 없으면 "main"으로 리턴
+		if (projectVO == null) {
+			return URIs.URI_MAIN_REDIRECT;
+		}
+		
+		//여기부터 수정해야함
+//		List<TodoVO> todoList = todoService.todoListViewService(category_id);
+//
+//		System.out.println("@@@ TodoVO : " + todoList);
+//		model.addAttribute("todoList", todoList);
 		
 		return "/todo/todoList";
 	}	

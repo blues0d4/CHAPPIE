@@ -42,7 +42,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
 
   <header class="main-header">
@@ -141,8 +141,8 @@
             </div>
 
             <div class="timeline-footer">
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Comments</button>
-                <div id="demo" class="collapse">
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Comments</button>
+                <div id="demo${status.index }" class="collapse">
 	   				 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
 	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

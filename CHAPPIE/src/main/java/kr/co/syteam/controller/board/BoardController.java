@@ -36,42 +36,16 @@ public class BoardController {
 	@Autowired
 	private ProjectService projectService;
 
-	// @RequestMapping(value="/")
-	// public String doBoardList(String board_no, Model model)throws Exception{
-	//
-	// BoardVO boardVO = boardService.boardView(board_no);
-	//
-	// if(boardVO == null){
-	//
-	// }
-	// model.addAttribute("board", boardVO);
-	// return "board/boardView";
-	// }
-
-	// @RequestMapping(value = URIs.BOARD_DEFAULT, method = RequestMethod.GET)
-	// public String doBoardList(Model model, HttpServletRequest request) throws
-	// Exception {
-	// logger.info("doBoardList");
-	//
-	// List<BoardVO> boardList = boardService.boardList();
-	// model.addAttribute("boardList", boardList);
-	// System.out.println(boardList);
-	//// return URIs.URI_BOARD_LIST_FULL;
-	//
-	// ProjectVO projectVO =
-	// (ProjectVO)request.getSession().getAttribute("project");
-	// System.out.println(projectVO);
-	//
-	// return "/board/boardList";
-	// }
 	@RequestMapping(value = "/project/{project_name}/board/{category_name}")
 	public String doCategoryView(@PathVariable("project_name") String project_name, @PathVariable("category_name") String category_name, Model model,
 			HttpServletRequest request) throws Exception {
 		logger.info("doCategoryView");
 
+		//세션에서 user_id를 가져온다.
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		
+		//DTO에 project_name과 user_id를 넣어준다.
 		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
 		projectSelectDTO.setProject_name(project_name);
 		projectSelectDTO.setUser_id(user_id);
