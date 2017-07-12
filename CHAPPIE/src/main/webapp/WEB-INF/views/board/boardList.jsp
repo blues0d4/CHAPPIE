@@ -87,7 +87,7 @@
     <!-- timeline time label -->
     <li class="time-label">
         <span class="bg-red">
-            10 Feb. 2014
+            2017년 2월 20일 월요일
         </span>
     </li>
     <!-- /.timeline-label -->
