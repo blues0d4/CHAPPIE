@@ -60,7 +60,6 @@ public class BoardController {
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
-		
 		List<BoardVO> categoryList= boardService.boardCategoryList(project_name);
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);

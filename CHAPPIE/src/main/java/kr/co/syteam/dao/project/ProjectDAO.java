@@ -3,6 +3,8 @@ package kr.co.syteam.dao.project;
 import java.util.List;
 
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
+import kr.co.syteam.domain.category.dto.CategoryDTO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -15,4 +17,5 @@ public interface ProjectDAO {
 	public List<ProjectVO> projectList(String project_id) throws Exception;
 	public ProjectVO projectSelect(ProjectSelectDTO projectSelectDTO) throws Exception; 
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception;
+	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
 }

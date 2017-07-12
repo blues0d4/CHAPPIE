@@ -61,4 +61,34 @@
 			VALUES(CATEGORY_SEQ.NEXTVAL, #{category_name}, #{project_id})
 		]]>
 	</insert>
+	
+	<select id="projectCategorySelect" resultType="kr.co.syteam.domain.category.vo.CategoryVO">
+		<![CDATA[
+			SELECT C.CATEGORY_ID, C.CATEGORY_NAME
+			FROM CATEGORY_TABLE C, PROJECT_TABLE P
+			WHERE C.PROJECT_ID = P.PROJECT_ID
+			AND P.PROJECT_NAME = #{project_name}
+			AND C.CATEGORY_NAME = #{category_name}
+		]]>
+	</select>
+	
+	<select id="projectCategoryList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+		<![CDATA[
+			SELECT CATEGORY_NAME
+			FROM CATEGORY_TABLE C, PROJECT_TABLE P
+			WHERE C.PROJECT_ID = P.PROJECT_ID
+			AND P.PROJECT_name = #{project_name}
+		    ORDER BY P.PROJECT_ID DESC
+		]]>
+	</select>
+	
+	<select id="projectCategoryList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+		<![CDATA[
+			SELECT CATEGORY_NAME
+			FROM CATEGORY_TABLE C, PROJECT_TABLE P
+			WHERE C.PROJECT_ID = P.PROJECT_ID
+			AND P.PROJECT_name = #{project_name}
+		    ORDER BY P.PROJECT_ID DESC
+		]]>
+	</select>
 </mapper>

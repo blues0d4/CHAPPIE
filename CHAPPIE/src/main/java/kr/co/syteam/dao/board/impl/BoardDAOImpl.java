@@ -45,10 +45,7 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectList(namespace+"boardCategoryList", project_name);
 	}
 
-	@Override
-	public CategoryVO boardCategorySelect(CategoryDTO categoryDTO) throws Exception {
-		return sqlSession.selectOne(namespace+"boardCategorySelect", categoryDTO);
-	}
+	
 
 	@Override
 	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception {

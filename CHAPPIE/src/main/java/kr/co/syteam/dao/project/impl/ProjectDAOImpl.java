@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.syteam.dao.project.ProjectDAO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
+import kr.co.syteam.domain.category.dto.CategoryDTO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -54,6 +56,11 @@ public class ProjectDAOImpl implements ProjectDAO {
 	@Override
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception {
 		sqlSession.insert(namespace+"projectCategoryCreate", categoryCreateDTO);
+	}
+	
+	@Override
+	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"projectCategorySelect", categoryDTO);
 	}
 
 
