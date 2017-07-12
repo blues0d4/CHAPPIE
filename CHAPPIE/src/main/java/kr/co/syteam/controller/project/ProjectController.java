@@ -102,6 +102,11 @@ public class ProjectController {
 		String user_id = loginVO.getUser_id();
 		List<ProjectVO> projectList = projectService.projectList(user_id);
 		System.out.println(projectList);
+		if(projectList.isEmpty()){
+			return "redirect:/projectCreateForm";
+		}
+		
+		System.out.println(projectList);
 //		model.addAttribute("projectList", projectList);
 		request.getSession().setAttribute("projectList", projectList);
 		return URIs.URI_PROJECT_LIST_FULL;
