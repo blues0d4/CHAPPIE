@@ -46,14 +46,18 @@
 		white-space: pre;
 	}
 	
-	body {
-		font: 16px/1.5 sans-serif;
-	}
+/* 	body { */
+/* 		font: 16px/1.5 sans-serif; */
+/* 	} */
 	
 	/* Show only 4 lines in smaller screens */
 	article {
 		max-height: 6em; /* (4 * 1.5 = 6) */
 	}
+	
+.fixedbutton{position:relative;margin:0 1.25rem}
+#msg_input{overflow:auto;margin:0;width:100%;min-height:42px;height:38px;max-height:180px;border:2px solid #E0E0E0;border-radius:.375rem;outline:0;background:#fff;resize:none;box-shadow:none;color:#3D3C40;font-family:Slack-Lato,appleLogo,sans-serif;font-size:.9375rem;line-height:1.2rem;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto;padding:9px 30px 10px 50px}
+
 </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
@@ -168,7 +172,7 @@
     </li>
 				</c:forEach>
 
-    <div>
+    <div class="fixedbutton">
 		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/${category_name }/boardWriteForm">Write</a>
 	
 	</div>
@@ -197,6 +201,7 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+    
 </div>
 	
 <!-- ./wrapper -->
@@ -243,7 +248,7 @@
 <script src="/resources/js/readmore.js"></script> 
 <script>
     $('article').readmore({
-        	blockCSS: 'display: block; width: 100%;',
+//         	blockCSS: 'display: block; width: 100%;',
 //         	moreLink: '<span><button type="button" class="btn btn-info">Read More</button></span>',
 //       	  lessLink: '<span><button type="button" class="btn btn-info" style="width:10%;">Close</button></span>'
       		
@@ -254,5 +259,6 @@
     
     
   </script>
+  <!-- Custom Theme JavaScript -->
 </body>
 </html>

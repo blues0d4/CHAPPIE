@@ -1,7 +1,5 @@
 package kr.co.syteam.controller.todolist;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
