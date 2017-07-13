@@ -27,13 +27,13 @@
 
   var readmore = 'readmore',
       defaults = {
-        speed: 100,
+        speed: 10,
         collapsedHeight: 200,
         heightMargin: 16,
-//        moreLink: '<a href="#">Read More</a>',
-        moreLink: '<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Read More</button>',
-//        lessLink: '<a href="#">Close</a>',
-        lessLink: '<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Close</button>',
+        moreLink: '<a href="#">Read More</a>',
+//        moreLink: '<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Read More</button>',
+        lessLink: '<a href="#">Close</a>',
+//        lessLink: '<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Close</button>',
         embedCSS: true,
         blockCSS: 'display: block; width: 100%;',
         startOpen: false,

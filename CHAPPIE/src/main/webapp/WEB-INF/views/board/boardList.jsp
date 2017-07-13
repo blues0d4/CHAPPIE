@@ -41,6 +41,20 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <style>
+	p {
+		white-space: pre;
+	}
+	
+	body {
+		font: 16px/1.5 sans-serif;
+	}
+	
+	/* Show only 4 lines in smaller screens */
+	article {
+		max-height: 6em; /* (4 * 1.5 = 6) */
+	}
+</style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -138,42 +152,7 @@
 
             <div class="timeline-body">
             <article>
-			<p>
-			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	  			
-			</p>
+			<p>${boardVO.board_contents }</p>
 			</article>
             </div>
 
@@ -261,15 +240,19 @@
 <script src="/resources/dist/js/demo.js"></script>
 
 
-<script src="/resources/Readmore.js/Readmore.js-master/readmore.js"></script> 
+<script src="/resources/js/readmore.js"></script> 
 <script>
-    $('article').readmore({maxHeight: 216});
-    $('article').readmore({embedCSS: false});
     $('article').readmore({
-    	  speed: 75,
-    	  moreLink: '<button type="button" class="btn btn-info" data-toggle="collapse">Close</button>',
-    	  lessLink: '<a href="#">Read less</a>'
-    	});
+        	blockCSS: 'display: block; width: 100%;',
+//         	moreLink: '<span><button type="button" class="btn btn-info">Read More</button></span>',
+//       	  lessLink: '<span><button type="button" class="btn btn-info" style="width:10%;">Close</button></span>'
+      		
+      	  moreLink: '<span>...<a href="#">Read more</a></span>',
+      	  lessLink: '<span><a href="#">Close</a></span>'
+      
+    });
+    
+    
   </script>
 </body>
 </html>

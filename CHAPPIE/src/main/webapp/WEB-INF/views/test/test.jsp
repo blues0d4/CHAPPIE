@@ -11,7 +11,7 @@
 
 <body>
 <div id="container">
-<h1>Demo3</h1>
+<h1>Demo4</h1>
 <section id="demo">
 <article class="slide">
 <h2>Artisanal Narwahls</h2> 
