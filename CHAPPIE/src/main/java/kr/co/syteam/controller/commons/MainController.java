@@ -23,7 +23,7 @@ public class MainController {
 		logger.info("doMain");
 		
 		
-		return URIs.URI_MAIN_FULL;
+		return URIs.URI_MAIN_PAGE;
 	}
 	
 }

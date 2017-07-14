@@ -2,14 +2,16 @@ package kr.co.syteam.commons;
 
 public class PAGEs {
 	
-	private static final String default_path = "../../views";
+	private static final String default_path = "/WEB-INF/views/";
 	private static final String nav_path = default_path + "/nav";
 	private static final String aside_path = default_path + "/aside";
 	private static final String error_path = default_path + "/error";
 	private static final String footer_path = default_path + "/footer";
 	private static final String todo_path = default_path + "/todo";
 	private static final String board_path = default_path + "/board";
+	private static final String project_path = default_path + "/project";
 	
+	public static final String VIEW_PROJECT_MAIN = project_path + "/projectMain.jsp";
 	
 	public static final String VIEW_NAV_MAIN = nav_path + "/navMain.jsp";
 	public static final String VIEW_NAV_PROJECT= nav_path + "/navProject.jsp";

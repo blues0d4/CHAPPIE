@@ -53,7 +53,7 @@
 						<tbody>
 							<c:forEach items="${ projectList }" var="projectVO">
 								<tr>
-									<td><a href="/project/${projectVO.project_name }">${projectVO.project_name }</a></td>
+									<td><a href="/project/${projectVO.project_id }">${projectVO.project_name }</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

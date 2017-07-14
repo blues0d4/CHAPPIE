@@ -37,10 +37,10 @@ public class ProjectController {
 	
 	//프로젝트 메인
 	//프로젝트 선택
-	@RequestMapping(value = "/project/{project_name}")
-	public String doProjectView(@PathVariable("project_name") String project_name, Model model, HttpServletRequest request)throws Exception{
+	@RequestMapping(value = URIs.URI_PROJECT_MAIN)
+	public String doProjectView(@PathVariable("project_id") String project_id, Model model, HttpServletRequest request)throws Exception{
 	
-		logger.info("doProjectView");
+		logger.info("doProjectMain");
 		
 		//로그인이 안되어 있을 때 "main"으로 리턴
 //		if(request.getSession().getAttribute("login") == null){
@@ -51,25 +51,25 @@ public class ProjectController {
 		String user_id = loginVO.getUser_id();
 		
 		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
-		projectSelectDTO.setProject_name(project_name);
+		projectSelectDTO.setProject_id(project_id);
 		projectSelectDTO.setUser_id(user_id);
 		
 		//선택한 project가 있는지 체크
 		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
 		//없으면 "main"으로 리턴
 		if(projectVO == null){
-			return URIs.URI_MAIN_REDIRECT;
+			return "redirect:"+URIs.URI_MAIN;
 		}
 //		model.addAttribute("project", projectVO);
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
 		System.out.println(projectVO);
 		
-		List<CategoryVO> categoryList= projectService.projectCategoryList(project_name);
+		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
-		return URIs.URI_PROJECT_MAIN_FULL;
+		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
 	
 	//프로젝트 생성 폼
@@ -79,7 +79,7 @@ public class ProjectController {
 		logger.info("doProjectCreateForm");
 		
 		
-		return URIs.URI_PROJECT_CREATE_FORM_FULL;
+		return URIs.URI_PROJECT_CREATE_FORM_PAGE;
 	}
 	
 	//프로젝트 생성
@@ -89,7 +89,7 @@ public class ProjectController {
 		logger.info("doProjectCreate");
 		
 		projectService.projectManagerInsert(projectDTO, request);
-		return "redirect:/projectList";
+		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 	
 	//프로젝트 리스트
@@ -103,26 +103,26 @@ public class ProjectController {
 		List<ProjectVO> projectList = projectService.projectList(user_id);
 		System.out.println(projectList);
 		if(projectList.isEmpty()){
-			return "redirect:/projectCreateForm";
+			return "redirect:"+URIs.URI_PROJECT_CREATE_FORM;
 		}
 		
 		System.out.println(projectList);
 //		model.addAttribute("projectList", projectList);
 		request.getSession().setAttribute("projectList", projectList);
-		return URIs.URI_PROJECT_LIST_FULL;
+		return URIs.URI_PROJECT_LIST_PAGE;
  
 	}
 	
 	//프로젝트 카테고리 추가 Form
-	@RequestMapping(value = "/project/{project_name}/categoryCreateForm")
+	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_CREATE_FORM)
 	public String doProjectCategoryCreateForm() throws Exception{
 		
 		logger.info("doProjectCategoryCreateForm");
 
-		return "/project/projectCategoryCreateForm";
+		return URIs.URI_PROJECT_CATEGORY_CREATE_FORM_PAGE;
 	}
 	
-	@RequestMapping(value = "/project/categoryCreate")
+	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_CREATE)
 	public String doProjectCategoryCreate(String category_name, HttpServletRequest request) throws Exception{
 		
 		logger.info("doProjectCategoryCreate");

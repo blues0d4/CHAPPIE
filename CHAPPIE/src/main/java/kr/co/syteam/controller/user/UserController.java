@@ -31,7 +31,7 @@ public class UserController {
 
 		// return "/user/userJoin";
 		logger.info("doUserJoinForm");
-		return URIs.URI_USER_JOIN_FORM_FULL;
+		return URIs.URI_USER_JOIN_FORM_PAGE;
 	}
 
 	// 회원가입 (테스트 완료)
@@ -42,7 +42,7 @@ public class UserController {
 		System.out.println(joinResult);
 
 		logger.info("doUserJoin");
-		return URIs.URI_MAIN_REDIRECT;
+		return "redirect:"+URIs.URI_MAIN;
 		// return URIs.URI_JOINUSER_FULL;
 	}
 
@@ -53,7 +53,7 @@ public class UserController {
 
 		// return "/user/userJoin";
 		logger.info("doLoginForm");
-		return URIs.URI_USER_LOGIN_FORM_FULL;
+		return URIs.URI_USER_LOGIN_FORM_PAGE;
 	}
 
 	// 로그인 (테스트 완료)
@@ -71,7 +71,7 @@ public class UserController {
 		
 		
 //		return URIs.URI_MAIN_REDIRECT;
-		return "redirect:/projectList";
+		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 
 	// 회원정보 수정 폼 (테스트 완료)
@@ -80,7 +80,7 @@ public class UserController {
 
 		// return "/user/userJoin";
 		logger.info("doModifyForm");
-		return URIs.URI_USER_MODIFY_FORM_FULL;
+		return URIs.URI_USER_MODIFY_FORM_PAGE;
 	}
 
 	// 회원정보 수정 (테스트 미완료)
@@ -90,7 +90,7 @@ public class UserController {
 		int modifyResult = userService.userModify(userDTO);
 
 		logger.info("doModify");
-		return URIs.URI_MAIN_REDIRECT;
+		return "redirect:"+URIs.URI_MAIN;
 	}
 
 	// 로그아웃 (테스트 완료)
@@ -100,7 +100,7 @@ public class UserController {
 		logger.info("doLogout");
 		
 		request.getSession().invalidate();
-		return URIs.URI_MAIN_REDIRECT;
+		return "redirect:"+URIs.URI_MAIN;
 	}
 	
 	@RequestMapping(value="/idCheck", method=RequestMethod.GET)
