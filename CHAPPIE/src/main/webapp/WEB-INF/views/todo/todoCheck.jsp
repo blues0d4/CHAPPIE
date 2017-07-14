@@ -125,7 +125,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-              	<a href="/todo/todoList" class="btn btn-default">Cancel</a>
+              	<a href="/project/${project.project_id }/todo/${category.category_id }" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-info pull-right">Modify</button>
               </div>
               <!-- /.box-footer -->
