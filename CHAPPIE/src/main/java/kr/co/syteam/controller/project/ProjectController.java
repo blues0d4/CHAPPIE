@@ -129,14 +129,14 @@ public class ProjectController {
 
 		ProjectVO projectVO = (ProjectVO) request.getSession().getAttribute("project");
 		String project_id = projectVO.getProject_id();
-		String project_name = projectVO.getProject_name();
-		project_name = URLEncoder.encode(project_name, "UTF-8");
+//		String project_name = projectVO.getProject_name();
+//		project_name = URLEncoder.encode(project_name, "UTF-8");
 		CategoryCreateDTO categoryCreateDTO = new CategoryCreateDTO();
 		categoryCreateDTO.setCategory_name(category_name);
 		categoryCreateDTO.setProject_id(project_id);
 		
 		projectService.projectCategoryCreate(categoryCreateDTO);
-		return "redirect:/project/"+project_name;
+		return "redirect:/project/"+project_id;
 	}
 	
 	

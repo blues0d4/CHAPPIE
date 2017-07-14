@@ -91,7 +91,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/categoryCreate">
+            <form role="form" method="post" action="${URIs.URI_PROJECT_CATEGORY_CREATE }">
               <div class="box-body">
                 <div class="form-group">
                   <label>카테고리 이름</label>

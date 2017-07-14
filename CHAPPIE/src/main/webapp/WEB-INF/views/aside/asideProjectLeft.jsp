@@ -35,7 +35,7 @@
           			</c:when>
           			<c:otherwise>
 					<li>
-         			<a href="/project/${projectVO.project_name}"><i class="fa fa-folder"></i> ${projectVO.project_name}</a>
+         			<a href="${URIs.PROJECT_DEFAULT }/${projectVO.project_id}"><i class="fa fa-folder"></i> ${projectVO.project_name}</a>
           			</li>
           			
           			
@@ -43,7 +43,7 @@
 				</c:choose>
 			</c:forEach>
 				<li>
-         			<a href="/projectCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
+         			<a href="${URIs.URI_PROJECT_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
        			</li>
           </ul>
        </li>
@@ -94,12 +94,12 @@
 	            <c:choose>
 				<c:when test="${boardVO.category_name eq category.category_name}">
 				<li class="active">
-				<a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
+				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
            		 </li>
 				</c:when>
 				<c:otherwise> 
 				<li>
-	            <a href="/project/${project.project_name}/board/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
+	            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
 	            </li>
 				</c:otherwise>
 			</c:choose>
@@ -107,7 +107,7 @@
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-				<a href="/project/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
 				</li>
           </ul>
         </li>        
@@ -123,12 +123,12 @@
 <!--      	    <li class="active"> -->
 			<c:forEach items="${categoryList}" var="boardVO">
 					<li>
-		            <a href="/project/${project.project_name}/todo/${boardVO.category_name}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
+		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_name}/todo/${boardVO.category_name}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
 		            </li>
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-					<a href="/project/${project.project_name}/categoryCreateForm"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+					<a href="${URIs.URI_PROJECT_CATEGORY_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
 				</li>
           </ul>
         </li>

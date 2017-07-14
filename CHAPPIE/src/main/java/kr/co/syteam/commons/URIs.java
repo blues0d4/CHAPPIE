@@ -75,8 +75,9 @@ public class URIs {
 	public static final String URI_PROJECT_SELECT = "/projectSelect";
 	public static final String URI_PROJECT_SELECT_PAGE = PROJECT_DEFAULT + URI_PROJECT_SELECT;
 	
-	public static final String URI_PROJECT_CATEGORY_CREATE_FORM = URI_PROJECT_MAIN + "/projectCategoryCreateForm";
-	public static final String URI_PROJECT_CATEGORY_CREATE_FORM_PAGE = PROJECT_DEFAULT + "/projectCategoryCreateForm";
+	public static final String URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT = "/projectCategoryCreateForm";
+	public static final String URI_PROJECT_CATEGORY_CREATE_FORM = URI_PROJECT_MAIN + URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT;
+	public static final String URI_PROJECT_CATEGORY_CREATE_FORM_PAGE = PROJECT_DEFAULT + URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT;
 	
 	public static final String URI_PROJECT_CATEGORY_CREATE = PROJECT_DEFAULT + "/projectCategoryCreate";
 	
