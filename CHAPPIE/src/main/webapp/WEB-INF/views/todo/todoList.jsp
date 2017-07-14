@@ -112,7 +112,7 @@
 					<c:forEach items="${ todoList }" var="todoVO">
 						<tr>
 							<td width="70px">								
-		                     	<a href="/todo/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
+		                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
 		                    </td>
 							<td style="padding-top:15px">${todoVO.todo_list}	</td>
 														
@@ -172,7 +172,7 @@
       </div>
 
       <div class="modal-body">
-        <form class="form-horizontal" method="post" action="/todo/todoWrite">
+        <form class="form-horizontal" method="post" action="/project/${project.project_id }/todo/${category.category_id }/todoWrite">
           
        	   	<div class="modal-body">
        	   		<table class="w3-table w3-white">

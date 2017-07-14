@@ -82,7 +82,7 @@
             <!-- form start -->
             
             <c:set var="todoVO" value="${todoView }" />
-            <form class="form-horizontal" action="/todo/todoModify?todo_no=${todoVO.todo_no }" method="post">
+            <form class="form-horizontal" action="/project/${project.project_id }/todo/${category.category_id }/todoModify?todo_no=${todoVO.todo_no }" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">할 일</label>

@@ -10,9 +10,12 @@ public class URIs {
 	public static final String USER_DEFAULT = "/user";
 	public static final String BOARD_DEFAULT = "/board";
 	public static final String PROJECT_DEFAULT = "/project";
+	public static final String TODO_DEFAULT = "/todo";
 
 	//MAIN URI
 	public static final String URI_MAIN_PAGE = MAIN_DEFAULT + "/main";
+	
+	
 	//USER URI
 
 	public static final String URI_USER_LOGIN_FORM = "/userLoginForm";
@@ -86,6 +89,12 @@ public class URIs {
 	
 	public static final String URI_BOARD_DELETE = "/boardDelete";
 	public static final String URI_BOARD_DELETE_PAGE = BOARD_DEFAULT + URI_BOARD_DELETE;
+	
+	
+	
+	//TODO URI
+	public static final String URI_TODO_MAIN = URI_PROJECT_MAIN + TODO_DEFAULT + "/{category_id}";
+	
 	
 	
 }

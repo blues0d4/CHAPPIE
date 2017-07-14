@@ -121,9 +121,9 @@
           </a>
           <ul class="treeview-menu">
 <!--      	    <li class="active"> -->
-			<c:forEach items="${categoryList}" var="boardVO">
+			<c:forEach items="${categoryList}" var="categoryVO">
 					<li>
-		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${boardVO.category_id}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
+		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${categoryVO.category_id}"><i class="fa fa-square-o"></i> #${categoryVO.category_name}</a>
 		            </li>
 			</c:forEach>
 				<li>
