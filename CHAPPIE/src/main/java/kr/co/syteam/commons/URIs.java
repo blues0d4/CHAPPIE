@@ -36,29 +36,6 @@ public class URIs {
 	public static final String URI_USER_MODIFY_FORM_PAGE = USER_DEFAULT + URI_USER_MODIFY_FORM;
 
 	
-	//BOARD URI
-	public static final String URI_BOARD_LIST = "/boardList";
-	public static final String URI_BOARD_LIST_PAGE = BOARD_DEFAULT + URI_BOARD_LIST;
-	
-	public static final String URI_BOARD_VIEW = "/boardView";
-	public static final String URI_BOARD_VIEW_PAGE = BOARD_DEFAULT + URI_BOARD_VIEW;
-	
-	public static final String URI_BOARD_WRITE = "/boardWrite";
-	public static final String URI_BOARD_WRITE_PAGE = BOARD_DEFAULT + URI_BOARD_WRITE;
-	
-	public static final String URI_BOARD_WRITE_FORM = "/boardWriteForm";
-	public static final String URI_BOARD_WRITE_FORM_PAGE = BOARD_DEFAULT + URI_BOARD_WRITE_FORM;
-	
-	public static final String URI_BOARD_UPDATE = "/boardUpdate";
-	public static final String URI_BOARD_UPDATE_PAGE = BOARD_DEFAULT + URI_BOARD_UPDATE;
-	
-	public static final String URI_BOARD_MODIFY_FORM = "/boardModify";
-	public static final String URI_BOARD_MODIFY_FORM_PAGE = BOARD_DEFAULT + URI_BOARD_MODIFY_FORM;
-	
-	public static final String URI_BOARD_DELETE = "/boardDelete";
-	public static final String URI_BOARD_DELETE_PAGE = BOARD_DEFAULT + URI_BOARD_DELETE;
-	
-	
 	//PROJECT URI
 	public static final String URI_PROJECT_MAIN  = PROJECT_DEFAULT + "/{project_id}";
 	public static final String URI_PROJECT_MAIN_PAGE  = PROJECT_DEFAULT + "/projectMain";
@@ -80,5 +57,35 @@ public class URIs {
 	public static final String URI_PROJECT_CATEGORY_CREATE_FORM_PAGE = PROJECT_DEFAULT + URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT;
 	
 	public static final String URI_PROJECT_CATEGORY_CREATE = PROJECT_DEFAULT + "/projectCategoryCreate";
+	
+
+	
+	//BOARD URI
+	
+	
+	public static final String URI_BOARD_MAIN = URI_PROJECT_MAIN + BOARD_DEFAULT + "/{category_id}";
+	
+	public static final String URI_BOARD_LIST = URI_BOARD_MAIN;
+	public static final String URI_BOARD_LIST_PAGE = BOARD_DEFAULT + "/boardList";
+	
+	public static final String URI_BOARD_VIEW = "/boardView";
+	public static final String URI_BOARD_VIEW_PAGE = BOARD_DEFAULT + URI_BOARD_VIEW;
+
+	public static final String URI_BOARD_WRITE_DEFAULT = "/boardWrite";
+	public static final String URI_BOARD_WRITE = URI_BOARD_MAIN + URI_BOARD_WRITE_DEFAULT;
+	
+	public static final String URI_BOARD_WRITE_FORM_DEFAULT = "/boardWriteForm";
+	public static final String URI_BOARD_WRITE_FORM = URI_BOARD_MAIN + URI_BOARD_WRITE_FORM_DEFAULT;
+	public static final String URI_BOARD_WRITE_FORM_PAGE = BOARD_DEFAULT + URI_BOARD_WRITE_FORM_DEFAULT;
+	
+	public static final String URI_BOARD_UPDATE = "/boardUpdate";
+	public static final String URI_BOARD_UPDATE_PAGE = BOARD_DEFAULT + URI_BOARD_UPDATE;
+	
+	public static final String URI_BOARD_MODIFY_FORM = "/boardModify";
+	public static final String URI_BOARD_MODIFY_FORM_PAGE = BOARD_DEFAULT + URI_BOARD_MODIFY_FORM;
+	
+	public static final String URI_BOARD_DELETE = "/boardDelete";
+	public static final String URI_BOARD_DELETE_PAGE = BOARD_DEFAULT + URI_BOARD_DELETE;
+	
 	
 }

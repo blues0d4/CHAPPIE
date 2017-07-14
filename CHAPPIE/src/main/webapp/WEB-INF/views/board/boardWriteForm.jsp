@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="/project/${project.project_name }/board/${category.category_name }/boardWrite" method="post">
+		<form action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}" method="post">
 			<table class="table table-bordered">
 			<thead>
 			<h3>글 작성</h3>
@@ -41,7 +41,7 @@
 					<input type="hidden" value=${login.user_id } name = "user_id">
 					<div>
 						<td colspan="2"><input type="submit" value="Write" class="btn btn-default" style="float: left">
-			<a href="/project/${project.project_name}/board/${category.category_name}" class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
+			<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}" class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
 					</div>
 					</tr>
 				</tbody>

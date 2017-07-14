@@ -90,16 +90,16 @@
           </a>
           <ul class="treeview-menu">
 <!--      	    <li class="active"> -->
-			<c:forEach items="${categoryList}" var="boardVO">
+			<c:forEach items="${categoryList}" var="categoryVO">
 	            <c:choose>
-				<c:when test="${boardVO.category_name eq category.category_name}">
+				<c:when test="${categoryVO.category_name eq category.category_name}">
 				<li class="active">
-				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
+				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-slack"></i> #${categoryVO.category_name}</a>
            		 </li>
 				</c:when>
 				<c:otherwise> 
 				<li>
-	            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${boardVO.category_name}"><i class="fa fa-slack"></i> #${boardVO.category_name}</a>
+	            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-slack"></i> #${categoryVO.category_name}</a>
 	            </li>
 				</c:otherwise>
 			</c:choose>
@@ -123,7 +123,7 @@
 <!--      	    <li class="active"> -->
 			<c:forEach items="${categoryList}" var="boardVO">
 					<li>
-		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_name}/todo/${boardVO.category_name}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
+		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${boardVO.category_id}"><i class="fa fa-square-o"></i> #${boardVO.category_name}</a>
 		            </li>
 			</c:forEach>
 				<li>

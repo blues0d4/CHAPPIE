@@ -117,7 +117,7 @@
         <div class="timeline-item">
             <span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
 
-            <h3 class="timeline-header"><a href="#">SY Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
+            <h3 class="timeline-header"><a href="#">SY_Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
 
             <div class="timeline-body">
                 	<b>#${category.category_name}</b> 게시판 공지입니다.
@@ -173,7 +173,7 @@
 				</c:forEach>
 
     <div class="fixedbutton">
-		<a class="btn btn-default pull-left" href="/project/${project.project_name}/board/${category_name }/boardWriteForm">Write</a>
+		<a class="btn btn-default pull-left" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
 	
 	</div>
     <!-- END timeline item -->

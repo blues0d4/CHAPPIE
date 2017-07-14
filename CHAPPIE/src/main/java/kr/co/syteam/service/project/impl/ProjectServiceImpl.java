@@ -72,8 +72,8 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public List<CategoryVO> projectCategoryList(String project_name) throws Exception {
-		return projectDAO.projectCategoryList(project_name);
+	public List<CategoryVO> projectCategoryList(String project_id) throws Exception {
+		return projectDAO.projectCategoryList(project_id);
 	}
 
 }

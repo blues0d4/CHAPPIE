@@ -67,17 +67,17 @@
 			SELECT C.CATEGORY_ID, C.CATEGORY_NAME
 			FROM CATEGORY_TABLE C, PROJECT_TABLE P
 			WHERE C.PROJECT_ID = P.PROJECT_ID
-			AND P.PROJECT_NAME = #{project_name}
-			AND C.CATEGORY_NAME = #{category_name}
+			AND P.PROJECT_ID = #{project_id}
+			AND C.CATEGORY_ID = #{category_id}
 		]]>
 	</select>
 	
 	<select id="projectCategoryList" resultType="kr.co.syteam.domain.category.vo.CategoryVO">
 		<![CDATA[
-			SELECT CATEGORY_NAME
+			SELECT CATEGORY_ID, CATEGORY_NAME
 			FROM CATEGORY_TABLE C, PROJECT_TABLE P
 			WHERE C.PROJECT_ID = P.PROJECT_ID
-			AND P.PROJECT_id = #{project_id}
+			AND P.PROJECT_ID = #{project_id}
 		    ORDER BY P.PROJECT_ID DESC
 		]]>
 	</select>
