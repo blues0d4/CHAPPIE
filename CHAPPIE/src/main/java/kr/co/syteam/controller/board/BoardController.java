@@ -32,7 +32,7 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
-	
+	 
 	@Autowired
 	private ProjectService projectService;
 
