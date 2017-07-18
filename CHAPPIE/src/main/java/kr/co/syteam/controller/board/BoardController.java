@@ -33,7 +33,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	 
-	@Autowired
+	@Autowired 
 	private ProjectService projectService;
 
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
