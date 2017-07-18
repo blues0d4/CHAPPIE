@@ -26,7 +26,7 @@ import kr.co.syteam.service.project.ProjectService;
 
 @Controller
 //@RequestMapping("/project/*/")
-public class BoardController {
+public class BoardController { 
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
