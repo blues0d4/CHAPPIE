@@ -26,14 +26,14 @@ import kr.co.syteam.service.project.ProjectService;
 
 @Controller
 //@RequestMapping("/project/*/")
-public class BoardController {
+public class BoardController { 
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Autowired
 	private BoardService boardService;
-	
-	@Autowired
+	 
+	@Autowired 
 	private ProjectService projectService;
 
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
