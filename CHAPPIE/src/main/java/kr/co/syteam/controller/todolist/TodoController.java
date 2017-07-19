@@ -104,7 +104,7 @@ public class TodoController {
 	public String todoWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, TodoDTO todoDTO) throws Exception {
 		System.out.println("todoWrite!!!!!!!!! : " + todoDTO);
 		todoDTO.setCategory_id(category_id);
-
+		todoDTO.setProject_id(project_id);
 		todoService.todoWriteService(todoDTO);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;

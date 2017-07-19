@@ -14,7 +14,16 @@ public class TodoDTO {
 	private String todo_priority;
 	private String todo_note;
 	private String todo_complete;
+	private String project_id;
 	
+	public String getProject_id() {
+		return project_id;
+	}
+
+	public void setProject_id(String project_id) {
+		this.project_id = project_id;
+	}
+
 	@Override
 	public String toString() {
 		return "TodoDTO [todo_no=" + todo_no + ", category_id=" + category_id + ", todo_list=" + todo_list

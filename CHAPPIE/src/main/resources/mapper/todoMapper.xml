@@ -8,7 +8,7 @@
 		<![CDATA[
 			INSERT INTO TODO_LIST_TABLE 
 			VALUES (TODO_SEQ.NEXTVAL ,#{category_id}, #{todo_list}, 
-			#{todo_start_date}, #{todo_end_date}, #{todo_priority}, #{todo_note}, '0')		
+			#{todo_start_date}, #{todo_end_date}, #{todo_priority}, #{todo_note}, '0', #{project_id})		
 		]]>
 	</insert>
 	

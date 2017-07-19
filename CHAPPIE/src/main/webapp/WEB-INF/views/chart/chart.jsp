@@ -68,31 +68,39 @@
 
     <!-- Main content -->
     <section class="content" >
-		
-		<div class="row">
-        <div class="col-md-6">
-          
+    
+		  <div class="col-md-5">
+			<div class="box box-primary">
+            
+            <!-- /.box-header -->
+      		  <div class="box-body">
+				<div class="row">
+				<div class="col-xs-12">
+                  <p class="text-center">
+                    <strong>Goal Completion</strong>
+                  </p>
 
-          <!-- DONUT CHART -->
-          <div class="box box-danger">
-            <div class="box-header with-border">
-              <h3 class="box-title">Donut Chart</h3>
+                  <div class="progress-group">
+                    <span class="progress-text">Add Products to Cart</span>
+                    <span class="progress-number"><b>160</b>/200</span>
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body chart-responsive">
-              <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Complete Purchase</span>
+                    <span class="progress-number"><b>310</b>/400</span>
 
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#000000;width: 80%"></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+       		 </div>
         </div>
-        
       </div>
       <!-- /.row -->
 
