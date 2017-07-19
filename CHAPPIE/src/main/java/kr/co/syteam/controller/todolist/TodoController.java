@@ -120,6 +120,14 @@ public class TodoController {
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
+	
+	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoDelete", method = RequestMethod.GET)
+	public String todoDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
+		todoService.todoDeleteService(todo_no);
+
+		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
+	}
+	
 
 	@RequestMapping(value = "/todo/todoComplete", method = RequestMethod.GET)
 	@ResponseBody

@@ -15,24 +15,11 @@ public class ChartDAOImpl implements ChartDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
-	private static final String namespace = "kr.co.syteam.mapper.ProjectMapper.";
+	private static final String namespace = "kr.co.syteam.mapper.ChartMapper.";
 
 	@Override
 	public List<ChartVO> selectCategoryName(String project_id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList(namespace + "selectCategoryName", project_id);
 	}
-
-	@Override
-	public List<ChartVO> todoCnt(String project_id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-//	@Override
-//	public int projectEmptyCheck(String user_id) throws Exception {
-//		return sqlSession.selectOne(namespace + "projectEmptyCheck", user_id);
-//	}	
-
 
 }

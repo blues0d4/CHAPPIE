@@ -45,8 +45,7 @@ public class TodoDAOImpl implements TodoDAO {
 
 	@Override
 	public int todoDelete(String todo_no) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete(namespace+"todoDelete", todo_no);
 	}
 
 	@Override

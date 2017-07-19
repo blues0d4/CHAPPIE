@@ -11,6 +11,21 @@
   <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -92,10 +107,12 @@
     <section class="content-header">
     <div>
       <h1> <b>#${category.category_name }</b>
-    </div>
 <!--         <small>Control panel</small> -->
       </h1>
-
+		<div class="fixedbutton">
+		<a class="btn btn-default pull-right" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
+	</div>
+    </div>
     </section>
 
     <!-- Main content -->
@@ -172,16 +189,14 @@
     </li>
 				</c:forEach>
 
-    <div class="fixedbutton">
-		<a class="btn btn-default pull-left" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-	
-	</div>
+    
     <!-- END timeline item -->
 
 
 </ul>
 
     </section>
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -203,6 +218,8 @@
   <div class="control-sidebar-bg"></div>
     
 </div>
+<a id="to-top2" href="#top" class="btn btn-dark btn-lg">
+    <i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
 	
 <!-- ./wrapper -->
 
@@ -257,6 +274,47 @@
       
     });
     
+ // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    
+  //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top2').show("slow", function() {
+                    $('#to-top2').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top2').hide("slow", function() {
+                    $('#to-top2').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
     
   </script>
   <!-- Custom Theme JavaScript -->

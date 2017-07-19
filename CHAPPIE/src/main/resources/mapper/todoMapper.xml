@@ -51,6 +51,13 @@
 		]]>
 	</update>
 	
+	<delete id="todoDelete">
+		<![CDATA[
+			DELETE FROM TODO_LIST_TABLE
+			WHERE TODO_NO=#{todo_no}
+		]]>
+	</delete>
+	
 	<select id="todoCompleteSelect" resultType="int">
 		<![CDATA[
 			SELECT TODO_COMPLETE FROM TODO_LIST_TABLE WHERE TODO_NO = #{todo_no}

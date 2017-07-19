@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.syteam.mapper.ChartMapper">
+
+	<select id="selectCategoryName" resultType="kr.co.syteam.domain.chart.vo.ChartVO">
+		<![CDATA[
+			SELECT C.CATEGORY_NAME, COUNT(T.TODO_COMPLETE) todo_cnt, 
+					SUM(T.TODO_COMPLETE) todo_complete_cnt 
+			FROM CATEGORY_TABLE C, TODO_LIST_TABLE T 
+			WHERE C.CATEGORY_ID=T.CATEGORY_ID AND 
+			C.PROJECT_ID = #{project_id} 
+			GROUP BY C.CATEGORY_NAME
+		]]>	
+	</select>
+	
+
+</mapper>

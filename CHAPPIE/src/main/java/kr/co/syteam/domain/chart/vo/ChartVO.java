@@ -4,7 +4,18 @@ public class ChartVO {
 	String category_name;
 	String todo_cnt;
 	String todo_complete_cnt;
+	double progress;
 	
+	@Override
+	public String toString() {
+		return category_name;
+	}
+	public double getProgress() {
+		return progress;
+	}
+	public void setProgress(double progress) {
+		this.progress = progress;
+	}
 	public String getCategory_name() {
 		return category_name;
 	}

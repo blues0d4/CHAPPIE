@@ -126,7 +126,10 @@
               <!-- /.box-body -->
               <div class="box-footer">
               	<a href="/project/${project.project_id }/todo/${category.category_id }" class="btn btn-default">Cancel</a>
-                <button type="submit" class="btn btn-info pull-right">Modify</button>
+              	<button type="submit" class="btn btn-info pull-right">Modify</button>
+              	<a href="/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }" 
+              	class="btn btn-danger pull-right" style="margin-right:10px">Delete</a>
+                
               </div>
               <!-- /.box-footer -->
             </form>

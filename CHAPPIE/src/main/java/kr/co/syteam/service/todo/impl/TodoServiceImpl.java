@@ -37,8 +37,7 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public int todoDeleteService(String todo_no) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return todoDAO.todoDelete(todo_no);
 	}
 
 	@Override

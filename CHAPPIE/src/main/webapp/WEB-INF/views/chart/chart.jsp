@@ -79,24 +79,34 @@
                   <p class="text-center">
                     <strong>Goal Completion</strong>
                   </p>
-
-                  <div class="progress-group">
-                    <span class="progress-text">Add Products to Cart</span>
-                    <span class="progress-number"><b>160</b>/200</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Complete Purchase</span>
-                    <span class="progress-number"><b>310</b>/400</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#000000;width: 80%"></div>
-                    </div>
-                  </div>
+				  
+				  <c:choose>
+				  <c:when test="${empty chart}">
+				  	<p class="text-center">
+                    	<strong>내용이 없습니다.</strong>
+                  	</p>
+                  </c:when>
+                  <c:otherwise>
+				  	<c:forEach items="${chart }" var="chartVO">
+	                  <div class="progress-group">
+	                    <span class="progress-text">${chartVO.category_name }</span>
+	                    <span class="progress-number"><b>${chartVO.todo_complete_cnt }</b>/<b>${chartVO.todo_cnt }(${chartVO.progress}%)</b></span>
+	                    <div class="progress sm">
+	                      <div class="progress-bar progress-bar-aqua" style="width: ${chartVO.progress}%"></div>
+	                    </div>
+	                  </div>
+                  	<!-- /.progress-group -->
+                  	</c:forEach>
+                  	<div class="progress-group">
+	                    <span class="progress-text">${allChart.category_name }</span>
+	                    <span class="progress-number"><b>${allChart.todo_complete_cnt }</b>/<b>${allChart.todo_cnt }(${allChart.progress}%)</b></span>
+	                    <div class="progress sm">
+	                      <div class="progress-bar progress-bar-red" style="width: ${allChart.progress}%"></div>
+	                    </div>
+	                  </div>
+                  </c:otherwise>
+                  	
+                  </c:choose>
                   </div>
                 </div>
        		 </div>
