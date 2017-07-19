@@ -1,6 +1,5 @@
 package kr.co.syteam.controller.board;
 
-import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
