@@ -169,7 +169,7 @@
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test6
+	test4
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
@@ -177,8 +177,21 @@
             </div>
 
             <div class="timeline-footer">
+            <div class="form-inline">
+<!--             <div style="width: 500px"> -->
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Comments</button>
-                <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a> </button>
+<%--                 <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a>  --%>
+<%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
+<%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
+<!--                 </button> -->
+                <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">
+               	   <input type="submit" value="Delete" class="btn btn-danger">
+               	    <input type="hidden" value=${boardVO.board_no } name = "board_no">
+					<input type="hidden" value=${login.user_id } name = "user_id">
+                </form>
+<!--                 </div> -->
+            </div>
+                
                 <div id="demo${status.index }" class="collapse">
 	   				 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
 	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

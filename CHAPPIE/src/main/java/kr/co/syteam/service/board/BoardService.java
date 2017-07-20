@@ -13,4 +13,5 @@ public interface BoardService {
 	public BoardVO boardView(String board_no) throws Exception;
 	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception;
 	public void boardDelete(BoardDTO boardDTO) throws Exception;
+	public void boardModify(BoardDTO boardDTO) throws Exception;
 }

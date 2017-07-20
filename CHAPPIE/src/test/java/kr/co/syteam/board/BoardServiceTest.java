@@ -81,15 +81,27 @@ public class BoardServiceTest {
 //		System.out.println(result);
 //	}
 	
-	//게시물 삭제 테스트()
+	//게시물 삭제 테스트(완료)
+//	@Test
+//	public void testBoardDelete() throws Exception{
+//		BoardDTO boardDTO = new BoardDTO();
+//		
+//		boardDTO.setUser_id("1");
+//		boardDTO.setBoard_no("98");
+//		boardService.boardDelete(boardDTO);
+//	}
+
+	//게시물 수정 테스트(미완료)
 	@Test
-	public void testBoardDelete() throws Exception{
+	public void testBoardModify() throws Exception{
 		BoardDTO boardDTO = new BoardDTO();
 		
 		boardDTO.setUser_id("1");
-		boardDTO.setBoard_no("98");
-		boardService.boardDelete(boardDTO);
-	}
+		boardDTO.setBoard_no("108");
+		boardDTO.setBoard_title("titlemod");
+		boardDTO.setBoard_contents("contmod");
 		
+		boardService.boardModify(boardDTO);
+	}
 		
 }
