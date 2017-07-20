@@ -37,8 +37,6 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -89,56 +87,38 @@
             
             <!-- /.box-header -->
             <div class="box-body">
-            <div class="row">
-            <div class="col-xs-3">
-                <select class="form-control input-sm" id="select" style="margin-left:20px">
-                 <option>category</option>
-                 <option>1</option>
-                 <option>2</option>
-                 <option>3</option>
-                 <option>4</option>
-                 <option>5</option>
-               </select>
-           	  </div>
-           	  
-              <div class="w3-panel">
-               <div class="w3-row-padding" style="margin:0 -16px">
-                 <table class="w3-table w3-striped w3-white" >
-                    <tr>
-                   	 <td width="70px"></td>
-                     <td><strong>할 일 목록</strong></td>
-                     <td width="50px"><strong>완료</strong></td>
-                    </tr>
-					<c:forEach items="${ todoList }" var="todoVO">
-						<tr>
-							<td width="70px">								
-		                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
-		                    </td>
-							<td style="padding-top:15px">${todoVO.todo_list}	</td>
-														
-							<c:choose>
-								<c:when test="${todoVO.todo_complete == '1' }">
-									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
-								</c:when>
-								<c:otherwise>
-									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
-								</c:otherwise>
-							</c:choose>
-						</tr>
-					</c:forEach>                   
-                  </table>
-              </div>
-            </div>
-              </div>
-              
+                <table class="table table-bordered table-hover" >
+                   <tr>
+                  	 <td width="50px"></td>
+                    <td><strong>할 일 목록</strong></td>
+                    <td width="50px"><strong>완료</strong></td>
+                   </tr>
+				<c:forEach items="${ todoList }" var="todoVO">
+					<tr>
+						<td>								
+	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
+	                    </td>
+						<td style="padding-top:15px">${todoVO.todo_list}	</td>
+													
+						<c:choose>
+							<c:when test="${todoVO.todo_complete == '1' }">
+								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
+							</c:when>
+							<c:otherwise>
+								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
+							</c:otherwise>
+						</c:choose>
+					</tr>
+				</c:forEach>                   
+                 </table>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
+		</div>		
 		
-		</div>
     </section>
     <!-- /.content -->
   </div>
@@ -175,7 +155,7 @@
         <form class="form-horizontal" method="post" action="/project/${project.project_id }/todo/${category.category_id }/todoWrite">
           
        	   	<div class="modal-body">
-       	   		<table class="w3-table w3-white">
+       	   		<table class="table table-bordered table-hover">
        	   			<tr>
        	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
        	   				<td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
@@ -243,7 +223,8 @@ function complete(chk)
 }
 </script>
 
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- Select2 -->
@@ -271,8 +252,10 @@ function complete(chk)
 <script src="/resources/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
+
 <!-- Page script -->
 <script>
+
   $(function () {
     //Initialize Select2 Elements
     $(".select2").select2();

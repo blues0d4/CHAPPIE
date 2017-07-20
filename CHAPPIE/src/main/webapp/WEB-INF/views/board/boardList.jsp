@@ -11,8 +11,6 @@
   <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap Core CSS -->
@@ -111,6 +109,7 @@
       </h1>
 		<div class="fixedbutton">
 		<a class="btn btn-default pull-right" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
+		
 	</div>
     </div>
     </section>
@@ -200,6 +199,7 @@
     
     <!-- /.content -->
   </div>
+  
   <!-- /.content-wrapper -->
   <footer class="main-footer">
    	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
@@ -219,13 +219,14 @@
   <div class="control-sidebar-bg"></div>
     
 </div>
-<a id="to-top2" href="#top" class="btn btn-dark btn-lg">
-    <i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+
 	
 <!-- ./wrapper -->
 
+
 <!-- jQuery 2.2.3 -->
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
