@@ -15,5 +15,5 @@ public interface BoardDAO {
 	public void boardHitCount(String board_no) throws Exception;
 	public List<BoardVO> boardCategoryList(String project_name) throws Exception;
 	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception;
-	public void boardDelete() throws Exception;
+	public void boardDelete(BoardDTO boardDTO) throws Exception;
 }

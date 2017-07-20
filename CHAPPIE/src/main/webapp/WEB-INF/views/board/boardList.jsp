@@ -170,7 +170,7 @@
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-
+	test6
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
@@ -179,6 +179,7 @@
 
             <div class="timeline-footer">
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Comments</button>
+                <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a> </button>
                 <div id="demo${status.index }" class="collapse">
 	   				 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
 	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

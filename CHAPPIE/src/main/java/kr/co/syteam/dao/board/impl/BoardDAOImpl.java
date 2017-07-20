@@ -51,6 +51,11 @@ public class BoardDAOImpl implements BoardDAO {
 	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception {
 		return sqlSession.selectList(namespace+"boardCategoryListView", categoryDTO);
 	}
+
+	@Override
+	public void boardDelete(BoardDTO boardDTO) throws Exception {
+		sqlSession.delete(namespace+"boardDelete", boardDTO);
+	}
 	
 	
 	

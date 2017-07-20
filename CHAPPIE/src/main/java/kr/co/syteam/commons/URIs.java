@@ -87,8 +87,10 @@ public class URIs {
 	public static final String URI_BOARD_MODIFY_FORM = "/boardModify";
 	public static final String URI_BOARD_MODIFY_FORM_PAGE = BOARD_DEFAULT + URI_BOARD_MODIFY_FORM;
 	
-	public static final String URI_BOARD_DELETE = "/boardDelete";
-	public static final String URI_BOARD_DELETE_PAGE = BOARD_DEFAULT + URI_BOARD_DELETE;
+	public static final String URI_BOARD_DELETE_DEFAULT = "/boardDelete";
+	public static final String URI_BOARD_DELETE = URI_BOARD_MAIN + URI_BOARD_DELETE_DEFAULT;
+	
+//	public static final String URI_BOARD_DELETE_PAGE = BOARD_DEFAULT + URI_BOARD_DELETE;
 	
 	
 	

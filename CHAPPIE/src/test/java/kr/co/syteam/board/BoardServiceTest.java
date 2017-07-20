@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.co.syteam.domain.board.dto.BoardDTO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -79,6 +80,16 @@ public class BoardServiceTest {
 //		
 //		System.out.println(result);
 //	}
+	
+	//게시물 삭제 테스트()
+	@Test
+	public void testBoardDelete() throws Exception{
+		BoardDTO boardDTO = new BoardDTO();
+		
+		boardDTO.setUser_id("1");
+		boardDTO.setBoard_no("98");
+		boardService.boardDelete(boardDTO);
+	}
 		
 		
 }
