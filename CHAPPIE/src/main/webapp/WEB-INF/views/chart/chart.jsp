@@ -69,7 +69,7 @@
     <!-- Main content -->
     <section class="content" >
     
-		  <div class="col-md-5">
+		  <div class="col-md-8">
 			<div class="box box-primary">
             
             <!-- /.box-header -->
@@ -91,8 +91,9 @@
 	                  <div class="progress-group">
 	                    <span class="progress-text">${chartVO.category_name }</span>
 	                    <span class="progress-number"><b>${chartVO.todo_complete_cnt }</b>/<b>${chartVO.todo_cnt }(${chartVO.progress}%)</b></span>
-	                    <div class="progress sm">
-	                      <div class="progress-bar progress-bar-aqua" style="width: ${chartVO.progress}%"></div>
+	                    <div class="progress active">
+	                      <div class="progress-bar progress-bar-aqua progress-bar-striped" 
+	                       style="width: ${chartVO.progress}%"></div>
 	                    </div>
 	                  </div>
                   	<!-- /.progress-group -->
@@ -100,8 +101,9 @@
                   	<div class="progress-group">
 	                    <span class="progress-text">${allChart.category_name }</span>
 	                    <span class="progress-number"><b>${allChart.todo_complete_cnt }</b>/<b>${allChart.todo_cnt }(${allChart.progress}%)</b></span>
-	                    <div class="progress sm">
-	                      <div class="progress-bar progress-bar-red" style="width: ${allChart.progress}%"></div>
+	                    <div class="progress active">
+	                      <div class="progress-bar progress-bar-red progress-bar-striped" 
+	                      style="width: ${allChart.progress}%"></div>
 	                    </div>
 	                  </div>
                   </c:otherwise>

@@ -102,8 +102,7 @@
 	            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-slack"></i> #${categoryVO.category_name}</a>
 	            </li>
 				</c:otherwise>
-			</c:choose>
-			
+			</c:choose>			
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
@@ -111,6 +110,7 @@
 				</li>
           </ul>
         </li>        
+        
         
         <li class="treeview">
           <a href="#">
