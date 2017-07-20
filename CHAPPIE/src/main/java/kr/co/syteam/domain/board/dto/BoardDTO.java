@@ -4,6 +4,15 @@ public class BoardDTO {
 	private String category_id;
 	private String board_title;
 	private String board_contents;
+	private String board_no;
+	public String getBoard_no() {
+		return board_no;
+	}
+
+	public void setBoard_no(String board_no) {
+		this.board_no = board_no;
+	}
+
 	private String user_id;
 
 	public String getCategory_id() {

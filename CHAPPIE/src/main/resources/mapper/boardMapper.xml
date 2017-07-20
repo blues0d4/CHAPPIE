@@ -50,5 +50,13 @@
 		]]>
 	</select>
 	
+	<delete id = "boardDelete">
+		<![CDATA[
+			DELETE FROM BOARD_TABLE
+			WHERE USER_ID = #{user_id}
+			AND BOARD_NO= #{board_no}
+		]]>
+	</delete>
+	
 	
 </mapper>
