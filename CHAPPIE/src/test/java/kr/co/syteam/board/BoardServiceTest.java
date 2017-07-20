@@ -91,7 +91,7 @@ public class BoardServiceTest {
 //		boardService.boardDelete(boardDTO);
 //	}
 
-	//게시물 수정 테스트(미완료)
+	//게시물 수정 테스트(완료)
 	@Test
 	public void testBoardModify() throws Exception{
 		BoardDTO boardDTO = new BoardDTO();

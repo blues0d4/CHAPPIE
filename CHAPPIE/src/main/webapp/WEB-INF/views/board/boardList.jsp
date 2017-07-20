@@ -169,7 +169,7 @@
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test4
+	test2
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
@@ -184,11 +184,19 @@
 <%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
 <%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
 <!--                 </button> -->
+				<c:if test="${login.user_id eq boardVO.user_id}">
+				 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}">
+               	   <input type="submit" value="Modify" class="btn btn-danger">
+               	    <input type="hidden" value=${boardVO.board_no } name = "board_no">
+					<input type="hidden" value=${login.user_id } name = "user_id">
+                </form>
                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">
                	   <input type="submit" value="Delete" class="btn btn-danger">
                	    <input type="hidden" value=${boardVO.board_no } name = "board_no">
 					<input type="hidden" value=${login.user_id } name = "user_id">
                 </form>
+               
+				</c:if>
 <!--                 </div> -->
             </div>
                 
