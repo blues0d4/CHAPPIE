@@ -22,18 +22,19 @@
 		<form action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_MODIFY_DEFAULT}/${boardVO.board_no}" method="post">
 			<table class="table table-bordered">
 			<thead>
+			test1
 			<h3>글 수정</h3>
 			</thead>
 				<tbody>
 					<tr>
 						<th>제목:</th>
 						<td><input type="text" placeholder="제목을 입력하세요. "
-							name="board_title" class="form-control" /></td>
+							name="board_title" class="form-control" value="${boardVO.board_title }"/></td>
 					</tr>
 					<tr>
 						<th>내용:</th>
 						<td><textarea cols="100" placeholder="내용을 입력하세요. " rows="10"
-								name="board_contents" class="form-control"></textarea></td>
+								name="board_contents" class="form-control" >${boardVO.board_contents }</textarea></td>
 					</tr>
 					<tr>
 <%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
