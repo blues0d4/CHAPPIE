@@ -141,31 +141,26 @@ public class BoardController {
 		return "redirect:/project/"+project_id+"/board/"+category_id;
 	}
 	
-	//미완료
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY_FORM + "/{board_no}")
-	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, HttpServletRequest request) throws Exception {
+	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, Model model) throws Exception {
 		
 		logger.info("doBoardModifyForm");
 		
-		return URIs.URI_BOARD_MODIFY_FORM;
+		BoardVO boardVO = boardService.boardView(board_no);
+
+		if (boardVO == null) {
+			return "redirect:/project/"+project_id+"/board/"+category_id;
+		}
+		model.addAttribute("boardVO", boardVO);
+		
+		return URIs.URI_BOARD_MODIFY_FORM_PAGE;
 	}
 	
-	//미완료
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY + "/{board_no}")
-	public String doBoardModify(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, HttpServletRequest request) throws Exception {
+	public String doBoardModify(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
 		
 		logger.info("doBoardModify");
 
-		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
-		String user_id = loginVO.getUser_id();
-		
-		BoardDTO boardDTO = new BoardDTO();
-		
-		boardDTO.setUser_id(user_id);
-		boardDTO.setBoard_no("108");
-		boardDTO.setBoard_title("titlemod");
-		boardDTO.setBoard_contents("contmod");
-		
 		boardService.boardModify(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
