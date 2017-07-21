@@ -68,3 +68,17 @@ ALTER TABLE category_table ADD CONSTRAINT uk_category_table_name UNIQUE(category
 commit;
 
 rollback;
+
+SELECT MEMBER_NICKNAME FROM CATEGORY_MEMBER_TABLE  
+			WHERE CATEGORY_ID = 2081;
+
+---------------category member----------------
+DROP TABLE CATEGORY_MEMBER_TABLE;
+CREATE TABLE Category_member_table
+(
+    CATEGORY_ID    NUMBER           NOT NULL, 
+    MEMBER_NICKNAME      VARCHAR2(50)     NULL, 
+    USER_ID        VARCHAR2(50)    NULL   
+);
+INSERT INTO CATEGORY_MEMBER_TABLE(CATEGORY_ID, MEMBER_NICKNAME, USER_ID)
+VALUES(2081, '채피01', '1');

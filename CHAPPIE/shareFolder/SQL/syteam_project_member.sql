@@ -1,4 +1,4 @@
---MEMBER_TABLE ╩Щ╪╨
+--MEMBER_TABLE О©╫О©╫О©╫О©╫
 CREATE TABLE MEMBER_TABLE(
 PROJECT_ID NUMBER,
 MEMBER_NICKNAME VARCHAR2(50),
@@ -6,11 +6,11 @@ MEMBER_RANK VARCHAR2(20),
 USER_ID VARCHAR2(50)
 );
 
---FK ╪Ёа╓ MEMBER_TABLE(USER_ID)
+--FK О©╫О©╫О©╫О©╫ MEMBER_TABLE(USER_ID)
 ALTER TABLE MEMBER_TABLE
 ADD CONSTRAINT FK_MEMBER_USER_ID FOREIGN KEY(USER_ID) REFERENCES USER_TABLE;
 
---FK ╪Ёа╓ MEMBER_TABLE(PROJECT_ID)
+--FK О©╫О©╫О©╫О©╫ MEMBER_TABLE(PROJECT_ID)
 ALTER TABLE MEMBER_TABLE
 ADD CONSTRAINT FK_MEMBER_PROJECT_ID FOREIGN KEY(PROJECT_ID) REFERENCES PROJECT_TABLE;
 
@@ -23,13 +23,13 @@ select * from member_table;
 
 select member_nickname from member_table where project_id = 1003;
 
---ю╞юЗгяев га╥на╖ф╝ юж╢баЖ ╬Ь╢баЖ ц╪е╘го╢б дУ╦╝
+--О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝ О©╫ж╢О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ ц╪е╘О©╫о╢О©╫ О©╫О©╫О©╫О©╫
 select count(*)
 from PROJECT_TABLE p, MEMBER_TABLE m
 where p.PROJECT_ID = m.PROJECT_ID
     and m.USER_ID = '1';
 
---ю╞юЗ╟║ га╥на╖ф╝ цъ╟║го╢б дУ╦╝
+--О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝ О©╫ъ╟О©╫О©╫о╢О©╫ О©╫О©╫О©╫О©╫
 INSERT INTO PROJECT_TABLE(PROJECT_ID, PROJECT_NAME)
 VALUES(PROJECT_SEQ.nextval, 'ptest01');
 
@@ -39,25 +39,25 @@ SELECT PROJECT_ID
 FROM PROJECT_TABLE
 WHERE PROJECT_NAME = 'ptest01';
 
---╦╤╫╨ем╟║ ╩Щ╪╨гр╤╖ projectManagerInsert
+--О©╫О©╫О©╫О©╫О©╫м╟О©╫ О©╫О©╫О©╫О©╫О©╫р╤О©╫ projectManagerInsert
 INSERT INTO MEMBER_TABLE(PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID)
-VALUES(1003, 'qqq', 'y', '1');
+VALUES(1062, 'Л╗╘Л╗╘Л²╢', 'n', '123');
 
---цй╢Кгр╤╖ projectMemberInsert
+--О©╫й╢О©╫О©╫р╤О©╫ projectMemberInsert
 
 INSERT INTO MEMBER_TABLE(PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID)
 VALUES(1003, 'qqq', 'n', 'user_id');
 
---цъхд ╠Б╢и(╢пЁвюс аъ╨╧ ╠щаЖ╫це╟╟М цъ╟║ ╫ц null╥н цъ╟║ хд null╟╙юл╦И га╥на╖ф╝ ╪╠ец ╫ц ╢пЁвюсю╩ ╪Ёа╓го╣╣╥о фДюлаЖ ╠╦гЖ)
+--О©╫О©╫О©╫О©╫ О©╫О©╫О©╫(О©╫пЁО©╫О©╫О©╫ О©╫ъ╨О©╫ О©╫О©╫О©╫О©╫О©╫О©╫е╟О©╫О©╫ О©╫ъ╟О©╫ О©╫О©╫ nullО©╫О©╫ О©╫ъ╟О©╫ О©╫О©╫ nullО©╫О©╫О©╫л╦О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝ О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫пЁО©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╣О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫)
 
---ю╞юЗ╟║ ╟║аЬ га╥на╖ф╝ ╦╝╫╨ф╝
+--О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝ О©╫О©╫О©╫О©╫ф╝
 select distinct *
 from PROJECT_TABLE p, MEMBER_TABLE m
 where p.PROJECT_ID = m.PROJECT_ID
     and m.USER_ID = '1';
     
     
---ю╞юЗ╟║ ╪╠ецгя га╥на╖ф╝
+--О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ф╝
 select distinct *
 from PROJECT_TABLE p, MEMBER_TABLE m
 where p.PROJECT_ID = m.PROJECT_ID

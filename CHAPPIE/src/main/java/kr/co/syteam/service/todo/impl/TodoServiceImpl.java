@@ -60,8 +60,17 @@ public class TodoServiceImpl implements TodoService {
 			return todoDAO.todoCompleteYes(todo_no);
 		}else{
 			return todoDAO.todoCompleteNo(todo_no);
-		}
-		
+		}		
+	}
+
+	@Override
+	public List<String> categoryMemberSelectService(String category_id) throws Exception {
+		return todoDAO.categoryMemberSelect(category_id);
+	}
+
+	@Override
+	public List<String> todoMemberSelectService(String todo_no) throws Exception {
+		return todoDAO.todoMemberSelect(todo_no);
 	}
 	
 	

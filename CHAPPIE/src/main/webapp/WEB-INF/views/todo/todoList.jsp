@@ -179,6 +179,19 @@
 		                </td>
        	   			</tr>
        	   			<tr>
+       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 담당자 </label></td>
+       	   				<td>
+			                  <div class="checkbox">
+				                  <c:forEach var="categoryMember" items="${cmList }">
+				                    <label>
+				                      <input type="checkbox" name="member_nickname">
+				                      	${categoryMember }
+				                    </label>
+					              </c:forEach>      
+			                  </div>			                  
+		                </td>
+       	   			</tr>
+       	   			<tr>
        	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
        	   				<td>
 	       	   				<select style="margin:3px" name="todo_priority">

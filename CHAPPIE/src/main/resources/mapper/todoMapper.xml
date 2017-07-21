@@ -58,6 +58,19 @@
 		]]>
 	</delete>
 	
+	<select id="todoMemberSelect" resultType="String">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM TODO_MEMBER_TABLE 
+			WHERE TODO_NO = #{todo_no}
+		]]>
+	</select>
+	<select id="categoryMemberSelect" resultType="String">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM CATEGORY_MEMBER_TABLE  
+			WHERE CATEGORY_ID = #{category_id}
+		]]>
+	</select>
+	
 	<select id="todoCompleteSelect" resultType="int">
 		<![CDATA[
 			SELECT TODO_COMPLETE FROM TODO_LIST_TABLE WHERE TODO_NO = #{todo_no}

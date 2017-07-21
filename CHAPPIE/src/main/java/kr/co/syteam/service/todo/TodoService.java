@@ -12,5 +12,7 @@ public interface TodoService {
 	public int todoDeleteService(String todo_no) throws Exception;
 	public int todoModifyService(TodoDTO todoDTO) throws Exception;
 	public int todoAuthCheckService(TodoDTO todoDTO) throws Exception;
+	public List<String> categoryMemberSelectService(String category_id) throws Exception;
+	public List<String> todoMemberSelectService(String todo_no) throws Exception;
 	public int todoCompleteService(String todo_no) throws Exception;
 }
