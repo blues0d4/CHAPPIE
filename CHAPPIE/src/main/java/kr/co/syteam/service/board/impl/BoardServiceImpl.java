@@ -33,19 +33,19 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.boardView(board_no);
 	}
 
-//	@Override
-//	public List<BoardVO> boardCategoryList(String project_name) throws Exception {
-//		return boardDAO.boardCategoryList(project_name);
-//	}
-//
-//	@Override
-//	public CategoryVO boardCategorySelect(CategoryDTO categoryDTO) throws Exception {
-//		return boardDAO.boardCategorySelect(categoryDTO);
-//	}
-
 	@Override
 	public List<BoardVO> boardCategoryListView(CategoryDTO categoryDTO) throws Exception {
 		return boardDAO.boardCategoryListView(categoryDTO);
+	}
+
+	@Override
+	public void boardDelete(BoardDTO boardDTO) throws Exception {
+		boardDAO.boardDelete(boardDTO);
+	}
+
+	@Override
+	public void boardModify(BoardDTO boardDTO) throws Exception {
+		boardDAO.boardModify(boardDTO);
 	}
 	
 

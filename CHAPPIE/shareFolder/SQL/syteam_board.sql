@@ -113,3 +113,22 @@ AND C.CATEGORY_NAME = '기타'
 AND P.PROJECT_NAME = '프로젝트테스트01'
 ORDER BY BOARD_NO 
 ;
+
+select * from board_table;
+
+commit;
+
+UPDATE BOARD_TABLE 
+SET 
+BOARD_TITLE='KIM', 
+BOARD_CONTENTS='board_contents', 
+BOARD_MODIFY_DATE=sysdate
+WHERE BOARD_NO = 94
+and user_id = '1'
+;
+
+INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
+VALUES (2023, board_seq.nextval, 'titleTeswefwefwegwergergergdfgergergdfgergergerggdfgergt24', 'contentsTest02', '1', sysdate, sysdate);
+
+
+
