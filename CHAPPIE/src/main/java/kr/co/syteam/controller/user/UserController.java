@@ -49,20 +49,20 @@ public class UserController {
 	// 로그인 폼 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_LOGIN_FORM)
 	// @RequestMapping(value = "/joinform")
-	public String doLoginForm() throws Exception {
+	public String doUserLoginForm() throws Exception {
 
 		// return "/user/userJoin";
-		logger.info("doLoginForm");
+		logger.info("doUserLoginForm");
 		return URIs.URI_USER_LOGIN_FORM_PAGE;
 	}
 
 	// 로그인 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_LOGIN, method = RequestMethod.POST)
-	public String doLogin(Model model, UserDTO userDTO) throws Exception {
+	public String doUserLogin(Model model, UserDTO userDTO) throws Exception {
 		LoginVO loginVO = userService.userLogin(userDTO);
 		model.addAttribute("login", loginVO);
 
-		logger.info("doLogin");
+		logger.info("doUserLogin");
 
 //		System.out.println("loginId : " + loginVO.getUser_id());
 //		System.out.println("loginName : " + loginVO.getUser_name());
@@ -76,28 +76,28 @@ public class UserController {
 
 	// 회원정보 수정 폼 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY_FORM)
-	public String doModifyForm() throws Exception {
+	public String doUserModifyForm() throws Exception {
 
 		// return "/user/userJoin";
-		logger.info("doModifyForm");
+		logger.info("doUserModifyForm");
 		return URIs.URI_USER_MODIFY_FORM_PAGE;
 	}
 
 	// 회원정보 수정 (테스트 미완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY, method = RequestMethod.POST)
-	public String doModify(Model model, UserDTO userDTO) throws Exception {
+	public String doUserModify(Model model, UserDTO userDTO) throws Exception {
 
 		int modifyResult = userService.userModify(userDTO);
 
-		logger.info("doModify");
+		logger.info("doUserModify");
 		return "redirect:"+URIs.URI_MAIN;
 	}
 
 	// 로그아웃 (테스트 완료)
 	@RequestMapping(value = URIs.URI_USER_LOGOUT)
-	public String doLogout(HttpServletRequest request) {
+	public String doUserLogout(HttpServletRequest request) {
 
-		logger.info("doLogout");
+		logger.info("doUserLogout");
 		
 		request.getSession().invalidate();
 		return "redirect:"+URIs.URI_MAIN;
@@ -105,11 +105,11 @@ public class UserController {
 	
 	@RequestMapping(value="/idCheck", method=RequestMethod.GET)
 	@ResponseBody
-	public LoginVO idCheck(String userid) throws Exception{		
+	public LoginVO idCheck(String user_id) throws Exception{		
 		
 		System.out.println("Join ID CHECK !!!!!!!!!!!!!!!!!");
 		LoginVO loginVO = new LoginVO();
-		loginVO.setUser_id(userService.userIdCheck(userid));
+		loginVO.setUser_id(userService.userIdCheck(user_id));
 		System.out.println(loginVO.getUser_id());
 		
 		return loginVO;
