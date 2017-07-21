@@ -98,7 +98,7 @@
 						<td>								
 	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
 	                    </td>
-						<td style="padding-top:15px">${todoVO.todo_list}	</td>
+						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td>
 													
 						<c:choose>
 							<c:when test="${todoVO.todo_complete == '1' }">
