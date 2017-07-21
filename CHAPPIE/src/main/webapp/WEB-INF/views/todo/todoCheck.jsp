@@ -110,20 +110,19 @@
                   <label for="inputEmail3" class="col-sm-3 control-label">담당자</label>
                   <div class="col-sm-9">
                     <div class="checkbox">
-	                  <c:forEach var="categoryMember" items="${cmList }">
-	                  	
-                  		<c:forEach var="todoMember" items="${tmList }">
-                  			<c:choose>
-		                  		<c:when test="${todoMember == categoryMember}">
+                   	 <c:forEach var="todoMember" items="${tmList }">
 			                      <label>
 			                      <input type="checkbox" name="member_nickname" checked>
-			                      	${categoryMember }
+			                      	${todoMember }
 			                      </label>
-			                    </c:when>
-		                    </c:choose>
 		                </c:forEach>
-		                
+	                  <c:forEach var="categoryMember" items="${cmList }">
+               		             <label>
+			                      <input type="checkbox" name="member_nickname">
+			                      	${categoryMember }
+			                      </label>   
 		              </c:forEach>      
+		              
 	                 </div>
                   </div>
                 </div>

@@ -82,7 +82,6 @@ public class TodoController {
 		List<TodoVO> todoList = todoService.todoListViewService(category_id);
 		List<String> categoryMemberList = todoService.categoryMemberSelectService(category_id); 
 		
-		System.out.println("@@@ TodoVO : " + todoList);
 		model.addAttribute("todoList", todoList);
 		model.addAttribute("cmList", categoryMemberList);
 
@@ -95,13 +94,17 @@ public class TodoController {
 		TodoVO todoVO = new TodoVO();
 		todoVO = todoService.todoViewService(todo_no);
 		todoVO.setTodo_no(todo_no);
-		List<String> categoryMemberList = todoService.categoryMemberSelectService(category_id); 
-		List<String> todoMemberList = todoService.todoMemberSelectService(todo_no);
+		List<String> list1 = todoService.categoryMemberSelectService(category_id); 
+		List<String> list2 = todoService.todoMemberSelectService(todo_no);
 		
+		for(String s : list2){
+			if(list1.contains(s)){
+				list1.remove(s);
+			}			
+		}
 		
-		
-		model.addAttribute("cmList", categoryMemberList);
-		model.addAttribute("tmList", todoMemberList);
+		model.addAttribute("cmList", list1);
+		model.addAttribute("tmList", list2);
 		model.addAttribute("todoView", todoVO);
 
 		return "/todo/todoCheck";
