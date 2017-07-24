@@ -169,7 +169,7 @@
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test4
+	test2
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
@@ -184,11 +184,21 @@
 <%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
 <%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
 <!--                 </button> -->
+				<c:if test="${login.user_id eq boardVO.user_id}">
+				<button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}">Modify</a>
+                </button>
+<%-- 				 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}"> --%>
+<!--                	   <input type="submit" value="Modify" class="btn btn-danger"> -->
+<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
+<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
+<!--                 </form> -->
                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">
                	   <input type="submit" value="Delete" class="btn btn-danger">
                	    <input type="hidden" value=${boardVO.board_no } name = "board_no">
 					<input type="hidden" value=${login.user_id } name = "user_id">
                 </form>
+               
+				</c:if>
 <!--                 </div> -->
             </div>
                 
@@ -306,68 +316,30 @@
     });
     
   //#to-top button appears after scrolling
-    
-    
-    $(function () {
-    	  var slideToTop = $("<div />");
-    	  slideToTop.html('<i class="fa fa-chevron-up"></i>');
-    	  slideToTop.css({
-    	    position: 'fixed',
-    	    bottom: '20px',
-    	    right: '25px',
-    	    width: '40px',
-    	    height: '40px',
-    	    color: '#eee',
-    	    'font-size': '',
-    	    'line-height': '40px',
-    	    'text-align': 'center',
-    	    'background-color': '#222d32',
-    	    cursor: 'pointer',
-    	    'border-radius': '5px',
-    	    'z-index': '99999',
-    	    opacity: '.7',
-    	    'display': 'none'
-    	  });
-    	  slideToTop.on('mouseenter', function () {
-    	    $(this).css('opacity', '1');
-    	  });
-    	  slideToTop.on('mouseout', function () {
-    	    $(this).css('opacity', '.7');
-    	  });
-    	  $('.wrapper').append(slideToTop);
-    	  $(window).scroll(function () {
-    	    if ($(window).scrollTop() >= 150) {
-    	      if (!$(slideToTop).is(':visible')) {
-    	        $(slideToTop).fadeIn(500);
-    	      }
-    	    } else {
-    	      $(slideToTop).fadeOut(500);
-    	    }
-    	  });
-    	  $(slideToTop).click(function () {
-    	    $("body").animate({
-    	      scrollTop: 0
-    	    }, 500);
-    	  });
-    	  $(".sidebar-menu li:not(.treeview) a").click(function () {
-    	    var $this = $(this);
-    	    var target = $this.attr("href");
-    	    if (typeof target === 'string') {
-    	      $("body").animate({
-    	        scrollTop: ($(target).offset().top) + "px"
-    	      }, 500);
-    	    }
-    	  });
-    	  //Skin switcher
-    	  var current_skin = "skin-blue";
-    	  $('#layout-skins-list [data-skin]').click(function(e) {
-    	    e.preventDefault();
-    	    var skinName = $(this).data('skin');
-    	    $('body').removeClass(current_skin);
-    	    $('body').addClass(skinName);
-    	    current_skin = skinName;
-    	  });
-    	});
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top2').show("slow", function() {
+                    $('#to-top2').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top2').hide("slow", function() {
+                    $('#to-top2').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
     
   </script>
   <!-- Custom Theme JavaScript -->
