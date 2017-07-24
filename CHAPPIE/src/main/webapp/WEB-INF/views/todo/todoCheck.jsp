@@ -112,13 +112,13 @@
                     <div class="checkbox">
                    	 <c:forEach var="todoMember" items="${tmList }">
 			                      <label>
-			                      <input type="checkbox" name="member_nickname" checked>
+			                      <input type="checkbox" name="member_nickname" value="${todoMember }" checked>
 			                      	${todoMember }
 			                      </label>
 		                </c:forEach>
 	                  <c:forEach var="categoryMember" items="${cmList }">
                		             <label>
-			                      <input type="checkbox" name="member_nickname">
+			                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
 			                      	${categoryMember }
 			                      </label>   
 		              </c:forEach>      

@@ -78,6 +78,10 @@ public class TodoDAOImpl implements TodoDAO {
 	public List<String> todoMemberSelect(String todo_no) throws Exception {
 		return sqlSession.selectList(namespace+"todoMemberSelect", todo_no);
 	}
+	@Override
+	public int todoMemberDelete(String todo_no) throws Exception {
+		return sqlSession.delete(namespace+"todoMemberDelete", todo_no);
+	}
 
 	
 

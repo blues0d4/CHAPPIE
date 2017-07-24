@@ -114,22 +114,23 @@ public class TodoController {
 	public String todoWrite(@PathVariable("project_id")String project_id, 
 			@PathVariable("category_id") String category_id, TodoDTO todoDTO, HttpServletRequest request) throws Exception {
 		String[] value = request.getParameterValues("member_nickname");
-		System.out.println("member_nickname : "+value[0]+value[1]);
 		todoDTO.setCategory_id(category_id);
 		todoDTO.setProject_id(project_id);
 		todoService.todoWriteService(todoDTO);
+		todoService.todoMemberWriteService(value);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoModify", method = RequestMethod.POST)
 	public String todoModify(@PathVariable("project_id")String project_id, 
-			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
-
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no, HttpServletRequest request) throws Exception {
+		String[] value = request.getParameterValues("member_nickname");
 		todoDTO.setTodo_no(todo_no);
 		System.out.println("todoModify!!!!!!!!! : " + todoDTO);
 
 		todoService.todoModifyService(todoDTO);
+		todoService.todoMemberModify(value, todo_no);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}

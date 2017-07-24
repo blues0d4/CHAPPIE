@@ -1,5 +1,6 @@
 package kr.co.syteam.service.todo.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,12 +45,26 @@ public class TodoServiceImpl implements TodoService {
 	public int todoModifyService(TodoDTO todoDTO) throws Exception {
 		return todoDAO.todoModify(todoDTO);
 	}
-
 	@Override
-	public int todoAuthCheckService(TodoDTO todoDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int todoMemberModify(String[] member_nickname, String todo_no) throws Exception {
+		TodoDTO todoDTO = new TodoDTO();
+		
+		int result=0;
+		
+		todoDAO.todoMemberDelete(todo_no);
+		for(int i = 0;i<member_nickname.length;i++){
+			List<TodoDTO> list = new ArrayList<TodoDTO>();
+			todoDTO.setMember_nickname(member_nickname[i]);
+			todoDTO.setTodo_no(todo_no);
+			System.out.println(member_nickname[i]);
+			
+			list.add(todoDTO);
+			result = todoDAO.todoMemberWrite(list.get(0));
+		}
+		
+		return result;
 	}
+
 
 	@Override
 	public int todoCompleteService(String todo_no) throws Exception {
@@ -74,8 +89,30 @@ public class TodoServiceImpl implements TodoService {
 	}
 
 	@Override
-	public int todoMemberWriteService(String[] member_nickname, String todo_no) throws Exception {
+	public int todoMemberWriteService(String[] member_nickname) throws Exception {
 		
+		TodoDTO todoDTO = new TodoDTO();
+		String todo_no = todoDAO.todoSelect();
+		int result=0;
+		
+		for(int i = 0;i<member_nickname.length;i++){
+			List<TodoDTO> list = new ArrayList<TodoDTO>();
+			todoDTO.setMember_nickname(member_nickname[i]);
+			todoDTO.setTodo_no(todo_no);
+			System.out.println(member_nickname[i]);
+			
+			list.add(todoDTO);
+			result = todoDAO.todoMemberWrite(list.get(0));
+		}
+		
+		
+		return result;
+	}
+
+
+	@Override
+	public int todoAuthCheckService(TodoDTO todoDTO) throws Exception {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 	
