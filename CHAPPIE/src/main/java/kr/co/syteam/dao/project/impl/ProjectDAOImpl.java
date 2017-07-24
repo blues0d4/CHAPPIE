@@ -68,5 +68,20 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return sqlSession.selectList(namespace+"projectCategoryList", project_name);
 	}
 
+	@Override
+	public void projectInvite(ProjectDTO projectDTO) throws Exception {
+		sqlSession.insert(namespace+"projectInvite", projectDTO);
+	}
+
+	@Override
+	public ProjectVO getUserIdName(String user_id) throws Exception {
+		return sqlSession.selectOne(namespace + "getUserIdName", user_id);
+	}
+
+	@Override
+	public List<ProjectVO> projectMemberList(String project_id) throws Exception {
+		return sqlSession.selectList(namespace+"projectMemberList", project_id);
+	}
+
 
 }

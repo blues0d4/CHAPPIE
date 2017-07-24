@@ -76,4 +76,25 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.projectCategoryList(project_id);
 	}
 
+	@Override
+	public void projectInvite(ProjectDTO projectDTO) throws Exception {
+		
+		ProjectVO projectVO = projectDAO.getUserIdName(projectDTO.getUser_id());
+		
+		if(projectVO != null){
+			projectDTO.setMember_nickname(projectVO.getUser_name());
+			System.out.println(projectDTO.toString());
+			projectDAO.projectInvite(projectDTO);
+		}else{
+			System.out.println("프로젝트 초대에서 projectVO가 널이다!!!!!");
+		}
+		
+		
+	}
+
+	@Override
+	public List<ProjectVO> projectMemeberListService(String project_id) throws Exception {
+		return projectDAO.projectMemberList(project_id);
+	}
+
 }

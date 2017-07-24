@@ -39,7 +39,8 @@ USER_NAME = 'stan2',
 USER_PHONE = 'stan3'
 WHERE USER_ID = 'stan';
 
-
+ALTER TABLE USER_TABLE
+RENAME COLUMN MEMBER_NICKNAME TO USER_NAME;
 
 rollback;
 commit;
@@ -52,6 +53,6 @@ delete category_table;
 delete TODO_LIST_TABLE;
 delete TODO_MEMBER_TABLE;
 
-
+SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID='buzzbylove@gmail.com';
 select *
 from user_table;

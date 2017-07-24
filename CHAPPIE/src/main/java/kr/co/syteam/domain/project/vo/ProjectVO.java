@@ -6,6 +6,13 @@ public class ProjectVO {
 	private String member_nickname;
 	private String member_rank;
 	private String user_id;
+	private String user_name;
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
 	public String getProject_id() {
 		return project_id;
 	}
