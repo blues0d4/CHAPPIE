@@ -80,54 +80,68 @@ public class TodoController {
 		request.getSession().setAttribute("category", categoryVO);
 
 		List<TodoVO> todoList = todoService.todoListViewService(category_id);
-
-		System.out.println("@@@ TodoVO : " + todoList);
+		List<String> categoryMemberList = todoService.categoryMemberSelectService(category_id); 
+		
 		model.addAttribute("todoList", todoList);
+		model.addAttribute("cmList", categoryMemberList);
 
 		return "/todo/todoList";
 	}
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoView", method = RequestMethod.GET)
-	public String todoView(Model model, String todo_no) throws Exception {
-
+	public String todoView(@PathVariable("category_id")String category_id, Model model, String todo_no) throws Exception {
+		
 		TodoVO todoVO = new TodoVO();
 		todoVO = todoService.todoViewService(todo_no);
 		todoVO.setTodo_no(todo_no);
-		System.out.println("todoView !!!!!!!!!! todo_no : " + todoVO);
-
+		List<String> list1 = todoService.categoryMemberSelectService(category_id); 
+		List<String> list2 = todoService.todoMemberSelectService(todo_no);
+		
+		for(String s : list2){
+			if(list1.contains(s)){
+				list1.remove(s);
+			}			
+		}
+		
+		model.addAttribute("cmList", list1);
+		model.addAttribute("tmList", list2);
 		model.addAttribute("todoView", todoVO);
 
 		return "/todo/todoCheck";
 	}
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoWrite", method = RequestMethod.POST)
-	public String todoWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, TodoDTO todoDTO) throws Exception {
-		System.out.println("todoWrite!!!!!!!!! : " + todoDTO);
+	public String todoWrite(@PathVariable("project_id")String project_id, 
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, HttpServletRequest request) throws Exception {
+		String[] value = request.getParameterValues("member_nickname");
 		todoDTO.setCategory_id(category_id);
 		todoDTO.setProject_id(project_id);
 		todoService.todoWriteService(todoDTO);
+		todoService.todoMemberWriteService(value);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoModify", method = RequestMethod.POST)
-	public String todoModify(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
-
+	public String todoModify(@PathVariable("project_id")String project_id, 
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no, HttpServletRequest request) throws Exception {
+		String[] value = request.getParameterValues("member_nickname");
 		todoDTO.setTodo_no(todo_no);
 		System.out.println("todoModify!!!!!!!!! : " + todoDTO);
 
 		todoService.todoModifyService(todoDTO);
+		todoService.todoMemberModify(value, todo_no);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
 	
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoDelete", method = RequestMethod.GET)
-	public String todoDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
+	public String todoDelete(@PathVariable("project_id")String project_id, 
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
 		todoService.todoDeleteService(todo_no);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
-	
 
 	@RequestMapping(value = "/todo/todoComplete", method = RequestMethod.GET)
 	@ResponseBody

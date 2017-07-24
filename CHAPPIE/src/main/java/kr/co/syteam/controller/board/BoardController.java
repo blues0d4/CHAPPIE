@@ -2,6 +2,7 @@ package kr.co.syteam.controller.board;
 
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -132,19 +133,33 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_DELETE + "/{board_no}")
-	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
+	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, BoardDTO boardDTO) throws Exception {
 		
 		logger.info("doBoardDelete");
 
+//		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+//		String user_id = loginVO.getUser_id();
+		
+//		BoardDTO boardDTO = new BoardDTO();
+//		boardDTO.setBoard_no(board_no);
+//		boardDTO.setUser_id(user_id);
 		boardService.boardDelete(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY_FORM + "/{board_no}")
-	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, Model model) throws Exception {
+	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, HttpServletRequest request, Model model) throws Exception {
 		
 		logger.info("doBoardModifyForm");
+
+		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+		String user_id = loginVO.getUser_id();
+		
+		BoardDTO boardDTO = new BoardDTO();
+		boardDTO.setBoard_no(board_no);
+		boardDTO.setUser_id(user_id);
+		boardService.boardDelete(boardDTO);
 		
 		BoardVO boardVO = boardService.boardView(board_no);
 

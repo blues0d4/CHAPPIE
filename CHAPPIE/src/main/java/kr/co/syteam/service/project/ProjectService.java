@@ -20,4 +20,6 @@ public interface ProjectService {
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception;
 	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
 	public List<CategoryVO> projectCategoryList(String project_id) throws Exception;
+	public void projectInvite(ProjectDTO projectDTO) throws Exception;
+	public List<ProjectVO> projectMemeberListService(String project_id) throws Exception;
 }

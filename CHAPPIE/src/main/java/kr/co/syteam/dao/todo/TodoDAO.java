@@ -14,8 +14,11 @@ public interface TodoDAO {
 	public List<TodoVO> todoListView(String category_id) throws Exception;
 	public TodoVO todoView(String todo_no) throws Exception;
 	public int todoDelete(String todo_no) throws Exception;
+	public int todoMemberDelete(String todo_no) throws Exception;
 	public int todoModify(TodoDTO todoDTO) throws Exception;
 	public int todoAuthCheck(TodoDTO todoDTO) throws Exception;
+	public List<String> categoryMemberSelect(String category_id) throws Exception;
+	public List<String> todoMemberSelect(String todo_no) throws Exception;
 	public int todoCompleteYes(String todo_no) throws Exception;
 	public int todoCompleteNo(String todo_no) throws Exception;
 	public int todoCompleteSelect(String todo_no) throws Exception;

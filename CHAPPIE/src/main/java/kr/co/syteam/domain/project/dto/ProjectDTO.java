@@ -52,6 +52,8 @@ public class ProjectDTO {
 		return "ProjectDTO [project_id=" + project_id + ", project_name=" + project_name + ", member_nickname="
 				+ member_nickname + ", member_rank=" + member_rank + ", user_id=" + user_id + "]";
 	}
+
+	
 	
 	
 

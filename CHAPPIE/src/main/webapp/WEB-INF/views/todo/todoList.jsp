@@ -98,7 +98,7 @@
 						<td>								
 	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
 	                    </td>
-						<td style="padding-top:15px">${todoVO.todo_list}	</td>
+						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td>
 													
 						<c:choose>
 							<c:when test="${todoVO.todo_complete == '1' }">
@@ -176,6 +176,19 @@
 		                </td>
 		                <td>
 		               		<input type="text" name="todo_end_date" class="form-control" id="datepicker4" placeholder="">
+		                </td>
+       	   			</tr>
+       	   			<tr>
+       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 담당자 </label></td>
+       	   				<td>
+			                  <div class="checkbox">
+				                  <c:forEach var="categoryMember" items="${cmList }">
+				                    <label>
+				                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
+				                      	${categoryMember }
+				                    </label>
+					              </c:forEach>      
+			                  </div>			                  
 		                </td>
        	   			</tr>
        	   			<tr>

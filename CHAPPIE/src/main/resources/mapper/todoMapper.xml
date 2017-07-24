@@ -50,6 +50,12 @@
 			TODO_END_DATE=#{todo_end_date}, TODO_PRIORITY=#{todo_priority}, TODO_NOTE=#{todo_note} WHERE TODO_NO=#{todo_no}
 		]]>
 	</update>
+	<delete id="todoMemberDelete">
+		<![CDATA[
+			DELETE FROM TODO_MEMBER_TABLE 
+			WHERE TODO_NO = #{todo_no}
+		]]>
+	</delete>
 	
 	<delete id="todoDelete">
 		<![CDATA[
@@ -57,6 +63,19 @@
 			WHERE TODO_NO=#{todo_no}
 		]]>
 	</delete>
+	
+	<select id="todoMemberSelect" resultType="String">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM TODO_MEMBER_TABLE 
+			WHERE TODO_NO = #{todo_no}
+		]]>
+	</select>
+	<select id="categoryMemberSelect" resultType="String">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM CATEGORY_MEMBER_TABLE  
+			WHERE CATEGORY_ID = #{category_id}
+		]]>
+	</select>
 	
 	<select id="todoCompleteSelect" resultType="int">
 		<![CDATA[

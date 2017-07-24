@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
@@ -19,8 +20,8 @@ import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
-import kr.co.syteam.service.board.BoardService;
 import kr.co.syteam.service.project.ProjectService;
+import kr.co.syteam.service.user.IUserService;
 
 //"/{project}"
 @Controller
@@ -32,7 +33,7 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	@Autowired
-	private BoardService boardService;
+	private IUserService userService;
 	
 	//프로젝트 메인
 	//프로젝트 선택
@@ -136,6 +137,26 @@ public class ProjectController {
 		
 		projectService.projectCategoryCreate(categoryCreateDTO);
 		return "redirect:/project/"+project_id;
+	}
+	
+	@RequestMapping(value="/project/{project_id}/project_setting")
+	public String projectSetting(@PathVariable("project_id")String project_id ,Model model) throws Exception{
+		
+		List<ProjectVO> list = projectService.projectMemeberListService(project_id);
+		model.addAttribute("projectMember", list);
+		
+		return "/project/projectSetting";
+	}
+	
+	@RequestMapping(value="/project/{project_id}/project_invite", method = RequestMethod.POST)
+	public String projectInvite(@PathVariable("project_id")String project_id, ProjectDTO projectDTO) throws Exception{
+		logger.info("project_invite");
+		
+		projectDTO.setProject_id(project_id);
+		System.out.println(projectDTO.toString());
+		projectService.projectInvite(projectDTO);
+		
+		return "redirect:/project/{project_id}/project_setting";
 	}
 	
 	

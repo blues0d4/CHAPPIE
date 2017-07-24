@@ -73,7 +73,7 @@
 
     <!-- Main content -->
     <section class="content" >
-    	<div class="col-md-7">
+    	<div class="col-md-8">
     	<div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Todo</h3>
@@ -85,13 +85,13 @@
             <form class="form-horizontal" action="/project/${project.project_id }/todo/${category.category_id }/todoModify?todo_no=${todoVO.todo_no }" method="post">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">할 일</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">할 일</label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control" id="todo_list" name="todo_list" value="${todoVO.todo_list }">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">시작 일자 <i class="fa fa-calendar"></i></label>
+                  <label for="inputPassword3" class="col-sm-3 control-label">시작 일자 <i class="fa fa-calendar"></i></label>
                   <div class="col-sm-9">
                 <div class="input-group date">
                     <input type="text" class="form-control pull-right" id="datepicker" name="todo_start_date" value="${todoVO.todo_start_date }">
@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">종료 일자 <i class="fa fa-calendar"></i></label>
+                  <label for="inputPassword3" class="col-sm-3 control-label">종료 일자 <i class="fa fa-calendar"></i></label>
                   <div class="col-sm-9">
                     <div class="input-group date">
                     <input type="text" class="form-control pull-right" id="datepicker2" name="todo_end_date" value="${todoVO.todo_end_date }">
@@ -107,17 +107,51 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">중요도</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">담당자</label>
+                  <div class="col-sm-9">
+                    <div class="checkbox">
+                   	 <c:forEach var="todoMember" items="${tmList }">
+			                      <label>
+			                      <input type="checkbox" name="member_nickname" value="${todoMember }" checked>
+			                      	${todoMember }
+			                      </label>
+		                </c:forEach>
+	                  <c:forEach var="categoryMember" items="${cmList }">
+               		             <label>
+			                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
+			                      	${categoryMember }
+			                      </label>   
+		              </c:forEach>      
+		              
+	                 </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-3 control-label">중요도</label>
                   <div class="col-sm-9">
                     <select class="form-control" id="todo_priority" name="todo_priority">
-                    <option>상</option>
-                    <option>중</option>
-                    <option>하</option>
+                    	<c:choose>
+                    		<c:when test="${todoVO.todo_priority == '상' }">
+			                   	<option selected>상</option>
+			                    <option>중</option>
+			                    <option>하</option>
+			                </c:when>
+			                <c:when test="${todoVO.todo_priority == '중' }">
+			                   	<option>상</option>
+			                    <option selected>중</option>
+			                    <option>하</option>
+			                </c:when>
+			                <c:otherwise>
+			                	<option>상</option>
+			                    <option>중</option>
+			                    <option selected>하</option>
+			                </c:otherwise>
+	                    </c:choose>
                   </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">비고</label>
+                  <label for="inputPassword3" class="col-sm-3 control-label">비고</label>
                   <div class="col-sm-9">
                     <textarea class="form-control" rows="5" id="todo_note" name="todo_note">${todoVO.todo_note }</textarea>
                   </div>

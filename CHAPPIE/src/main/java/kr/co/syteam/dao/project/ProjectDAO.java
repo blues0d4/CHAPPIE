@@ -19,4 +19,7 @@ public interface ProjectDAO {
 	public void projectCategoryCreate(CategoryCreateDTO categoryCreateDTO) throws Exception;
 	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
 	public List<CategoryVO> projectCategoryList(String project_name) throws Exception;
+	public void projectInvite(ProjectDTO projectDTO) throws Exception;
+	public ProjectVO getUserIdName(String user_id) throws Exception;
+	public List<ProjectVO> projectMemberList(String project_id) throws Exception;
 }

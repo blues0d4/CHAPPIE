@@ -48,7 +48,7 @@
           </ul>
        </li>
          <li class="treeview">
-         <a href="#">
+         <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/project_setting">
             <i class="glyphicon glyphicon-cog"></i> <span>Project Settings</span>
             
 <!--             <span class="pull-right-container"> -->

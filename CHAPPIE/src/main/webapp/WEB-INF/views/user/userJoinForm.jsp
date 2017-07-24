@@ -105,10 +105,10 @@
         <input type="password" class="form-control" placeholder="Password" id="user_pw" name="user_pw">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password" id="user_pwcheck" name="user_pwcheck">
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-      </div>
+<!--       <div class="form-group has-feedback"> -->
+<!--         <input type="password" class="form-control" placeholder="Retype password" id="user_pwcheck" name="user_pwcheck"> -->
+<!--         <span class="glyphicon glyphicon-log-in form-control-feedback"></span> -->
+<!--       </div> -->
 
 
 		<div class="input-group">
@@ -121,13 +121,13 @@
 <br>
 <br>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
-            </label>
-          </div>
-        </div>
+<!--         <div class="col-xs-8"> -->
+<!--           <div class="checkbox icheck"> -->
+<!--             <label> -->
+<!--               <input type="checkbox"> I agree to the <a href="#">terms</a> -->
+<!--             </label> -->
+<!--           </div> -->
+<!--         </div> -->
         <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" id="submit" class="btn btn-primary btn-block btn-flat">Register</button>

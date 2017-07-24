@@ -70,6 +70,18 @@ public class TodoDAOImpl implements TodoDAO {
 	public int todoCompleteSelect(String todo_no) throws Exception {
 		return sqlSession.selectOne(namespace+"todoCompleteSelect", todo_no);
 	}
+	@Override
+	public List<String> categoryMemberSelect(String category_id) throws Exception {
+		return sqlSession.selectList(namespace+"categoryMemberSelect", category_id );
+	}
+	@Override
+	public List<String> todoMemberSelect(String todo_no) throws Exception {
+		return sqlSession.selectList(namespace+"todoMemberSelect", todo_no);
+	}
+	@Override
+	public int todoMemberDelete(String todo_no) throws Exception {
+		return sqlSession.delete(namespace+"todoMemberDelete", todo_no);
+	}
 
 	
 

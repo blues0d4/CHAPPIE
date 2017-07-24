@@ -82,4 +82,20 @@
 		]]>
 	</select>
 	
+	<insert id="projectInvite" parameterType="kr.co.syteam.domain.project.dto.ProjectDTO">
+		<![CDATA[
+			INSERT INTO MEMBER_TABLE(PROJECT_ID, MEMBER_NICKNAME, MEMBER_RANK, USER_ID)
+			VALUES(#{project_id}, #{member_nickname}, 'n', #{user_id})
+		]]>
+	</insert>
+	<select id="getUserIdName" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+		<![CDATA[
+			SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID=#{user_id}
+		]]>
+	</select>
+	<select id="projectMemberList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM MEMBER_TABLE WHERE PROJECT_ID=#{project_id}
+		]]>
+	</select>
 </mapper>
