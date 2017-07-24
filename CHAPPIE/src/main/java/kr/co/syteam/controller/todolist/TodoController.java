@@ -112,8 +112,9 @@ public class TodoController {
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoWrite", method = RequestMethod.POST)
 	public String todoWrite(@PathVariable("project_id")String project_id, 
-			@PathVariable("category_id") String category_id, TodoDTO todoDTO) throws Exception {
-		System.out.println("todoWrite!!!!!!!!! : " + todoDTO);
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, HttpServletRequest request) throws Exception {
+		String[] value = request.getParameterValues("member_nickname");
+		System.out.println("member_nickname : "+value[0]+value[1]);
 		todoDTO.setCategory_id(category_id);
 		todoDTO.setProject_id(project_id);
 		todoService.todoWriteService(todoDTO);

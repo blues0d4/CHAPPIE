@@ -184,7 +184,7 @@
 			                  <div class="checkbox">
 				                  <c:forEach var="categoryMember" items="${cmList }">
 				                    <label>
-				                      <input type="checkbox" name="member_nickname">
+				                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
 				                      	${categoryMember }
 				                    </label>
 					              </c:forEach>      

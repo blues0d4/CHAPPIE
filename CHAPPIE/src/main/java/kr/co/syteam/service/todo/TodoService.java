@@ -7,6 +7,7 @@ import kr.co.syteam.domain.todo.vo.TodoVO;
 
 public interface TodoService {
 	public int todoWriteService(TodoDTO todoDTO) throws Exception;
+	public int todoMemberWriteService(String[] member_nickname, String todo_no) throws Exception;
 	public List<TodoVO> todoListViewService(String category_id) throws Exception;
 	public TodoVO todoViewService(String todo_no) throws Exception;
 	public int todoDeleteService(String todo_no) throws Exception;

@@ -72,6 +72,12 @@ public class TodoServiceImpl implements TodoService {
 	public List<String> todoMemberSelectService(String todo_no) throws Exception {
 		return todoDAO.todoMemberSelect(todo_no);
 	}
+
+	@Override
+	public int todoMemberWriteService(String[] member_nickname, String todo_no) throws Exception {
+		
+		return 0;
+	}
 	
 	
 	
