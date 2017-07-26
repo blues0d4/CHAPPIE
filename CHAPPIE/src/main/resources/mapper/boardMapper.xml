@@ -70,5 +70,22 @@
 		]]>
 	</update>
 	
+	<insert id = "boardCommentWrite">
+		<![CDATA[
+			INSERT INTO COMMENT_TABLE(BOARD_NO, COMMENT_NO, COMMENT_CONTENTS, USER_ID, USER_NAME, COMMENT_WRITE_DATE)
+			VALUES(#{board_no}, COMMENT_SEQ.NEXTVAL, #{comment_contents}, #{user_id}, #{user_name}, SYSDATE)
+		]]>
+	</insert>
+	
+	<select id="boardCommentList" resultType = "kr.co.syteam.domain.board.vo.BoardCommentVO">
+		<![CDATA[
+			SELECT BOARD_NO, COMMENT_NO, COMMENT_CONTENTS, C.USER_ID, C.USER_NAME, COMMENT_WRITE_DATE
+			FROM COMMENT_TABLE C, USER_TABLE U
+			WHERE C.USER_ID = U.USER_ID
+			AND BOARD_NO = #{board_no}
+			ORDER BY COMMENT_NO
+		]]>
+	</select>
+	
 	
 </mapper>

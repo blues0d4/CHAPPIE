@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.syteam.dao.board.BoardDAO;
+import kr.co.syteam.domain.board.dto.BoardCommentDTO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
+import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -60,6 +62,16 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void boardModify(BoardDTO boardDTO) throws Exception {
 		sqlSession.update(namespace+"boardModify", boardDTO);
+	}
+
+	@Override
+	public void boardCommentWrite(BoardCommentDTO boardCommentDTO) throws Exception {
+		sqlSession.insert(namespace+"boardCommentWrite", boardCommentDTO);
+	}
+
+	@Override
+	public List<BoardCommentVO> boardCommentList(String board_no) throws Exception {
+		return sqlSession.selectList(namespace+"boardCommentList", board_no);
 	}
 	
 	

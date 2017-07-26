@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.syteam.dao.board.BoardDAO;
+import kr.co.syteam.domain.board.dto.BoardCommentDTO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
+import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -46,6 +48,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void boardModify(BoardDTO boardDTO) throws Exception {
 		boardDAO.boardModify(boardDTO);
+	}
+
+	@Override
+	public void boardCommentWrite(BoardCommentDTO boardCommentDTO) throws Exception {
+		boardDAO.boardCommentWrite(boardCommentDTO);
+	}
+
+	@Override
+	public List<BoardCommentVO> boardCommentList(String board_no) throws Exception {
+		return boardDAO.boardCommentList(board_no);
 	}
 	
 
