@@ -21,5 +21,8 @@ public interface ProjectDAO {
 	public List<CategoryVO> projectCategoryList(String project_name) throws Exception;
 	public void projectInvite(ProjectDTO projectDTO) throws Exception;
 	public ProjectVO getUserIdName(String user_id) throws Exception;
-	public List<ProjectVO> projectMemberList(String project_id) throws Exception;
+	public List<String> projectMemberList(String project_id) throws Exception;
+	public int projectMemberDelete(ProjectDTO projectDTO) throws Exception;
+	public int categoryDelete(String category_id) throws Exception;
+	public List<String> categoryMemberList(String category_id) throws Exception;
 }

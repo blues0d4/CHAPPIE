@@ -110,7 +110,7 @@
                   <label for="inputEmail3" class="col-sm-3 control-label">담당자</label>
                   <div class="col-sm-9">
                     <div class="checkbox">
-                   	 <c:forEach var="todoMember" items="${tmList }">
+                   	    <c:forEach var="todoMember" items="${tmList }">
 			                      <label>
 			                      <input type="checkbox" name="member_nickname" value="${todoMember }" checked>
 			                      	${todoMember }
@@ -122,7 +122,6 @@
 			                      	${categoryMember }
 			                      </label>   
 		              </c:forEach>      
-		              
 	                 </div>
                   </div>
                 </div>
