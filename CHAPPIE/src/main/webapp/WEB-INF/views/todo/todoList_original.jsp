@@ -55,9 +55,9 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CHAPPIE</b></span>
     </a>
-
+    
     <!-- Header Navbar: style can be found in header.less -->
-
+    
 	<nav class="navbar navbar-static-top">
     <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
     </nav>
@@ -84,7 +84,7 @@
     <section class="content">
 		<div class="col-md-7">
 		<div class="box box-primary">
-
+            
             <!-- /.box-header -->
             <div class="box-body">
                 <table class="table table-bordered table-hover" >
@@ -95,11 +95,11 @@
                    </tr>
 				<c:forEach items="${ todoList }" var="todoVO">
 					<tr>
-						<td>
-	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
+						<td>								
+	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
 	                    </td>
 						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td>
-
+													
 						<c:choose>
 							<c:when test="${todoVO.todo_complete == '1' }">
 								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
@@ -109,7 +109,7 @@
 							</c:otherwise>
 						</c:choose>
 					</tr>
-				</c:forEach>
+				</c:forEach>                   
                  </table>
             </div>
             <!-- /.box-body -->
@@ -117,30 +117,30 @@
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
-		</div>
-
+		</div>		
+		
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
    	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
-
+    
   </footer>
 
   <!-- Control Sidebar -->
-
+  
 	<aside class="control-sidebar control-sidebar-dark">
-
+		
    	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-
+	
  	</aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-
+	
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
@@ -153,7 +153,7 @@
 
       <div class="modal-body">
         <form class="form-horizontal" method="post" action="/project/${project.project_id }/todo/${category.category_id }/todoWrite">
-
+          
        	   	<div class="modal-body">
        	   		<table class="table table-bordered table-hover">
        	   			<tr>
@@ -187,8 +187,8 @@
 				                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
 				                      	${categoryMember }
 				                    </label>
-					              </c:forEach>
-			                  </div>
+					              </c:forEach>      
+			                  </div>			                  
 		                </td>
        	   			</tr>
        	   			<tr>
@@ -213,7 +213,7 @@
 	                  	<button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
            			</div>
            		</div>
-			</div>
+			</div>        
 		</form>
       </div>
 	  </div>
@@ -222,7 +222,7 @@
 
 <script type="text/javascript">
 function complete(chk)
-{
+{   
    var allData = { "todo_no": chk };
    $.ajax({
       url: "/todo/todoComplete",
@@ -231,8 +231,8 @@ function complete(chk)
       dataType:"String",
       success:function(result){
          alert("aa");
-      }
-   });
+      }      
+   });   
 }
 </script>
 
@@ -310,7 +310,7 @@ function complete(chk)
     $('#datepicker4').datepicker({
         autoclose: true
       });
-
+    
     //iCheck for checkbox and radio inputs
     $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',

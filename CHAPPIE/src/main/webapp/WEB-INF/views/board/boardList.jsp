@@ -74,6 +74,7 @@
 </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
+
 <div class="wrapper">
 
   <header class="main-header">
