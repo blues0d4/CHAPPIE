@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
@@ -142,8 +144,8 @@ public class ProjectController {
 	@RequestMapping(value="/project/{project_id}/project_setting")
 	public String projectSetting(@PathVariable("project_id")String project_id ,Model model) throws Exception{
 		
-		List<ProjectVO> list = projectService.projectMemeberListService(project_id);
-		model.addAttribute("projectMember", list);
+		List<String> list = projectService.projectMemeberListService(project_id);
+		model.addAttribute("projectM", list);
 		
 		return "/project/projectSetting";
 	}
@@ -158,6 +160,62 @@ public class ProjectController {
 		
 		return "redirect:/project/{project_id}/project_setting";
 	}
+	
+	@RequestMapping(value="/project/{project_id}/project_member_delete")
+	public String projectMemberDelete(@PathVariable("project_id")String project_id, ProjectDTO projectDTO) throws Exception{
+		logger.info("project_delete");
+		projectDTO.setProject_id(project_id);
+		
+		System.out.println(projectDTO.toString());
+		projectService.projectMemberDeleteService(projectDTO);
+				
+		return "redirect:/project/{project_id}/project_setting";
+	}
+	@RequestMapping(value="/project/{project_id}/category_setting")
+	public String categorySetting(@PathVariable("project_id")String project_id, Model model, 
+			HttpServletRequest request,String category_id) throws Exception{
+		
+		category_id = request.getParameter("category_id");
+		List<String> list1 = projectService.projectMemeberListService(project_id);
+		List<String> list2 = projectService.categoryMemeberListService(category_id);
+				
+		for(String s : list2){
+			if(list1.contains(s)){
+				list1.remove(s);
+			}
+		}
+		
+		model.addAttribute("pmList", list1);
+		model.addAttribute("cmList", list2);
+		
+		
+		return "/project/categorySetting";
+	}
+	
+	@RequestMapping(value= "/project/{project_id}/categoryMemberModify")
+	public String categoryMemberModify(HttpServletRequest request, String category_id) throws Exception{
+		
+		String[] value = request.getParameterValues("member_nickname");
+		
+		System.out.println(value[0]);
+		
+		projectService.categoryMemberModify(value, category_id);
+		
+		
+		return "redirect:/project/{project_id}/category_setting";
+	}
+	
+	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
+	@ResponseBody
+	public int categoryDelete(@PathVariable("project_id")String project_id, 
+			@PathVariable("category_id")String category_id) throws Exception{
+
+		System.out.println("category_id : " + category_id);
+		int result = projectService.categoryDeleteService(category_id);
+		System.out.println(result);
+		return result;
+	}
+	
 	
 	
 }

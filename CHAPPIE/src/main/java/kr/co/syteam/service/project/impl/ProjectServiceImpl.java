@@ -88,13 +88,45 @@ public class ProjectServiceImpl implements ProjectService {
 		}else{
 			System.out.println("프로젝트 초대에서 projectVO가 널이다!!!!!");
 		}
-		
-		
 	}
 
 	@Override
-	public List<ProjectVO> projectMemeberListService(String project_id) throws Exception {
+	public List<String> projectMemeberListService(String project_id) throws Exception {
 		return projectDAO.projectMemberList(project_id);
+	}
+
+	@Override
+	public int projectMemberDeleteService(ProjectDTO projectDTO) throws Exception {
+		return projectDAO.projectMemberDelete(projectDTO);
+	}
+
+	@Override
+	public int categoryDeleteService(String category_id) throws Exception {
+		return projectDAO.categoryDelete(category_id);
+	}
+
+	@Override
+	public List<String> categoryMemeberListService(String category_id) throws Exception {
+		return projectDAO.categoryMemberList(category_id);
+	}
+
+	@Override
+	public int categoryMemberModify(String[] member_nickname, String category_id) throws Exception {
+		int result=0;
+		System.out.println("memberDelete" + category_id);
+		projectDAO.categoryMemberDelete(category_id);
+		
+		for(int i = 0;i<member_nickname.length;i++){
+			CategoryDTO categoryDTO = new CategoryDTO();
+			categoryDTO.setCategory_id(category_id);
+			categoryDTO.setMember_nickname(member_nickname[i]);
+			
+			System.out.println("categoryMemberWrite !!! : " + categoryDTO);
+			
+			result = projectDAO.categoryMemberWrite(categoryDTO);
+		}
+		
+		return result;
 	}
 
 }

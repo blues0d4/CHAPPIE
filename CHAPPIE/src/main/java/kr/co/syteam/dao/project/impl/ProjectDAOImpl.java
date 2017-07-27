@@ -79,8 +79,33 @@ public class ProjectDAOImpl implements ProjectDAO {
 	}
 
 	@Override
-	public List<ProjectVO> projectMemberList(String project_id) throws Exception {
+	public List<String> projectMemberList(String project_id) throws Exception {
 		return sqlSession.selectList(namespace+"projectMemberList", project_id);
+	}
+
+	@Override
+	public int projectMemberDelete(ProjectDTO projectDTO) throws Exception {
+		return sqlSession.delete(namespace+"projectMemberDelete", projectDTO);
+	}
+
+	@Override
+	public int categoryDelete(String category_id) throws Exception {
+		return sqlSession.delete(namespace+"categoryDelete", category_id);
+	}
+
+	@Override
+	public List<String> categoryMemberList(String category_id) throws Exception {
+		return sqlSession.selectList(namespace+"categoryMemberList", category_id);
+	}
+
+	@Override
+	public int categoryMemberDelete(String category_id) throws Exception {
+		return sqlSession.delete(namespace+"categoryMemberDelete", category_id);
+	}
+
+	@Override
+	public int categoryMemberWrite(CategoryDTO categoryDTO) throws Exception {
+		return sqlSession.insert(namespace+"categoryMemberWrite", categoryDTO);
 	}
 
 

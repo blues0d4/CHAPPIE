@@ -93,9 +93,43 @@
 			SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID=#{user_id}
 		]]>
 	</select>
-	<select id="projectMemberList" resultType="kr.co.syteam.domain.project.vo.ProjectVO">
+	<select id="projectMemberList" resultType="String">
 		<![CDATA[
 			SELECT MEMBER_NICKNAME FROM MEMBER_TABLE WHERE PROJECT_ID=#{project_id}
 		]]>
 	</select>
+	
+	<select id="categoryMemberList" resultType="String">
+		<![CDATA[
+			SELECT MEMBER_NICKNAME FROM CATEGORY_MEMBER_TABLE WHERE CATEGORY_ID=#{category_id}
+		]]>
+	</select>
+	
+	<delete id="projectMemberDelete" parameterType="kr.co.syteam.domain.project.dto.ProjectDTO">
+		<![CDATA[
+			DELETE FROM MEMBER_TABLE 
+			WHERE PROJECT_ID=#{project_id} AND MEMBER_NICKNAME=#{member_nickname} 
+		]]>
+	</delete>
+	
+	<delete id="categoryDelete">
+		<![CDATA[
+			DELETE FROM CATEGORY_TABLE WHERE CATEGORY_ID=#{category_id}
+		]]>
+	</delete>
+	
+	<delete id="categoryMemberDelete">
+		<![CDATA[
+			DELETE FROM CATEGORY_MEMBER_TABLE 
+			WHERE CATEGORY_ID = #{category_id}
+		]]>
+	</delete>
+	
+	<insert id="categoryMemberWrite">
+  		<![CDATA[
+  			INSERT INTO CATEGORY_MEMBER_TABLE 
+			VALUES (#{category_id}, #{member_nickname})
+  		]]>
+  	</insert>
+	
 </mapper>
