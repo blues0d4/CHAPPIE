@@ -47,6 +47,8 @@
   <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,6 +74,36 @@
 #msg_input{overflow:auto;margin:0;width:100%;min-height:42px;height:38px;max-height:180px;border:2px solid #E0E0E0;border-radius:.375rem;outline:0;background:#fff;resize:none;box-shadow:none;color:#3D3C40;font-family:Slack-Lato,appleLogo,sans-serif;font-size:.9375rem;line-height:1.2rem;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto;padding:9px 30px 10px 50px}
 
 </style>
+
+<script>
+function commentList(val){
+	var allData = { "board_no" : val};
+	
+	$.ajax({
+		url: "${URIs.URI_BOARD_COMMENT_LIST }/"+val,
+		data: allData,
+		dataType: "json",
+		success:function(result){
+			var output = "<table>";
+	            for(var i in result){
+	                output += "<tr>";
+	                output += "<td>"+result[i].user_id;
+	//                 output += "("+changeDate(result[i].regdate)+")<br>";
+	                output += result[i].comment_contents+"</td>";
+	                output += "<tr>";
+	            }
+            output += "</table>";
+
+            $("#commentList").html(output);
+				
+		}
+		
+		
+	})
+	
+}
+</script>
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
@@ -122,6 +154,7 @@
     <li class="time-label">
         <span class="bg-red">
             2017년 2월 20일 월요일
+            <button id="btntest">a</button>
         </span>
     </li>
     <!-- /.timeline-label -->
@@ -169,7 +202,7 @@
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test2
+	test3
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
@@ -179,7 +212,8 @@
             <div class="timeline-footer">
             <div class="form-inline">
 <!--             <div style="width: 500px"> -->
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }">Comments</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }" onclick="commentList(${boardVO.board_no})">${boardVO.comment_count } Comments</button>
+
 <%--                 <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a>  --%>
 <%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
 <%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
@@ -203,10 +237,20 @@
             </div>
                 
                 <div id="demo${status.index }" class="collapse">
-	   				 Lorem ipsum dolor sit amet, co nsectetur adipisicing elit,
-	   					 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	   				  <form>
+    <div class="form-group">
+<%--     <c:forEach items="${boardCommentList }" var="boardCommentVO" varStatus="status"> --%>
+ 				
+<%--     	${boardCommentVO.comment_contents} --%>
+<%--     	</c:forEach> --%>
+
+    <div id="commentList"></div>
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="2" id="comment"></textarea>
+    </div>
+  </form>
 	  			</div>
+	  			
             </div>
         </div>
     </li>
