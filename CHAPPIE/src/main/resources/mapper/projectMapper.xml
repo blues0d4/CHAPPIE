@@ -132,4 +132,20 @@
   		]]>
   	</insert>
 	
+	<select id="projectChoiceGet" resultType = "String">
+		<![CDATA[
+			SELECT USER_PROJECT_CHOICE
+			FROM USER_TABLE
+			WHERE USER_ID = #{user_id}
+		]]>
+	</select>
+	
+	<update id="projectChoice">
+		<![CDATA[
+			UPDATE USER_TABLE
+			SET
+			USER_PROJECT_CHOICE = #{project_id}
+			WHERE USER_ID = #{user_id}
+		]]>
+	</update>
 </mapper>

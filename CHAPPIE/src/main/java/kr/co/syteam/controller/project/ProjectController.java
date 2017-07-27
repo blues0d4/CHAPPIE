@@ -62,10 +62,14 @@ public class ProjectController {
 		if(projectVO == null){
 			return "redirect:"+URIs.URI_MAIN;
 		}
+		
+		projectService.projectChoice(projectSelectDTO);
+		
 //		model.addAttribute("project", projectVO);
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
-		System.out.println(projectVO);
+		
+//		System.out.println(projectVO);
 		
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
 		System.out.println(categoryList);
@@ -91,6 +95,8 @@ public class ProjectController {
 		logger.info("doProjectCreate");
 		
 		projectService.projectManagerInsert(projectDTO, request);
+		
+		
 		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 	
@@ -103,7 +109,8 @@ public class ProjectController {
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		List<ProjectVO> projectList = projectService.projectList(user_id);
-		System.out.println(projectList);
+		
+//		System.out.println(projectList);
 		if(projectList.isEmpty()){
 			return "redirect:"+URIs.URI_PROJECT_CREATE_FORM;
 		}
@@ -111,6 +118,13 @@ public class ProjectController {
 		System.out.println(projectList);
 //		model.addAttribute("projectList", projectList);
 		request.getSession().setAttribute("projectList", projectList);
+		
+		String user_project_choice = projectService.projectChoiceGet(user_id);
+		
+		System.out.println(user_project_choice);
+		if(user_project_choice != null) {
+			return "redirect:"+URIs.PROJECT_DEFAULT+"/"+user_project_choice;
+		}
 		return URIs.URI_PROJECT_LIST_PAGE;
  
 	}

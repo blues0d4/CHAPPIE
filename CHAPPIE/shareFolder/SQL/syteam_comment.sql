@@ -37,7 +37,7 @@ NOMINVALUE; --�ּҰ� X
 
 --댓글 삽입
 insert into comment_table(BOARD_NO, comment_no, comment_contents, user_id, user_name, comment_write_date)
-values('135', comment_seq.nextval, 'ctest1', '1', '1', sysdate)
+values('135', comment_seq.nextval, '테스트1', '1', '1', sysdate)
 ;
 
 COMMIT;
@@ -47,7 +47,7 @@ DELETE FROM COMMENT_TABLE;
 SELECT BOARD_NO, COMMENT_NO, COMMENT_CONTENTS, C.USER_ID, C.USER_NAME, COMMENT_WRITE_DATE
 FROM COMMENT_TABLE C, USER_TABLE U
 WHERE C.USER_ID = U.USER_ID
-AND BOARD_NO = 135
+AND BOARD_NO = 130
 ORDER BY COMMENT_NO
 ;
 

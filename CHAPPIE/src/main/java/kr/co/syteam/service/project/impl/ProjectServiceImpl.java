@@ -49,6 +49,14 @@ public class ProjectServiceImpl implements ProjectService {
 		
 		System.out.println("projectManagerInsert");
 		System.out.println(projectDTO);
+		
+		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
+		projectSelectDTO.setProject_id(project_id);
+		projectSelectDTO.setUser_id(user_id);
+		
+		System.out.println(projectSelectDTO);
+		
+		projectDAO.projectChoice(projectSelectDTO);
 	}
 
 	@Override
@@ -127,6 +135,16 @@ public class ProjectServiceImpl implements ProjectService {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public void projectChoice(ProjectSelectDTO projectSelectDTO) throws Exception {
+		projectDAO.projectChoice(projectSelectDTO);
+	}
+
+	@Override
+	public String projectChoiceGet(String user_id) throws Exception {
+		return projectDAO.projectChoiceGet(user_id);
 	}
 
 }

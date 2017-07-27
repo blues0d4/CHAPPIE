@@ -42,7 +42,7 @@ public class UserController {
 		System.out.println(joinResult);
 
 		logger.info("doUserJoin");
-		return "redirect:"+URIs.URI_MAIN;
+		return "redirect:"+URIs.URI_USER_LOGIN_FORM;
 		// return URIs.URI_JOINUSER_FULL;
 	}
 
