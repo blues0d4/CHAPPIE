@@ -173,9 +173,9 @@ public class ProjectController {
 	}
 	@RequestMapping(value="/project/{project_id}/category_setting")
 	public String categorySetting(@PathVariable("project_id")String project_id, Model model, 
-			HttpServletRequest request) throws Exception{
+			HttpServletRequest request,String category_id) throws Exception{
 		
-		String category_id = request.getParameter("category_id");
+		category_id = request.getParameter("category_id");
 		List<String> list1 = projectService.projectMemeberListService(project_id);
 		List<String> list2 = projectService.categoryMemeberListService(category_id);
 				
@@ -192,12 +192,14 @@ public class ProjectController {
 		return "/project/categorySetting";
 	}
 	
-	@RequestMapping(value= "/project/{project_id}/memberModify")
+	@RequestMapping(value= "/project/{project_id}/categoryMemberModify")
 	public String categoryMemberModify(HttpServletRequest request, String category_id) throws Exception{
 		
 		String[] value = request.getParameterValues("member_nickname");
 		
+		System.out.println(value[0]);
 		
+		projectService.categoryMemberModify(value, category_id);
 		
 		
 		return "redirect:/project/{project_id}/category_setting";

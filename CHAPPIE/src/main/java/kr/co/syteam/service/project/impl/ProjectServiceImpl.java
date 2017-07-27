@@ -110,4 +110,23 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.categoryMemberList(category_id);
 	}
 
+	@Override
+	public int categoryMemberModify(String[] member_nickname, String category_id) throws Exception {
+		int result=0;
+		System.out.println("memberDelete" + category_id);
+		projectDAO.categoryMemberDelete(category_id);
+		
+		for(int i = 0;i<member_nickname.length;i++){
+			CategoryDTO categoryDTO = new CategoryDTO();
+			categoryDTO.setCategory_id(category_id);
+			categoryDTO.setMember_nickname(member_nickname[i]);
+			
+			System.out.println("categoryMemberWrite !!! : " + categoryDTO);
+			
+			result = projectDAO.categoryMemberWrite(categoryDTO);
+		}
+		
+		return result;
+	}
+
 }

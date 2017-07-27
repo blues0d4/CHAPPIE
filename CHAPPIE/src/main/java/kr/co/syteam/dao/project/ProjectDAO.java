@@ -25,4 +25,6 @@ public interface ProjectDAO {
 	public int projectMemberDelete(ProjectDTO projectDTO) throws Exception;
 	public int categoryDelete(String category_id) throws Exception;
 	public List<String> categoryMemberList(String category_id) throws Exception;
+	public int categoryMemberDelete(String category_id) throws Exception;
+	public int categoryMemberWrite(CategoryDTO categoryDTO) throws Exception;
 }

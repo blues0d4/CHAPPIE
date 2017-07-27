@@ -98,5 +98,15 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return sqlSession.selectList(namespace+"categoryMemberList", category_id);
 	}
 
+	@Override
+	public int categoryMemberDelete(String category_id) throws Exception {
+		return sqlSession.delete(namespace+"categoryMemberDelete", category_id);
+	}
+
+	@Override
+	public int categoryMemberWrite(CategoryDTO categoryDTO) throws Exception {
+		return sqlSession.insert(namespace+"categoryMemberWrite", categoryDTO);
+	}
+
 
 }
