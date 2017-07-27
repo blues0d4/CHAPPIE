@@ -21,5 +21,9 @@ public interface ProjectService {
 	public CategoryVO projectCategorySelect(CategoryDTO categoryDTO) throws Exception;
 	public List<CategoryVO> projectCategoryList(String project_id) throws Exception;
 	public void projectInvite(ProjectDTO projectDTO) throws Exception;
-	public List<ProjectVO> projectMemeberListService(String project_id) throws Exception;
+	public List<String> projectMemeberListService(String project_id) throws Exception;
+	public int projectMemberDeleteService(ProjectDTO projectDTO) throws Exception;
+	public int categoryDeleteService(String category_id) throws Exception;
+	public List<String> categoryMemeberListService(String category_id) throws Exception;
+	public int categoryMemberModify(String[] member_nickname, String category_id) throws Exception;
 }

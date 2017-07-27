@@ -1,8 +1,10 @@
-<%@page import="kr.co.syteam.commons.URIs"%>
 <%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+
+
  <!DOCTYPE html>
 <html>
 <head>
@@ -44,40 +46,6 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 <div class="wrapper" style="height: auto;">
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>CHAPPIE</b></span>
-    </a>
-    
-    <!-- Header Navbar: style can be found in header.less -->
-    
-	<nav class="navbar navbar-static-top">
-    <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <jsp:include page ="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <!-- Contents -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-<!--     <section class="content-header"> -->
-<!--       <h1> Content-header  -->
-<!--         <small>Control panel</small> -->
-<!--       </h1> -->
-
-<!--     </section> -->
-
-    <!-- Main content -->
     <section class="content" >
 		
 <!-- 		content  -->
@@ -86,112 +54,66 @@
    <div class="row">
   	 <div class="col-md-8">
    		<div class="box box-primary">
-            <div class="box-header with-border">
-              <h1 class="box-title">프로젝트 초대하기</h1>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/project_invite">
+            <form role="form" method="post" action="/project/${project.project_id }/categoryMemberModify?category_id=<%=request.getParameter("category_id") %>">
               <div class="box-body">
                 <div class="form-group">
-                  <label>초대할 아이디</label>
-                  <input type="text" class="form-control" id="user_id" name="user_id">
+                  <label>멤버 변경</label>
+                  <div class="checkbox">
+                   	    <c:forEach var="categoryMember" items="${cmList }">
+			                      <label>
+			                      <input type="checkbox" name="member_nickname" value="${categoryMember }" checked>
+			                      	${categoryMember }
+			                      </label>
+		                </c:forEach>
+	                  <c:forEach var="projectMember" items="${pmList }">
+               		             <label>
+			                      <input type="checkbox" name="member_nickname" value="${projectMember }">
+			                      	${projectMember }
+			                      </label>   
+		              </c:forEach>      
+	                 </div>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Invite</button>
+                <button type="submit" class="btn btn-primary">변경</button>
               </div>
             </form>
           </div>
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h1 class="box-title">프로젝트 멤버 삭제</h1>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/project_member_delete">
+          
+          <div class="box">
               <div class="box-body">
-                <div class="form-group">
-                  <label>삭제할 아이디</label></br>
-                  	<c:forEach items="${projectM }" var="projectVO">
-                  		<p><input type="radio" name="member_nickname" value="${projectVO}">${projectVO}</p>
-                  	</c:forEach>
-                </div>
+                  <label>카테고리 삭제</label>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Delete</button>
+                <button class="btn btn-primary" onclick="categoryDelete(<%= request.getParameter("category_id")%>)">삭제</button>
               </div>
-            </form>
           </div>
-    	 <div class="box box-primary">
-            <div class="box-header with-border">
-              <h1 class="box-title">카테고리 멤버 변경</h1>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                	<label>카테고리 선택</label></br>
-					<c:forEach items="${categoryList }" var="categoryList">
-						<input type="radio" name="category_id" 
-						value="${categoryList.category_id}">${categoryList.category_name}
-					</c:forEach>
-                </div>
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="button" class="btn btn-primary"
-                onclick="javascript:popup(this.form);">선택</button>
-              </div>
-            </form>
-          </div>
-   
   	 </div>
-   
    </div>
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
-    
-  </footer>
-
-  <!-- Control Sidebar -->
   
-	<aside class="control-sidebar control-sidebar-dark">
-		
-   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-	
- 	</aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
 
-<script language="javascript">
-function popup(frm)
-{
-  var url    ="/project/"+${project.project_id}+"/category_setting";
-  var title  = "Category Setting";
-  var status = "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=600, height=700, top=0,left=20"; 
-  window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
-                                            //인수로  넣어도 동작에는 지장이 없으나 form.action에서 적용하므로 생략
-                                            //가능합니다.
-  frm.target = title;                    //form.target 이 부분이 빠지면 form값 전송이 되지 않습니다. 
-  frm.action = url;                    //form.action 이 부분이 빠지면 action값을 찾지 못해서 제대로 된 팝업이 뜨질 않습니다.
-  frm.method = "post";
-  frm.submit();     
-  }
+<script type="text/javascript">
+function categoryDelete(val)
+{   
+   var allData = { "category_id": val };
+   $.ajax({
+      url: "/project/${project.project_id }/categoryDelete/<%= request.getParameter("category_id") %>",
+      data: allData,
+      type: "get",
+      dataType:"String",
+      success:function(result){
+    	  window.close('','_self').close();
+      }      
+   });   
+}
 </script>
 
 <!-- jQuery 2.2.3 -->
@@ -199,9 +121,6 @@ function popup(frm)
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->

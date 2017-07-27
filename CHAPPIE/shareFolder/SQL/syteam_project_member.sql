@@ -16,8 +16,10 @@ ADD CONSTRAINT FK_MEMBER_PROJECT_ID FOREIGN KEY(PROJECT_ID) REFERENCES PROJECT_T
 
 
 commit;
+rollback;
 
-
+delete from member_table 
+where project_id=1062 and member_nickname='안녕하세요';
 
 select * from member_table;
 
