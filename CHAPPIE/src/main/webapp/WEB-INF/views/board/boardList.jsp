@@ -84,41 +84,20 @@ function commentList(val){
 		data: allData,
 		dataType: "json",
 		success:function(result){
-			var output = "";
-// 				"<table>";
-	            	output += "<div>";
-	            	output += "<table class="table table-hover">";
-// 	            for(var i in result){
-	            	
-// 	            	output += result[i].user_id;
-// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-// 	            	output += result[i].comment_contents;
-	            	
-	                output += "<tbody>";
-// 	                output += "<tr>";
-// 	                output += "<td>175</td>";
-// 	                output += "<td>Mike Doe</td>";
-// 	                output += "<td>11-7-2014</td>";
-// 	                output += "<td><span class="label label-danger">Denied</span></td>";
-// 	                output += "<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>";
-//                     output += "           </tr>";
-                    output += "           </tbody>";
-	            	
-	            	
-	            	
-	            	
-// 	                output += "<tr>";
-// 	                output += "<td>"+result[i].user_id;
-// 	//                 output += "("+changeDate(result[i].regdate)+")<br>";
-// 	                output += result[i].comment_contents+"</td>";
-// 	                output += "<tr>";
-//             output += "</table>";
+			var output = "<table class=\"table table-hover\">";
+				
+	            for(var i in result){
+	                output += "<tr>";
+	                output += "<td>"+"<a href=\"#\">"+result[i].user_id+"</a></td>";
+	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	                output += "<td>"+result[i].comment_contents+"</td>";
+	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	            	output += "<td>"+result[i].comment_write_date+"</td>"
+	                output += "</tr>";
+	            }
+            output += "</table>";
 
 
-
-// 	            }
-                    output += "          </table>";
-	                output += "</div>";
             $("#commentList"+val).html(output);
 				
 		}
@@ -267,10 +246,8 @@ function commentList(val){
  				
 <%--     	${boardCommentVO.comment_contents} --%>
 <%--     	</c:forEach> --%>
-test
+
     <div id="commentList${boardVO.board_no }"></div>
-    
-<!--     <div><h3 class="timeline-header"><a href="#">44</a>&nbsp;&nbsp;&nbsp;&nbsp; 545</h3></div> -->
       <label for="comment">Comment:</label>
       <textarea class="form-control" rows="2" id="comment"></textarea>
     </div>

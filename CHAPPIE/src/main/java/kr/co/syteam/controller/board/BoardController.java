@@ -192,7 +192,7 @@ public class BoardController {
 		logger.info("doBoardCommentList!!!!");
 		List<BoardCommentVO> boardCommentVO = boardService.boardCommentList(board_no);
 		
-		System.out.println(boardCommentVO.get(0).toString());
+//		System.out.println(boardCommentVO.get(0).toString());
 //		model.addAttribute("boardCommentVO", boardCommentVO);
 		
 		return boardCommentVO;
