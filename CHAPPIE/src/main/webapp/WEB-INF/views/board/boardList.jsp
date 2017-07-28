@@ -84,15 +84,17 @@ function commentList(val){
 		data: allData,
 		dataType: "json",
 		success:function(result){
-			var output = "<table>";
-	            for(var i in result){
-	                output += "<tr>";
-	                output += "<td>"+result[i].user_id;
-	//                 output += "("+changeDate(result[i].regdate)+")<br>";
-	                output += result[i].comment_contents+"</td>";
-	                output += "<tr>";
-	            }
-            output += "</table>";
+// 			var output = "<table>";
+// 	            for(var i in result){
+// 	                output += "<tr>";
+// 	                output += "<td>"+result[i].user_id;
+// 	//                 output += "("+changeDate(result[i].regdate)+")<br>";
+// 	                output += result[i].comment_contents+"</td>";
+// 	                output += "<tr>";
+// 	            }
+//             output += "</table>";
+
+<h3 class="timeline-header"><a href="#">SY_Team</a>			 #${result[i].comment_contents}</h3>
 
             $("#commentList"+val).html(output);
 				
