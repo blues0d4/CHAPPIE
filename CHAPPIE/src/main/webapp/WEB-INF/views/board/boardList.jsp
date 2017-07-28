@@ -94,7 +94,7 @@ function commentList(val){
 	            }
             output += "</table>";
 
-            $("#commentList").html(output);
+            $("#commentList"+val).html(output);
 				
 		}
 		
@@ -154,7 +154,6 @@ function commentList(val){
     <li class="time-label">
         <span class="bg-red">
             2017년 2월 20일 월요일
-            <button id="btntest">a</button>
         </span>
     </li>
     <!-- /.timeline-label -->
@@ -244,7 +243,7 @@ function commentList(val){
 <%--     	${boardCommentVO.comment_contents} --%>
 <%--     	</c:forEach> --%>
 
-    <div id="commentList"></div>
+    <div id="commentList${boardVO.board_no }"></div>
       <label for="comment">Comment:</label>
       <textarea class="form-control" rows="2" id="comment"></textarea>
     </div>
