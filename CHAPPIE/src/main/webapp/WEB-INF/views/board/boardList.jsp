@@ -76,6 +76,7 @@
 </style>
 
 <script>
+
 function commentList(val){
 	var allData = { "board_no" : val};
 	
@@ -110,16 +111,14 @@ function commentList(val){
 
 function commentWrite(val){
 	var allData = { "board_no" : val};
-	
+	var commentText = $("#commentText").val();
+			alert(commentText);
 	$.ajax({
 		url: "${URIs.URI_BOARD_COMMENT_WRITE }/"+val,
 		data: allData,
 		dataType: "json",
 		success:function(result){
 			
-			alert("");
-
-
             $("#commentWrite"+val).html(output);
 				
 		}
@@ -128,6 +127,22 @@ function commentWrite(val){
 	})
 	
 }
+
+// $("#commentWrite").click(function(){
+// //     var replytext=$("#replytext").val();
+// //     var bno="${dto.bno}"
+// //     var param="replytext="+replytext+"&bno="+bno;
+// //     $.ajax({                
+// //         type: "post",
+// //         url: "${path}/reply/insert.do",
+// //         data: param,
+// //         success: function(){
+// //             alert("댓글이 등록되었습니다.");
+// //             listReply2();
+// //         }
+// //     });
+// alert("ff");
+// });
 
 
 </script>
@@ -274,7 +289,7 @@ function commentWrite(val){
     <div id="commentList${boardVO.board_no }"></div>
       <c:if test="${login.user_id != null}">    
       <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="2" cols="80" id="boardCommentText"></textarea>
+      <textarea class="form-control" rows="2" cols="80" id="commentText"></textarea>
 <!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
         <br>
         <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
