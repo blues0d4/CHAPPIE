@@ -106,6 +106,30 @@ function commentList(val){
 	})
 	
 }
+
+
+function commentWrite(val){
+	var allData = { "board_no" : val};
+	
+	$.ajax({
+		url: "${URIs.URI_BOARD_COMMENT_WRITE }/"+val,
+		data: allData,
+		dataType: "json",
+		success:function(result){
+			
+			alert("");
+
+
+            $("#commentWrite"+val).html(output);
+				
+		}
+		
+		
+	})
+	
+}
+
+
 </script>
 
 </head>
@@ -248,8 +272,15 @@ function commentList(val){
 <%--     	</c:forEach> --%>
 
     <div id="commentList${boardVO.board_no }"></div>
+      <c:if test="${login.user_id != null}">    
       <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="2" id="comment"></textarea>
+      <textarea class="form-control" rows="2" cols="80" id="boardCommentText"></textarea>
+<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
+        <br>
+        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+        
+        </c:if>
+      
     </div>
   </form>
 	  			</div>
