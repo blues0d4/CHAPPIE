@@ -108,41 +108,60 @@ function commentList(val){
 	
 }
 
-
-function commentWrite(val){
-	var allData = { "board_no" : val};
-	var commentText = $("#commentText").val();
-			alert(commentText);
-	$.ajax({
-		url: "${URIs.URI_BOARD_COMMENT_WRITE }/"+val,
-		data: allData,
-		dataType: "json",
-		success:function(result){
-			
-            $("#commentWrite"+val).html(output);
-				
-		}
-		
-		
-	})
+$(document).ready(function(){
+	alert("test1");
 	
-}
+	$("#commentWriteBtn").click(function(){
+		alert("test2");
+		
+	var commentText = $("#commentText").val();
+		alert(commentText);
+	});
+	
+	
+	
+});
 
-// $("#commentWrite").click(function(){
-// //     var replytext=$("#replytext").val();
-// //     var bno="${dto.bno}"
-// //     var param="replytext="+replytext+"&bno="+bno;
-// //     $.ajax({                
-// //         type: "post",
-// //         url: "${path}/reply/insert.do",
-// //         data: param,
-// //         success: function(){
-// //             alert("댓글이 등록되었습니다.");
-// //             listReply2();
-// //         }
-// //     });
-// alert("ff");
-// });
+$("#btnReply").click(function(){
+    var replytext=$("#replytext").val();
+    var bno="${dto.bno}"
+    var param="replytext="+replytext+"&bno="+bno;
+    $.ajax({                
+        type: "post",
+        url: "${path}/reply/insert.do",
+        data: param,
+        success: function(){
+            alert("댓글이 등록되었습니다.");
+            listReply2();
+        }
+    });
+});
+
+
+// function commentWrite(val){
+// 	alert("test1");
+// 	var allData = { "board_no" : val};
+// 	var commentText = $("#commentText").val();
+// 	alert(commentText);
+	
+// 	$.ajax({
+// 		url: "${URIs.URI_BOARD_COMMENT_WRITE }/"+val,
+// 		data: allData,
+// 		dataType: "json",
+// 		success:function(result){
+// 			alert("test2");
+			
+			
+//             $("#commentWrite"+val).html(output);
+				
+// 		}
+		
+		
+// 	})
+	
+// }
+
+
 
 
 </script>
@@ -292,7 +311,8 @@ function commentWrite(val){
       <textarea class="form-control" rows="2" cols="80" id="commentText"></textarea>
 <!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
         <br>
-        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+        <button type="button" class="btn btn-info" id="commentWriteBtn" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
         
         </c:if>
       
