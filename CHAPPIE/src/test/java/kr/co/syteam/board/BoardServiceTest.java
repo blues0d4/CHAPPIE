@@ -118,7 +118,7 @@ public class BoardServiceTest {
 //		boardService.boardCommentWrite(boardCommentDTO);
 //	}
 	
-	//게시글 댓글 리스트 테스트()
+	//게시글 댓글 리스트 테스트(완료)
 	@Test
 	public void testBoardCommentList() throws Exception{
 		List<BoardCommentVO> boardCommentList = boardService.boardCommentList("130");

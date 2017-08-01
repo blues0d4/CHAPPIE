@@ -47,4 +47,11 @@ public class BoardDTO {
 		this.user_id = user_id;
 	}
 
+	@Override
+	public String toString() {
+		return "BoardDTO [category_id=" + category_id + ", board_title=" + board_title + ", board_contents="
+				+ board_contents + ", board_no=" + board_no + ", user_id=" + user_id + "]";
+	}
+
+	
 }

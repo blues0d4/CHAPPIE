@@ -108,58 +108,48 @@ function commentList(val){
 	
 }
 
-$(document).ready(function(){
-	alert("test1");
-	
-	$("#commentWriteBtn").click(function(){
-		alert("test2");
-		
-	var commentText = $("#commentText").val();
-		alert(commentText);
-	});
-	
-	
-	
-});
 
-$("#btnReply").click(function(){
-    var replytext=$("#replytext").val();
-    var bno="${dto.bno}"
-    var param="replytext="+replytext+"&bno="+bno;
-    $.ajax({                
-        type: "post",
-        url: "${path}/reply/insert.do",
-        data: param,
-        success: function(){
-            alert("댓글이 등록되었습니다.");
-            listReply2();
-        }
-    });
-});
+// $("#btnReply").click(function(){
+//     var replytext=$("#replytext").val();
+//     var bno="${dto.bno}"
+//     var param="replytext="+replytext+"&bno="+bno;
+//     $.ajax({                
+//         type: "post",
+//         url: "${path}/reply/insert.do",
+//         data: param,
+//         success: function(){
+//             alert("댓글이 등록되었습니다.");
+//             listReply2();
+//         }
+//     });
+// });
 
 
-// function commentWrite(val){
-// 	alert("test1");
-// 	var allData = { "board_no" : val};
-// 	var commentText = $("#commentText").val();
+function commentWrite(val){
+	var commentForm = $("form[name=commentForm"+val+"]").serialize() ;
+// 	var commentText = $("#commentText"+val).val();
+// 	var commentForm = $("input[name=board_no"+val+"]").val();
 // 	alert(commentText);
 	
-// 	$.ajax({
-// 		url: "${URIs.URI_BOARD_COMMENT_WRITE }/"+val,
-// 		data: allData,
-// 		dataType: "json",
-// 		success:function(result){
-// 			alert("test2");
-			
+// 		commentList(val);
+	$.ajax({            
+	    type : 'post',
+		url: "${URIs.URI_BOARD_COMMENT_WRITE }",
+		data: commentForm,
+		dataType: "json",
+		complete :function(){
+
+		var test = $("#commentText"+val).val("");
+		commentList(val);
 			
 //             $("#commentWrite"+val).html(output);
 				
-// 		}
+		}
 		
 		
-// 	})
+	})
 	
-// }
+}
 
 
 
@@ -169,7 +159,6 @@ $("#btnReply").click(function(){
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
-
   <header class="main-header">
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
@@ -178,7 +167,6 @@ $("#btnReply").click(function(){
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CHAPPIE</b></span>
     </a>
-    
     <!-- Header Navbar: style can be found in header.less -->
     
 	<nav class="navbar navbar-static-top">
@@ -298,7 +286,7 @@ $("#btnReply").click(function(){
             </div>
                 
                 <div id="demo${status.index }" class="collapse">
-	   				  <form>
+<!-- 	   				  <form> -->
     <div class="form-group">
 <%--     <c:forEach items="${boardCommentList }" var="boardCommentVO" varStatus="status"> --%>
  				
@@ -308,16 +296,22 @@ $("#btnReply").click(function(){
     <div id="commentList${boardVO.board_no }"></div>
       <c:if test="${login.user_id != null}">    
       <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="2" cols="80" id="commentText"></textarea>
+      
+      <form name="commentForm${boardVO.board_no}" action="post">
+      <input type="hidden" value="${login.user_name}" name = "user_name"/>
+      <input type="hidden" value=${boardVO.board_no } name = "board_no" />
+	  <input type="hidden" value=${login.user_id } name = "user_id" />
+      <textarea id= "commentText${boardVO.board_no }"class="form-control" rows="2" cols="80" name ="comment_contents"></textarea>
 <!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
         <br>
-        <button type="button" class="btn btn-info" id="commentWriteBtn" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+      </form>
+        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
 <!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
         
         </c:if>
       
     </div>
-  </form>
+<!--   </form> -->
 	  			</div>
 	  			
             </div>

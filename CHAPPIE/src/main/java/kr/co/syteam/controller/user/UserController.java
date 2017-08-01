@@ -35,7 +35,7 @@ public class UserController {
 	}
 
 	// 회원가입 (테스트 완료)
-	@RequestMapping(value = URIs.URI_USER_JOIN, method = RequestMethod.POST)
+	@RequestMapping(value = URIs.URI_USER_JOIN)
 	public String doUserJoin(Model model, UserDTO userDTO) throws Exception {
 		int joinResult = userService.userJoin(userDTO);
 
