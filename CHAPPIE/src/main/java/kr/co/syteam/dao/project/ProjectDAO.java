@@ -8,6 +8,7 @@ import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.temp.dto.TempDTO;
 
 public interface ProjectDAO {
 	public int projectEmptyCheck(String user_id) throws Exception;
@@ -29,4 +30,5 @@ public interface ProjectDAO {
 	public int categoryMemberWrite(CategoryDTO categoryDTO) throws Exception;
 	public void projectChoice(ProjectSelectDTO projectSelectDTO) throws Exception;
 	public String projectChoiceGet(String user_id) throws Exception;
+	public void tempTable(TempDTO tempDTO) throws Exception;
 }

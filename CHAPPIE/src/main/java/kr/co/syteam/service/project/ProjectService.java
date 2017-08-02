@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.temp.dto.TempDTO;
 
 public interface ProjectService {
 	public void projectMemberInsert(ProjectDTO projectDTO) throws Exception;
@@ -28,4 +28,5 @@ public interface ProjectService {
 	public int categoryMemberModify(String[] member_nickname, String category_id) throws Exception;
 	public void projectChoice(ProjectSelectDTO projectSelectDTO) throws Exception;
 	public String projectChoiceGet(String user_id) throws Exception;
+	public void tempTableService(TempDTO tempDTO) throws Exception;
 }

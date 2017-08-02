@@ -148,4 +148,11 @@
 			WHERE USER_ID = #{user_id}
 		]]>
 	</update>
+	
+	<insert id="tempTable" parameterType="kr.co.syteam.domain.temp.dto.TempDTO">
+		<![CDATA[
+			INSERT INTO TEMP_TABLE(PROJECT_ID, PROJECT_NAME, USER_ID, USER_NAME) 
+			VALUES(#{project_id}, #{project_name},#{user_id},#{user_name})
+		]]>
+	</insert>
 </mapper>

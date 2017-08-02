@@ -13,6 +13,7 @@ import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.temp.dto.TempDTO;
 
 @Repository
 public class ProjectDAOImpl implements ProjectDAO {
@@ -116,6 +117,11 @@ public class ProjectDAOImpl implements ProjectDAO {
 	@Override
 	public String projectChoiceGet(String user_id) throws Exception {
 		return sqlSession.selectOne(namespace+"projectChoiceGet", user_id);
+	}
+
+	@Override
+	public void tempTable(TempDTO tempDTO) throws Exception {
+		sqlSession.insert(namespace+"tempTable", tempDTO);
 	}
 
 

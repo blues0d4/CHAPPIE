@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +20,7 @@ import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.temp.dto.TempDTO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.project.ProjectService;
 import kr.co.syteam.service.user.IUserService;
@@ -75,6 +75,14 @@ public class ProjectController {
 		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
+		
+		TempDTO tempDTO = new TempDTO();
+		tempDTO.setProject_id(projectVO.getProject_id());
+		tempDTO.setProject_name(projectVO.getProject_name());
+		tempDTO.setUser_id(loginVO.getUser_id());
+		tempDTO.setUser_name(loginVO.getUser_name());
+		projectService.tempTableService(tempDTO);
+		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
 	
