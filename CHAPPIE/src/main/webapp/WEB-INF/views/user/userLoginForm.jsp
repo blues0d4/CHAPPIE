@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <meta name="description" content=""> -->
 <!-- <meta name="author" content=""> -->
-<title>SSangyoung_login</title>
+<title>CHAPPIE</title>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -19,31 +19,20 @@
 <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+  <!-- Ionicons -->
+<!--   <link rel="stylesheet" href="https:d//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapc]dn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/resources/plugins/iCheck/square/blue.css">
 </head>
 
 
 
-<body class="hold-transition login-page" style="background-color: #E5FFFD">
+<body class="hold-transition login-page" style="background-color: #a3dcd7">
   <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 <jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
   </nav>
@@ -59,34 +48,39 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-	<p class="login-box-msg">Sign in to start your session</p>
+<!-- 	<p class="login-box-msg">Sign in to start your session</p> -->
+               
       <div class="form-group has-feedback">
-       <label for="userid">이메일</label>
-           <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required>
+        <input type="email" class="form-control" placeholder="Email" id="user_id" name="user_id">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <div id="idcheck" ></div>
       </div>
+      
       <div class="form-group has-feedback">
-        <label for = "password">비밀번호</label>
-           <input class="w3-input w3-border" type="password" value='' id="user_pw" name="user_pw" placeholder="비밀번호" required>
+        <input type="password" class="form-control" placeholder="Password" id="user_pw" name="user_pw">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div>
+<!--         <div class="col-xs-8"> -->
+<!--           <div class="checkbox icheck"> -->
+<!--             <label> -->
+<!--               <input type="checkbox">Remember Me -->
+<!--               <br> -->
+<!--             </label> -->
+<!--           </div> -->
+<!--         </div> -->
         
-        
-        
-        <!-- /.col -->
+         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">로그인</button>
-          <button type="submit" class="btn btn-primary btn-block btn-flat">취소</button>
+        <br>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" style="background-color: #59c0b7">Login</button>
+<!--           <button type="submit" class="btn btn-primary btn-block btn-flat" style="background-color: #59c0b7">취소</button> -->
           
+        <br>
+        <br>
         </div>
+        
+       
         <!-- /.col -->
      </div>
     
@@ -105,11 +99,34 @@
 
 </section>
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="/resources/plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- date-range-picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="/resources/plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="/resources/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/resources/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/resources/dist/js/demo.js"></script>
 <script>
   $(function () {
     $('input').iCheck({
@@ -117,6 +134,15 @@
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
+  });
+</script>
+<script>
+  $(function () {
+   
+    //Money Euro
+    $("[data-mask]").inputmask();
+
+    
   });
 </script>
 
