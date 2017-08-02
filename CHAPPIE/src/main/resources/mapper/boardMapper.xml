@@ -7,8 +7,8 @@
 
 	<insert id="boardWrite" parameterType="kr.co.syteam.domain.board.dto.BoardDTO">
 		<![CDATA[
-			INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
-			VALUES (#{category_id}, board_seq.nextval, #{board_title}, #{board_contents}, #{user_id}, sysdate, sysdate)
+			INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
+			VALUES (#{category_id}, #{board_title}, #{board_contents}, #{user_id}, now(), now())
 		]]>
 	</insert>
 	
@@ -39,15 +39,24 @@
 	<select id="boardCategoryListView" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
 			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT, 
-	 			TO_CHAR(BOARD_WRITE_DATE, 'YYYY') AS BOARD_WRITE_DATE_YYYY, TO_CHAR(BOARD_WRITE_DATE, 'MON') AS BOARD_WRITE_DATE_MON, 
-	 			TO_CHAR(BOARD_WRITE_DATE, 'DD') AS BOARD_WRITE_DATE_DD, TO_CHAR(BOARD_WRITE_DATE, 'day') AS BOARD_WRITE_DATE_DAY, 
-				TO_CHAR(BOARD_WRITE_DATE, 'YYYYMMDD') AS BOARD_WRITE_DATE_YYYYMMDD,
+	 			DATE_FORMAT(BOARD_WRITE_DATE, '%Y') AS BOARD_WRITE_DATE_YYYY, DATE_FORMAT(BOARD_WRITE_DATE, '%m') AS BOARD_WRITE_DATE_MON, 
+	 			DATE_FORMAT(BOARD_WRITE_DATE, '%d') AS BOARD_WRITE_DATE_DD, 
+                CASE DATE_FORMAT(BOARD_WRITE_DATE, '%w')
+					WHEN '0' THEN '일요일'
+					WHEN '1' THEN '월요일'
+					WHEN '2' THEN '화요일'
+					WHEN '3' THEN '수요일'
+					WHEN '4' THEN '목요일'
+					WHEN '5' THEN '금요일'
+					WHEN '6' THEN '토요일'
+                 END AS BOARD_WRITE_DATE_DAY, 
+				DATE_FORMAT(BOARD_WRITE_DATE, '%Y%m%d') AS BOARD_WRITE_DATE_YYYYMMDD,
  				(SELECT COUNT(*) FROM COMMENT_TABLE WHERE BOARD_NO=B.BOARD_NO) AS COMMENT_COUNT 
 			FROM BOARD_TABLE B, CATEGORY_TABLE C, PROJECT_TABLE P 
 			WHERE B.CATEGORY_ID = C.CATEGORY_ID 
 			AND C.CATEGORY_ID = #{category_id} 
-			AND P.PROJECT_ID = #{project_id} 
-			ORDER BY BOARD_NO DESC 
+			AND P.PROJECT_ID = #{project_id}
+			ORDER BY BOARD_NO DESC
 		]]>
 	</select>
 	
@@ -65,16 +74,16 @@
 			SET 
 				BOARD_TITLE = #{board_title}, 
 				BOARD_CONTENTS = #{board_contents}, 
-				BOARD_MODIFY_DATE = SYSDATE
+				BOARD_MODIFY_DATE = NOW() 
 				WHERE BOARD_NO = #{board_no}
-			AND USER_ID = #{user_id}
+					AND USER_ID = #{user_id}
 		]]>
 	</update>
 	
 	<insert id = "boardCommentWrite">
 		<![CDATA[
-			INSERT INTO COMMENT_TABLE(BOARD_NO, COMMENT_NO, COMMENT_CONTENTS, USER_ID, USER_NAME, COMMENT_WRITE_DATE)
-			VALUES(#{board_no}, COMMENT_SEQ.NEXTVAL, #{comment_contents}, #{user_id}, #{user_name}, SYSDATE)
+			INSERT INTO COMMENT_TABLE(BOARD_NO, COMMENT_CONTENTS, USER_ID, USER_NAME, COMMENT_WRITE_DATE)
+			VALUES(#{board_no}, #{comment_contents}, #{user_id}, #{user_name}, NOW())
 		]]>
 	</insert>
 	
