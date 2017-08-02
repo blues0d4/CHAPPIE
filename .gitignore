@@ -54,16 +54,16 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 ### Java ###
 # Compiled class file
 *.class
- 
+
 # Log file
 *.log
 
@@ -98,6 +98,8 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+
+/root-context.xml
 
 # End of https://www.gitignore.io/api/java,maven,eclipse
 /example/
