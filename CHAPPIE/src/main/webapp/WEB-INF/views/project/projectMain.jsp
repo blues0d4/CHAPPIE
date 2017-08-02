@@ -8,9 +8,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <title>CHAPPIE</title>
+
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -233,6 +235,7 @@
     </section>
     <!-- /.content -->
   </div>
+  
   <!-- /.content-wrapper -->
   <footer class="main-footer">
    	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
@@ -249,8 +252,7 @@
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-  
+  <div class="control-sidebar-bg"></div>  
 </div>
 <!-- ./wrapper -->
  <!-- jQuery 2.2.3 -->
@@ -291,7 +293,7 @@
 <script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
-<!-- SlimScroll 1.3.0 -->
+<!-- Slim 1.3.0 -->
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <script src="/resources/documentation/docs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>

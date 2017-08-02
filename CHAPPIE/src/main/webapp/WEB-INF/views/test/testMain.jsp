@@ -9,17 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <title>CHAPPIE</title>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet"
-	href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet'
-	href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">/
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -28,23 +24,18 @@
 <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,300"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
 
 </head>
-<body>
-	<style>
+
+
+<!-- 채피 채팅내용창 -->
+<style>
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -378,6 +369,7 @@ height: 430;
 	position: relative;
 }
 </style>
+
 <body id="page-top" class="index">
 
 
@@ -390,9 +382,6 @@ height: 430;
 	</nav>
 
 	<!-- Header -->
-
-
-
 
 
 	<header id="top" class="header">
@@ -424,34 +413,11 @@ height: 430;
 	<!--  채피 아이콘 -->
 
 	<div style="position: fixed; bottom: 5px; right: 5px;">
-		<a href="#" id="addClass"><img
-			src="/resources/img/chappie_button.png"></a>
+		<a id="addClass"><img src="/resources/img/chappie_button.png"></a>
 	</div>
 
 
-
-
-
-
-	<div class="container text-center">
-		<div class="row">
-			<h2>Open in chat (popup-box chat-popup)</h2>
-			<h4>Click Here</h4>
-			<div class="round hollow text-center">
-				<a href="#" id="addClass"><span
-					class="glyphicon glyphicon-comment"></span> Open in chat </a>
-			</div>
-
-			<hr>
-
-			MORE : <a target="_blank" href="http://bootsnipp.com/snippets/33ejn">Whatsapp
-				Chat Box POPUP</a>, <a target="_blank"
-				href="http://bootsnipp.com/snippets/z4P39"> Creative User
-				Profile </a>
-
-		</div>
-	</div>
-
+	<!-- 채피 채팅창 -->
 
 	<div class="popup-box chat-popup" id="qnimate">
 		<div class="popup-head">
@@ -855,7 +821,8 @@ height: 430;
 		// Enable map zooming with mouse scroll when the user clicks the map
 		$('.map').on('click', onMapClickHandler);
 	</script>
-
+	
+<!-- 채피 스크립트 -->
 	<script>
 		$(function() {
 			$("#addClass").click(function() {
