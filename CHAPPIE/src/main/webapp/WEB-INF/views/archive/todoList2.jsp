@@ -58,9 +58,9 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>CHAPPIE</b></span>
     </a>
-
+    
     <!-- Header Navbar: style can be found in header.less -->
-
+    
    <nav class="navbar navbar-static-top">
     <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
     </nav>
@@ -85,10 +85,10 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
 
     <!-- Main content -->
     <section class="content">
-
+      
       <div class="col-md-7">
 		<div class="box box-primary">
-
+            
             <!-- /.box-header -->
             <div class="box-body">
             <div class="col-xs-3">
@@ -101,7 +101,7 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
                  <option>5</option>
                </select>
            	  </div>
-
+           	  
               <div class="w3-panel">
                <div class="w3-row-padding" style="margin:0 -16px">
                  <table class="w3-table w3-striped w3-white" >
@@ -112,11 +112,11 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
                     </tr>
 					<c:forEach items="${ todoList }" var="todoVO">
 						<tr>
-							<td width="70px">
-		                     	<a href="/todo/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
+							<td width="70px">								
+		                     	<a href="/todo/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>	                     									
 		                    </td>
 							<td style="padding-top:15px">${todoVO.todo_list}	</td>
-
+														
 							<c:choose>
 								<c:when test="${todoVO.todo_complete == '1' }">
 									<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
@@ -126,18 +126,18 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
 								</c:otherwise>
 							</c:choose>
 						</tr>
-					</c:forEach>
+					</c:forEach>                   
                   </table>
               </div>
             </div>
               </div>
-
+              
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
-
+		
 		</div>
 
     </section>
@@ -146,22 +146,22 @@ c<%@page import="kr.co.syteam.commons.URIs"%>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
        <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
-
+    
   </footer>
 
   <!-- Control Sidebar -->
-
+  
    <aside class="control-sidebar control-sidebar-dark">
-
+      
        <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-
+   
     </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-
+   
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->

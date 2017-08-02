@@ -129,6 +129,7 @@ public class TodoController {
 		todoDTO.setTodo_no(todo_no);
 		System.out.println("todoModify!!!!!!!!! : " + todoDTO);
 
+	
 		todoService.todoModifyService(todoDTO);
 		todoService.todoMemberModify(value, todo_no);
 
