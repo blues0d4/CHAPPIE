@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.co.syteam.domain.board.dto.BoardCommentDTO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
+import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -92,16 +94,34 @@ public class BoardServiceTest {
 //	}
 
 	//게시물 수정 테스트(미완료)
+//	@Test
+//	public void testBoardModify() throws Exception{
+//		BoardDTO boardDTO = new BoardDTO();
+//		
+//		boardDTO.setUser_id("1");
+//		boardDTO.setBoard_no("108");
+//		boardDTO.setBoard_title("titlemod");
+//		boardDTO.setBoard_contents("contmod");
+//		
+//		boardService.boardModify(boardDTO);
+//	}
+	
+	//게시물 댓글 삽입 테스트(완료)
+//	@Test
+//	public void testBoardCommentWrite() throws Exception{
+//		BoardCommentDTO boardCommentDTO = new BoardCommentDTO();
+//		boardCommentDTO.setBoard_no("130");
+//		boardCommentDTO.setComment_contents("serviceTest1");
+//		boardCommentDTO.setUser_id("1");
+//		boardCommentDTO.setUser_name("1");
+//		
+//		boardService.boardCommentWrite(boardCommentDTO);
+//	}
+	
+	//게시글 댓글 리스트 테스트(완료)
 	@Test
-	public void testBoardModify() throws Exception{
-		BoardDTO boardDTO = new BoardDTO();
-		
-		boardDTO.setUser_id("1");
-		boardDTO.setBoard_no("108");
-		boardDTO.setBoard_title("titlemod");
-		boardDTO.setBoard_contents("contmod");
-		
-		boardService.boardModify(boardDTO);
+	public void testBoardCommentList() throws Exception{
+		List<BoardCommentVO> boardCommentList = boardService.boardCommentList("130");
+		System.out.println(boardCommentList);
 	}
-		
 }

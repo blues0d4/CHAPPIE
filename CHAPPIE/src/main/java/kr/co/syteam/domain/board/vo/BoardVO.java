@@ -15,6 +15,7 @@ public class BoardVO {
 	private String board_write_date_mon;
 	private String board_write_date_dd;
 	private String board_write_date_day;
+	private String comment_count;
 	public String getCategory_id() {
 		return category_id;
 	}
@@ -98,6 +99,14 @@ public class BoardVO {
 	}
 	public void setBoard_write_date_day(String board_write_date_day) {
 		this.board_write_date_day = board_write_date_day;
+	}
+	
+	
+	public String getComment_count() {
+		return comment_count;
+	}
+	public void setComment_count(String comment_count) {
+		this.comment_count = comment_count;
 	}
 	@Override
 	public String toString() {

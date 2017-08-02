@@ -5,6 +5,7 @@ public class LoginVO {
 	private String user_id;
 	private String user_name;
 	private String logindate;
+	private String user_project_choice;
 	
 	public String getUser_id() {
 		return user_id;
@@ -23,6 +24,13 @@ public class LoginVO {
 	}
 	public void setLogindate(String logindate) {
 		this.logindate = logindate;
+	}
+	
+	public String getUser_project_choice() {
+		return user_project_choice;
+	}
+	public void setUser_project_choice(String user_project_choice) {
+		this.user_project_choice = user_project_choice;
 	}
 	@Override
 	public String toString() {

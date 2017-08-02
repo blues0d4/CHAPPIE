@@ -35,14 +35,14 @@ public class UserController {
 	}
 
 	// 회원가입 (테스트 완료)
-	@RequestMapping(value = URIs.URI_USER_JOIN, method = RequestMethod.POST)
+	@RequestMapping(value = URIs.URI_USER_JOIN)
 	public String doUserJoin(Model model, UserDTO userDTO) throws Exception {
 		int joinResult = userService.userJoin(userDTO);
 
 		System.out.println(joinResult);
 
 		logger.info("doUserJoin");
-		return "redirect:"+URIs.URI_MAIN;
+		return "redirect:"+URIs.URI_USER_LOGIN_FORM;
 		// return URIs.URI_JOINUSER_FULL;
 	}
 

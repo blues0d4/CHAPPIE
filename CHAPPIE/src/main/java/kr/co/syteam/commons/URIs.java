@@ -91,7 +91,10 @@ public class URIs {
 	public static final String URI_BOARD_DELETE_DEFAULT = "/boardDelete";
 	public static final String URI_BOARD_DELETE = URI_BOARD_MAIN + URI_BOARD_DELETE_DEFAULT;
 	
+	public static final String URI_BOARD_COMMENT_WRITE = URI_BOARD_MAIN + "/boardCommentWrite";
 	
+	public static final String URI_BOARD_COMMENT_LIST_DEFAULT = "/boardCommentList";
+	public static final String URI_BOARD_COMMENT_LIST = URI_BOARD_MAIN + URI_BOARD_COMMENT_LIST_DEFAULT;
 	
 	
 	//TODO URI

@@ -11,9 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.syteam.commons.URIs;
+import kr.co.syteam.domain.board.dto.BoardCommentDTO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
+import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -58,9 +63,9 @@ public class BoardController {
 //		model.addAttribute("project", projectVO);
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
-		System.out.println(projectVO);
+//		System.out.println(projectVO);
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
-		System.out.println(categoryList);
+//		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
 		
@@ -78,7 +83,7 @@ public class BoardController {
 		request.getSession().setAttribute("category", categoryVO);
 		List<BoardVO> boardList = boardService.boardCategoryListView(categoryDTO);
 		model.addAttribute("boardList", boardList);
-		System.out.println(boardList);
+//		System.out.println(boardList);
 		// System.out.println("------");
 		// System.out.println(categoryVO);
 		// System.out.println("------");
@@ -132,9 +137,14 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_DELETE + "/{board_no}")
-	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
+	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO) throws Exception {
 		
 		logger.info("doBoardDelete");
+		BoardVO boardVO = boardService.boardView(board_no);
+
+		if (boardVO == null) {
+			return "redirect:/project/"+project_id+"/board/"+category_id;
+		}
 
 		boardService.boardDelete(boardDTO);
 		
@@ -164,5 +174,32 @@ public class BoardController {
 		boardService.boardModify(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
+	}
+	
+	@RequestMapping(value = URIs.URI_BOARD_COMMENT_WRITE,  method = RequestMethod.POST)
+	public void doBoardCommentWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id")String category_id, BoardCommentDTO boardCommentDTO) throws Exception   {
+
+		logger.info("doBoardCommentWrite");
+		
+//		System.out.println(user_id);
+//		System.out.println(board_no);
+//		System.out.println(comment_contents);
+//		System.out.println(boardCommentDTO);
+		boardService.boardCommentWrite(boardCommentDTO);
+		
+	}
+	
+	@RequestMapping(value = URIs.URI_BOARD_COMMENT_LIST + "/{board_no}")
+	@ResponseBody
+	public List<BoardCommentVO> doBoardCommentList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, @PathVariable("board_no")String board_no, 
+			Model model, HttpServletRequest request) throws Exception {
+		
+		logger.info("doBoardCommentList!!!!");
+		List<BoardCommentVO> boardCommentVO = boardService.boardCommentList(board_no);
+		
+//		System.out.println(boardCommentVO.get(0).toString());
+//		model.addAttribute("boardCommentVO", boardCommentVO);
+		
+		return boardCommentVO;
 	}
 }
