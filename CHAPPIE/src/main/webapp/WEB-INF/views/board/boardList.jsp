@@ -90,10 +90,14 @@ function commentList(val){
 	            for(var i in result){
 	                output += "<tr>";
 	                output += "<td>"+"<a href=\"#\">"+result[i].user_id+"</a></td>";
-	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	                output += "<td>"+result[i].comment_contents+"</td>";
-	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-	            	output += "<td>"+result[i].comment_write_date+"</td>"
+// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	            	output += "<td>"+result[i].comment_write_date+"</td>";
+	            	 output += "<td>";
+	                     output += "<i class=\"fa fa-edit\"></i>";
+	                     output += "<i class=\"fa fa-trash-o\"></i>";
+	                     output += "</td>";
 	                output += "</tr>";
 	            }
             output += "</table>";
@@ -251,7 +255,7 @@ function commentWrite(val){
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test3
+	
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>
