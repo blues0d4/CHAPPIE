@@ -37,8 +37,8 @@
 					</tr>
 					<tr>
 <%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
-					<input type="hidden" value=${category.category_id } name = "category_id">
-					<input type="hidden" value=${login.user_id } name = "user_id">
+					<input type="hidden" value=${category.category_id } name = "category_id"/>
+					<input type="hidden" value=${login.user_id } name = "user_id"/>
 					<div>
 						<td colspan="2"><input type="submit" value="Write" class="btn btn-default" style="float: left">
 			<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}" class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
