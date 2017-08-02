@@ -15,8 +15,8 @@
 	
 	<insert id="projectCreate">
 		<![CDATA[
-			INSERT INTO PROJECT_TABLE(PROJECT_ID, PROJECT_NAME) 
-			VALUES(PROJECT_SEQ.nextval, #{project_name})
+			INSERT INTO PROJECT_TABLE(PROJECT_NAME) 
+			VALUES(#{project_name})
 		]]>
 	</insert>
 	
@@ -57,8 +57,8 @@
 	
 	<insert id="projectCategoryCreate">
 		<![CDATA[
-			INSERT INTO CATEGORY_TABLE(CATEGORY_ID, CATEGORY_NAME, PROJECT_ID)
-			VALUES(CATEGORY_SEQ.NEXTVAL, #{category_name}, #{project_id})
+			INSERT INTO CATEGORY_TABLE(CATEGORY_NAME, PROJECT_ID)
+			VALUES(#{category_name}, #{project_id})
 		]]>
 	</insert>
 	

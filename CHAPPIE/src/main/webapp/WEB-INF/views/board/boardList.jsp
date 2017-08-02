@@ -162,7 +162,9 @@ function commentWrite(val){
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
-<div class="wrapper">
+
+<div class= "wrapper">
+
   <header class="main-header">
     <!-- Logo -->
     <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
@@ -195,7 +197,7 @@ function commentWrite(val){
       </h1>
 		<div class="fixedbutton">
 		<a class="btn btn-default pull-right" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-		
+
 	</div>
     </div>
     </section>
@@ -239,7 +241,7 @@ function commentWrite(val){
 		
     <li class="time-label">
         <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
         </span>
     </li>
 				</c:when>

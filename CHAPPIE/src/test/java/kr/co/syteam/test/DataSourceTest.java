@@ -24,6 +24,7 @@ public class DataSourceTest {
             System.out.println(conn);
             System.out.println("연결 성공");
          }catch (SQLException e) {
+        	 System.out.println("연결 실패");
                e.printStackTrace();
          }
    }

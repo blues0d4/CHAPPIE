@@ -1,3 +1,4 @@
+<%@page import="kr.co.syteam.commons.KEYs"%>
 <%@page import="kr.co.syteam.commons.URIs"%>
 <%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,6 +11,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -66,8 +69,8 @@
   
 </head>
 
-<body class="hold-transition register-page skin-blue"style="background-color: #99ccff">
-<nav>
+<body class="hold-transition register-page"style="background-color: #99ccff">
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 <jsp:include page="${PAGEs.VIEW_NAV_MAIN}" flush="false"/>
 </nav>
 <div class="register-box">
