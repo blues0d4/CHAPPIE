@@ -73,9 +73,9 @@
 
 </style>
 </head>
-<body class="hold-transition skin-blue sidebar-mini fixed">
+<body class="hold-transition skin-blue sidebar-mini fixed" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 
-<div class="wrapper">
+<div class="wrapper" style="height: auto;">
 
   <header class="main-header">
     <!-- Logo -->
@@ -103,11 +103,9 @@
   <div class="content-wrapper">
   
   <section class="content-header">
-    <div>
       <h1> <b>#${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
-      </div>
       </section>
       
       
@@ -127,7 +125,7 @@
 					</tr>
 					<tr>
 						<th>내용:</th>
-						<td><textarea cols="100" placeholder="내용을 입력하세요. " rows="10"
+						<td><textarea cols="100" placeholder="내용을 입력하세요. " rows="30"
 								name="board_contents" class="form-control"></textarea></td>
 					</tr>
 					<tr>
@@ -143,20 +141,20 @@
 			</table>
 		</form>
 	</section>
-	
-	
+</div>	
 	
   <footer class="main-footer">
    	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
-    
   </footer>
-  	<aside class="control-sidebar control-sidebar-dark">
-		
+  
+  	<aside class="control-sidebar control-sidebar-dark">	
    	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-	
  	</aside>
    <div class="control-sidebar-bg"></div>
   </div>
+  
+  <!-- Slimscroll -->
+<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 	
 	<script>
     $('article').readmore({
