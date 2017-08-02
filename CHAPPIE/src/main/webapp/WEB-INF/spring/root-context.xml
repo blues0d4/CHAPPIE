@@ -20,7 +20,7 @@
 <!--  			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl" /> -->
 		<property name="username" value="mysql_db" />
 		<property name="password" value="syteam1111" />
-	</bean>
+	</bean> 
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
