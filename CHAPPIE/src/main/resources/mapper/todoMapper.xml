@@ -30,8 +30,8 @@
   	  	
   	<select id="todoView" resultType="kr.co.syteam.domain.todo.vo.TodoVO">
   		<![CDATA[
-  			SELECT TODO_LIST, TO_CHAR(todo_start_date, 'mm/dd/yyyy') TODO_START_DATE, 
-  			TO_CHAR(todo_start_date, 'mm/dd/yyyy') TODO_END_DATE, TODO_PRIORITY, TODO_NOTE 
+  			SELECT TODO_LIST, DATE_FORMAT(todo_start_date, '%m/%d/%Y') TODO_START_DATE, 
+  			DATE_FORMAT(todo_end_date, '%m/%d/%Y') TODO_END_DATE, TODO_PRIORITY, TODO_NOTE 
 			FROM TODO_LIST_TABLE 
 			WHERE TODO_NO=#{todo_no}
   		]]>
