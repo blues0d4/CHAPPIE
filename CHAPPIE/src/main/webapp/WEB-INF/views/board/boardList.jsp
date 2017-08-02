@@ -253,7 +253,7 @@ function commentWrite(val){
             <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	test3
+	
             <div class="timeline-body">
             <article>
 			<p>${boardVO.board_contents }</p>

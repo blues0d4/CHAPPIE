@@ -74,6 +74,7 @@
 .fixedbutton{position:relative;margin:0 1.25rem}
 #msg_input{overflow:auto;margin:0;width:100%;min-height:42px;height:38px;max-height:180px;border:2px solid #E0E0E0;border-radius:.375rem;outline:0;background:#fff;resize:none;box-shadow:none;color:#3D3C40;font-family:Slack-Lato,appleLogo,sans-serif;font-size:.9375rem;line-height:1.2rem;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto;padding:9px 30px 10px 50px}
 
+
 </style>
 
 
@@ -119,7 +120,7 @@
       
 	<section class="container">
 		<form action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}" method="post">
-			<table class="table table-bordered">
+			<table class="table">
 			<thead>
 			<h3>글 작성</h3>
 			</thead>
@@ -129,9 +130,8 @@
 						<td><input type="text" placeholder="제목을 입력하세요. "
 							name="board_title" class="form-control" /></td>
 					</tr>
-					<tr>
 <!-- 					<div id="summernote">Hello Summernote</div> -->
-					</tr>
+
 					<tr>
 						<th>내용:</th>
 						<td>
@@ -227,12 +227,21 @@
   </script>
 
 <!-- 글씨체 스크립트 -->
-<script >
-$(document).ready(function() {
-	  $('#summernote').summernote();
+<!-- <script > -->
+// $(document).ready(function() {
+// 	  $('#summernote').summernote();
+	  
+// 	});
+<!-- </script> -->
+
+<script>
+$('#summernote').summernote({
+	  height: 600,                 // set editor height
+	  minHeight: null,             // set minimum height of editor
+	  maxHeight: null,             // set maximum height of editor
+	  focus: true                  // set focus to editable area after initializing summernote
 	});
 </script>
-
 </body>
 
 </html>
