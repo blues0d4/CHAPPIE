@@ -219,7 +219,7 @@ function commentWrite(val){
 
             <h3 class="timeline-header"><a href="#">SY_Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
 
-            <div class="timeline-body">
+            <div class="timeline-body" >
                 	<b>#${category.category_name}</b> 게시판 공지입니다.
             </div>
 
@@ -254,7 +254,10 @@ function commentWrite(val){
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
 	
-            <div class="timeline-body">
+	
+	<!-- 줄바꿈 -->
+            <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
+            text-overflow:ellipsis;  margin:10px;" >
             <article>
 			<p>${boardVO.board_contents }</p>
 			</article>

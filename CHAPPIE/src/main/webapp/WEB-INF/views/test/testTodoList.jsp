@@ -98,6 +98,8 @@
 
                     <h3 class="box-title">To Do List</h3>
                   </div>
+                  
+                  <c:forEach items="${ todoList }" var="todoVO">
                   <!-- /.box-header -->
                   <div class="box-body">
                     <ul class="todo-list">
@@ -117,12 +119,22 @@
                       
                         <!-- General tools such as edit or delete-->
                         <div class="tools">
-                            <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" ><i class="fa fa-edit"></i></a>
+                            <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default" ><i class="fa fa-edit"></i></a>
                           <i class="fa fa-trash-o"></i>
                         </div>
                       </li>
-
+                      
+                      <li style="padding-top:15px"><p>${todoVO.todo_list}</p></li>
+					<c:choose>
+							<c:when test="${todoVO.todo_complete == '1' }">
+								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
+							</c:when>
+							<c:otherwise>
+								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
+							</c:otherwise>
+						</c:choose>
                     </ul>
+                    </c:forEach>
                   </div>
                   <!-- /.box-body -->
                   <div class="box-footer clearfix no-border">
@@ -142,34 +154,33 @@
 
 
 
+<!--             /.box-header -->
+<!--             <div class="box-body"> -->
+<!--                 <table class="table table-bordered table-hover" > -->
+<!--                    <tr> -->
+<!--                   	 <td width="50px"></td> -->
+<!--                     <td><strong>할 일 목록</strong></td> -->
+<!--                     <td width="50px"><strong>완료</strong></td> -->
+<!--                    </tr> -->
+<%-- 				<c:forEach items="${ todoList }" var="todoVO"> --%>
+<!-- 					<tr> -->
+<!-- 						<td> -->
+<%-- 	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a> --%>
+<!-- 	                    </td> -->
+<%-- 						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td> --%>
 
-            <!-- /.box-header -->
-            <div class="box-body">
-                <table class="table table-bordered table-hover" >
-                   <tr>
-                  	 <td width="50px"></td>
-                    <td><strong>할 일 목록</strong></td>
-                    <td width="50px"><strong>완료</strong></td>
-                   </tr>
-				<c:forEach items="${ todoList }" var="todoVO">
-					<tr>
-						<td>
-	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
-	                    </td>
-						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td>
-
-						<c:choose>
-							<c:when test="${todoVO.todo_complete == '1' }">
-								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
-							</c:when>
-							<c:otherwise>
-								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
-							</c:otherwise>
-						</c:choose>
-					</tr>
-				</c:forEach>
-                 </table>
-            </div>
+<%-- 						<c:choose> --%>
+<%-- 							<c:when test="${todoVO.todo_complete == '1' }"> --%>
+<%-- 								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/> --%>
+<%-- 							</c:when> --%>
+<%-- 							<c:otherwise> --%>
+<%-- 								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/> --%>
+<%-- 							</c:otherwise> --%>
+<%-- 						</c:choose> --%>
+<!-- 					</tr> -->
+<%-- 				</c:forEach> --%>
+<!--                  </table> -->
+<!--             </div> -->
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>

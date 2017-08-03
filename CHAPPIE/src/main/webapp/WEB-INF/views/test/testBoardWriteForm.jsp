@@ -48,6 +48,9 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+ <!-- 글씨체 변경 -->
+ <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+ <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -72,6 +75,8 @@
 #msg_input{overflow:auto;margin:0;width:100%;min-height:42px;height:38px;max-height:180px;border:2px solid #E0E0E0;border-radius:.375rem;outline:0;background:#fff;resize:none;box-shadow:none;color:#3D3C40;font-family:Slack-Lato,appleLogo,sans-serif;font-size:.9375rem;line-height:1.2rem;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto;padding:9px 30px 10px 50px}
 
 </style>
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 
@@ -102,12 +107,13 @@
   
   <div class="content-wrapper">
   
+  
   <section class="content-header">
-      <h1> <b>#${category.category_name }</b>
+      <h1> <b># ${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
       </section>
-      
+
       
       
       
@@ -122,6 +128,9 @@
 						<th>제목:</th>
 						<td><input type="text" placeholder="제목을 입력하세요. "
 							name="board_title" class="form-control" /></td>
+					</tr>
+					<tr>
+					<div id="summernote">Hello Summernote</div>
 					</tr>
 					<tr>
 						<th>내용:</th>
@@ -155,7 +164,13 @@
   
   <!-- Slimscroll -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+
+<!-- 글씨체 설정 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 	
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
+
 	<script>
     $('article').readmore({
 //         	blockCSS: 'display: block; width: 100%;',
@@ -209,7 +224,16 @@
         }
     });
     
+    $(document).ready(function() {
+  	  $('#summernote').summernote();
+  	});
+    
   </script>
+
+<!-- 글씨체 스크립트 -->
+<script >
+
+</script>
 
 </body>
 
