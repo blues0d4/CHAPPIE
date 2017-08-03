@@ -7,14 +7,14 @@
   <insert id="userJoin">
   	<![CDATA[
 		INSERT INTO USER_TABLE(USER_ID, USER_PW, USER_NAME, USER_PHONE, USER_JOINDATE)
-		VALUES(#{user_id}, #{user_pw}, #{user_name}, #{user_phone}, SYSDATE)
+		VALUES(#{user_id}, #{user_pw}, #{user_name}, #{user_phone}, NOW())
   	]]>
   </insert>
   
 <!--   <select id="userLogin"> -->
   <select id="userLogin" parameterType="kr.co.syteam.domain.user.dto.UserDTO" resultType="kr.co.syteam.domain.user.vo.LoginVO">
  	<![CDATA[
-  		SELECT USER_ID, USER_NAME, SYSDATE AS logindate 
+  		SELECT USER_ID, USER_NAME, NOW() AS logindate 
  		FROM USER_TABLE 
 		WHERE USER_ID = #{user_id} AND USER_PW = #{user_pw}
  	]]>

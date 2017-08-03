@@ -19,9 +19,9 @@
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-<!--   <link rel="stylesheet" href="https:d//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
@@ -69,7 +69,8 @@
   
 </head>
 
-<body class="hold-transition register-page"style="background-color: #99ccff">
+<!-- <body class="hold-transition register-page"style="background-color: #99ccff"> -->
+<body class="hold-transition register-page"style="background-color: #99ceff"> 
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 <jsp:include page="${PAGEs.VIEW_NAV_MAIN}" flush="false"/>
 </nav>
@@ -158,31 +159,8 @@
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Select2 -->
-<script src="/resources/plugins/select2/select2.full.min.js"></script>
-<!-- InputMask -->
-<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
-<!-- date-range-picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap datepicker -->
-<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-<!-- bootstrap time picker -->
-<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- iCheck 1.0.1 -->
+<!-- iCheck -->
 <script src="/resources/plugins/iCheck/icheck.min.js"></script>
-<!-- FastClick -->
-<script src="/resources/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/resources/dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/resources/dist/js/demo.js"></script>
 <script>
   $(function () {
     $('input').iCheck({
@@ -190,15 +168,6 @@
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' // optional
     });
-  });
-</script>
-<script>
-  $(function () {
-   
-    //Money Euro
-    $("[data-mask]").inputmask();
-
-    
   });
 </script>
 </body>

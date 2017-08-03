@@ -14,6 +14,7 @@ import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
+import kr.co.syteam.domain.temp.dto.TempDTO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.project.ProjectService;
 
@@ -145,6 +146,11 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	public String projectChoiceGet(String user_id) throws Exception {
 		return projectDAO.projectChoiceGet(user_id);
+	}
+
+	@Override
+	public void tempTableService(TempDTO tempDTO) throws Exception {
+		projectDAO.tempTable(tempDTO);
 	}
 
 }

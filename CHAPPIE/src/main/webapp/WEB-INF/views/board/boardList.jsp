@@ -90,10 +90,14 @@ function commentList(val){
 	            for(var i in result){
 	                output += "<tr>";
 	                output += "<td>"+"<a href=\"#\">"+result[i].user_id+"</a></td>";
-	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	                output += "<td>"+result[i].comment_contents+"</td>";
-	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-	            	output += "<td>"+result[i].comment_write_date+"</td>"
+// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	            	output += "<td>"+result[i].comment_write_date+"</td>";
+	            	 output += "<td>";
+	                     output += "<i class=\"fa fa-edit\"></i>";
+	                     output += "<i class=\"fa fa-trash-o\"></i>";
+	                     output += "</td>";
 	                output += "</tr>";
 	            }
             output += "</table>";
@@ -237,7 +241,7 @@ function commentWrite(val){
 		
     <li class="time-label">
         <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
         </span>
     </li>
 				</c:when>
