@@ -43,24 +43,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  
- <style type="text/css">
-  
-    p {
-        padding: 5px;
-    }
-  
-    .textdecoration1 { text-decoration: line-through; }
-    
-    .content-wrapper{
-    	height: auto;
-    }
-    
-    .col-md-7 { height: auto;}
-    
-</style>
-
-
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -76,7 +58,7 @@
 
     <!-- Header Navbar: style can be found in header.less -->
 
-	<nav class="navbar navbar-static-top">
+   <nav class="navbar navbar-static-top">
     <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
     </nav>
   </header>
@@ -100,42 +82,34 @@
 
     <!-- Main content -->
     <section class="content">
-		<div class="col-md-7">
-
-      <!-- TO DO List -->
-                <div class="box box-primary">
-                  <div class="box-header">
-                    <i class="ion ion-clipboard"></i>
-
-      
-
-
+      <div class="col-md-7">
+      <div class="box box-primary">
 
             <!-- /.box-header -->
             <div class="box-body">
                 <table class="table table-bordered table-hover" >
                    <tr>
-                  	 <td width="50px"></td>
+                      <td width="50px"></td>
                     <td><strong>할 일 목록</strong></td>
                     <td width="50px"><strong>완료</strong></td>
                    </tr>
-				<c:forEach items="${ todoList }" var="todoVO">
-					<tr>
-						<td>
-	                     	<a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
-	                    </td>
-						<td style="padding-top:15px"><p>${todoVO.todo_list}</p>	</td>
+            <c:forEach items="${ todoList }" var="todoVO">
+               <tr>
+                  <td>
+                           <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
+                       </td>
+                  <td style="padding-top:15px"><p>${todoVO.todo_list}</p>   </td>
 
-						<c:choose>
-							<c:when test="${todoVO.todo_complete == '1' }">
-								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
-							</c:when>
-							<c:otherwise>
-								<td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
-							</c:otherwise>
-						</c:choose>
-					</tr>
-				</c:forEach>
+                  <c:choose>
+                     <c:when test="${todoVO.todo_complete == '1' }">
+                        <td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
+                     </c:when>
+                     <c:otherwise>
+                        <td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
+                     </c:otherwise>
+                  </c:choose>
+               </tr>
+            </c:forEach>
                  </table>
             </div>
             <!-- /.box-body -->
@@ -143,24 +117,24 @@
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
-		</div>
+      </div>
 
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
+       <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
 
   </footer>
 
   <!-- Control Sidebar -->
 
-	<aside class="control-sidebar control-sidebar-dark">
+   <aside class="control-sidebar control-sidebar-dark">
 
-   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
+       <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
 
- 	</aside>
+    </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -180,70 +154,70 @@
       <div class="modal-body">
         <form class="form-horizontal" method="post" action="/project/${project.project_id }/todo/${category.category_id }/todoWrite">
 
-       	   	<div class="modal-body">
-       	   		<table class="table table-bordered table-hover">
-       	   			<tr>
-       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
-       	   				<td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px">
-       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
-			         		<i class="fa fa-calendar"></i></label>
-		         		</td>
-			         	<td><div class="input-group date">
+                <div class="modal-body">
+                   <table class="table table-bordered table-hover">
+                      <tr>
+                         <td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 할 일 </label></td>
+                         <td><input type="text" class="form-control" id="todo_list" name="todo_list"></td>
+                      </tr>
+                      <tr>
+                         <td style="padding-left:5px">
+                            <label for="inputEmail" style="margin-top:5px; padding: 0px"> 시작일자
+                        <i class="fa fa-calendar"></i></label>
+                     </td>
+                     <td><div class="input-group date">
                     <input type="text" class="form-control pull-right" id="datepicker3" name="todo_start_date">
                   </div></td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px">
-       	   					<label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
-			                <i class="fa fa-calendar"></i></label>
-		                </td>
-		                <td>
-		               		<input type="text" name="todo_end_date" class="form-control" id="datepicker4" placeholder="">
-		                </td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 담당자 </label></td>
-       	   				<td>
-			                  <div class="checkbox">
-				                  <c:forEach var="categoryMember" items="${cmList }">
-				                    <label>
-				                      <input type="checkbox" name="member_nickname" value="${categoryMember }">
-				                      	${categoryMember }
-				                    </label>
-					              </c:forEach>
-			                  </div>
-		                </td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
-       	   				<td>
-	       	   				<select style="margin:3px" name="todo_priority">
-				                <option> 상 </option>
-				                <option> 중 </option>
-				                <option> 하 </option>
-		               		</select>
-	               		</td>
-       	   			</tr>
-       	   			<tr>
-       	   				<td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
-       	   				<td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요" name="todo_note"></textarea></td>
-       	   			</tr>
-       	   		</table>
-       	   		<div class="form-group" style="text-align:center">
-             		<div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
-             			<br/>
-	                 	<button type="submit" class="btn btn-primary">등록</button>
-	                  	<button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
-           			</div>
-           		</div>
-			</div>
-		</form>
+                      </tr>
+                      <tr>
+                         <td style="padding-left:5px">
+                            <label for="inputEmail" style="margin-top:5px; padding: 0px"> 종료일자
+                         <i class="fa fa-calendar"></i></label>
+                      </td>
+                      <td>
+                           <input type="text" name="todo_end_date" class="form-control" id="datepicker4" placeholder="">
+                      </td>
+                      </tr>
+                      <tr>
+                         <td width="110px" style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 담당자 </label></td>
+                         <td>
+                           <div class="checkbox">
+                              <c:forEach var="categoryMember" items="${cmList }">
+                                <label>
+                                  <input type="checkbox" name="member_nickname" value="${categoryMember }">
+                                     ${categoryMember }
+                                </label>
+                             </c:forEach>
+                           </div>
+                      </td>
+                      </tr>
+                      <tr>
+                         <td style="padding-left:5px"><label for="inputEmail" style="margin-top:5px"> 중요도 </label></td>
+                         <td>
+                            <select style="margin:3px" name="todo_priority">
+                            <option> 상 </option>
+                            <option> 중 </option>
+                            <option> 하 </option>
+                           </select>
+                        </td>
+                      </tr>
+                      <tr>
+                         <td style="padding-left:5px"><label for="textArea" style="margin-top:5px">비고</label></td>
+                         <td><textarea class="form-control" rows="10" id="description" placeholder="내용을 입력하세요" name="todo_note"></textarea></td>
+                      </tr>
+                   </table>
+                   <div class="form-group" style="text-align:center">
+                   <div class="col-lg-10 col-lg-offset-2" style="margin-left:60px">
+                      <br/>
+                       <button type="submit" class="btn btn-primary">등록</button>
+                        <button type="reset" data-dismiss="modal" class="btn btn-default">취소</button>
+                    </div>
+                 </div>
+         </div>
+      </form>
       </div>
-	  </div>
-	</div>
+     </div>
+   </div>
 </div>
 
 <script type="text/javascript">
@@ -262,41 +236,33 @@ function complete(chk)
 }
 </script>
 
-<!-- jQuery 2.2.3 -->
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
+<script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/resources/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/resources/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
+<!-- Select2 -->
+<script src="/resources/plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="/resources/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="/resources/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- date-range-picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
+<!-- bootstrap datepicker -->
 <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
+<!-- bootstrap color picker -->
+<script src="/resources/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="/resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 <!-- FastClick -->
 <script src="/resources/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
 
@@ -372,7 +338,5 @@ function complete(chk)
     });
   });
 </script>
-
-
 </body>
 </html>
