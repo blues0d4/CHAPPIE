@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
-		var objDiv = document.getElementById('response'); 
+		
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
 				if (event.which == 13) {
@@ -28,7 +28,7 @@
 				headers: {
 					"Authorization": "Bearer " + accessToken
 				},
-				data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+				data: JSON.stringify({ query: text, lang: "ko", sessionId: "somerandomthing" }),
 				success: function(data) {
 					response(data);
 				},
@@ -49,8 +49,11 @@
 					temp = data.result.fulfillment.speech;	
 					setResponse(temp);
 				}
-				console.log("temp:"+temp);
-				objDiv.scrollTop = objDiv.scrollHeight;
+			console.log("temp:"+temp);
+			
+			$(document).ready(function(){
+				$('#response').scrollTop($('#response')[0].scrollHeight);
+			});
 		}
 		
 		function setResponse(val) {
@@ -68,7 +71,7 @@
 	</script>
 	<style type="text/css">
 		body { width: 500px; margin: 0 auto; margin-top: 20px; }
-		div {  position: absolute; padding:10px}
+		div {  padding:10px}
 		input { width: 400px; }
 		button { width: 50px; }
 		textarea { width: 100%; }
@@ -77,8 +80,8 @@
 </head>
 <body>
 	<div>
-		<input id="input" type="text"> <button onclick="send()">Send</button>
-		<div id="response" style="overflow:scroll;border:1px solid; width:100%; height:300px; background-color:yellow"></div>
+		<input id="input" type="text"> <button onclick="send()">Send!</button>
+		<div id="response" style="overflow:auto;border:1px solid; width:100%; height:300px; background-color:yellow"></div>
 	</div>
 </body>
 </html>
