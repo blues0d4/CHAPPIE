@@ -20,6 +20,9 @@
 		
 		function send() {
 			var text = $("#input").val();
+			if(text==""){
+				return;
+			}
 			$.ajax({
 				type: "POST",
 				url: baseUrl + "query?v=20150910",
@@ -33,7 +36,7 @@
 					response(data);
 				},
 				error: function() {
-					setResponse("Internal Server Error");
+					setResponse("Error");
 				}
 			});			
 		}
