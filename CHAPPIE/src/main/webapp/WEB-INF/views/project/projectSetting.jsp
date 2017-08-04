@@ -11,6 +11,8 @@
   <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -177,6 +179,10 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+
+
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
 <script language="javascript">
 function popup(frm)

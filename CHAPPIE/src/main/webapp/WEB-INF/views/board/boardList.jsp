@@ -355,6 +355,9 @@ function commentWrite(val){
     
 </div>
 
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+
 	
 <!-- ./wrapper -->
 

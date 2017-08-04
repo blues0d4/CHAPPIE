@@ -44,7 +44,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
 
   <header class="main-header">
@@ -74,40 +74,41 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1> Dashboard
+      <h1> <b>#${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
-
     </section>
 
     <!-- Main content -->
+    
     <section class="content">
-      <div class="col-md-7">
-      <div class="box box-primary">
+      <div class="box box-primary" >
 
             <!-- /.box-header -->
             <div class="box-body">
                 <table class="table table-bordered table-hover" >
                    <tr>
-                      <td width="50px"></td>
+                      <td width="50px"><strong>완료</strong></td>
                     <td><strong>할 일 목록</strong></td>
-                    <td width="50px"><strong>완료</strong></td>
+                    <td width="50px"></td>
                    </tr>
             <c:forEach items="${ todoList }" var="todoVO">
                <tr>
-                  <td>
-                           <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
-                       </td>
-                  <td style="padding-top:15px"><p>${todoVO.todo_list}</p>   </td>
-
-                  <c:choose>
+               
+                <c:choose>
                      <c:when test="${todoVO.todo_complete == '1' }">
                         <td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });" checked/>
                      </c:when>
                      <c:otherwise>
                         <td width="50px"><input type="checkbox" style="display:table-col; margin-left:10px; margin-top:10px" onclick="complete(${todoVO.todo_no });"/>
                      </c:otherwise>
-                  </c:choose>
+          	       </c:choose>
+                  
+                  <td style="padding-top:15px"><p>${todoVO.todo_list}</p>   </td>
+					<td>
+                           <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
+                       </td>
+                 
                </tr>
             </c:forEach>
                  </table>
@@ -117,11 +118,13 @@
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
-      </div>
+          </div>
 
     </section>
     <!-- /.content -->
-  </div>
+
+</div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
        <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
@@ -139,7 +142,6 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-</div>
 
 <!-- ./wrapper -->
 
@@ -219,6 +221,9 @@
      </div>
    </div>
 </div>
+
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
 <script type="text/javascript">
 function complete(chk)
@@ -337,6 +342,8 @@ function complete(chk)
       showInputs: false
     });
   });
+  
+  
 </script>
 </body>
 </html>

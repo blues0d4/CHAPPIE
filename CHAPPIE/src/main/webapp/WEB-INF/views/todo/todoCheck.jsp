@@ -170,7 +170,7 @@
 <%--               	<a href="/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }"  --%>
 <!--               	class="btn btn-danger pull-right" style="margin-right:10px" id="delete">Delete</a> -->
                 
-            <button type = "button" class="btn btn-danger pull-right" style="margin-right:10px" id="delete">Delete</button>
+           		 <button type = "button" class="btn btn-danger pull-right" style="margin-right:10px" id="delete">Delete</button>
               </div>
               <!-- /.box-footer -->
             </form>
