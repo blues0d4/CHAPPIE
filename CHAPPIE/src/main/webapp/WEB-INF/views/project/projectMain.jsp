@@ -68,37 +68,13 @@ body {
 	border: 1px solid #b0b0b0;
 	bottom: 0;
 	display: none;
-	height: 415px;
+	height: 600px;
 	position: fixed;
 	right: 70px;
-	width: 300px;
+	width: 400px;
 	font-family: 'Open Sans', sans-serif;
 }
 
-.round.hollow {
-	margin: 40px 0 0;
-}
-
-.round.hollow a {
-	border: 2px solid #ff6701;
-	border-radius: 35px;
-	color: red;
-	color: #ff6701;
-	font-size: 23px;
-	padding: 10px 21px;
-	text-decoration: none;
-	font-family: 'Open Sans', sans-serif;
-}
-
-.round.hollow a:hover {
-	border: 2px solid #000;
-	border-radius: 35px;
-	color: red;
-	color: #000;
-	font-size: 23px;
-	padding: 10px 21px;
-	text-decoration: none;
-}
 
 .popup-box-on {
 	display: block !important;
@@ -115,6 +91,8 @@ body {
 	font-family: Oswald;
 }
 
+
+/*채팅방이랑 연결하는 바*/
 .bg_none i {
 	border: 1px solid #ff6701;
 	border-radius: 25px;
@@ -141,13 +119,13 @@ body {
 }
 
 .popup-box .popup-head .popup-head-right {
-	margin: 11px 7px 0;
+	
 }
 
 .popup-box .popup-messages {
 
-width : 300;
-height: 430;
+width : 400;
+height: 600;
 	
 }
 
@@ -158,26 +136,6 @@ height: 430;
 	margin-right: 10px
 }
 
-.popup-messages-footer>textarea {
-	border-bottom: 1px solid #b2b2b2 !important;
-	margin: 7px;
-	padding: 5px !important;
-	border: medium none;
-	width: 95% !important;
-}
-
-.popup-messages-footer {
-	background: #fff none repeat scroll 0 0;
-	bottom: 0;
-	position: absolute;
-	width: 100%;
-}
-
-.popup-messages-footer .btn-footer {
-	overflow: hidden;
-	padding: 2px 5px 10px 6px;
-	width: 100%;
-}
 
 .simple_round {
 	background: #d1d1d1 none repeat scroll 0 0;
@@ -189,8 +147,7 @@ height: 430;
 }
 
 .popup-box .popup-messages {
-	background: #00abd9 none repeat scroll 0 0;
-	height: 310px;
+	height: auto;
 	overflow: auto;
 }
 
@@ -204,7 +161,6 @@ height: 430;
 	border-bottom: 1px solid #a4c6b5;
 	height: 12px;
 	margin: 7px 0 20px;
-	position: relative;
 	text-align: center;
 }
 
@@ -250,7 +206,7 @@ height: 430;
 	border-bottom: 1px solid #a4c6b5;
 	height: 12px;
 	margin: 7px 0 20px;
-	position: relative;
+	
 	text-align: center;
 }
 
@@ -267,7 +223,7 @@ height: 430;
 
 .popup-messages .direct-chat-timestamp {
 	color: #fff;
-	opacity: 0.6;
+
 }
 
 .popup-messages .direct-chat-name {
@@ -275,7 +231,7 @@ height: 430;
 	font-weight: 600;
 	margin: 0 0 0 49px !important;
 	color: #fff;
-	opacity: 0.9;
+
 }
 
 .popup-messages .direct-chat-info {
@@ -302,7 +258,7 @@ height: 430;
 	color: #fff;
 	font-size: 15px;
 	margin: 0 0 0 10px;
-	opacity: 0.9;
+
 }
 
 .direct-chat-img-reply-small {
@@ -317,7 +273,7 @@ height: 430;
 
 .popup-messages .direct-chat-msg {
 	margin-bottom: 10px;
-	position: relative;
+	
 }
 
 .popup-messages .doted-border::after {
@@ -389,9 +345,10 @@ height: 430;
 	color: #444;
 	margin: 5px 0 0 50px;
 	padding: 5px 10px;
-	position: relative;
+	
 }
 </style>
+
 
 
 <body class="hold-transition skin-blue sidebar-mini fixed" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
@@ -592,7 +549,7 @@ height: 430;
   
   <!--  채피 아이콘 -->
 
-	<div style="position: fixed; bottom: 5px; right: 5px;">
+	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 50px">
 		<a href="#" id="addClass"><img src="/resources/img/chappie_button.png"></a>
 	</div>
 
@@ -626,7 +583,7 @@ height: 430;
 			</div>
 		</div>
 		<div class="popup-messages">
-			<iframe width="300" height="430"
+			<iframe width="395" height="530"
 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4">
 			</iframe>
 		</div>

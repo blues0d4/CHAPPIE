@@ -90,14 +90,10 @@ function commentList(val){
 	            for(var i in result){
 	                output += "<tr>";
 	                output += "<td>"+"<a href=\"#\">"+result[i].user_id+"</a></td>";
-// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	                output += "<td>"+result[i].comment_contents+"</td>";
-// 	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-	            	output += "<td>"+result[i].comment_write_date+"</td>";
-	            	 output += "<td>";
-	                     output += "<i class=\"fa fa-edit\"></i>";
-	                     output += "<i class=\"fa fa-trash-o\"></i>";
-	                     output += "</td>";
+	            	output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	            	output += "<td>"+result[i].comment_write_date+"</td>"
 	                output += "</tr>";
 	            }
             output += "</table>";
@@ -223,7 +219,7 @@ function commentWrite(val){
 
             <h3 class="timeline-header"><a href="#">SY_Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
 
-            <div class="timeline-body">
+            <div class="timeline-body" >
                 	<b>#${category.category_name}</b> 게시판 공지입니다.
             </div>
 
@@ -241,7 +237,7 @@ function commentWrite(val){
 		
     <li class="time-label">
         <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
         </span>
     </li>
 				</c:when>
@@ -258,7 +254,10 @@ function commentWrite(val){
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
 	
-            <div class="timeline-body">
+	
+	<!-- 줄바꿈 -->
+            <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
+            text-overflow:ellipsis;  margin:10px;" >
             <article>
 			<p>${boardVO.board_contents }</p>
 			</article>
@@ -355,6 +354,9 @@ function commentWrite(val){
   <div class="control-sidebar-bg"></div>
     
 </div>
+
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
 	
 <!-- ./wrapper -->

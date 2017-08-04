@@ -10,6 +10,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CHAPPIE</title>
+  
+  <script src="/resources/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/resources/dist/sweetalert.css">
+	
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -77,6 +82,7 @@
     	<div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Todo</h3>
+
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -160,9 +166,11 @@
               <div class="box-footer">
               	<a href="/project/${project.project_id }/todo/${category.category_id }" class="btn btn-default">Cancel</a>
               	<button type="submit" class="btn btn-info pull-right">Modify</button>
-              	<a href="/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }" 
-              	class="btn btn-danger pull-right" style="margin-right:10px">Delete</a>
+              	
+<%--               	<a href="/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }"  --%>
+<!--               	class="btn btn-danger pull-right" style="margin-right:10px" id="delete">Delete</a> -->
                 
+           		 <button type = "button" class="btn btn-danger pull-right" style="margin-right:10px" id="delete">Delete</button>
               </div>
               <!-- /.box-footer -->
             </form>
@@ -287,6 +295,60 @@
       showInputs: false
     });
   });
+  
+  // 삭제유무
+  
+  $(document).ready(function(){
+	  $("#delete").click(function(){
+		  
+		  
+// 		  alert("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
+// 		  alert("alert");
+		  
+		  swal({
+			  title: "Are you sure?",
+			  text: "",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Yes, delete it!",
+			  cancelButtonText: "No, cancel plx!",
+			  closeOnConfirm: false,
+			  closeOnCancel: false
+			},
+			
+			
+			function(isConfirm){
+			  if (isConfirm) {
+			    swal("Success!", "", "success");
+			    setTimeout( function() {
+// 			    	  alert('http://webisfree.com');
+				  location.replace("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
+			    	}, 500);
+			  } else {
+			    swal("Cancelled!", "", "error");
+			  }
+			});
+		  
+// 	     var isDelete = confirm("삭제하시겠습니까?");
+	     
+	     
+	     
+// 	     if(isDelete){
+// 	    	 document.form.submit();
+// 	     }else{
+// 	    	 return false;
+// 	     }
+	     
+	     
+	     
+	     });
+	  
+	  });
+  
+
+
+
 </script>
     
 </body>
