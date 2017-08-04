@@ -11,7 +11,7 @@
   <title>CHAPPIE</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  
   
 <script src="/resources/plugins/chartjs/Chart.js"></script>
   <!-- Bootstrap 3.3.6 -->
@@ -134,6 +134,10 @@
  	</aside>
   <div class="control-sidebar-bg"></div>
 </div>
+
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+
 <!-- ./wrapper -->
 
 <!-- jQuery UI 1.11.4 -->
