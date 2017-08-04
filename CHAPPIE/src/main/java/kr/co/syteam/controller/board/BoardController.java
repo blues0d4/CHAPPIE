@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.dto.BoardCommentDTO;
@@ -137,15 +136,23 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_DELETE + "/{board_no}")
-	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO) throws Exception {
+	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO, HttpServletRequest request) throws Exception {
 		
 		logger.info("doBoardDelete");
+		System.out.println(board_no);
 		BoardVO boardVO = boardService.boardView(board_no);
 
+		System.out.println(boardVO);
 		if (boardVO == null) {
 			return "redirect:/project/"+project_id+"/board/"+category_id;
 		}
+		
 
+		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
+		String user_id = loginVO.getUser_id();
+		
+		boardDTO.setUser_id(user_id);
+		
 		boardService.boardDelete(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
