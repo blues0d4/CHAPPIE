@@ -118,13 +118,12 @@
               <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
             </div>
           </div>
-          </div>
 
     </section>
     <!-- /.content -->
 
 </div>
-
+</div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
        <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
