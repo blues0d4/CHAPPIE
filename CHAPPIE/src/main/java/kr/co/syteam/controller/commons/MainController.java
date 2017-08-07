@@ -32,10 +32,10 @@ public class MainController {
 //	      return "/test/chappieTest";
 //	   }
 //	
-	@RequestMapping(value = "/test")
-	   public String Test1(){
-	      logger.info("cahppitest");
-	      return "/test/chappieTest2";
-	   }
+//	@RequestMapping(value = "/test")
+//	   public String Test1(){
+//	      logger.info("cahppitest");
+//	      return "/test/chappieTest2";
+//	   }
 	
 }

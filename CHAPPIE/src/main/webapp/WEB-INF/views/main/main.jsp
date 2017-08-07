@@ -85,11 +85,11 @@
 					<p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한
 						협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p>
 					<br> <br> <br />
-					<h2>"how is the weather in 서울"</h2>
+
 					<br />
-					<iframe width="350" height="430"
-						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4">
-					</iframe>
+<!-- 					<iframe width="350" height="430" -->
+<!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
+<!-- 					</iframe> -->
 
 				</div>
 			</div>

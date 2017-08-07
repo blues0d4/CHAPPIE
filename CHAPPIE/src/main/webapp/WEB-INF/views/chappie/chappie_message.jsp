@@ -86,8 +86,8 @@
 		
 
 		function setResponseImg(val, data) {
-			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"http://placehold.it/50/FA6F57/fff&text=ME\" alt=\"User Avatar\" class=\"img-circle\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
-			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+data+"</p></div><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img></li>");
+			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
+			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+data+"</p></div><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img></li>");
 			document.getElementById('input').value = "";
 			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
@@ -130,7 +130,7 @@
 
 	.chat li
 	{
-	    margin-bottom: 10px;
+	    margin-bottom: 5px;
 	    padding-bottom: 5px;
 	    border-bottom: 1px dotted #B3A9A9;
 	}
@@ -148,7 +148,7 @@
 
 	.chat li .chat-body p
 	{
-	    margin: 0;
+	    margin: 0 auto;
 	    color: #777777;
 	}
 
@@ -160,8 +160,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 500px;
-	    margin-bottom : 50px;
+		height: 480px;
 	    background-color : #F5F5F5;
 	}
 
@@ -171,8 +170,8 @@
 		width: 380px;
 		height: 40px;
 		margin-left : 10px;
-		margin-bottom : 10px;
-		margin-top:10px;
+		margin-bottom : 5px;
+		margin-top:5px;
 	}
 
 
@@ -320,7 +319,7 @@ height: 600;
 }
 
 .chat-header-button {
-/* 	background: transparent none repeat scroll 0 0; */
+	background: transparent none repeat scroll 0 0; 
 	border: 1px solid #ffffff;
 	border-radius: 50%;
 	font-size: 14px;
@@ -494,7 +493,7 @@ height: 600;
 .popup-messages-footer {
 
     background: #fff none repeat scroll 0 0;
-    bottom: 0;
+    bottom: 10px;
     position: absolute;
     width: 100%;
     height: 100px;

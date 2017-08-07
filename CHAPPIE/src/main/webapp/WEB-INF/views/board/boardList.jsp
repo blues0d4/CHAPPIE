@@ -67,9 +67,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <style>
-	p {
-		white-space: pre;
-	}
 	
 /* 	body { */
 /* 		font: 16px/1.5 sans-serif; */
@@ -269,7 +266,7 @@ function commentWrite(val){
             <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
             text-overflow:ellipsis;  margin:10px;" >
             <article>
-			<p>${boardVO.board_contents }</p>
+			<p style="white-space: pre;">${boardVO.board_contents }</p>
 			</article>
             </div>
 
