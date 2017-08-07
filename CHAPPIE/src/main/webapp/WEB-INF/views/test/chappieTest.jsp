@@ -44,10 +44,11 @@
 		function response(data){
 			console.log(JSON.stringify(data, undefined, 2));
 			var temp = "";
-			
+			var temp2 = "";
 				if(typeof data.result.fulfillment.messages[0].imageUrl !="undefined"){
 					temp = data.result.fulfillment.messages[0].imageUrl;
-					setResponseImg(temp);
+					temp2 = data.result.fulfillment.speech;
+					setResponseImg(temp, temp2);
 				}else{
 					temp = data.result.fulfillment.speech;	
 					setResponse(temp);
@@ -59,14 +60,17 @@
 			});
 		}
 		
+		
 		function setResponse(val) {
 			$("#response").append("<p align=\"right\" style=\"width:55%;margin-left:45%;background-color:green\">"+$('#input').val()+"</p>");
 			$("#response").append("<p style=\"width:55%;background-color:red\">"+val+"</p>");
 			document.getElementById('input').value = "";
 		}
 		
-		function setResponseImg(val) {
+		
+		function setResponseImg(val,data) {
 			$("#response").append("<p style=\"width:55%;margin-left:45%;background-color:green\" align=\"right\">"+$('#input').val()+"</p>");
+			$("#response").append("<p style=\"width:55%;background-color:red\">"+data+"</p>");
 			$("#response").append("<img src=\""+val+"\"></img>");
 			document.getElementById('input').value = "";
 		}
@@ -83,7 +87,7 @@
 </head>
 <body>
 	<div>
-		<input id="input" type="text"> <button onclick="send()">Send!</button>
+		<input id="input" type="text"> <button onclick="send()">Send</button>
 		<div id="response" style="overflow:auto;border:1px solid; width:100%; height:300px; background-color:yellow"></div>
 	</div>
 </body>

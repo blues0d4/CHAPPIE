@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.board.dto.BoardCommentDTO;
@@ -22,10 +21,12 @@ import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.board.BoardService;
+import kr.co.syteam.service.history.HistoryService;
 import kr.co.syteam.service.project.ProjectService;
 
 @Controller
@@ -39,6 +40,9 @@ public class BoardController {
 	 
 	@Autowired 
 	private ProjectService projectService;
+	
+	@Autowired
+	private HistoryService historyService;
 
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
 	public String doBoardCategoryList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, Model model,
@@ -128,16 +132,24 @@ public class BoardController {
 
 //		CategoryVO categoryVO = (CategoryVO) request.getSession().getAttribute("category");
 //		String user_id = loginVO.getUser_id();
-		
-		
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("등록");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(boardDTO.getBoard_title());
+		historyDTO.setKind("게시판");
 //		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
+		
 		boardService.boardWrite(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_DELETE + "/{board_no}")
-	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO) throws Exception {
+	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO, HttpServletRequest request) throws Exception {
 		
 		logger.info("doBoardDelete");
 		BoardVO boardVO = boardService.boardView(board_no);
@@ -146,6 +158,17 @@ public class BoardController {
 			return "redirect:/project/"+project_id+"/board/"+category_id;
 		}
 
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("삭제");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(boardVO.getBoard_title());
+		historyDTO.setKind("게시판");
+//		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
+		
 		boardService.boardDelete(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;
@@ -167,9 +190,20 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY + "/{board_no}")
-	public String doBoardModify(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
+	public String doBoardModify(HttpServletRequest request ,@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
 		
 		logger.info("doBoardModify");
+		
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("수정");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(boardDTO.getBoard_title());
+		historyDTO.setKind("게시판");
+//		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
 
 		boardService.boardModify(boardDTO);
 		

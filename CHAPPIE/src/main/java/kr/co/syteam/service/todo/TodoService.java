@@ -2,6 +2,7 @@ package kr.co.syteam.service.todo;
 
 import java.util.List;
 
+import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
 
@@ -16,5 +17,5 @@ public interface TodoService {
 	public int todoAuthCheckService(TodoDTO todoDTO) throws Exception;
 	public List<String> categoryMemberSelectService(String category_id) throws Exception;
 	public List<String> todoMemberSelectService(String todo_no) throws Exception;
-	public int todoCompleteService(String todo_no) throws Exception;
+	public int todoCompleteService(String todo_no, HistoryDTO historyDTO) throws Exception;
 }
