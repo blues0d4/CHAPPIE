@@ -166,6 +166,9 @@
 				</form>
 			</section>
 		</div>
+		
+		<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
 		<footer class="main-footer">
 			<jsp:include page="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />

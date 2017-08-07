@@ -33,6 +33,7 @@
 
 
 <body class="hold-transition login-page" style="background-color: #a3dcd7">
+
   <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 <jsp:include page ="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
   </nav>

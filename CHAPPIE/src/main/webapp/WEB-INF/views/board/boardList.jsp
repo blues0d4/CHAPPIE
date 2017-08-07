@@ -198,15 +198,16 @@ function commentWrite(val){
       <h1> <b>#${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
-		<div class="fixedbutton">
-		<a class="btn btn-default pull-right" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-
-	</div>
+	
     </div>
+    <div class="fixedbutton">
+		<a class="btn btn-primary btn-xs pull-right" style="margin-right:15px;" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
+	</div>
     </section>
 
     <!-- Main content -->
     <section class="content">
+    
 		<ul class="timeline">
 
     <!-- timeline time label -->

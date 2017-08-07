@@ -87,7 +87,7 @@
 
 		function setResponseImg(val, data) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
-			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+data+"</p></div><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img></li>");
+			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
 			document.getElementById('input').value = "";
 			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
@@ -508,7 +508,7 @@ height: 600;
 
 	<!--  채피 아이콘 -->
 
-	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 50px">
+	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 60px">
 		<a id="addClass"><img src="/resources/img/chappie_button.png"></a>
 	</div>
 
