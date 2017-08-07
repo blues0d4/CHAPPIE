@@ -26,4 +26,16 @@ public class MainController {
 		return URIs.URI_MAIN_PAGE;
 	}
 	
+//	@RequestMapping(value = "/test")
+//	   public String Test(){
+//	      logger.info("cahppitest");
+//	      return "/test/chappieTest";
+//	   }
+//	
+	@RequestMapping(value = "/test")
+	   public String Test1(){
+	      logger.info("cahppitest");
+	      return "/test/chappieTest2";
+	   }
+	
 }
