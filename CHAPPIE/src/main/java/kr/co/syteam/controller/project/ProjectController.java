@@ -17,13 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.chappie.vo.ChappieVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.temp.dto.TempDTO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.chappie.ChappieService;
 import kr.co.syteam.service.project.ProjectService;
-import kr.co.syteam.service.user.IUserService;
 
 //"/{project}"
 @Controller
@@ -33,6 +34,9 @@ public class ProjectController {
 
 	@Autowired
 	private ProjectService projectService;
+	
+	@Autowired
+	private ChappieService chappieService;
 	
 	//프로젝트 메인
 	//프로젝트 선택
@@ -81,6 +85,9 @@ public class ProjectController {
 		tempDTO.setUser_id(loginVO.getUser_id());
 		tempDTO.setUser_name(loginVO.getUser_name());
 		projectService.tempTableService(tempDTO);
+		
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(user_id);
+		model.addAttribute("chappieVO", chappieVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
@@ -163,15 +170,19 @@ public class ProjectController {
 		String[] value = request.getParameterValues("member_nickname");
 		projectService.projectCategoryCreate(categoryCreateDTO);
 		projectService.categoryMemberModify(value, projectService.categoryIdSelectService());
+		
 		return "redirect:/project/"+project_id;
 	}
 	
 	@RequestMapping(value="/project/{project_id}/project_setting")
-	public String projectSetting(@PathVariable("project_id")String project_id ,Model model) throws Exception{
+	public String projectSetting(@PathVariable("project_id")String project_id ,Model model, HttpServletRequest request) throws Exception{
 		
 		List<String> list = projectService.projectMemeberListService(project_id);
 		model.addAttribute("projectM", list);
 		
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
+		model.addAttribute("chappieVO", chappieVO);
 		return "/project/projectSetting";
 	}
 	
