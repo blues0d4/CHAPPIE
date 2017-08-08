@@ -62,7 +62,7 @@ public class ProjectController {
 		if(projectVO == null){
 			projectSelectDTO.setProject_id(null);
 			projectService.projectChoice(projectSelectDTO);
-			return "redirect:"+URIs.URI_MAIN;
+			return "redirect:"+URIs.URI_PROJECT_LIST;
 		}
 		
 		projectService.projectChoice(projectSelectDTO);
