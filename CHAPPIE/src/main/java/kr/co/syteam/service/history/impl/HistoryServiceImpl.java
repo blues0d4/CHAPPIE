@@ -22,8 +22,8 @@ public class HistoryServiceImpl implements HistoryService{
 	}
 
 	@Override
-	public List<HistoryVO> historySelectService() throws Exception {
-		return historyDAO.historySelect();
+	public List<HistoryVO> historySelectService(String project_id) throws Exception {
+		return historyDAO.historySelect(project_id);
 	}
 	
 }

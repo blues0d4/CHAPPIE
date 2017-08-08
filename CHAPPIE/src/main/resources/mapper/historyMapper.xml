@@ -14,7 +14,7 @@
 	<select id="historySelect" resultType="kr.co.syteam.domain.history.vo.HistoryVO">
 		<![CDATA[
 			SELECT MEMBER_NICKNAME, EVENT, SUBMIT_TIME, TITLE, KIND, CATEGORY_NAME, PROJECT_ID 
-			FROM HISTORY_TABLE ORDER BY SUBMIT_TIME DESC
+			FROM HISTORY_TABLE WHERE PROJECT_ID=#{project_id} ORDER BY SUBMIT_TIME DESC
 		]]>
 	</select>
 

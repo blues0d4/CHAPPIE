@@ -24,8 +24,8 @@ public class HistoryDAOImpl implements HistoryDAO{
 	}
 
 	@Override
-	public List<HistoryVO> historySelect() throws Exception {
-		return sqlSession.selectList(namespace+"historySelect");
+	public List<HistoryVO> historySelect(String project_id) throws Exception {
+		return sqlSession.selectList(namespace+"historySelect", project_id);
 	}
 
 	

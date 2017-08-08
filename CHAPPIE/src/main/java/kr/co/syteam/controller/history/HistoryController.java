@@ -34,7 +34,7 @@ public class HistoryController {
 	public String todoList(@PathVariable("project_id") String project_id, Model model, HttpServletRequest request) throws Exception {
 		logger.info("This is History !!!!");	
 		
-		List<HistoryVO> vo = historyService.historySelectService();
+		List<HistoryVO> vo = historyService.historySelectService(project_id);
 //		System.out.println(vo.get(0).toString());
 		model.addAttribute("HistoryVO", vo);
 
