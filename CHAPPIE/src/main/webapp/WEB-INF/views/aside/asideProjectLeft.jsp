@@ -7,7 +7,7 @@
       <div class="user-panel">
         <div class="pull-left image">
           <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-<!-- 			<i class="glyphicon glyphicon-user pull-left"></i> -->
+<!--          <i class="glyphicon glyphicon-user pull-left"></i> -->
         </div>
         <div class="pull-left info">
           <p>${ login.user_name }</p>
@@ -26,25 +26,25 @@
           </a>
           <ul class="treeview-menu">
 <!--        <li class="active"> -->
-			<c:forEach items="${projectList }" var="projectVO">
-				<c:choose>
-					<c:when test="${project.project_name eq projectVO.project_name}">
-<!-- 					<li class="active"> -->
-<%--          			<a href="/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a> --%>
-<!--           			</li> -->
-          			</c:when>
-          			<c:otherwise>
-					<li>
-         			<a href="${URIs.PROJECT_DEFAULT }/${projectVO.project_id}"><i class="fa fa-folder"></i> ${projectVO.project_name}</a>
-          			</li>
-          			
-          			
-          			</c:otherwise>
-				</c:choose>
-			</c:forEach>
-				<li>
-         			<a href="${URIs.URI_PROJECT_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
-       			</li>
+         <c:forEach items="${projectList }" var="projectVO">
+            <c:choose>
+               <c:when test="${project.project_name eq projectVO.project_name}">
+<!--                <li class="active"> -->
+<%--                   <a href="/${projectVO.project_name}"><i class="fa fa-circle-o"></i> ${projectVO.project_name}</a> --%>
+<!--                    </li> -->
+                   </c:when>
+                   <c:otherwise>
+               <li>
+                  <a href="${URIs.PROJECT_DEFAULT }/${projectVO.project_id}"><i class="fa fa-folder"></i> ${projectVO.project_name}</a>
+                   </li>
+                   
+                   
+                   </c:otherwise>
+            </c:choose>
+         </c:forEach>
+            <li>
+                  <a href="${URIs.URI_PROJECT_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
+                </li>
           </ul>
        </li>
          <li class="treeview">
@@ -74,62 +74,65 @@
         <li class="header">MENU</li>
 <!--         <li class="header"><br><br> </li> -->
 <!--         <li class="treeview"> -->
+
+
+
         <li class="treeview">
           <a href="#">
-			<c:choose>
-				<c:when test="${empty category}">
-	         	   <i class="fa fa-slack"></i> <span>Timeline </span>
-	            </c:when>
-	            <c:otherwise>
-           			<i class="fa fa-slack"></i> <span>#${category.category_name}</span>
-	            </c:otherwise>
-            </c:choose>
+<%--          <c:choose> --%>
+<%--             <c:when test="${empty category}"> --%>
+                  <i class="fa fa-commenting"></i> <span>Timeline </span>
+<%--                </c:when> --%>
+<%--                <c:otherwise> --%>
+<!--                     <i class="fa fa-slack"></i> <span>#${category.category_name}</span> -->
+<%--                </c:otherwise> --%>
+<%--             </c:choose> --%>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-<!--      	    <li class="active"> -->
-			<c:forEach items="${categoryList}" var="categoryVO">
-	            <c:choose>
-				<c:when test="${categoryVO.category_name eq category.category_name}">
-				<li class="active">
-				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-slack"></i> #${categoryVO.category_name}</a>
-           		 </li>
-				</c:when>
-				<c:otherwise> 
-				<li>
-	            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-slack"></i> #${categoryVO.category_name}</a>
-	            </li>
-				</c:otherwise>
-			</c:choose>			
-			</c:forEach>
-				<li>
-<!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-				<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
-				</li>
+<!--             <li class="active"> -->
+         <c:forEach items="${categoryList}" var="categoryVO">
+               <c:choose>
+            <c:when test="${categoryVO.category_name eq category.category_name}">
+            <li class="active">
+            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-commenting-o"></i> #${categoryVO.category_name}</a>
+                  </li>
+            </c:when>
+            <c:otherwise> 
+            <li>
+               <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${categoryVO.category_id}"><i class="fa fa-commenting-o"></i> #${categoryVO.category_name}</a>
+               </li>
+            </c:otherwise>
+         </c:choose>         
+         </c:forEach>
+            <li>
+<!--             <a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
+            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+            </li>
           </ul>
         </li>        
         
         
         <li class="treeview">
           <a href="#">
-	        <i class="fa fa-check-square-o"></i> <span>To-Do List</span>
-            	<span class="pull-right-container">
-             	 <i class="fa fa-angle-left pull-right"></i>
+           <i class="fa fa-check-square-o"></i> <span>To-Do List</span>
+               <span class="pull-right-container">
+                 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-<!--      	    <li class="active"> -->
-			<c:forEach items="${categoryList}" var="categoryVO">
-					<li>
-		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${categoryVO.category_id}"><i class="fa fa-square-o"></i> #${categoryVO.category_name}</a>
-		            </li>
-			</c:forEach>
-				<li>
-<!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-					<a href="${URIs.URI_PROJECT_CATEGORY_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
-				</li>
+<!--             <li class="active"> -->
+         <c:forEach items="${categoryList}" var="categoryVO">
+               <li>
+                  <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${categoryVO.category_id}"><i class="fa fa-square-o"></i> #${categoryVO.category_name}</a>
+                  </li>
+         </c:forEach>
+            <li>
+<!--             <a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
+               <a href="${URIs.URI_PROJECT_CATEGORY_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+            </li>
           </ul>
         </li>
        

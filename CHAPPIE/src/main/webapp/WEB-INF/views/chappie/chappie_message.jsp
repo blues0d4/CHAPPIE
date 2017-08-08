@@ -214,6 +214,7 @@ body {
 	right: 70px;
 	width: 400px;
 	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 50px;
 }
 
 
@@ -508,7 +509,7 @@ height: 600;
 
 	<!--  채피 아이콘 -->
 
-	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 60px">
+	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 60px; margin-bottom: 50px;" >
 		<a id="addClass"><img src="/resources/img/chappie_button.png"></a>
 	</div>
 
