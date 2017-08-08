@@ -239,10 +239,18 @@ public class ProjectController {
 		return result;
 	}
 	
-	@RequestMapping(value= "/project/{project_id}/project_Delete")
+	@RequestMapping(value= "/project/{project_id}/project_delete")
 	public String projectDelete(@PathVariable("project_id")String project_id, HttpServletRequest request) throws Exception{
+		ProjectDTO projectDTO = new ProjectDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		
-				
+		projectDTO.setUser_id(loginVO.getUser_id());
+		projectDTO.setProject_id(project_id);
+		int result = projectService.checkMemberRankService(projectDTO);
+		if(result==1){
+			projectService.projectDeleteService(project_id);
+		}
+		
 		
 		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}

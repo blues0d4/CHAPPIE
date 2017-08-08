@@ -31,4 +31,5 @@ public interface ProjectService {
 	public void tempTableService(TempDTO tempDTO) throws Exception;
 	public String categoryIdSelectService() throws Exception;
 	public int projectDeleteService(String project_id) throws Exception;
+	public int checkMemberRankService(ProjectDTO projectDTO) throws Exception;
 }

@@ -33,4 +33,5 @@ public interface ProjectDAO {
 	public void tempTable(TempDTO tempDTO) throws Exception;
 	public String categoryIdSelect() throws Exception;
 	public int projectDelete(String project_id) throws Exception;
+	public int checkMemberRank(ProjectDTO projectDTO) throws Exception;
 }

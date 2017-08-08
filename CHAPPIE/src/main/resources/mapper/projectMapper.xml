@@ -167,4 +167,9 @@
 			delete from PROJECT_TABLE WHERE PROJECT_ID=#{project_id}
 		]]>
 	</delete>
+	<select id="checkMemberRank" parameterType="kr.co.syteam.domain.project.dto.ProjectDTO" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*) FROM MEMBER_TABLE WHERE PROJECT_ID=#{project_id} AND USER_ID=#{user_id} AND MEMBER_RANK='Y'
+		]]>
+	</select>
 </mapper>

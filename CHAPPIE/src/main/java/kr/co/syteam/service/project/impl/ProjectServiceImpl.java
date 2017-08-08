@@ -159,4 +159,9 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.projectDelete(project_id);
 	}
 
+	@Override
+	public int checkMemberRankService(ProjectDTO projectDTO) throws Exception {
+		return projectDAO.checkMemberRank(projectDTO);
+	}
+
 }

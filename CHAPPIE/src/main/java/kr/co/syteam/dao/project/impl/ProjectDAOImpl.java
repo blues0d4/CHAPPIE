@@ -134,5 +134,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return sqlSession.delete(namespace+"projectDelete", project_id);
 	}
 
+	@Override
+	public int checkMemberRank(ProjectDTO projectDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"checkMemberRank", projectDTO);
+	}
+
 
 }
