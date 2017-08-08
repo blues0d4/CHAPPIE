@@ -14,11 +14,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
 
-
-
-
-
-
 <script type="text/javascript">
 		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
@@ -59,21 +54,46 @@
 		
 		function response(data){
 			console.log(JSON.stringify(data, undefined, 2));
+			
 			var temp = "";
 			var temp2 = "";
+			var temp3 = "";
+			
 				if(typeof data.result.fulfillment.messages[0].imageUrl !="undefined"){
 					temp = data.result.fulfillment.messages[0].imageUrl;
 					temp2 = data.result.fulfillment.speech;
 					setResponseImg(temp,temp2);
+					var allData = { "user_say": data.result.resolvedQuery, 
+							"bot_say": temp2, "bot_img": temp };
+					$.ajax({
+						type: "GET",
+						url: "/chappie",
+						data: allData,
+						success: function(data) {
+						},
+						error: function() {
+						}
+					});	
 				}else{
-					temp = data.result.fulfillment.speech;	
-					setResponse(temp);
+					temp3 = data.result.fulfillment.speech;	
+					setResponse(temp3);
+					var allData = { "user_say": data.result.resolvedQuery, 
+							"bot_say": temp3 };
+					$.ajax({
+						type: "GET",
+						url: "/chappie",
+						data: allData,
+						success: function(data) {
+						},
+						error: function() {
+						}
+					});	
 				}
-			console.log("temp:"+temp);
 			
-			$(document).ready(function(){
-				
-			});
+			
+			
+			
+			
 		}
 		
 
@@ -543,12 +563,30 @@ height: 600;
 		<div class="popup-messages">
 <!-- 			<iframe width="400" height="530" -->
 <!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 			</iframe> -->
-			
-			
+<!-- 			</iframe> -->			
 			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
 			  		
                     <ul class="chat" id="response">
+                    	<c:forEach items="${chappieVO }" var="chappieVO">
+	                    	<li class="right clearfix"><span class="chat-img pull-right" >
+	                    	<img src="/resources/img/chappie_button_chat2.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
+	                    	<div class="chat-body clearfix"><p align="right">${chappieVO.user_say }</p></div></li>
+	                    	
+	                    	<c:choose>
+	                    		<c:when test="${chappieVO.bot_img eq null }">
+			                    	<li class="left clearfix"><span class="chat-img pull-left" >
+			                    	<img src="/resources/img/chappie_button_chat.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
+			                    	<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
+		                    	</c:when>
+		                    	<c:otherwise>
+		                    		<li class="left clearfix"><span class="chat-img pull-left" >
+		                    		<img src="/resources/img/chappie_button_chat.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
+		                    		<img src="${chappieVO.bot_img }" style="cursor: pointer;" onclick="doImgPop('${chappieVO.bot_img}')"></img>
+		                    		<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
+		                    	</c:otherwise>
+		                    	
+	                    	</c:choose>
+                    	</c:forEach>
                     </ul>
 <!--                <input id="input" type="text" class="input_id">		  -->
 <!--          		   <button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button> -->

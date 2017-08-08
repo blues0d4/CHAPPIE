@@ -154,6 +154,19 @@
             </form>
           </div>
    
+ 		  <div class="box box-primary">
+            <div class="box-header with-border">
+              <h1 class="box-title">프로젝트 삭제</h1>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="/project/${project.project_id }/project_delete">
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Project Delete</button>
+              </div>
+            </form>
+          </div>
   	 </div>
    
    </div>

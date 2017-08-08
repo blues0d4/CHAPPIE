@@ -17,13 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.chappie.vo.ChappieVO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.temp.dto.TempDTO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.chappie.ChappieService;
 import kr.co.syteam.service.project.ProjectService;
-import kr.co.syteam.service.user.IUserService;
 
 //"/{project}"
 @Controller
@@ -35,7 +36,7 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	@Autowired
-	private IUserService userService;
+	private ChappieService chappieService;
 	
 	//프로젝트 메인
 	//프로젝트 선택
@@ -84,6 +85,9 @@ public class ProjectController {
 		tempDTO.setUser_id(loginVO.getUser_id());
 		tempDTO.setUser_name(loginVO.getUser_name());
 		projectService.tempTableService(tempDTO);
+		
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(user_id);
+		model.addAttribute("chappieVO", chappieVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
@@ -141,9 +145,11 @@ public class ProjectController {
 	
 	//프로젝트 카테고리 추가 Form
 	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_CREATE_FORM)
-	public String doProjectCategoryCreateForm() throws Exception{
+	public String doProjectCategoryCreateForm(@PathVariable("project_id")String project_id ,Model model) throws Exception{
 		
 		logger.info("doProjectCategoryCreateForm");
+		List<String> list1 = projectService.projectMemeberListService(project_id);
+		model.addAttribute("pmList", list1);
 
 		return URIs.URI_PROJECT_CATEGORY_CREATE_FORM_PAGE;
 	}
@@ -161,16 +167,22 @@ public class ProjectController {
 		categoryCreateDTO.setCategory_name(category_name);
 		categoryCreateDTO.setProject_id(project_id);
 		
+		String[] value = request.getParameterValues("member_nickname");
 		projectService.projectCategoryCreate(categoryCreateDTO);
+		projectService.categoryMemberModify(value, projectService.categoryIdSelectService());
+		
 		return "redirect:/project/"+project_id;
 	}
 	
 	@RequestMapping(value="/project/{project_id}/project_setting")
-	public String projectSetting(@PathVariable("project_id")String project_id ,Model model) throws Exception{
+	public String projectSetting(@PathVariable("project_id")String project_id ,Model model, HttpServletRequest request) throws Exception{
 		
 		List<String> list = projectService.projectMemeberListService(project_id);
 		model.addAttribute("projectM", list);
 		
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
+		model.addAttribute("chappieVO", chappieVO);
 		return "/project/projectSetting";
 	}
 	
@@ -221,8 +233,6 @@ public class ProjectController {
 		
 		String[] value = request.getParameterValues("member_nickname");
 		
-		System.out.println(value[0]);
-		
 		projectService.categoryMemberModify(value, category_id);
 		
 		
@@ -240,6 +250,21 @@ public class ProjectController {
 		return result;
 	}
 	
+	@RequestMapping(value= "/project/{project_id}/project_delete")
+	public String projectDelete(@PathVariable("project_id")String project_id, HttpServletRequest request) throws Exception{
+		ProjectDTO projectDTO = new ProjectDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		
+		projectDTO.setUser_id(loginVO.getUser_id());
+		projectDTO.setProject_id(project_id);
+		int result = projectService.checkMemberRankService(projectDTO);
+		if(result==1){
+			projectService.projectDeleteService(project_id);
+		}
+		
+		
+		return "redirect:"+URIs.URI_PROJECT_LIST;
+	}
 	
 	
 }

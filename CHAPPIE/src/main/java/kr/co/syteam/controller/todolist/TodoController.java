@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.chappie.vo.ChappieVO;
 import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.chappie.ChappieService;
 import kr.co.syteam.service.history.HistoryService;
 import kr.co.syteam.service.project.ProjectService;
 import kr.co.syteam.service.todo.TodoService;
@@ -41,6 +43,9 @@ public class TodoController {
 	
 	@Autowired
 	private HistoryService historyService;
+	
+	@Autowired
+	private ChappieService chappieService;
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}", method = RequestMethod.GET)
 	public String todoList(@PathVariable("project_id") String project_id,
@@ -89,6 +94,9 @@ public class TodoController {
 		
 		model.addAttribute("todoList", todoList);
 		model.addAttribute("cmList", categoryMemberList);
+		
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
+		model.addAttribute("chappieVO", chappieVO);
 
 		return "/todo/todoList";
 	}
@@ -128,6 +136,7 @@ public class TodoController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("등록");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(todoDTO.getTodo_list());
@@ -153,6 +162,7 @@ public class TodoController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("수정");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(todoDTO.getTodo_list());
@@ -173,6 +183,7 @@ public class TodoController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("삭제");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(todoVO.getTodo_list());
@@ -189,8 +200,10 @@ public class TodoController {
 		System.out.println("todoComplete!!!!!! : " + todo_no);
 				
 		HistoryDTO historyDTO = new HistoryDTO();
+		ProjectVO projectVO = (ProjectVO)request.getSession().getAttribute("project");
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setProject_id(projectVO.getProject_id());
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		

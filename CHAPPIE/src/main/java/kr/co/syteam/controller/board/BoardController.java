@@ -21,11 +21,13 @@ import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.chappie.vo.ChappieVO;
 import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.board.BoardService;
+import kr.co.syteam.service.chappie.ChappieService;
 import kr.co.syteam.service.history.HistoryService;
 import kr.co.syteam.service.project.ProjectService;
 
@@ -43,6 +45,9 @@ public class BoardController {
 	
 	@Autowired
 	private HistoryService historyService;
+	
+	@Autowired
+	private ChappieService chappieService;
 
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
 	public String doBoardCategoryList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, Model model,
@@ -100,6 +105,9 @@ public class BoardController {
 		// List<BoardVO> boardList = boardService.boardList();
 		// model.addAttribute("boardList", boardList);
 		// System.out.println(boardList);
+		
+		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
+		model.addAttribute("chappieVO", chappieVO);
 
 		return URIs.URI_BOARD_LIST_PAGE;
 	}
@@ -136,6 +144,7 @@ public class BoardController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("등록");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardDTO.getBoard_title());
@@ -165,6 +174,7 @@ public class BoardController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("삭제");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardVO.getBoard_title());
@@ -201,6 +211,7 @@ public class BoardController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
 		historyDTO.setEvent("수정");
+		historyDTO.setProject_id(project_id);
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardDTO.getBoard_title());

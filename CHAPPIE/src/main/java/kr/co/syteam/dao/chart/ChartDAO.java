@@ -6,4 +6,5 @@ import kr.co.syteam.domain.chart.vo.ChartVO;
 
 public interface ChartDAO {
 	public List<ChartVO> selectCategoryName(String project_id) throws Exception;
+	public List<ChartVO> memberChart(String project_id) throws Exception;
 }
