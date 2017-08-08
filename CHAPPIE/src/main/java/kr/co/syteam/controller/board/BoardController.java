@@ -47,7 +47,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
 	public String doBoardCategoryList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, Model model,
 			HttpServletRequest request) throws Exception {
-		logger.info("doBoardCategoryList");
+//		logger.info("doBoardCategoryList");
 
 		//세션에서 user_id를 가져온다.
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
