@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.syteam.dao.board.BoardDAO;
+import kr.co.syteam.dao.history.HistoryDAO;
 import kr.co.syteam.domain.board.dto.BoardCommentDTO;
 import kr.co.syteam.domain.board.dto.BoardDTO;
 import kr.co.syteam.domain.board.vo.BoardCommentVO;
 import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
-import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.service.board.BoardService;
 
 @Service

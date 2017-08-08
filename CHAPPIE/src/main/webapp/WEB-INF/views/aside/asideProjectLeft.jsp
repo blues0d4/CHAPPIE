@@ -159,7 +159,7 @@
 <!--           </ul> -->
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="/project/${project.project_id }/history">
             <i class="fa fa-history"></i>
             <span>History </span>
             <span class="pull-right-container">

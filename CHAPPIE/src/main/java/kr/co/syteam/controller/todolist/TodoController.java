@@ -17,11 +17,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
+import kr.co.syteam.service.history.HistoryService;
 import kr.co.syteam.service.project.ProjectService;
 import kr.co.syteam.service.todo.TodoService;
 
@@ -36,6 +38,9 @@ public class TodoController {
 
 	@Autowired
 	private ProjectService projectService;
+	
+	@Autowired
+	private HistoryService historyService;
 
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}", method = RequestMethod.GET)
 	public String todoList(@PathVariable("project_id") String project_id,
@@ -118,6 +123,17 @@ public class TodoController {
 		todoDTO.setProject_id(project_id);
 		todoService.todoWriteService(todoDTO);
 		todoService.todoMemberWriteService(value);
+		
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("등록");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(todoDTO.getTodo_list());
+		historyDTO.setKind("todo-list");
+//		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
@@ -132,24 +148,55 @@ public class TodoController {
 	
 		todoService.todoModifyService(todoDTO);
 		todoService.todoMemberModify(value, todo_no);
+		
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("수정");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(todoDTO.getTodo_list());
+		historyDTO.setKind("todo-list");
+//		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
 
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
 	
 	@RequestMapping(value = "/project/{project_id}/todo/{category_id}/todoDelete", method = RequestMethod.GET)
 	public String todoDelete(@PathVariable("project_id")String project_id, 
-			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no) throws Exception {
-		todoService.todoDeleteService(todo_no);
+			@PathVariable("category_id") String category_id, TodoDTO todoDTO, String todo_no, HttpServletRequest request) throws Exception {
+		
+		TodoVO todoVO = todoService.todoViewService(todo_no);
 
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setEvent("삭제");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		historyDTO.setTitle(todoVO.getTodo_list());
+		historyDTO.setKind("todo-list");
+//		boardDTO.setCategory_id(category_id);
+		historyService.historyInsertService(historyDTO);
+		todoService.todoDeleteService(todo_no);
 		return "redirect:"+URIs.PROJECT_DEFAULT +"/"+ project_id + "/todo/" + category_id;
 	}
 
 	@RequestMapping(value = "/todo/todoComplete", method = RequestMethod.GET)
 	@ResponseBody
-	public int todoComplete(String todo_no) throws Exception {
+	public int todoComplete(String todo_no, HttpServletRequest request) throws Exception {
 		System.out.println("todoComplete!!!!!! : " + todo_no);
-
-		return todoService.todoCompleteService(todo_no);
+				
+		HistoryDTO historyDTO = new HistoryDTO();
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
+		historyDTO.setMember_nickname(loginVO.getUser_name());
+		historyDTO.setCategory_name(categoryVO.getCategory_name());
+		
+		int result = todoService.todoCompleteService(todo_no, historyDTO);
+		historyService.historyInsertService(historyDTO);
+		return result;
 	}
 
 }

@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.syteam.dao.todo.TodoDAO;
+import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.history.dto.HistoryDTO;
 import kr.co.syteam.domain.todo.dto.TodoDTO;
 import kr.co.syteam.domain.todo.vo.TodoVO;
+import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.todo.TodoService;
 
 @Service
@@ -67,13 +70,24 @@ public class TodoServiceImpl implements TodoService {
 
 
 	@Override
-	public int todoCompleteService(String todo_no) throws Exception {
+	public int todoCompleteService(String todo_no, HistoryDTO historyDTO) throws Exception {
+		TodoVO todoVO = todoViewService(todo_no);
+		
+		
+		
+//		boardDTO.setCategory_id(category_id);
+	
 		
 		int todo_complete = todoDAO.todoCompleteSelect(todo_no);
-		System.out.println("TODO_NO : " + todo_no + ", todo_complete : " + todo_complete);
 		if(todo_complete==0){
+			historyDTO.setEvent("완료");		
+			historyDTO.setTitle(todoVO.getTodo_list());
+			historyDTO.setKind("todo-list");
 			return todoDAO.todoCompleteYes(todo_no);
 		}else{
+			historyDTO.setEvent("완료 취소");		
+			historyDTO.setTitle(todoVO.getTodo_list());
+			historyDTO.setKind("todo-list");
 			return todoDAO.todoCompleteNo(todo_no);
 		}		
 	}
