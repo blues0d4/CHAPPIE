@@ -5,15 +5,23 @@ public class HistoryVO {
 	String member_nickname;
 	String event;
 	String submit_time;
+	String project_id;
+	String kind;
+	String category_name;
+	String title;
+	
 	public String getSubmit_time() {
 		return submit_time;
 	}
 	public void setSubmit_time(String submit_time) {
 		this.submit_time = submit_time;
 	}
-	String kind;
-	String category_name;
-	String title;
+	public String getProject_id() {
+		return project_id;
+	}
+	public void setProject_id(String project_id) {
+		this.project_id = project_id;
+	}
 	public String getTitle() {
 		return title;
 	}

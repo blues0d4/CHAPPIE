@@ -34,9 +34,6 @@ public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
 	
-	@Autowired
-	private IUserService userService;
-	
 	//프로젝트 메인
 	//프로젝트 선택
 	@RequestMapping(value = URIs.URI_PROJECT_MAIN)
@@ -139,9 +136,11 @@ public class ProjectController {
 	
 	//프로젝트 카테고리 추가 Form
 	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_CREATE_FORM)
-	public String doProjectCategoryCreateForm() throws Exception{
+	public String doProjectCategoryCreateForm(@PathVariable("project_id")String project_id ,Model model) throws Exception{
 		
 		logger.info("doProjectCategoryCreateForm");
+		List<String> list1 = projectService.projectMemeberListService(project_id);
+		model.addAttribute("pmList", list1);
 
 		return URIs.URI_PROJECT_CATEGORY_CREATE_FORM_PAGE;
 	}
@@ -159,7 +158,9 @@ public class ProjectController {
 		categoryCreateDTO.setCategory_name(category_name);
 		categoryCreateDTO.setProject_id(project_id);
 		
+		String[] value = request.getParameterValues("member_nickname");
 		projectService.projectCategoryCreate(categoryCreateDTO);
+		projectService.categoryMemberModify(value, projectService.categoryIdSelectService());
 		return "redirect:/project/"+project_id;
 	}
 	
@@ -219,8 +220,6 @@ public class ProjectController {
 		
 		String[] value = request.getParameterValues("member_nickname");
 		
-		System.out.println(value[0]);
-		
 		projectService.categoryMemberModify(value, category_id);
 		
 		
@@ -238,6 +237,13 @@ public class ProjectController {
 		return result;
 	}
 	
+	@RequestMapping(value= "/project/{project_id}/project_Delete")
+	public String projectDelete(@PathVariable("project_id")String project_id, HttpServletRequest request) throws Exception{
+		
+				
+		
+		return "redirect:"+URIs.URI_PROJECT_LIST;
+	}
 	
 	
 }

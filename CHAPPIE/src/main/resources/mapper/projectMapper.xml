@@ -155,4 +155,16 @@
 			VALUES(#{project_id}, #{project_name},#{user_id},#{user_name})
 		]]>
 	</insert>
+	
+	<select id="categoryIdSelect" resultType="String">
+		<![CDATA[
+			SELECT MAX(CATEGORY_ID) FROM CATEGORY_TABLE
+		]]>
+	</select>
+	
+	<delete id="projectDelete">
+		<![CDATA[
+			delete from PROJECT_TABLE WHERE PROJECT_ID=#{project_id}
+		]]>
+	</delete>
 </mapper>

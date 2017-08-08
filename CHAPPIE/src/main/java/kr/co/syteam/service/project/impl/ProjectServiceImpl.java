@@ -92,10 +92,8 @@ public class ProjectServiceImpl implements ProjectService {
 		
 		if(projectVO != null){
 			projectDTO.setMember_nickname(projectVO.getUser_name());
-			System.out.println(projectDTO.toString());
 			projectDAO.projectInvite(projectDTO);
 		}else{
-			System.out.println("프로젝트 초대에서 projectVO가 널이다!!!!!");
 		}
 	}
 
@@ -122,7 +120,6 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	public int categoryMemberModify(String[] member_nickname, String category_id) throws Exception {
 		int result=0;
-		System.out.println("memberDelete" + category_id);
 		projectDAO.categoryMemberDelete(category_id);
 		
 		for(int i = 0;i<member_nickname.length;i++){
@@ -130,7 +127,6 @@ public class ProjectServiceImpl implements ProjectService {
 			categoryDTO.setCategory_id(category_id);
 			categoryDTO.setMember_nickname(member_nickname[i]);
 			
-			System.out.println("categoryMemberWrite !!! : " + categoryDTO);
 			
 			result = projectDAO.categoryMemberWrite(categoryDTO);
 		}
@@ -151,6 +147,16 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	public void tempTableService(TempDTO tempDTO) throws Exception {
 		projectDAO.tempTable(tempDTO);
+	}
+
+	@Override
+	public String categoryIdSelectService() throws Exception {
+		return projectDAO.categoryIdSelect();
+	}
+
+	@Override
+	public int projectDeleteService(String project_id) throws Exception {
+		return projectDAO.projectDelete(project_id);
 	}
 
 }

@@ -124,5 +124,15 @@ public class ProjectDAOImpl implements ProjectDAO {
 		sqlSession.insert(namespace+"tempTable", tempDTO);
 	}
 
+	@Override
+	public String categoryIdSelect() throws Exception {
+		return sqlSession.selectOne(namespace+"categoryIdSelect");
+	}
+
+	@Override
+	public int projectDelete(String project_id) throws Exception {
+		return sqlSession.delete(namespace+"projectDelete", project_id);
+	}
+
 
 }

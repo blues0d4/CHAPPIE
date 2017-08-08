@@ -98,6 +98,19 @@
                   <input type="text" class="form-control" id="category_name" name="category_name" placeholder="카테고리 이름">
                 </div>
               </div>
+              <div class="box-body">
+                <div class="form-group">
+                  <label>멤버 선택</label>
+                  <div class="checkbox">
+	                  <c:forEach var="projectMember" items="${pmList }">
+               		             <label>
+			                      <input type="checkbox" name="member_nickname" value="${projectMember }">
+			                      	${projectMember }
+			                      </label>   
+		              </c:forEach>      
+	                 </div>
+                </div>
+              </div>
               <!-- /.box-body -->
 
               <div class="box-footer">

@@ -128,7 +128,7 @@
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-					<a href="${URIs.URI_PROJECT_CATEGORY_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
 				</li>
           </ul>
         </li>
