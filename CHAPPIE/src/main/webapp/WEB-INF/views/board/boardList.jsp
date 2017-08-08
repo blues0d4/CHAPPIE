@@ -6,9 +6,19 @@
  <!DOCTYPE html>
 <html>
 <head>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CHAPPIE</title>
+  
+<script src="/resources/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/resources/dist/sweetalert.css">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+  
+  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -35,15 +45,15 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/resources/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/resources/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/resources/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/resources/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
+<!--   <!-- iCheck --> -->
+<!--   <link rel="stylesheet" href="/resources/plugins/iCheck/flat/blue.css"> -->
+<!--   <!-- Morris chart --> -->
+<!--   <link rel="stylesheet" href="/resources/plugins/morris/morris.css"> -->
+<!--   <!-- jvectormap --> -->
+<!--   <link rel="stylesheet" href="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
+<!--   <!-- Date Picker --> -->
+<!--   <link rel="stylesheet" href="/resources/plugins/datepicker/datepicker3.css"> -->
+<!--   <!-- Daterange picker --> -->
   <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
@@ -57,9 +67,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <style>
-	p {
-		white-space: pre;
-	}
 	
 /* 	body { */
 /* 		font: 16px/1.5 sans-serif; */
@@ -191,15 +198,16 @@ function commentWrite(val){
       <h1> <b>#${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
-		<div class="fixedbutton">
-		<a class="btn btn-default pull-right" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-
-	</div>
+	
     </div>
+    <div class="fixedbutton">
+		<a class="btn btn-primary btn-xs pull-right" style="margin-right:15px;" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
+	</div>
     </section>
 
     <!-- Main content -->
     <section class="content">
+    
 		<ul class="timeline">
 
     <!-- timeline time label -->
@@ -259,7 +267,7 @@ function commentWrite(val){
             <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
             text-overflow:ellipsis;  margin:10px;" >
             <article>
-			<p>${boardVO.board_contents }</p>
+			<p style="white-space: pre;">${boardVO.board_contents }</p>
 			</article>
             </div>
 
@@ -280,11 +288,13 @@ function commentWrite(val){
 <%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
 <%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
 <!--                 </form> -->
-                <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">
-               	   <input type="submit" value="Delete" class="btn btn-danger">
-               	    <input type="hidden" value=${boardVO.board_no } name = "board_no">
-					<input type="hidden" value=${login.user_id } name = "user_id">
-                </form>
+                   <button type = "button" class="btn btn-danger" style="margin-right:10px" onclick="deleteBoard(${boardVO.board_no})" >Delete</button>
+                
+<%--                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}"> --%>
+<!--                	   <input type="submit" value="Delete" class="btn btn-danger"> -->
+<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
+<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
+<!--                 </form> -->
                
 				</c:if>
 <!--                 </div> -->
@@ -297,7 +307,7 @@ function commentWrite(val){
  				
 <%--     	${boardCommentVO.comment_contents} --%>
 <%--     	</c:forEach> --%>
-
+ 
     <div id="commentList${boardVO.board_no }"></div>
       <c:if test="${login.user_id != null}">    
       <label for="comment">Comment:</label>
@@ -363,31 +373,27 @@ function commentWrite(val){
 
 
 <!-- jQuery 2.2.3 -->
-<script
-  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 <!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/resources/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/resources/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- <!-- Morris.js charts --> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
+<!-- <script src="/resources/plugins/morris/morris.min.js"></script> -->
+<!-- <!-- Sparkline --> -->
+<!-- <script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script> -->
+<!-- <!-- jvectormap --> -->
+<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> -->
+<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
+<!-- <!-- jQuery Knob Chart --> -->
+<!-- <script src="/resources/plugins/knob/jquery.knob.js"></script> -->
+<!-- <!-- daterangepicker --> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script> -->
+<!-- <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script> -->
+<!-- <!-- datepicker --> -->
+<!-- <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script> -->
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -397,13 +403,13 @@ function commentWrite(val){
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
+<!-- <script src="/resources/dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
 
 
 <script src="/resources/js/readmore.js"></script> 
-<script>
+<script type="text/javascript">
     $('article').readmore({
 //         	blockCSS: 'display: block; width: 100%;',
 //         	moreLink: '<span><button type="button" class="btn btn-info">Read More</button></span>',
@@ -455,6 +461,53 @@ function commentWrite(val){
             }
         }
     });
+    
+ // 삭제유무
+    
+ function deleteBoard(val){
+//   		  alert("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
+//   		  alert("alert");
+  		  swal({
+  			  title: "Are you sure?",
+  			  text: "",
+  			  type: "warning",
+  			  showCancelButton: true,
+  			  confirmButtonColor: "#DD6B55",
+  			  confirmButtonText: "Yes, delete it!",
+  			  cancelButtonText: "No, cancel plx!",
+  			  closeOnConfirm: false,
+  			  closeOnCancel: false
+  			},
+  			
+  			
+  			function(isConfirm){
+  				if (isConfirm==true) {
+  			    swal("Success!", "", "success");
+  			    setTimeout( function() {
+				  location.replace("${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/"+val);
+				  
+				  <%--                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}"> --%>
+				  <!--                	   <input type="submit" value="Delete" class="btn btn-danger"> -->
+				  <%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
+				  <%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
+  			    
+  			    }, 500);
+  			  } else {
+  			    swal("Cancelled!", "", "error");
+  			  }
+  			});
+  		  
+//   	     var isDelete = confirm("삭제하시겠습니까?");
+  	     
+  	     
+  	     
+//   	     if(isDelete){
+//   	    	 document.form.submit();
+//   	     }else{
+//   	    	 return false;
+//   	     }
+  	     
+  	  }
     
   </script>
   <!-- Custom Theme JavaScript -->

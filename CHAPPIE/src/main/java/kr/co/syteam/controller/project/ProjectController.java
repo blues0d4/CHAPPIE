@@ -57,7 +57,9 @@ public class ProjectController {
 		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
 		//없으면 "main"으로 리턴
 		if(projectVO == null){
-			return "redirect:"+URIs.URI_MAIN;
+			projectSelectDTO.setProject_id(null);
+			projectService.projectChoice(projectSelectDTO);
+			return "redirect:"+URIs.URI_PROJECT_LIST;
 		}
 		
 		projectService.projectChoice(projectSelectDTO);

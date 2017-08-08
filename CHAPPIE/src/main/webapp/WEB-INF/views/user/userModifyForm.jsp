@@ -27,6 +27,8 @@
   </nav>
   <!-- Sign up -->
   <section id="sign_up" class="sign_up">
+  
+  
 
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">

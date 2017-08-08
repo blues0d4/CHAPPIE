@@ -29,7 +29,7 @@ public class HistoryController {
 		logger.info("This is History !!!!");	
 		
 		List<HistoryVO> vo = historyService.historySelectService();
-		System.out.println(vo.get(0).toString());
+//		System.out.println(vo.get(0).toString());
 		model.addAttribute("HistoryVO", vo);
 
 		return "/history/history";

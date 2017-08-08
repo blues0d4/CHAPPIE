@@ -47,7 +47,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
 	public String doBoardCategoryList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, Model model,
 			HttpServletRequest request) throws Exception {
-		logger.info("doBoardCategoryList");
+//		logger.info("doBoardCategoryList");
 
 		//세션에서 user_id를 가져온다.
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
@@ -153,11 +153,14 @@ public class BoardController {
 	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO, HttpServletRequest request) throws Exception {
 		
 		logger.info("doBoardDelete");
+		System.out.println(board_no);
 		BoardVO boardVO = boardService.boardView(board_no);
 
+		System.out.println(boardVO);
 		if (boardVO == null) {
 			return "redirect:/project/"+project_id+"/board/"+category_id;
 		}
+		
 
 		HistoryDTO historyDTO = new HistoryDTO();
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
