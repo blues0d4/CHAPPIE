@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<include resource="org/springframework/book/logging/logback/base.xml"/>
-	<logger name="jdbc.sqlonly" level="OFF"/>
-	<logger name="jdbc.audit"	level="OFF"/>
-	<logger name="jdbc.resultset" level="OFF"/>
-	<logger name="jdbc.resultsettable" level="OFF"/>
-	<logger name="jdbc.connection" level="OFF"/>
+	<logger name="jdbc.sqlonly" level="TRACE"/>
+	<logger name="jdbc.audit"	level="TRACE"/>
+	<logger name="jdbc.resultset" level="TRACE"/>
+	<logger name="jdbc.resultsettable" level="TRACE"/>
+	<logger name="jdbc.connection" level="TRACE"/>
 </configuration>
