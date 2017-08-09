@@ -89,11 +89,9 @@
 						}
 					});	
 				}
-			
-			
-			
-			
-			
+				$(document).ready(function(){
+					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+				})
 		}
 		
 
@@ -101,7 +99,7 @@
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+val+"</p></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+			
 		}
 		
 
@@ -109,7 +107,6 @@
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
 		
 		function doImgPop(img){ 
@@ -130,13 +127,19 @@
 			function viewImage(img){ 
 			 W=img1.width; 
 			 H=img1.height; 
-			 O="width="+W+",height="+H+",scrollbars=yes"; 
+			 cw=screen.availWidth;     //화면 넓이
+			 ch=screen.availHeight;    //화면 높이
+			 ml=(cw-W)/2;        //가운데 띄우기위한 창의 x위치
+			 mt=(ch-H)/2;         //가운데 띄우기위한 창의 y위치
+			 O="width="+W+",height="+H+",top="+mt+",left="+ml+",scrollbars=yes"; 
 			 imgWin=window.open("","",O); 
 			 imgWin.document.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
 			 imgWin.document.write("<body topmargin=0 leftmargin=0>");
 			 imgWin.document.write("<img src="+img+" onclick='self.close()' style='cursor:pointer;' title ='클릭하시면 창이 닫힙니다.'>");
 			 imgWin.document.close();
 			}
+			
+
 	</script>
 	
 	<style>

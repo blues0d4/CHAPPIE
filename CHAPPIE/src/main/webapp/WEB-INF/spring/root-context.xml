@@ -14,9 +14,9 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" 
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
- 			value="jdbc:log4jdbc:mysql://sqldb.cmsrxuizyrwq.ap-northeast-2.rds.amazonaws.com:3306/syteam" />
+ 			value="jdbc:mysql://sqldb.cmsrxuizyrwq.ap-northeast-2.rds.amazonaws.com:3306/syteam" />
 <!--  			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl" /> -->
 		<property name="username" value="mysql_db" />
 		<property name="password" value="syteam1111" />

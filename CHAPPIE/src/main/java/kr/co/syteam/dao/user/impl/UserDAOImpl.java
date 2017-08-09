@@ -38,8 +38,18 @@ public class UserDAOImpl implements IUserDAO{
 	}
 
 	@Override
-	public int userDelete(String userid) throws Exception {
-		return sqlSession.delete(namespace+"userDelete", userid); 
+	public int userDelete(String user_id) throws Exception {
+		return sqlSession.delete(namespace+"userDelete", user_id); 
+	}
+
+	@Override
+	public int userCategoryMemberDelete(String member_nickname) throws Exception {
+		return sqlSession.delete(namespace+"userCategoryMemberDelete", member_nickname);
+	}
+
+	@Override
+	public int userTodoMemberDelete(String member_nickname) throws Exception {
+		return sqlSession.delete(namespace+"userTodoMemberDelete", member_nickname);
 	}
 
 

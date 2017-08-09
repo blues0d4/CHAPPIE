@@ -39,44 +39,35 @@
      <br>
        <h4 class="w3-center"><b>회원정보수정</b></h4>
        <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
-   
-       
-       <form action="/action_page.php" target="_blank">
-         <div class="w3-section">
-         
-           <label>이메일</label>
-           <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required >
-           <div id="idcheck"></div>
-         </div>
-
-         <div class="w3-section">
-           <label for = "password">비밀번호</label>
-           <input class="w3-input w3-border" type="password" value='' id="user_pw" name="user_pw" placeholder="비밀번호" required>
-         </div>
-
-         <div class="w3-section">
-           <label for = "password">비밀번호 확인</label>
-           <input class="w3-input w3-border" type="password" value='' id="user_pwcheck" name="user_pwcheck" placeholder="비밀번호 확인" required>
-         </div>
-
-         <div class="w3-section">
-           <label>닉네임</label>
-           <input class="w3-input w3-border" type="text" value='' id="user_name" name="user_name" placeholder="닉네임" required>
-         </div>
-         <div class="w3-section">
-           <label>휴대폰번호</label>
-           <input class="w3-input w3-border" type="number" value='' id="user_phone" name="user_phone" placeholder="휴대폰번호" required>
-         </div>
-         
-         <div class="form-group">
-         <input type="submit"
-				class="w3-button w3-block w3-black w3-margin-bottom w3-round"
-				value="수정완료" />
-				
-		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
-       </div>
+	         <div class="w3-section">
+	           <label>이메일</label>
+	           <input class="w3-input w3-border" type="text" value='' id="user_id" name="user_id" placeholder="이메일" required >
+	           <div id="idcheck"></div>
+	         </div>
+	         <div class="w3-section">
+	           <label for = "password">비밀번호</label>
+	           <input class="w3-input w3-border" type="password" value='' id="user_pw" name="user_pw" placeholder="비밀번호" required>
+	         </div>
+	         <div class="w3-section">
+	           <label for = "password">비밀번호 확인</label>
+	           <input class="w3-input w3-border" type="password" value='' id="user_pwcheck" name="user_pwcheck" placeholder="비밀번호 확인" required>
+	         </div>
+	         <div class="w3-section">
+	           <label>닉네임</label>
+	           <input class="w3-input w3-border" type="text" value='' id="user_name" name="user_name" placeholder="닉네임" required>
+	         </div>
+	         <div class="w3-section">
+	           <label>휴대폰번호</label>
+	           <input class="w3-input w3-border" type="number" value='' id="user_phone" name="user_phone" placeholder="휴대폰번호" required>
+	         </div>
+	         <div class="form-group">
+	         <input type="submit"
+					class="w3-button w3-block w3-black w3-margin-bottom w3-round"
+					value="수정완료" />
+					<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="../userDelete">회원탈퇴</a>
+			<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
+	       </div>
       
-       </form>
        </form>
      </div>
    </div>
