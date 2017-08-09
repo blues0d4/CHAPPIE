@@ -11,7 +11,8 @@ public class PAGEs {
 	private static final String board_path = default_path + "/board";
 	private static final String project_path = default_path + "/project";
 	private static final String chappie_path = default_path + "/chappie";
-
+	
+	private static final String main_introduce_path = default_path + "/test";
 	
 	public static final String VIEW_PROJECT_MAIN = project_path + "/projectMain.jsp";
 	
@@ -27,5 +28,5 @@ public class PAGEs {
 	public static final String VIEW_FOOTER_PROJECT = footer_path + "/footerProject.jsp";
 	
 	public static final String VIEW_CHAPPIE = chappie_path + "/chappie_message.jsp";
-
+	public static final String VIEW_MAIN_INTRODUCE = main_introduce_path + "/test_chappie_introduce.jsp";
 }

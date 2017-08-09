@@ -50,7 +50,7 @@
 		<div class="text-vertical-center">
 
 			<h1>Hello, CHAPPIE</h1>
-			<h3>Collaboration Management Web &amp; App Hybrid Application</h3>
+			<h3>Collaboration Management Web Application</h3>
 			<br> <br> <br> <br>
 			<c:choose>
 				<c:when test="${empty login }">
@@ -70,36 +70,34 @@
 			<!--             <br> -->
 		</div>
 	</header>
-
-
-
-
-
 	<!-- About -->
-	<section id="about" class="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h1>CHAPPIE 소개</h1>
-					<br>
-					<p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한
-						협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p>
-					<br> <br> <br />
+<!-- 	<section id="about" class="about"> -->
+			<!-- 채피 인크루드 -->
+<%-- 	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
+<!-- 		<div class="container"> -->
+<!-- 			<div class="row"> -->
+<!-- 				<div class="col-lg-12 text-center"> -->
+<!-- 					<h1>CHAPPIE 소개</h1> -->
+<!-- 					<br> -->
+<!-- 					<p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한 -->
+<!-- 						협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p> -->
+<!-- 					<br> <br> <br /> -->
 
-					<br />
-<!-- 					<iframe width="350" height="430" -->
-<!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 					</iframe> -->
+<!-- 					<br /> -->
+<!-- <!-- 					<iframe width="350" height="430" -->
+<!-- <!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> --> 
+<!-- <!-- 					</iframe> --> 
 
-				</div>
-			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /.container -->
-	</section>
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<!-- /.row --> 
+<!-- 		</div> -->
+<!-- 		<!-- /.container --> 
+<!-- 	</section> -->
 
 	<!-- Services -->
 	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" />
 	<section id="services" class="services bg-primary">
 		<div class="container">
 			<div class="row text-center">
@@ -107,6 +105,8 @@
 					<h2>Our Services</h2>
 					<!--                     <hr class="small"> -->
 					<div class="row">
+		
+		
 						<div class="col-md-3 col-sm-6">
 							<div class="service-item">
 								<span class="fa-stack fa-4x"> <i
