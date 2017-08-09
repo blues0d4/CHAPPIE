@@ -610,9 +610,6 @@ height: 600;
 			</div>
 			</div>
 		
-		
-		
-		
 	</div>
 	
 
