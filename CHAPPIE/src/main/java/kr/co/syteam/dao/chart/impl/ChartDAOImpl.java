@@ -22,4 +22,9 @@ public class ChartDAOImpl implements ChartDAO {
 		return sqlSession.selectList(namespace + "selectCategoryName", project_id);
 	}
 
+	@Override
+	public List<ChartVO> memberChart(String project_id) throws Exception {
+		return sqlSession.selectList(namespace+"memberChart", project_id);
+	}
+
 }

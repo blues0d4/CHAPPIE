@@ -38,11 +38,11 @@ animation: 20s slidy ease-in-out infinite;
 <body>
 <div id="slider">
 <figure>
-<img src="/resources/img/introduce1-1.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
 <img src="/resources/img/introduce2-9.png" alt="">
-<img src="/resources/img/introduce1-1.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
 <img src="/resources/img/introduce2-9.png" alt="">
-<img src="/resources/img/introduce1-1.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
 </figure>
 </div>
 </body>

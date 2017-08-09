@@ -27,4 +27,17 @@ public class ChartServiceImpl implements ChartService {
 			return list;			
 		}
 
+	@Override
+	public List<ChartVO> memberChartService(String project_id) throws Exception {
+		
+		List<ChartVO> list = chartDAO.memberChart(project_id);
+		
+		for(ChartVO vo : list){
+			vo.setProgress(Math.round((Double.parseDouble(vo.getTodo_complete_cnt())
+					/Double.parseDouble(vo.getTodo_cnt()))*100*10d)/10d);
+		}
+		
+		return list;
+	}
+
 }

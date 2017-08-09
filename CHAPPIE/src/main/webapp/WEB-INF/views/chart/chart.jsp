@@ -77,7 +77,7 @@
 				<div class="row">
 				<div class="col-xs-12">
                   <p class="text-center">
-                    <strong>Goal Completion</strong>
+                    <strong>Category Goal Completion</strong>
                   </p>
 				  
 				  <c:choose>
@@ -106,6 +106,37 @@
 	                      style="width: ${allChart.progress}%"></div>
 	                    </div>
 	                  </div>
+                  </c:otherwise>
+                  	
+                  </c:choose>
+                  </div>
+                </div>
+       		 </div>
+       		 <div class="box-body">
+				<div class="row">
+				<div class="col-xs-12">
+                  <p class="text-center">
+                    <strong>Member Goal Completion</strong>
+                  </p>
+				  
+				  <c:choose>
+				  <c:when test="${empty mcVO}">
+				  	<p class="text-center">
+                    	<strong>내용이 없습니다.</strong>
+                  	</p>
+                  </c:when>
+                  <c:otherwise>
+				  	<c:forEach items="${mcVO }" var="mcVO">
+	                  <div class="progress-group">
+	                    <span class="progress-text">${mcVO.member_nickname }</span>
+	                    <span class="progress-number"><b>${mcVO.todo_complete_cnt }</b>/<b>${mcVO.todo_cnt }(${mcVO.progress}%)</b></span>
+	                    <div class="progress active">
+	                      <div class="progress-bar progress-bar-aqua progress-bar-striped" 
+	                       style="width: ${mcVO.progress}%"></div>
+	                    </div>
+	                  </div>
+                  	<!-- /.progress-group -->
+                  	</c:forEach>
                   </c:otherwise>
                   	
                   </c:choose>

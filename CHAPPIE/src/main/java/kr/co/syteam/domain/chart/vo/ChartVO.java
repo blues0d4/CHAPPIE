@@ -5,7 +5,14 @@ public class ChartVO {
 	String todo_cnt;
 	String todo_complete_cnt;
 	double progress;
+	String member_nickname;
 	
+	public String getMember_nickname() {
+		return member_nickname;
+	}
+	public void setMember_nickname(String member_nickname) {
+		this.member_nickname = member_nickname;
+	}
 	@Override
 	public String toString() {
 		return category_name;

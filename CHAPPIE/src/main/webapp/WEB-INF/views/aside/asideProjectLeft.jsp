@@ -123,16 +123,17 @@
             </span>
           </a>
           <ul class="treeview-menu">
-<!--             <li class="active"> -->
-         <c:forEach items="${categoryList}" var="categoryVO">
-               <li>
-                  <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${categoryVO.category_id}"><i class="fa fa-square-o"></i> #${categoryVO.category_name}</a>
-                  </li>
-         </c:forEach>
-            <li>
-<!--             <a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-               <a href="${URIs.URI_PROJECT_CATEGORY_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
-            </li>
+
+<!--      	    <li class="active"> -->
+			<c:forEach items="${categoryList}" var="categoryVO">
+					<li>
+		            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/todo/${categoryVO.category_id}"><i class="fa fa-square-o"></i> #${categoryVO.category_name}</a>
+		            </li>
+			</c:forEach>
+				<li>
+<!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
+					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+				</li>
           </ul>
         </li>
        

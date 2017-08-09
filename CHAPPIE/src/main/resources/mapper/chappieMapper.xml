@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.syteam.mapper.ChappieMapper">
+
+  <insert id="insertChappieLog" parameterType="kr.co.syteam.domain.chappie.dto.ChappieDTO">
+  	<![CDATA[
+  		INSERT INTO CHAPPIE_TABLE 
+  		VALUES(#{user_id}, #{user_say}, #{bot_say}, #{bot_img}, now())
+  	]]>
+  </insert>
+  
+  <select id="selectChappieLog" resultType="kr.co.syteam.domain.chappie.vo.ChappieVO">
+  	<![CDATA[
+  		SELECT USER_ID, USER_SAY, BOT_SAY, BOT_IMG, CHAT_TIME FROM CHAPPIE_TABLE 
+  		WHERE USER_ID=#{user_id} ORDER BY CHAT_TIME ASC
+  	]]>
+  </select>
+
+</mapper>

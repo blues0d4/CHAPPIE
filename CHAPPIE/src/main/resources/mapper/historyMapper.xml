@@ -7,14 +7,14 @@
   <insert id="historyInsert" parameterType="kr.co.syteam.domain.history.dto.HistoryDTO">
   	<![CDATA[
 		INSERT INTO HISTORY_TABLE 
-		VALUES(#{member_nickname},#{event},now(),#{title}, #{kind}, #{category_name})
+		VALUES(#{member_nickname},#{event},now(),#{title}, #{kind}, #{category_name}, #{project_id})
   	]]>
   </insert>
   
 	<select id="historySelect" resultType="kr.co.syteam.domain.history.vo.HistoryVO">
 		<![CDATA[
-			SELECT MEMBER_NICKNAME, EVENT, SUBMIT_TIME, TITLE, KIND, CATEGORY_NAME FROM HISTORY_TABLE
-			ORDER BY SUBMIT_TIME DESC
+			SELECT MEMBER_NICKNAME, EVENT, SUBMIT_TIME, TITLE, KIND, CATEGORY_NAME, PROJECT_ID 
+			FROM HISTORY_TABLE WHERE PROJECT_ID=#{project_id} ORDER BY SUBMIT_TIME DESC
 		]]>
 	</select>
 

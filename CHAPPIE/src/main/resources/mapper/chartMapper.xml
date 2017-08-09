@@ -14,6 +14,13 @@
 			GROUP BY C.CATEGORY_NAME
 		]]>	
 	</select>
-	
+	<select id="memberChart" resultType="kr.co.syteam.domain.chart.vo.ChartVO">
+		<![CDATA[
+			SELECT MEM.MEMBER_NICKNAME AS member_nickname, SUM(TODO.TODO_COMPLETE) AS todo_complete_cnt, COUNT(TODO.TODO_NO) AS todo_cnt 
+			FROM TODO_LIST_TABLE TODO, (SELECT TODO_NO, MEMBER_NICKNAME FROM TODO_MEMBER_TABLE) MEM 
+			WHERE TODO.TODO_NO = MEM.TODO_NO AND TODO.PROJECT_ID = #{project_id} 
+			GROUP BY MEM.MEMBER_NICKNAME
+		]]>
+	</select>
 
 </mapper>

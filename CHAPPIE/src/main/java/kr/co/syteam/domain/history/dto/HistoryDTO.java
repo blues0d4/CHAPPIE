@@ -5,10 +5,16 @@ public class HistoryDTO {
 	String event;
 	String submit_time;
 	String kind;
+	String project_id;
 	String category_name;
 	String title;
 	
-
+	public String getProject_id() {
+		return project_id;
+	}
+	public void setProject_id(String project_id) {
+		this.project_id = project_id;
+	}
 	public String getTitle() {
 		return title;
 	}

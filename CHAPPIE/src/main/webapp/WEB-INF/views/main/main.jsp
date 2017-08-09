@@ -28,8 +28,35 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" type="text/css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
+<style>
 
-
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+body { margin: 0; }
+div.slider { overflow: hidden; }
+div.slider figure img { width: 20%; float: left; }
+div.slider figure {
+position: relative;
+width: 500%;
+margin: 0;
+top:0;
+left: 0;
+text-align: left;
+font-size: 0;
+-webkit-animation: 20s slidy ease-in-out infinite;
+animation: 20s slidy ease-in-out infinite;
+}
+</style>
+</head>
 <body id="page-top" class="index">
 
 	<!-- Navigation -->
@@ -71,33 +98,57 @@
 		</div>
 	</header>
 	<!-- About -->
-<!-- 	<section id="about" class="about"> -->
+	<section id="about" class="about">
 			<!-- 채피 인크루드 -->
-<%-- 	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
-<!-- 		<div class="container"> -->
-<!-- 			<div class="row"> -->
-<!-- 				<div class="col-lg-12 text-center"> -->
-<!-- 					<h1>CHAPPIE 소개</h1> -->
-<!-- 					<br> -->
-<!-- 					<p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한 -->
-<!-- 						협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p> -->
-<!-- 					<br> <br> <br /> -->
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>CHAPPIE 소개</h1>
+					<br>
+					<p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한
+						협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p>
+<%-- 					<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
+					
+<div class="slider">
+<figure>
+<img src="/resources/img/chappie_intro.png" alt="">
+<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+</figure>
+</div>
+					<br> <br> <br />
+ff
 
-<!-- 					<br /> -->
-<!-- <!-- 					<iframe width="350" height="430" -->
-<!-- <!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> --> 
-<!-- <!-- 					</iframe> --> 
+<div class="slider">
+<figure>
+<img src="/resources/img/chappie_intro.png" alt="">
+<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+</figure>
+</div>
+ff
+					<br />
+<!-- 					<iframe width="350" height="430"
+<!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> 
+<!-- 					</iframe> -->
 
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 			<!-- /.row --> 
-<!-- 		</div> -->
-<!-- 		<!-- /.container --> 
-<!-- 	</section> -->
+				</div>
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</section>
 
 	<!-- Services -->
 	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" />
+<!-- 	<div id="about"> -->
+<%-- 	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
+<!-- 	</div> -->
 	<section id="services" class="services bg-primary">
 		<div class="container">
 			<div class="row text-center">
