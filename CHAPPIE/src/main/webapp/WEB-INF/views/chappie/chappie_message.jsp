@@ -183,7 +183,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 480px;
+		height: 450px;
 	    background-color : #F5F5F5;
 	}
 

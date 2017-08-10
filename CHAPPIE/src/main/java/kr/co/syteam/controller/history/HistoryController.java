@@ -42,6 +42,6 @@ public class HistoryController {
 		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
 		model.addAttribute("chappieVO", chappieVO);
 		
-		return "/history/history";
+		return "/history/history2";
 	}	
 }  
