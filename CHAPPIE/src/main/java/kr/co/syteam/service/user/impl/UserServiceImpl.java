@@ -37,8 +37,11 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public int userDelete(String userid) throws Exception {
-		return userDAO.userDelete(userid);
+	public int userDelete(String user_id, String member_nickname) throws Exception {
+		userDAO.userCategoryMemberDelete(member_nickname);
+		userDAO.userTodoMemberDelete(member_nickname);
+		return userDAO.userDelete(user_id);
 	}
+
 
 }

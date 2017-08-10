@@ -181,7 +181,7 @@ public class BoardController {
 		historyDTO.setKind("게시판");
 //		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
-		
+		boardDTO.setUser_id(loginVO.getUser_id());
 		boardService.boardDelete(boardDTO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_id;

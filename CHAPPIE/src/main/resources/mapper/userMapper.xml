@@ -26,6 +26,18 @@
  			WHERE USER_ID = #{user_id}
  	]]>
   </delete>
+  <delete id="userCategoryMemberDelete">
+  	<![CDATA[
+ 			DELETE FROM CATEGORY_MEMBER_TABLE 
+ 			WHERE MEMBER_NICKNAME = #{member_nickname}
+ 	]]>
+  </delete>
+  <delete id="userTodoMemberDelete">
+  	<![CDATA[
+ 			DELETE FROM TODO_MEMBER_TABLE 
+ 			WHERE MEMBER_NICKNAME = #{member_nickname}
+ 	]]>
+  </delete>
   
   <select id="userIdCheck" resultType="String">
   	<![CDATA[
