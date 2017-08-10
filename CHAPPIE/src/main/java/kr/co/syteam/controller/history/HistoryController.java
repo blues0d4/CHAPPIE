@@ -22,7 +22,7 @@ import kr.co.syteam.service.history.HistoryService;
 @Controller
 public class HistoryController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HistoryController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(HistoryController.class);
 	
 	@Autowired
 	private HistoryService historyService;
@@ -32,7 +32,7 @@ public class HistoryController {
 	
 	@RequestMapping(value = "/project/{project_id}/history", method = RequestMethod.GET)
 	public String todoList(@PathVariable("project_id") String project_id, Model model, HttpServletRequest request) throws Exception {
-		logger.info("This is History !!!!");	
+//		logger.info("This is History !!!!");	
 		
 		List<HistoryVO> vo = historyService.historySelectService(project_id);
 //		System.out.println(vo.get(0).toString());

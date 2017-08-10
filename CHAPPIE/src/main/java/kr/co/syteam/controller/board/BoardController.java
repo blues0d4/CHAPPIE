@@ -35,7 +35,7 @@ import kr.co.syteam.service.project.ProjectService;
 //@RequestMapping("/project/*/")
 public class BoardController { 
 
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Autowired
 	private BoardService boardService;
@@ -126,7 +126,7 @@ public class BoardController {
 	
 	@RequestMapping(value = URIs.URI_BOARD_WRITE_FORM)
 	public String doBoardWriteForm() throws Exception{
-		logger.info("doBoardWriteForm");
+//		logger.info("doBoardWriteForm");
 		
 		return URIs.URI_BOARD_WRITE_FORM_PAGE;
 	}
@@ -134,7 +134,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_WRITE)
 	public String doBoardWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO, HttpServletRequest request) throws Exception{
 		
-		logger.info("doBoardWrite");
+//		logger.info("doBoardWrite");
 
 		
 
@@ -160,7 +160,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_DELETE + "/{board_no}")
 	public String doBoardDelete(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id,  @PathVariable("board_no")String board_no, BoardDTO boardDTO, HttpServletRequest request) throws Exception {
 		
-		logger.info("doBoardDelete");
+//		logger.info("doBoardDelete");
 		System.out.println(board_no);
 		BoardVO boardVO = boardService.boardView(board_no);
 
@@ -190,7 +190,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY_FORM + "/{board_no}")
 	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, Model model) throws Exception {
 		
-		logger.info("doBoardModifyForm");
+//		logger.info("doBoardModifyForm");
 		
 		BoardVO boardVO = boardService.boardView(board_no);
 
@@ -205,7 +205,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY + "/{board_no}")
 	public String doBoardModify(HttpServletRequest request ,@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
 		
-		logger.info("doBoardModify");
+//		logger.info("doBoardModify");
 		
 		HistoryDTO historyDTO = new HistoryDTO();
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
@@ -227,7 +227,7 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_COMMENT_WRITE,  method = RequestMethod.POST)
 	public void doBoardCommentWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id")String category_id, BoardCommentDTO boardCommentDTO) throws Exception   {
 
-		logger.info("doBoardCommentWrite");
+//		logger.info("doBoardCommentWrite");
 		
 //		System.out.println(user_id);
 //		System.out.println(board_no);
@@ -242,7 +242,7 @@ public class BoardController {
 	public List<BoardCommentVO> doBoardCommentList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, @PathVariable("board_no")String board_no, 
 			Model model, HttpServletRequest request) throws Exception {
 		
-		logger.info("doBoardCommentList!!!!");
+//		logger.info("doBoardCommentList!!!!");
 		List<BoardCommentVO> boardCommentVO = boardService.boardCommentList(board_no);
 		
 //		System.out.println(boardCommentVO.get(0).toString());

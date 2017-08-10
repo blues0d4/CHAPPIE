@@ -54,6 +54,7 @@ public class ProjectController {
 		String user_id = loginVO.getUser_id();
 		
 		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
+		System.out.println(project_id);
 		projectSelectDTO.setProject_id(project_id);
 		projectSelectDTO.setUser_id(user_id);
 		
