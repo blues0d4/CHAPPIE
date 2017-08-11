@@ -18,6 +18,7 @@
 		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
 		
+		
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
 				if (event.which == 13) {
@@ -89,17 +90,17 @@
 						}
 					});	
 				}
-				$(document).ready(function(){
-					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
-				})
+				
 		}
-		
+		$(document).ready(function(){
+			
+		})
 
 		function setResponse(val) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+val+"</p></div></li>");
 			document.getElementById('input').value = "";
-			
+			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
 		
 
@@ -107,6 +108,7 @@
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
 			document.getElementById('input').value = "";
+			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
 		
 		function doImgPop(img){ 
@@ -532,8 +534,8 @@ height: 600;
 
 	<!--  채피 아이콘 -->
 
-	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 60px; margin-bottom: 50px;" >
-		<a id="addClass"><img src="/resources/img/chappie_button.png"></a>
+	<div style="position: fixed; bottom: 5px; right: 5px; margin-right: 60px">
+		<a id="addClass"><img src="/resources/img/chappie_button.png" style="cursor:pointer"></a>
 	</div>
 
 	<!-- 채피 채팅창 -->
@@ -588,29 +590,21 @@ height: 600;
 		                    		<img src="${chappieVO.bot_img }" style="cursor: pointer;" onclick="doImgPop('${chappieVO.bot_img}')"></img>
 		                    		<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
 		                    	</c:otherwise>
-		                    	
 	                    	</c:choose>
                     	</c:forEach>
                     </ul>
 <!--                <input id="input" type="text" class="input_id">		  -->
 <!--          		   <button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button> -->
-           	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
-           	   </span>
-               
-                </div>
-   </div>
+	           	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+	           	   </span>
+             	</div>
+  		 </div>
 		<div class="popup-messages-footer">
 			<input id="input" type="text" class="input_id">	
-<!-- 			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea> -->
 			<div class="btn-footer">
-			<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
-<!-- 			<button class="bg_none"><i class="glyphicon glyphicon-film"></i> </button> -->
-<!-- 			<button class="bg_none"><i class="glyphicon glyphicon-camera"></i> </button> -->
-<!--             <button class="bg_none"><i class="glyphicon glyphicon-paperclip"></i> </button> -->
-<!-- 			<button class="bg_none pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> </button> -->
+				<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
 			</div>
-			</div>
-		
+		</div>
 	</div>
 	
 
@@ -620,15 +614,38 @@ height: 600;
 		$(function() {
 			$("#addClass").click(function() {
 				$('#qnimate').addClass('popup-box-on');
-				$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
-				
+				$('#responseScroll').scrollTop($('#responseScroll')[0].scrollHeight);
+				var allData = { "onOff" : "on"};
+				$.ajax({
+					type: "GET",
+					url: "/chappieOnOff",
+					data: allData,
+					success: function(data) {
+					},
+				});	
 			});
 
 			$("#removeClass").click(function() {
 				$('#qnimate').removeClass('popup-box-on');
+				var allData = { "onOff" : "off"};
+				$.ajax({
+					type: "GET",
+					url: "/chappieOnOff",
+					data: allData,
+					success: function(data) {
+					},
+				});	
 			});
 		})
-	</script>
-	
+		
+		$(document).ready(function(){
+			var member_id = "<%=(String)session.getAttribute("onoff")%>"
+			if(member_id == "on"){
+				$('#qnimate').addClass('popup-box-on');
+			}
+		
+		})
+
+</script>
 </body>	
 </html>	

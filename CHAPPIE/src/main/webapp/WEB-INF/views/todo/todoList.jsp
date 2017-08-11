@@ -342,6 +342,20 @@ function complete(chk)
     });
   });
   
+  $(document).ready(function(){
+	  $("#datepicker3").change(function(){
+		  if($("#datepicker4").val() != ""){
+			  if($("#datepicker3").val() > $("#datepicker4").val()){
+				  $("#datepicker3").val("");
+			  }
+		  }
+	  })
+	  $("#datepicker4").change(function(){
+		  if($("#datepicker3").val() > $("#datepicker4").val()){
+			  $("#datepicker4").val("");
+		  }
+	  })
+  })
   
 //   function dateCompare(todo_start_date, todo_end_date, point){
 //       //정상 날짜인지 체크한다.

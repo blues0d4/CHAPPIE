@@ -32,4 +32,12 @@ public class ChappieController {
 		chappieService.insertChappieLogService(chappieDTO);
 		return 1;
 	}
+	
+	@RequestMapping(value = "/chappieOnOff", method = RequestMethod.GET)
+	@ResponseBody
+	public int chappieOnOff(String onOff, HttpServletRequest request) throws Exception {
+		request.getSession().setAttribute("onoff", onOff);
+		
+		return 1;
+	}
 }  
