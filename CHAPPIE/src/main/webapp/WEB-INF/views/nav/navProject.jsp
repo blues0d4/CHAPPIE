@@ -214,29 +214,30 @@
                 <img src="/resources/dist/img/user2-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  ${ login.user_name } - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  ${ login.user_name } 
+<!--                   - Web Developer -->
+<!--                   <small>Member since Nov. 2012</small> -->
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+<!--               <li class="user-body"> -->
+<!--                 <div class="row"> -->
+<!--                   <div class="col-xs-4 text-center"> -->
+<!--                     <a href="#">Followers</a> -->
+<!--                   </div> -->
+<!--                   <div class="col-xs-4 text-center"> -->
+<!--                     <a href="#">Sales</a> -->
+<!--                   </div> -->
+<!--                   <div class="col-xs-4 text-center"> -->
+<!--                     <a href="#">Friends</a> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--                 /.row -->
+<!--               </li> -->
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="${URIs.URI_USER_MODIFY_CONFIRM_FORM }" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="${URIs.URI_USER_LOGOUT}" class="btn btn-default btn-flat">Sign out</a>
