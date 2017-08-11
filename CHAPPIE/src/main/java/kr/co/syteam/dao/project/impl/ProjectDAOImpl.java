@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.syteam.dao.project.ProjectDAO;
+import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.project.dto.CategorySelectDTO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -137,6 +139,21 @@ public class ProjectDAOImpl implements ProjectDAO {
 	@Override
 	public int checkMemberRank(ProjectDTO projectDTO) throws Exception {
 		return sqlSession.selectOne(namespace+"checkMemberRank", projectDTO);
+	}
+
+	@Override
+	public void updateCategoryChoice(CategorySelectDTO categorySelectDTO) throws Exception {
+		sqlSession.update(namespace+"updateCategoryChoice", categorySelectDTO);
+	}
+
+	@Override
+	public String selectCategoryChoice(CategorySelectDTO categorySelectDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"selectCategoryChoice", categorySelectDTO);
+	}
+
+	@Override
+	public BoardVO selectBoardNotice(String category_id) throws Exception {
+		return sqlSession.selectOne(namespace+"selectBoardNotice", category_id);
 	}
 
 

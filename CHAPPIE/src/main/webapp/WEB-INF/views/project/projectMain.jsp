@@ -81,7 +81,7 @@
     <jsp:include page ="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
     <!-- /.sidebar -->
   </aside>
-
+</div>
   <!-- Content Wrapper. Contains page content -->
   <!-- Contents -->
   <div class="content-wrapper">
@@ -101,157 +101,33 @@
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Area Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
+              <h3 class="box-title">공지사항</h3>
             </div>
             <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChart" style="height: 249px; width: 685px;" height="311" width="856"></canvas>
-              </div>
+                        	
+		        <div class="timeline-item">
+		            <span class="time"><i class="fa fa-clock-o"></i> ${category_choice.board_write_date }</span>
+		
+		            <h3 class="timeline-header"><a href="">${category_choice.user_id }</a>	${category_choice.board_title }</h3>
+		
+		            <div class="timeline-body" >
+		                	${category_choice.board_contents }
+		            </div>
+		
+		            <div class="timeline-footer">
+		                <a class="btn btn-primary btn-xs">Read more</a>
+           			 </div>
+        		</div>
+            
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-
-          <!-- DONUT CHART -->
-          <div class="box box-danger">
-            <div class="box-header with-border">
-              <h3 class="box-title">Donut Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <canvas id="pieChart" style="height: 342px; width: 685px;" height="427" width="856"></canvas>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-
-        </div>
-        <!-- /.col (LEFT) -->
-        <div class="col-md-6">
-          <!-- LINE CHART -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Line Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="lineChart" style="height: 249px; width: 685px;" height="311" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-
-          <!-- BAR CHART -->
-          <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height: 230px; width: 685px;" height="287" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-	<div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height: 230px; width: 685px;" height="287" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div><div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height: 230px; width: 685px;" height="287" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div><div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height: 230px; width: 685px;" height="287" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div><div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Bar Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height: 230px; width: 685px;" height="287" width="856"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </div>
-        <!-- /.col (RIGHT) -->
-      </div>
+		</div>
+	</div>
+  
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  
-  
   <!--  채피 아이콘 -->
 
 	<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
@@ -273,7 +149,6 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
   
-</div>
 <!-- ./wrapper -->
  <!-- jQuery 2.2.3 -->
 <script
@@ -281,9 +156,6 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- Sparkline -->
@@ -313,100 +185,8 @@
    
     <script src="/resources/documentation/docs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
-
-    
-    <!-- Custom Theme JavaScript -->
-	<script>
-		// Closes the sidebar menu
-		$("#menu-close").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		// Opens the sidebar menu
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		// Scrolls to the selected menu item on the page
-		$(function() {
-			$(
-					'a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])')
-					.click(
-							function() {
-								if (location.pathname.replace(/^\//, '') == this.pathname
-										.replace(/^\//, '')
-										|| location.hostname == this.hostname) {
-									var target = $(this.hash);
-									target = target.length ? target
-											: $('[name=' + this.hash.slice(1)
-													+ ']');
-									if (target.length) {
-										$('html,body').animate({
-											scrollTop : target.offset().top
-										}, 1000);
-										return false;
-									}
-								}
-							});
-		});
-		//#to-top button appears after scrolling
-		var fixed = false;
-		$(document).scroll(function() {
-			if ($(this).scrollTop() > 250) {
-				if (!fixed) {
-					fixed = true;
-					// $('#to-top').css({position:'fixed', display:'block'});
-					$('#to-top').show("slow", function() {
-						$('#to-top').css({
-							position : 'fixed',
-							display : 'block'
-						});
-					});
-				}
-			} else {
-				if (fixed) {
-					fixed = false;
-					$('#to-top').hide("slow", function() {
-						$('#to-top').css({
-							display : 'none'
-						});
-					});
-				}
-			}
-		});
-		// Disable Google Maps scrolling
-		// See http://stackoverflow.com/a/25904582/1607849
-		// Disable scroll zooming and bind back the click event
-		var onMapMouseleaveHandler = function(event) {
-			var that = $(this);
-			that.on('click', onMapClickHandler);
-			that.off('mouseleave', onMapMouseleaveHandler);
-			that.find('iframe').css("pointer-events", "none");
-		}
-		var onMapClickHandler = function(event) {
-			var that = $(this);
-			// Disable the click handler until the user leaves the map area
-			that.off('click', onMapClickHandler);
-			// Enable scrolling zoom
-			that.find('iframe').css("pointer-events", "auto");
-			// Handle the mouse leave event
-			that.on('mouseleave', onMapMouseleaveHandler);
-		}
-		// Enable map zooming with mouse scroll when the user clicks the map
-		$('.map').on('click', onMapClickHandler);
-	</script>
+	
     
  <!-- 채피 스크립트 -->
-<script>
-		$(function() {
-			$("#addClass").click(function() {
-				$('#qnimate').addClass('popup-box-on');
-			});
-
-			$("#removeClass").click(function() {
-				$('#qnimate').removeClass('popup-box-on');
-			});
-		})
-	</script>
 </body>
 </html>
