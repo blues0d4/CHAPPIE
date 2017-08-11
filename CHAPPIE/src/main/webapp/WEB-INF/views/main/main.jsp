@@ -120,18 +120,50 @@ animation: 20s slidy ease-in-out infinite;
 </figure>
 </div>
 					<br> <br> <br />
-ff
 
+
+
+<h2> 이슈를 함께 해결하기 위한 커뮤니케이션</h2>
+<br>
+<h4> 회사 내의 facebook! <br> 회사 내의 일상을 timeline에 담아보세요!</h4>
+<div class="slider">
+
+<img src="/resources/img/introduce_timeline1.png" alt="" style="width: 100%;">
+<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+
+</div>
+
+
+<h2> 한눈에 보기 쉬운 차트</h2>
+<br>
+<h4> 포스트 잇은 이제 그만! <br>  완료여부에 대한 한눈에 보기 좋은 차트까지
+<br> 해야할 일에 대한 메모는 물론, 담당자 선택, 중요도 체크까지 가능합니다.</h4>
 <div class="slider">
 <figure>
-<img src="/resources/img/chappie_intro.png" alt="">
-<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/introduce_todolist.png" alt="">
+<img src="/resources/img/introduce_chart.png" alt="">
 <img src="/resources/img/chappie_intro.png" alt="">
 <img src="/resources/img/introduce2-9.png" alt="">
 <img src="/resources/img/chappie_intro.png" alt="">
 </figure>
 </div>
-ff
+
+<h2> 히스토리</h2>
+<br>
+<h4> 포스트 잇은 이제 그만! <br>  완료여부에 대한 한눈에 보기 좋은 차트까지
+<br> 해야할 일에 대한 메모는 물론, 담당자 선택, 중요도 체크까지 가능합니다.</h4>
+<div class="slider">
+<figure>
+<img src="/resources/img/introduce_todolist.png" alt="">
+<img src="/resources/img/introduce_chart.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+<img src="/resources/img/introduce2-9.png" alt="">
+<img src="/resources/img/chappie_intro.png" alt="">
+</figure>
+</div>
 					<br />
 <!-- 					<iframe width="350" height="430"
 <!-- 						src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> 
