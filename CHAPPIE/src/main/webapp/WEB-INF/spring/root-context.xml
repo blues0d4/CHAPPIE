@@ -16,9 +16,11 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
       <property name="url"
-          value="jdbc:mysql://sqldb.cmsrxuizyrwq.ap-northeast-2.rds.amazonaws.com:3306/syteam" />
+          value="jdbc:mysql://218.144.130.3:3306/syteam" />
+<!--           value="jdbc:mysql://sqldb.cmsrxuizyrwq.ap-northeast-2.rds.amazonaws.com:3306/syteam" /> -->
 <!--  			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl" /> -->
-		<property name="username" value="mysql_db" />
+		<property name="username" value="root" />
+<!-- 		<property name="username" value="mysql_db" /> -->
 		<property name="password" value="syteam1111" />
 	</bean> 
 	

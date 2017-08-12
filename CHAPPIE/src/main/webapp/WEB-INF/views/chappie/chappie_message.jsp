@@ -619,6 +619,7 @@ height: 600;
 		$(function() {
 			$("#addClass").click(function() {
 				$('#qnimate').addClass('popup-box-on');
+				$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 			});
 
 			$("#removeClass").click(function() {
