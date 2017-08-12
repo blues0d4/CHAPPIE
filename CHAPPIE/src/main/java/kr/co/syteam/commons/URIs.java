@@ -34,9 +34,12 @@ public class URIs {
 
 	public static final String URI_USER_MODIFY = "/userModify";
 	public static final String URI_USER_MODIFY_PAGE = USER_DEFAULT + URI_USER_MODIFY;
-	
+
 	public static final String URI_USER_MODIFY_FORM = "/userModifyForm";
 	public static final String URI_USER_MODIFY_FORM_PAGE = USER_DEFAULT + URI_USER_MODIFY_FORM;
+	
+	public static final String URI_USER_MODIFY_CONFIRM_FORM = "/userModifyConfirmForm";
+	public static final String URI_USER_MODIFY_CONFIRM_FORM_PAGE = USER_DEFAULT + URI_USER_MODIFY_CONFIRM_FORM;
 
 	
 	//PROJECT URI

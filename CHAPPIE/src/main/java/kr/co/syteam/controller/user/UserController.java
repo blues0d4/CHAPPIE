@@ -127,4 +127,11 @@ public class UserController {
 		return "redirect:"+URIs.URI_MAIN;
 	}
 	
+	//유저 수정 비밀번호 체크
+	@RequestMapping(value = URIs.URI_USER_MODIFY_CONFIRM_FORM)
+	public String doUserModifyConfirmForm() throws Exception{
+		
+		return URIs.URI_USER_MODIFY_CONFIRM_FORM_PAGE;
+	}
+	
 }

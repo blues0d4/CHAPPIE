@@ -167,7 +167,7 @@
                         <i class="fa fa-calendar"></i></label>
                      </td>
                      <td><div class="input-group date">
-                    <input type="text" class="form-control pull-right" id="datepicker3" name="todo_start_date">
+                    <input type="text" name="todo_start_date" class="form-control" id="datepicker3" >
                   </div></td>
                       </tr>
                       <tr>
@@ -356,6 +356,20 @@ function complete(chk)
 		  }
 	  })
   })
+  
+//   function dateCompare(todo_start_date, todo_end_date, point){
+//       //정상 날짜인지 체크한다.
+//       var startDateChk = dateCheck(startDate, point);
+//       if(!startDateChk){
+//           return false;
+//       }
+//       var endDateChk = dateCheck(endDate, point, "end");
+      
+//       if(!endDateChk){
+//           return false;
+//       }
+
+
   
 </script>
 </body>
