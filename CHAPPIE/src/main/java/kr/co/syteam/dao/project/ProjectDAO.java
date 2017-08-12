@@ -2,9 +2,11 @@ package kr.co.syteam.dao.project;
 
 import java.util.List;
 
+import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
+import kr.co.syteam.domain.project.dto.CategorySelectDTO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -34,4 +36,7 @@ public interface ProjectDAO {
 	public String categoryIdSelect() throws Exception;
 	public int projectDelete(String project_id) throws Exception;
 	public int checkMemberRank(ProjectDTO projectDTO) throws Exception;
+	public void updateCategoryChoice(CategorySelectDTO categorySelectDTO) throws Exception;
+	public String selectCategoryChoice(CategorySelectDTO categorySelectDTO) throws Exception;
+	public BoardVO selectBoardNotice(String category_id) throws Exception;
 }

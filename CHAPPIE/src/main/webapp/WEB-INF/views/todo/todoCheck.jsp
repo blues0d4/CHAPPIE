@@ -300,11 +300,8 @@
   
   $(document).ready(function(){
 	  $("#delete").click(function(){
-		  
-		  
 // 		  alert("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
 // 		  alert("alert");
-		  
 		  swal({
 			  title: "Are you sure?",
 			  text: "",
@@ -330,22 +327,23 @@
 			  }
 			});
 		  
-// 	     var isDelete = confirm("삭제하시겠습니까?");
-	     
-	     
-	     
-// 	     if(isDelete){
-// 	    	 document.form.submit();
-// 	     }else{
-// 	    	 return false;
-// 	     }
-	     
-	     
-	     
 	     });
-	  
 	  });
   
+  $(document).ready(function(){
+	  $("#datepicker").change(function(){
+		  if($("#datepicker2").val() != ""){
+			  if($("#datepicker").val() > $("#datepicker2").val()){
+				  $("#datepicker").val("");
+			  }
+		  }
+	  })
+	  $("#datepicker2").change(function(){
+		  if($("#datepicker").val() > $("#datepicker2").val()){
+			  $("#datepicker2").val("");
+		  }
+	  })
+  })
 
 
 

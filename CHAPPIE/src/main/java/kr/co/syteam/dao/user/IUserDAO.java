@@ -9,5 +9,7 @@ public interface IUserDAO {
 	public LoginVO userLogin(UserDTO userDTO) throws Exception;
 	public String userIdCheck(String userid) throws Exception;
 	public int userModify(UserDTO userDTO) throws Exception;
-	public int userDelete(String userid) throws Exception;
+	public int userDelete(String user_id) throws Exception;
+	public int userCategoryMemberDelete(String member_nickname) throws Exception;
+	public int userTodoMemberDelete(String member_nickname) throws Exception;
 }

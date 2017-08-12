@@ -115,4 +115,16 @@ public class UserController {
 		return loginVO;
 	}
 
+	@RequestMapping(value = "/userDelete")
+	public String doUserDelete(HttpServletRequest request) throws Exception {
+		System.out.println("UserDELETE");
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		
+		System.out.println(loginVO.getUser_id()+","+ loginVO.getUser_name());
+		userService.userDelete(loginVO.getUser_id(), loginVO.getUser_name());
+		request.getSession().invalidate();
+		
+		return "redirect:"+URIs.URI_MAIN;
+	}
+	
 }

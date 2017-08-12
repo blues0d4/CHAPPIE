@@ -57,6 +57,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void boardDelete(BoardDTO boardDTO) throws Exception {
 		sqlSession.delete(namespace+"boardDelete", boardDTO);
+		System.out.println("보드딜리트");
 	}
 
 	@Override

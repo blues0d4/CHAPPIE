@@ -9,6 +9,6 @@ public interface IUserService {
 	public LoginVO userLogin(UserDTO userDTO) throws Exception;
 	public String userIdCheck(String userid) throws Exception;
 	public int userModify(UserDTO userDTO) throws Exception;
-	public int userDelete(String userid) throws Exception;
-	
+	public int userDelete(String user_id, String member_nickname) throws Exception;
+
 }

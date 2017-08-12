@@ -13,7 +13,6 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
   
-<script src="/resources/plugins/chartjs/Chart.js"></script>
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -70,10 +69,14 @@
     <section class="content" >
     
 		  <div class="col-md-8">
-			<div class="box box-primary">
-            
+			<div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">Category</a></li>
+              <li><a href="#tab_2" data-toggle="tab">Member</a></li>
             <!-- /.box-header -->
-      		  <div class="box-body">
+            </ul>
+            <div class="tab-content">
+      		  <div class="tab-pane active" id="tab_1">
 				<div class="row">
 				<div class="col-xs-12">
                   <p class="text-center">
@@ -112,7 +115,9 @@
                   </div>
                 </div>
        		 </div>
-       		 <div class="box-body">
+       		 
+       		 
+       		 <div class="tab-pane" id="tab_2">
 				<div class="row">
 				<div class="col-xs-12">
                   <p class="text-center">
@@ -142,6 +147,7 @@
                   </c:choose>
                   </div>
                 </div>
+       		 </div>
        		 </div>
         </div>
       </div>
@@ -179,7 +185,6 @@
 <script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="../../plugins/morris/morris.min.js"></script>
 <!-- FastClick -->
 <script src="../../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -187,25 +192,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
-<script>
-  $(function () {
-    "use strict";
 
-    //DONUT CHART
-    var donut = new Morris.Donut({
-      element: 'sales-chart',
-      resize: true,
-      colors: ["#3c8dbc", "#f56954", "#00b656"],
-      data: [
-        {label: "Download Sales", value: 12},
-        {label: "In-Store Sales", value: 30},
-        {label: "Mail-Order Sales", value: 20}
-      ],
-      hideHover: 'auto'
-    });
-    
-  });
-</script>
 
 </body>
 </html>
