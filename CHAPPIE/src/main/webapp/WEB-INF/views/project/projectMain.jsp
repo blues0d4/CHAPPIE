@@ -104,7 +104,6 @@
               <h3 class="box-title">공지사항</h3>
             </div>
             <div class="box-body">
-                        	
 		        <div class="timeline-item">
 		            <span class="time"><i class="fa fa-clock-o"></i> ${category_choice.board_write_date }</span>
 		
