@@ -74,15 +74,18 @@
             
             <!-- /.box-header -->
       		  <div class="box-body">
-				
+				<ul>
 					<c:forEach items="${HistoryVO }" var="historyVO">
+					<li>
 						<div>
-							<p>'${historyVO.member_nickname}'님이 '${historyVO.category_name}'카테고리 
-							'${historyVO.kind}'의 '${historyVO.title}'을(를) '${historyVO.event}'하였습니다
-							<small>${historyVO.submit_time}</small></p>
+						
+							<strong><p>'${historyVO.member_nickname}'</strong>님이 '${historyVO.category_name}'카테고리 
+							<strong>'${historyVO.kind}'의 '${historyVO.title}'</strong>을(를) '${historyVO.event}'하였습니다 &nbsp &nbsp
+							<small class="label label-primary" style = "margin-bottom:10px;"><i class="fa fa-clock-o"></i>  ${historyVO.submit_time}</small></p>
 						</div>
+						</li>
 					</c:forEach>
-				
+				</ul>
        		 </div>
         </div>
       </div>

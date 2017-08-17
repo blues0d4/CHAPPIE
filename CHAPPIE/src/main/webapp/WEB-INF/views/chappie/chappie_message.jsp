@@ -185,7 +185,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 480px;
+		height: 450px;
 	    background-color : #F5F5F5;
 	}
 
@@ -239,6 +239,7 @@ body {
 	right: 70px;
 	width: 400px;
 	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 50px;
 }
 
 
@@ -641,6 +642,7 @@ height: 600;
 			var member_id = "<%=(String)session.getAttribute("onoff")%>"
 			if(member_id == "on"){
 				$('#qnimate').addClass('popup-box-on');
+				$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 			}
 		
 		})

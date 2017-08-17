@@ -6,7 +6,7 @@
 
   <insert id="historyInsert" parameterType="kr.co.syteam.domain.history.dto.HistoryDTO">
   	<![CDATA[
-		INSERT INTO HISTORY_TABLE 
+		INSERT INTO HISTORY_TABLE (member_nickname, event, submit_time, title, kind, category_name, project_id)
 		VALUES(#{member_nickname},#{event},now(),#{title}, #{kind}, #{category_name}, #{project_id})
   	]]>
   </insert>
