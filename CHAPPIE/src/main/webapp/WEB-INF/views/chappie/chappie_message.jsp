@@ -183,7 +183,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 450px;
+		height: 430px;
 	    background-color : #F5F5F5;
 	}
 
@@ -544,32 +544,31 @@ height: 600;
 				<img src="/resources/img/chappie_button_chat.png" alt="iamgurdeeposahan">
 				CHAPPIE
 			</div>
+			
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
-<!-- 					<button class="chat-header-button" data-toggle="dropdown" -->
-<!-- 						type="button" aria-expanded="false"> -->
-<!-- 						<i class="glyphicon glyphicon-cog"></i> -->
-<!-- 					</button> -->
-<!-- 					<ul role="menu" class="dropdown-menu pull-right"> -->
-<!-- 						<li><a href="#">Media</a></li> -->
-<!-- 						<li><a href="#">Block</a></li> -->
-<!-- 						<li><a href="#">Clear Chat</a></li> -->
-<!-- 						<li><a href="#">Email Chat</a></li> -->
-<!-- 					</ul> -->
+
 				</div>
 
 				<button data-widget="remove" id="removeClass"
 					class="chat-header-button pull-right" type="button">
 					<i class="glyphicon glyphicon-remove-circle"></i>
 				</button>
+				
+
 			</div>
 		</div>
 		<div class="popup-messages">
 <!-- 			<iframe width="400" height="530" -->
 <!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 			</iframe> -->			
+<!-- 			</iframe> -->
+
+		<div style="positon:fixed; bottom:5px; right: 5px;">	
+			<a href="#responseScroll">		
+			<i class="fa fa-chevron-up "></i></a>	
+			</div>			
+			
 			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
-			  		
                     <ul class="chat" id="response">
                     	<c:forEach items="${chappieVO }" var="chappieVO">
 	                    	<li class="right clearfix"><span class="chat-img pull-right" >
@@ -588,21 +587,25 @@ height: 600;
 		                    		<img src="${chappieVO.bot_img }" style="cursor: pointer;" onclick="doImgPop('${chappieVO.bot_img}')"></img>
 		                    		<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
 		                    	</c:otherwise>
-		                    	
+		                    
 	                    	</c:choose>
                     	</c:forEach>
                     </ul>
+
 <!--                <input id="input" type="text" class="input_id">		  -->
 <!--          		   <button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button> -->
            	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
            	   </span>
-               
+    
                 </div>
    </div>
 		<div class="popup-messages-footer">
+		
+		
 			<input id="input" type="text" class="input_id">	
 <!-- 			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea> -->
 			<div class="btn-footer">
+
 			<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
 <!-- 			<button class="bg_none"><i class="glyphicon glyphicon-film"></i> </button> -->
 <!-- 			<button class="bg_none"><i class="glyphicon glyphicon-camera"></i> </button> -->
@@ -630,5 +633,7 @@ height: 600;
 		})
 	</script>
 	
+	
+
 </body>	
 </html>	

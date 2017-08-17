@@ -81,70 +81,29 @@
 	rel="stylesheet">
 
 
-<script>
+<!-- <script type="text/javascript"> -->
+
+// function boardWriteCheck() {
+//     var form = document.boardWriteForm;
+//     // 제목이 입력이 안되어 있다면
+//     if (form.board_title.value == '') {
+//         alert('제목을 입력하세요.');
+//         // 제목 INPUT BOX 커서가 이동
+//         form.board_title.focus();
+//         return false;
+//     }
+//     if (form.board_contents.value == '') {
+//         alert('내용을 입력하세요');
+//         form.board_contents.focus();
+//         return false;
+//     }
+//     return true;
+// }
 
 
-function check_onclick(){
-	theForm=document.frm1;
-	if(theForm.board_title.value=="" || theForm.board_contents.value==""){
-		alert("공백이양");
-	}else{
-		alert("필수 입력란을 모두 입력하셨습니다.");
-		location.replace("${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}");	
-		}
-}
 
+<!-- </script> -->
 
-
-// //삭제유무
-
-// function deleteBoard(val){
-// //  		  alert("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
-// //  		  alert("alert");
-//  		  swal({
-//  			  title: "Are you sure?",
-//  			  text: "",
-//  			  type: "warning",
-//  			  showCancelButton: true,
-//  			  confirmButtonColor: "#DD6B55",
-//  			  confirmButtonText: "Yes, delete it!",
-//  			  cancelButtonText: "No, cancel plx!",
-//  			  closeOnConfirm: false,
-//  			  closeOnCancel: false
-//  			},
- 			
- 			
-//  			function(isConfirm){
-//  				if (isConfirm==true) {
-//  			    swal("Success!", "", "success");
-//  			    setTimeout( function() {
-// 				  location.replace("${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/"+val);
-				  
-<%-- 				                  <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}"> --%>
-// 				  <!--                	   <input type="submit" value="Delete" class="btn btn-danger"> -->
-<%-- 				                 	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 				  					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
- 			    
-//  			    }, 500);
-//  			  } else {
-//  			    swal("Cancelled!", "", "error");
-//  			  }
-//  			});
- 		  
-// //  	     var isDelete = confirm("삭제하시겠습니까?");
- 	     
- 	     
- 	     
-// //  	     if(isDelete){
-// //  	    	 document.form.submit();
-// //  	     }else{
-// //  	    	 return false;
-// //  	     }
- 	     
-//  	  }
- 	  
- 	  
-</script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed"
 	data-spy="scroll" data-target="#scrollspy" style="height: auto;">
@@ -188,9 +147,10 @@ function check_onclick(){
 
 			<section class="container">
 				<form
-					name = "frm1"
-<%-- 					action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}" --%>
-					method="post">0
+					action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}"
+					method="post"
+					name = "boardWriteForm"
+>
 					<table class="table">
 						<thead>
 							<h3>글 작성</h3>
@@ -221,9 +181,7 @@ function check_onclick(){
 								<input type="hidden" value=${login.user_id } name="user_id">
 								<div>
 									<td colspan="2"><input type="submit" value="Write"
-									
-<%-- 									onclick="deleteBoard(${boardVO.board_no})" --%>
-										class="btn btn-default" style="float: left" onclick="check_onclick()"> 
+										onclick= "boardWriteCheck();" class="btn btn-default" style="float: left" name="board_write_button"> 
 										<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}"
 										class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
 								</div>
