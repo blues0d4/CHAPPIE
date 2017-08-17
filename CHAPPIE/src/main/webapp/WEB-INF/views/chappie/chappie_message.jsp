@@ -546,16 +546,16 @@ height: 600;
 			</div>
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
-					<button class="chat-header-button" data-toggle="dropdown"
-						type="button" aria-expanded="false">
-						<i class="glyphicon glyphicon-cog"></i>
-					</button>
-					<ul role="menu" class="dropdown-menu pull-right">
-						<li><a href="#">Media</a></li>
-						<li><a href="#">Block</a></li>
-						<li><a href="#">Clear Chat</a></li>
-						<li><a href="#">Email Chat</a></li>
-					</ul>
+<!-- 					<button class="chat-header-button" data-toggle="dropdown" -->
+<!-- 						type="button" aria-expanded="false"> -->
+<!-- 						<i class="glyphicon glyphicon-cog"></i> -->
+<!-- 					</button> -->
+<!-- 					<ul role="menu" class="dropdown-menu pull-right"> -->
+<!-- 						<li><a href="#">Media</a></li> -->
+<!-- 						<li><a href="#">Block</a></li> -->
+<!-- 						<li><a href="#">Clear Chat</a></li> -->
+<!-- 						<li><a href="#">Email Chat</a></li> -->
+<!-- 					</ul> -->
 				</div>
 
 				<button data-widget="remove" id="removeClass"
