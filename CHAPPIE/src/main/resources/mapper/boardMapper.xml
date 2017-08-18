@@ -7,14 +7,14 @@
 
 	<insert id="boardWrite" parameterType="kr.co.syteam.domain.board.dto.BoardDTO">
 		<![CDATA[
-			INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE)
-			VALUES (#{category_id}, #{board_title}, #{board_contents}, #{user_id}, now(), now())
+			INSERT INTO BOARD_TABLE(CATEGORY_ID, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_NOTICE)
+			VALUES (#{category_id}, #{board_title}, #{board_contents}, #{user_id}, now(), now(), #{board_notice})
 		]]>
 	</insert>
 	
 	<select id="boardList" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT
+			SELECT BOARD_NO, BOARD_TITLE, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT, BOARD_NOTICE 
 			FROM BOARD_TABLE 
 			ORDER BY BOARD_NO DESC 
 		]]> 
@@ -22,7 +22,7 @@
 
 	<select id="boardView" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_HITCOUNT
+			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_HITCOUNT, BOARD_NOTICE
 			FROM BOARD_TABLE
 			WHERE BOARD_NO = #{board_no}
 		]]>
@@ -38,7 +38,7 @@
 	
 	<select id="boardCategoryListView" resultType="kr.co.syteam.domain.board.vo.BoardVO">
 		<![CDATA[
-			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT, 
+			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_MODIFY_DATE, BOARD_HITCOUNT, BOARD_NOTICE, 
 	 			DATE_FORMAT(BOARD_WRITE_DATE, '%Y') AS BOARD_WRITE_DATE_YYYY, DATE_FORMAT(BOARD_WRITE_DATE, '%m') AS BOARD_WRITE_DATE_MON, 
 	 			DATE_FORMAT(BOARD_WRITE_DATE, '%d') AS BOARD_WRITE_DATE_DD, 
                 CASE DATE_FORMAT(BOARD_WRITE_DATE, '%w')
@@ -74,7 +74,8 @@
 			SET 
 				BOARD_TITLE = #{board_title}, 
 				BOARD_CONTENTS = #{board_contents}, 
-				BOARD_MODIFY_DATE = NOW() 
+				BOARD_MODIFY_DATE = NOW(),
+				BOARD_NOTICE = #{board_notice}  
 				WHERE BOARD_NO = #{board_no}
 					AND USER_ID = #{user_id}
 		]]>

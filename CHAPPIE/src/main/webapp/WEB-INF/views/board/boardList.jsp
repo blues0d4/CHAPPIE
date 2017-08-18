@@ -16,8 +16,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/dist/sweetalert.css">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-  
+
   
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -45,15 +44,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/resources/dist/css/skins/_all-skins.min.css">
-<!--   <!-- iCheck --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/iCheck/flat/blue.css"> -->
-<!--   <!-- Morris chart --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/morris/morris.css"> -->
-<!--   <!-- jvectormap --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
-<!--   <!-- Date Picker --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/datepicker/datepicker3.css"> -->
-<!--   <!-- Daterange picker --> -->
   <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
@@ -198,58 +188,58 @@ function commentWrite(val){
       <h1> <b>#${category.category_name }</b>
 <!--         <small>Control panel</small> -->
       </h1>
-	
+      <a class="btn btn-primary btn-xs pull-right" style="margin-right:15px;" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
     </div>
-    <div class="fixedbutton">
-		<a class="btn btn-primary btn-xs pull-right" style="margin-right:15px;" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-	</div>
     </section>
 
     <!-- Main content -->
     <section class="content">
     
-		<ul class="timeline">
+	<ul class="timeline">
 
     <!-- timeline time label -->
-    <li class="time-label">
-        <span class="bg-red">
-            2017년 2월 20일 월요일
-        </span>
-    </li>
-    <!-- /.timeline-label -->
-
-    <!-- timeline item -->
-    <li>
-        <!-- timeline icon -->
-        <i class="fa fa-envelope bg-blue"></i>
-        <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
-
-            <h3 class="timeline-header"><a href="#">SY_Team</a>			 #${category.category_name}게시판 공지입니다.</h3>
-
-            <div class="timeline-body" >
-                	<b>#${category.category_name}</b> 게시판 공지입니다.
-            </div>
-
-            <div class="timeline-footer">
-                <a class="btn btn-primary btn-xs">Read more</a>
-            </div>
-        </div>
-    </li>
+    <c:forEach items="${boardList }" var="boardVO" varStatus="status">
+    	<c:choose>
+    		<c:when test="${boardList[status.index].board_notice eq 'y' }">
+    		<li class="time-label">
+		        <span class="bg-red">
+		           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+		        </span>
+		    </li>
+			    <!-- timeline item -->
+			    <li>
+			        <!-- timeline icon -->
+			        <i class="fa fa-exclamation-circle bg-red"></i>
+			        <div class="timeline-item" style="background-color: #FFF9AA">
+			         <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
+			            <h3 class="timeline-header"><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }</h3>
+			            <div class="timeline-body" >
+			                	${boardVO.board_contents }
+			            </div>
+			
+			        </div>
+			    </li>
+			</c:when>
+	    </c:choose>
+    </c:forEach>
+    </ul>
+    
+    </br>
+    
+    <ul class="timeline">
  <!-- timeline time label -->
- 				<c:forEach items="${boardList }" var="boardVO" varStatus="status">
- 				
- 				<c:choose>
- 				
-                <c:when test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
+	<c:forEach items="${boardList }" var="boardVO" varStatus="status">
+	
+	<c:choose>
+            <c:when test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
 		
-    <li class="time-label">
-        <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
-        </span>
-    </li>
-				</c:when>
- 				</c:choose>
+		    <li class="time-label">
+		        <span class="bg-red">
+		           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
+		        </span>
+		    </li>
+			</c:when>
+	</c:choose>
 				
     <!-- /.timeline-label -->
 
@@ -262,7 +252,6 @@ function commentWrite(val){
 
             <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
 	
-	
 	<!-- 줄바꿈 -->
             <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
             text-overflow:ellipsis;  margin:10px;" >
@@ -273,66 +262,42 @@ function commentWrite(val){
 
             <div class="timeline-footer">
             <div class="form-inline">
-<!--             <div style="width: 500px"> -->
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }" onclick="commentList(${boardVO.board_no})">${boardVO.comment_count } Comments</button>
 
-<%--                 <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a>  --%>
-<%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </button> -->
 				<c:if test="${login.user_id eq boardVO.user_id}">
-				<button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}">Modify</a>
-                </button>
-<%-- 				 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}"> --%>
-<!--                	   <input type="submit" value="Modify" class="btn btn-danger"> -->
-<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </form> -->
-                   <button type = "button" class="btn btn-danger" style="margin-right:10px" onclick="deleteBoard(${boardVO.board_no})" >Delete</button>
-                
-<%--                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}"> --%>
-<!--                	   <input type="submit" value="Delete" class="btn btn-danger"> -->
-<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </form> -->
-               
+					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}" class="btn btn-danger">Modify</a>
+                    <button type = "button" class="btn btn-danger" style="margin-right:10px" onclick="deleteBoard(${boardVO.board_no})" >Delete</button>
 				</c:if>
-<!--                 </div> -->
             </div>
                 
-                <div id="demo${status.index }" class="collapse">
-<!-- 	   				  <form> -->
-    <div class="form-group">
-<%--     <c:forEach items="${boardCommentList }" var="boardCommentVO" varStatus="status"> --%>
- 				
-<%--     	${boardCommentVO.comment_contents} --%>
-<%--     	</c:forEach> --%>
- 
-    <div id="commentList${boardVO.board_no }"></div>
-      <c:if test="${login.user_id != null}">    
-      <label for="comment">Comment:</label>
-      
-      <form name="commentForm${boardVO.board_no}" action="post">
-      <input type="hidden" value="${login.user_name}" name = "user_name"/>
-      <input type="hidden" value=${boardVO.board_no } name = "board_no" />
-	  <input type="hidden" value=${login.user_id } name = "user_id" />
-      <textarea id= "commentText${boardVO.board_no }"class="form-control" rows="2" cols="80" name ="comment_contents"></textarea>
-<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
-        <br>
-      </form>
-        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
-<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
-        
-        </c:if>
-      
-    </div>
+            <div id="demo${status.index }" class="collapse">
+				    <div class="form-group">
+				 
+				    <div id="commentList${boardVO.board_no }"></div>
+				      <c:if test="${login.user_id != null}">    
+				      <label for="comment">Comment:</label>
+				      
+				      <form name="commentForm${boardVO.board_no}" action="post">
+				      <input type="hidden" value="${login.user_name}" name = "user_name"/>
+				      <input type="hidden" value=${boardVO.board_no } name = "board_no" />
+					  <input type="hidden" value=${login.user_id } name = "user_id" />
+				      <textarea id= "commentText${boardVO.board_no }"class="form-control" rows="2" cols="80" name ="comment_contents"></textarea>
+				<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
+				        <br>
+				      </form>
+				        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+				<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
+				        
+				        </c:if>
+				      
+				    </div>
 <!--   </form> -->
 	  			</div>
 	  			
             </div>
         </div>
     </li>
-				</c:forEach>
+	</c:forEach>
 
     
     <!-- END timeline item -->

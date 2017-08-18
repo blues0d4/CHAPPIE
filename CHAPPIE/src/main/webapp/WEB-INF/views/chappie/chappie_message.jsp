@@ -1,4 +1,3 @@
-<%@page import="kr.co.syteam.commons.URIs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,7 +17,6 @@
 		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
 		
-		
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
 				if (event.which == 13) {
@@ -34,7 +32,6 @@
 				return;
 			}
 			
-
 			$.ajax({
 				type: "POST",
 				url: baseUrl + "query?v=20150910",
@@ -90,25 +87,24 @@
 						}
 					});	
 				}
-				
+				$(document).ready(function(){
+					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+				})
 		}
-		$(document).ready(function(){
-			
-		})
+		
 
 		function setResponse(val) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+val+"</p></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+			
 		}
 		
 
 		function setResponseImg(val, data) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
-			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
+			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><p>"+data+"</p><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
 		
 		function doImgPop(img){ 
@@ -185,7 +181,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 450px;
+		height: 400px;
 	    background-color : #F5F5F5;
 	}
 
@@ -546,32 +542,31 @@ height: 600;
 				<img src="/resources/img/chappie_button_chat.png" alt="iamgurdeeposahan">
 				CHAPPIE
 			</div>
+			
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
-					<button class="chat-header-button" data-toggle="dropdown"
-						type="button" aria-expanded="false">
-						<i class="glyphicon glyphicon-cog"></i>
-					</button>
-					<ul role="menu" class="dropdown-menu pull-right">
-						<li><a href="#">Media</a></li>
-						<li><a href="#">Block</a></li>
-						<li><a href="#">Clear Chat</a></li>
-						<li><a href="#">Email Chat</a></li>
-					</ul>
+
 				</div>
 
 				<button data-widget="remove" id="removeClass"
 					class="chat-header-button pull-right" type="button">
 					<i class="glyphicon glyphicon-remove-circle"></i>
 				</button>
+				
+
 			</div>
 		</div>
 		<div class="popup-messages">
 <!-- 			<iframe width="400" height="530" -->
 <!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 			</iframe> -->			
+<!-- 			</iframe> -->
+
+		<div style="positon:fixed; bottom:5px; right: 5px;">	
+			<a href="#responseScroll">		
+			<i class="fa fa-chevron-up "></i></a>	
+			</div>			
+			
 			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
-			  		
                     <ul class="chat" id="response">
                     	<c:forEach items="${chappieVO }" var="chappieVO">
 	                    	<li class="right clearfix"><span class="chat-img pull-right" >
@@ -593,16 +588,18 @@ height: 600;
 	                    	</c:choose>
                     	</c:forEach>
                     </ul>
-<!--                <input id="input" type="text" class="input_id">		  -->
-<!--          		   <button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button> -->
-	           	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
-	           	   </span>
-             	</div>
-  		 </div>
+           	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+           	   </span>
+    
+                </div>
+   </div>
 		<div class="popup-messages-footer">
+		
+		
 			<input id="input" type="text" class="input_id">	
 			<div class="btn-footer">
-				<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
+
+			<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
 			</div>
 		</div>
 	</div>

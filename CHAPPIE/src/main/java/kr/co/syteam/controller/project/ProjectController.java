@@ -94,10 +94,10 @@ public class ProjectController {
 		CategorySelectDTO selectDTO = new CategorySelectDTO();
 		selectDTO.setUser_id(user_id);
 		selectDTO.setProject_id(project_id);
-		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
-		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
+//		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
+//		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
 		
-		model.addAttribute("category_choice", boardVO);
+//		model.addAttribute("category_choice", boardVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
@@ -255,11 +255,11 @@ public class ProjectController {
 	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
 	@ResponseBody
 	public int categoryDelete(@PathVariable("project_id")String project_id, 
-			@PathVariable("category_id")String category_id) throws Exception{
-
-		System.out.println("category_id : " + category_id);
+			@PathVariable("category_id")String category_id, HttpServletRequest request) throws Exception{
+		
 		int result = projectService.categoryDeleteService(category_id);
-		System.out.println(result);
+		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
+		request.getSession().setAttribute("categoryList", categoryList);
 		return result;
 	}
 	

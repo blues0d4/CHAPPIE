@@ -110,6 +110,25 @@
 			</thead>
 				<tbody>
 					<tr>
+						<th>종류 : </th>
+						<td>
+							<c:choose>
+								<c:when test="${boardVO.board_notice eq 'y' }">
+									<select name="board_notice">
+										<option value="y" selected="selected">공지</option>
+										<option value="n" >일반</option>
+									</select> 
+								</c:when>
+								<c:otherwise>
+									<select name="board_notice">
+										<option value="y">공지</option>
+										<option value="n" selected="selected">일반</option>
+									</select> 
+								</c:otherwise>
+							</c:choose>
+						</td>
+					</tr>
+					<tr>
 						<th>제목:</th>
 						<td><input type="text" placeholder="제목을 입력하세요. "
 							name="board_title" class="form-control" value="${boardVO.board_title }" /></td>
@@ -123,17 +142,14 @@
 						</td>
 					</tr>
 					<tr>
-<%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
-					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind">
-					<input type="hidden" value=${login.user_id } name = "user_id">
-					<input type="hidden" value=${boardVO.board_no } name = "board_no">
-					<div>
 						<td colspan="2"><input type="submit" value="Write" class="btn btn-default" style="float: left">
 			<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}" class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
-					</div>
 					</tr>
 				</tbody>
 			</table>
+			<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind">
+			<input type="hidden" value=${login.user_id } name = "user_id">
+			<input type="hidden" value=${boardVO.board_no } name = "board_no">
 		</form>
 	</section>
 </div>	

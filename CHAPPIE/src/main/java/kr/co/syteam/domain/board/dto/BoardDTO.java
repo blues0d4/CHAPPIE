@@ -5,6 +5,15 @@ public class BoardDTO {
 	private String board_title;
 	private String board_contents;
 	private String board_no;
+	private String board_notice;
+	public String getBoard_notice() {
+		return board_notice;
+	}
+
+	public void setBoard_notice(String board_notice) {
+		this.board_notice = board_notice;
+	}
+
 	public String getBoard_no() {
 		return board_no;
 	}

@@ -16,6 +16,13 @@ public class BoardVO {
 	private String board_write_date_dd;
 	private String board_write_date_day;
 	private String comment_count;
+	private String board_notice;
+	public String getBoard_notice() {
+		return board_notice;
+	}
+	public void setBoard_notice(String board_notice) {
+		this.board_notice = board_notice;
+	}
 	public String getCategory_id() {
 		return category_id;
 	}
@@ -116,7 +123,17 @@ public class BoardVO {
 				+ ", board_hitcount=" + board_hitcount + ", board_write_date_yyyymmdd=" + board_write_date_yyyymmdd
 				+ ", board_write_date_yyyy=" + board_write_date_yyyy + ", board_write_date_mon=" + board_write_date_mon
 				+ ", board_write_date_dd=" + board_write_date_dd + ", board_write_date_day=" + board_write_date_day
-				+ "]";
+				+ ", comment_count=" + comment_count + ", board_notice=" + board_notice + ", getBoard_notice()="
+				+ getBoard_notice() + ", getCategory_id()=" + getCategory_id() + ", getCategory_name()="
+				+ getCategory_name() + ", getBoard_title()=" + getBoard_title() + ", getBoard_no()=" + getBoard_no()
+				+ ", getBoard_contents()=" + getBoard_contents() + ", getUser_id()=" + getUser_id()
+				+ ", getBoard_write_date()=" + getBoard_write_date() + ", getBoard_modify_date()="
+				+ getBoard_modify_date() + ", getBoard_hitcount()=" + getBoard_hitcount()
+				+ ", getBoard_write_date_yyyymmdd()=" + getBoard_write_date_yyyymmdd() + ", getBoard_write_date_yyyy()="
+				+ getBoard_write_date_yyyy() + ", getBoard_write_date_mon()=" + getBoard_write_date_mon()
+				+ ", getBoard_write_date_dd()=" + getBoard_write_date_dd() + ", getBoard_write_date_day()="
+				+ getBoard_write_date_day() + ", getComment_count()=" + getComment_count() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
 	
