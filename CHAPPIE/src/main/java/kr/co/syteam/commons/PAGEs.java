@@ -2,7 +2,7 @@ package kr.co.syteam.commons;
 
 public class PAGEs {
 	
-	private static final String default_path = "/WEB-INF/views/";
+	private static final String default_path = "/WEB-INF/views";
 	private static final String nav_path = default_path + "/nav";
 	private static final String aside_path = default_path + "/aside";
 	private static final String error_path = default_path + "/error";
@@ -27,5 +27,6 @@ public class PAGEs {
 	public static final String VIEW_FOOTER_PROJECT = footer_path + "/footerProject.jsp";
 	
 	public static final String VIEW_CHAPPIE = chappie_path + "/chappie_message.jsp";
+	public static final String VIEW_CHAPPIE_TEST = chappie_path + "/chappie_message2.jsp";
 	public static final String VIEW_MAIN_INTRODUCE = main_introduce_path + "/chappie_introduce.jsp";
 }
