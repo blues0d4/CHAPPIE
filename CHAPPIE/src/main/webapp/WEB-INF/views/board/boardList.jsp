@@ -16,8 +16,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/dist/sweetalert.css">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-  
+
   
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

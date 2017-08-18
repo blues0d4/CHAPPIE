@@ -81,6 +81,29 @@
 	rel="stylesheet">
 
 
+<!-- <script type="text/javascript"> -->
+
+// function boardWriteCheck() {
+//     var form = document.boardWriteForm;
+//     // 제목이 입력이 안되어 있다면
+//     if (form.board_title.value == '') {
+//         alert('제목을 입력하세요.');
+//         // 제목 INPUT BOX 커서가 이동
+//         form.board_title.focus();
+//         return false;
+//     }
+//     if (form.board_contents.value == '') {
+//         alert('내용을 입력하세요');
+//         form.board_contents.focus();
+//         return false;
+//     }
+//     return true;
+// }
+
+
+
+<!-- </script> -->
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed"
 	data-spy="scroll" data-target="#scrollspy" style="height: auto;">
@@ -125,7 +148,9 @@
 			<section class="container">
 				<form
 					action="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.BOARD_DEFAULT }/${category.category_id}${URIs.URI_BOARD_WRITE_DEFAULT}"
-					method="post">
+					method="post"
+					name = "boardWriteForm"
+>
 					<table class="table">
 						<thead>
 							<h3>글 작성</h3>
@@ -157,8 +182,8 @@
 							
 							<tr> 
 									<td colspan="2"><input type="submit" value="Write"
-										class="btn btn-default" style="float: left"> <a
-										href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}"
+										onclick= "boardWriteCheck();" class="btn btn-default" style="float: left" name="board_write_button"> 
+										<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}"
 										class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
 							</tr>
 						</tbody>
