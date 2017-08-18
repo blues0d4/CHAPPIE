@@ -212,7 +212,7 @@ function commentWrite(val){
 			        <i class="fa fa-exclamation-circle bg-red"></i>
 			        <div class="timeline-item" style="background-color: #FFF9AA">
 			         <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
-			            <h3 class="timeline-header"><a href="#">${boardVO.user_id }</a>${boardVO.board_title }</h3>
+			            <h3 class="timeline-header"><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }</h3>
 			            <div class="timeline-body" >
 			                	${boardVO.board_contents }
 			            </div>

@@ -181,11 +181,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-<<<<<<< HEAD
 		height: 400px;
-=======
-		height: 430px;
->>>>>>> branch 'mergeTest' of https://github.com/blues0d4/CHAPPIE.git
 	    background-color : #F5F5F5;
 	}
 
