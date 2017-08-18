@@ -1,4 +1,3 @@
-<%@page import="kr.co.syteam.commons.URIs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,7 +17,6 @@
 		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
 		
-		
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
 				if (event.which == 13) {
@@ -34,7 +32,6 @@
 				return;
 			}
 			
-
 			$.ajax({
 				type: "POST",
 				url: baseUrl + "query?v=20150910",
@@ -90,25 +87,24 @@
 						}
 					});	
 				}
-				
+				$(document).ready(function(){
+					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+				})
 		}
-		$(document).ready(function(){
-			
-		})
+		
 
 		function setResponse(val) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+val+"</p></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
+			
 		}
 		
 
 		function setResponseImg(val, data) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
-			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
+			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><p>"+data+"</p><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"></div></li>");
 			document.getElementById('input').value = "";
-			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
 		
 		function doImgPop(img){ 

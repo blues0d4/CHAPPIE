@@ -132,37 +132,40 @@
 						</thead>
 						<tbody>
 							<tr>
+								<th>종류 : </th>
+								<td>
+									<select name="board_notice">
+										<option value="y">공지</option>
+										<option value="n" selected="selected">일반</option>
+									</select> 
+								</td>
+							</tr>
+							<tr>
 								<th>제목:</th>
 								<td><input type="text" placeholder="제목을 입력하세요. "
 									name="board_title" class="form-control" /></td>
 							</tr>
-							<!-- 					<div id="summernote">Hello Summernote</div> -->
-
 							<tr>
 								<th>내용:</th>
 								<td>
-									<!-- 						<div style="width:auto; overflow:hidden; white-space:normal; word-break:normal; -->
-									<!--             text-overflow:ellipsis;  margin:10px;"> --> <!-- 줄바꿈 -->
 									<textarea id="summernote" cols="100" placeholder="내용을 입력하세요."
 										name="board_contents" class="form-control"
 										style="width: 1070; word-break: normal;">
-						</textarea>
+									</textarea>
 								</td>
 							</tr>
-							<tr>
-								<%-- 					<input type="hidden" value=<%=request.getParameter("board_kind") %> name = "board_kind"> --%>
-								<input type="hidden" value=${category.category_id }
-									name="category_id">
-								<input type="hidden" value=${login.user_id } name="user_id">
-								<div>
+							
+							<tr> 
 									<td colspan="2"><input type="submit" value="Write"
 										class="btn btn-default" style="float: left"> <a
 										href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}"
 										class="btn btn-default" style="float: right">글 목록으로 가기</a></td>
-								</div>
 							</tr>
 						</tbody>
 					</table>
+					<input type="hidden" value=${category.category_id }
+									name="category_id">
+					<input type="hidden" value=${login.user_id } name="user_id">
 				</form>
 			</section>
 		</div>

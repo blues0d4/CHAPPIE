@@ -94,10 +94,10 @@ public class ProjectController {
 		CategorySelectDTO selectDTO = new CategorySelectDTO();
 		selectDTO.setUser_id(user_id);
 		selectDTO.setProject_id(project_id);
-		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
-		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
+//		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
+//		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
 		
-		model.addAttribute("category_choice", boardVO);
+//		model.addAttribute("category_choice", boardVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
