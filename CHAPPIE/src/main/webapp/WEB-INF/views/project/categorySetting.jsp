@@ -54,14 +54,14 @@
    <div class="row">
   	 <div class="col-md-8">
    		<div class="box box-primary">
-            <form role="form" method="post" action="/project/${project.project_id }/categoryMemberModify?category_id=<%=request.getParameter("category_id") %>">
+            <form role="form" id="submitTest" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label>멤버 변경</label>
                   <div class="checkbox">
                    	    <c:forEach var="categoryMember" items="${cmList }">
 			                      <label>
-			                      <input type="checkbox" name="member_nickname" value="${categoryMember }" checked>
+			                      <input type="checkbox"  name="member_nickname" value="${categoryMember }" checked>
 			                      	${categoryMember }
 			                      </label>
 		                </c:forEach>
@@ -77,7 +77,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">변경</button>
+                <input type="submit" class="btn btn-primary" value="변경">
               </div>
             </form>
           </div>
@@ -100,7 +100,7 @@
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript">
+<script>
 function categoryDelete(val)
 {   
    var allData = { "category_id": val };
@@ -108,16 +108,38 @@ function categoryDelete(val)
       url: "/project/${project.project_id }/categoryDelete/<%= request.getParameter("category_id") %>",
       data: allData,
       type: "get",
-      dataType:"String",
       success:function(result){
-    	  window.close('','_self').close();
+    	  CloseWindow();
       }      
    });   
+}
+
+<%-- $(document).ready(function(){
+	$('#submitTest').submit(function(){
+		var allData = $(this).serialize();
+		alert("dfdf");
+		$.ajax({
+		      url: "/project/${project.project_id }/categoryMemberModify/<%= request.getParameter("category_id") %>",
+		      data: allData,
+		      type: "get",
+		      success:function(result){
+		    	  CloseWindow();
+		      }      
+		   }); 
+		return true;
+	});
+}); --%>
+
+function CloseWindow(){
+	opener.parent.location.reload();
+	self.opener = self;
+	window.close();
 }
 </script>
 
 <!-- jQuery 2.2.3 -->
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -135,23 +157,11 @@ function categoryDelete(val)
 <script src="/resources/plugins/knob/jquery.knob.js"></script>
 <!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/resources/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/resources/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
-<!-- SlimScroll 1.3.0 -->
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    <script src="/resources/documentation/docs.js"></script>
 </body>
 </html>

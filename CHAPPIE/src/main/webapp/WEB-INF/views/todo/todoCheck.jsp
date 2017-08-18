@@ -331,12 +331,17 @@
 	  });
   
   $(document).ready(function(){
+	  $("#datepicker").change(function(){
+		  if($("#datepicker2").val() != ""){
+			  if($("#datepicker").val() > $("#datepicker2").val()){
+				  $("#datepicker").val("");
+			  }
+		  }
+	  })
 	  $("#datepicker2").change(function(){
 		  if($("#datepicker").val() > $("#datepicker2").val()){
 			  $("#datepicker2").val("");
-			  alert("종료일자 맞춰주세요");
 		  }
-		  
 	  })
   })
 

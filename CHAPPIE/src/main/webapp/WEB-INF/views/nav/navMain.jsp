@@ -47,7 +47,7 @@
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#"><span class ="glyphicon glyphicon-user">${ login.user_name }</span><span class="caret "></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="${URIs.URI_USER_MODIFY_FORM}">회원 정보 수정</a></li>
+							<li><a href="${URIs.URI_USER_MODIFY_CONFIRM_FORM}">회원 정보 수정</a></li>
 							<li><a href="${URIs.URI_USER_LOGOUT }">로그아웃</a></li>
 						</ul>
 					</li>

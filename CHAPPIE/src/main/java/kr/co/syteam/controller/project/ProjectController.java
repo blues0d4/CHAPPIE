@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.syteam.commons.URIs;
+import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.chappie.vo.ChappieVO;
+import kr.co.syteam.domain.project.dto.CategorySelectDTO;
 import kr.co.syteam.domain.project.dto.ProjectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
@@ -76,7 +78,6 @@ public class ProjectController {
 //		System.out.println(projectVO);
 		
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
-		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
 		
@@ -89,6 +90,14 @@ public class ProjectController {
 		
 		List<ChappieVO> chappieVO = chappieService.selectChappieService(user_id);
 		model.addAttribute("chappieVO", chappieVO);
+		
+		CategorySelectDTO selectDTO = new CategorySelectDTO();
+		selectDTO.setUser_id(user_id);
+		selectDTO.setProject_id(project_id);
+		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
+		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
+		
+		model.addAttribute("category_choice", boardVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
 	}
@@ -199,13 +208,16 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/project/{project_id}/project_member_delete")
-	public String projectMemberDelete(@PathVariable("project_id")String project_id, ProjectDTO projectDTO) throws Exception{
+	public String projectMemberDelete(@PathVariable("project_id")String project_id, ProjectDTO projectDTO, HttpServletRequest request) throws Exception{
 		logger.info("project_delete");
 		projectDTO.setProject_id(project_id);
 		
 		System.out.println(projectDTO.toString());
 		projectService.projectMemberDeleteService(projectDTO);
 				
+		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
+		request.getSession().setAttribute("categoryList", categoryList);
+		
 		return "redirect:/project/{project_id}/project_setting";
 	}
 	@RequestMapping(value="/project/{project_id}/category_setting")
@@ -229,15 +241,15 @@ public class ProjectController {
 		return "/project/categorySetting";
 	}
 	
-	@RequestMapping(value= "/project/{project_id}/categoryMemberModify")
-	public String categoryMemberModify(HttpServletRequest request, String category_id) throws Exception{
-		
+	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
+	@ResponseBody
+	public int categoryMemberModify(HttpServletRequest request, String category_id, Model model) throws Exception{
+		System.out.println("djf");
 		String[] value = request.getParameterValues("member_nickname");
 		
 		projectService.categoryMemberModify(value, category_id);
 		
-		
-		return "redirect:/project/{project_id}/category_setting";
+		return 1;
 	}
 	
 	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")

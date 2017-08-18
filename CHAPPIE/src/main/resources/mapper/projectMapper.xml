@@ -172,4 +172,32 @@
 			SELECT COUNT(*) FROM MEMBER_TABLE WHERE PROJECT_ID=#{project_id} AND USER_ID=#{user_id} AND MEMBER_RANK='Y'
 		]]>
 	</select>
+	
+	<update id="updateCategoryChoice" parameterType="kr.co.syteam.domain.project.dto.CategorySelectDTO">
+		<![CDATA[
+			UPDATE MEMBER_TABLE
+			SET
+			CATEGORY_CHOICE = #{category_id}
+			WHERE USER_ID = #{user_id} AND
+			PROJECT_ID= #{project_id}
+		]]>
+	</update>
+	<select id="selectCategoryChoice" parameterType="kr.co.syteam.domain.project.dto.CategorySelectDTO" resultType="String">
+		<![CDATA[
+			SELECT CATEGORY_CHOICE
+			FROM MEMBER_TABLE
+			WHERE USER_ID = #{user_id} AND
+			PROJECT_ID= #{project_id}
+		]]>
+	</select>
+	
+	<select id="selectBoardNotice" resultType="kr.co.syteam.domain.board.vo.BoardVO">
+		<![CDATA[
+			SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENTS, USER_ID, BOARD_WRITE_DATE, BOARD_HITCOUNT
+			FROM BOARD_TABLE
+			WHERE BOARD_NOTICE='Y' AND CATEGORY_ID=#{category_id};
+		]]>
+	</select>
+	
+	
 </mapper>

@@ -23,6 +23,7 @@ import kr.co.syteam.domain.category.dto.CategoryDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.chappie.vo.ChappieVO;
 import kr.co.syteam.domain.history.dto.HistoryDTO;
+import kr.co.syteam.domain.project.dto.CategorySelectDTO;
 import kr.co.syteam.domain.project.dto.ProjectSelectDTO;
 import kr.co.syteam.domain.project.vo.ProjectVO;
 import kr.co.syteam.domain.user.vo.LoginVO;
@@ -108,7 +109,13 @@ public class BoardController {
 		
 		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
 		model.addAttribute("chappieVO", chappieVO);
-
+		
+		CategorySelectDTO selectDTO = new CategorySelectDTO();
+		selectDTO.setCategory_id(category_id);
+		selectDTO.setProject_id(project_id);
+		selectDTO.setUser_id(user_id);
+		projectService.updateCategoryChoiceService(selectDTO);
+		
 		return URIs.URI_BOARD_LIST_PAGE;
 	}
 
