@@ -93,13 +93,14 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" onSubmit="return CheckForm(this)" name="frmMember">
+            <form role="form" method="post" onSubmit="return CheckForm(this)" action="${URIs.URI_PROJECT_CATEGORY_CREATE }" name="category_form" id="category_form">
+<!--             <form role="form" method="post" onclick="return CheckForm(this)" name="category_form" id="category_form"> -->
 <!--             <form role="form" method="post" action="" onSubmit="return CheckForm(this)" name="frmMember"> -->
 <%--             <form role="form" method="post" action="${URIs.URI_PROJECT_CATEGORY_CREATE }"> --%>
               <div class="box-body">
                 <div class="form-group">
                   <label>카테고리 이름</label>
-                  <input type="text" class="form-control" id="category_name" name="category_name" placeholder="카테고리 이름">
+                  <input type="text" class="form-control strCheck" id="category_name" name="category_name" placeholder="카테고리 이름">
                 </div>
               </div>
               <div class="box-body">
@@ -147,26 +148,94 @@
 </div>
 <!-- ./wrapper -->
 <script>
-$(document).ready(function(){
-    function(){
-        alert("Bye! You now leave p1!");
-    }); 
-});
-</script>
-<script>
-
+// $(document).ready(function(){
+// 	alert("ready");	
+	
+	
+// }); 
 
 function CheckForm(isChecked){
-    alert("test");
+	
+
+var str = $('.strCheck').val();
+
+// 	 alert(str);
+
+	if( str == '' || str == null ){
+	    alert( '이름을 입력해주세요' );
+	    return false;
+	}
+
+	var blank_pattern = /^\s+|\s+$/g;
+	if( str.replace( blank_pattern, '' ) == "" ){
+	    alert( '이름을 입력해주세요' );
+	    return false;
+	}
+
+	 
+
+	//공백 금지
+	var blank_pattern = /[\s]/g;
+	if( blank_pattern.test( str) == true){
+	    alert( '이름을 입력해주세요' );
+	    return false;
+	}
+
+
+	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+	if( special_pattern.test(str) == true ){
+	    alert('특수문자는 사용할 수 없습니다.');
+	    return false;
+	}
+
+// 	alert( '최종 : ' + str.value );
+
+	
+	if( str.search(/\W|\s/g) > -1 ){
+	    alert( '특수문자 또는 공백을 입력할 수 없습니다.' );
+	    str.focus();
+	    return false;
+	}
+
+
+
+//     alert("CheckForm");
     //체크박스 체크여부 확인 [하나]
-    var isChecked = $(".member_nickname").prop("checked") ;
+//     var isChecked = $(".member_nickname").prop("checked") ;
+    //체크박스 갯수 구하기
+    var checkedCount = $(".member_nickname:checked").length ;
     
-    alert(isChecked);
     
-    if(!isChecked){
-        alert('멤버를 선택해야 합니다.');
+//     alert(isChecked);
+//     alert(checkedList);
+    
+    if(checkedCount < 1){
+        alert('멤버를 1명 이상 선택해야 합니다.');
         return false;
-    } 
+    }else{
+    	$(document).ready(function() 
+    			{
+					alert("test");
+//     				$("#ReadingInfoSelectBtn").click(function()
+//     				{
+//     					var formData = $("#category_form").serialize();
+//     		 			alert(formData);
+//     					$.ajax({
+//     			 					type : "POST",
+//     			 					url : "${URIs.URI_PROJECT_CATEGORY_CREATE }",
+//     			 					cache : false,
+//     			 					data : formData,
+//     			 					success : onSuccess,
+//     			 					error : onError
+//     					});
+//     				});
+    			});
+//     			function onSuccess(json, status){alert($.trim(json));}
+//     			function onError(data, status){alert("error");
+//     			}
+//     	${URIs.URI_PROJECT_CATEGORY_CREATE };
+    }
 
 
 }
