@@ -3,7 +3,7 @@
 <%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -43,12 +43,12 @@
   <div class="login-logo">
    
     <a href="#"><b>CHAPPIE  </b>로그인</a>
-    <form role="form" method="post" action="${URIs.URI_USER_LOGIN}">
-     <form action="/action_page.php" target="_blank">
+    
      
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
+  <form role="form" method="post" action="${URIs.URI_USER_LOGIN}">
 <!-- 	<p class="login-box-msg">Sign in to start your session</p> -->
                
       <div class="form-group has-feedback">
@@ -92,10 +92,10 @@
     
     
  		</form>
-    </form>
+    </div>
   </div>
   <!-- /.login-box-body -->
-</div>
+
 <!-- /.login-box -->
 
 </section>

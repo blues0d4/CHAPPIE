@@ -10,5 +10,5 @@ public interface IUserService {
 	public String userIdCheck(String userid) throws Exception;
 	public int userModify(UserDTO userDTO) throws Exception;
 	public int userDelete(String user_id, String member_nickname) throws Exception;
-
+	public int userPwCheckService(UserDTO userDTO) throws Exception;
 }

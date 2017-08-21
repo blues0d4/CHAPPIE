@@ -80,6 +80,8 @@ public class UserController {
 
 		// return "/user/userJoin";
 		logger.info("doUserModifyForm");
+		
+		
 		return URIs.URI_USER_MODIFY_FORM_PAGE;
 	}
 
@@ -87,7 +89,7 @@ public class UserController {
 	@RequestMapping(value = URIs.URI_USER_MODIFY, method = RequestMethod.POST)
 	public String doUserModify(Model model, UserDTO userDTO) throws Exception {
 
-		int modifyResult = userService.userModify(userDTO);
+		userService.userModify(userDTO);
 
 		logger.info("doUserModify");
 		return "redirect:"+URIs.URI_MAIN;
@@ -113,6 +115,22 @@ public class UserController {
 		System.out.println(loginVO.getUser_id());
 		
 		return loginVO;
+	}
+	
+	@RequestMapping(value="/pwCheck", method=RequestMethod.GET)
+	@ResponseBody
+	public int pwCheck(String user_pw, HttpServletRequest request) throws Exception{		
+		
+		System.out.println("Join PW CHECK !!!!!!!!!!!!!!!!!");
+		LoginVO loginVO = new LoginVO();
+		UserDTO userDTO = new UserDTO();
+		loginVO = (LoginVO)request.getSession().getAttribute("login");
+		userDTO.setUser_id(loginVO.getUser_id());
+		userDTO.setUser_pw(user_pw);
+		int result=userService.userPwCheckService(userDTO);
+		System.out.println("결과 : " + result);
+		
+		return result;
 	}
 
 	@RequestMapping(value = "/userDelete")

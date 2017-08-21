@@ -14,7 +14,7 @@
 <!--   <select id="userLogin"> -->
   <select id="userLogin" parameterType="kr.co.syteam.domain.user.dto.UserDTO" resultType="kr.co.syteam.domain.user.vo.LoginVO">
  	<![CDATA[
-  		SELECT USER_ID, USER_NAME, NOW() AS logindate 
+  		SELECT USER_ID, USER_NAME, NOW() AS logindate, USER_PHONE  
  		FROM USER_TABLE 
 		WHERE USER_ID = #{user_id} AND USER_PW = #{user_pw}
  	]]>
@@ -46,6 +46,15 @@
 			WHERE USER_ID = #{user_id}
  	]]>
   </select>
+  
+  <select id="userPwCheck" parameterType="kr.co.syteam.domain.user.dto.UserDTO" resultType="int">
+  	<![CDATA[
+  		SELECT COUNT(*) AS CHECKRESULT FROM USER_TABLE 
+  		WHERE USER_ID = #{user_id} AND USER_PW = #{user_pw}
+  	]]>
+  </select>
+  
+  
   
   <update id="userModify">
  	 <![CDATA[

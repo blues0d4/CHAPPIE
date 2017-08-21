@@ -235,7 +235,7 @@ body {
 	right: 70px;
 	width: 400px;
 	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 }
 
 
@@ -561,10 +561,10 @@ height: 600;
 <!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
 <!-- 			</iframe> -->
 
-		<div style="positon:fixed; bottom:5px; right: 5px;">	
-			<a href="#responseScroll">		
-			<i class="fa fa-chevron-up "></i></a>	
-			</div>			
+<!-- 		<div style="positon:fixed; bottom:5px; right: 5px;">	 -->
+<!-- 			<a href="#responseScroll">		 -->
+<!-- 			<i class="fa fa-chevron-up "></i></a>	 -->
+<!-- 			</div>			 -->
 			
 			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
                     <ul class="chat" id="response">
@@ -592,7 +592,7 @@ height: 600;
            	   </span>
     
                 </div>
-   </div>
+  		 </div>
 		<div class="popup-messages-footer">
 		
 		

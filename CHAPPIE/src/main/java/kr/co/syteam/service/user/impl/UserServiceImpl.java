@@ -43,5 +43,10 @@ public class UserServiceImpl implements IUserService {
 		return userDAO.userDelete(user_id);
 	}
 
+	@Override
+	public int userPwCheckService(UserDTO userDTO) throws Exception {
+		return userDAO.userPwCheck(userDTO);
+	}
+
 
 }

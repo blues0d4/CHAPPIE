@@ -4,9 +4,23 @@ public class LoginVO {
 
 	private String user_id;
 	private String user_name;
+	private String user_phone;
 	private String logindate;
 	private String user_project_choice;
+	private String user_pw;
 	
+	public String getUser_phone() {
+		return user_phone;
+	}
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
+	}
+	public String getUser_pw() {
+		return user_pw;
+	}
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
+	}
 	public String getUser_id() {
 		return user_id;
 	}

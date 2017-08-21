@@ -173,6 +173,10 @@
   
 </div>
 <!-- ./wrapper -->
+
+<!-- 채피 인크루드 -->
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+
  <!-- jQuery 2.2.3 -->
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

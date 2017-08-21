@@ -1,10 +1,9 @@
-<%@page import="kr.co.syteam.commons.KEYs"%>
 <%@page import="kr.co.syteam.commons.URIs"%>
 <%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -125,14 +124,6 @@
 <br>
 <br>
       <div class="row">
-<!--         <div class="col-xs-8"> -->
-<!--           <div class="checkbox icheck"> -->
-<!--             <label> -->
-<!--               <input type="checkbox"> I agree to the <a href="#">terms</a> -->
-<!--             </label> -->
-<!--           </div> -->
-<!--         </div> -->
-        <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" id="submit" class="btn btn-primary btn-block btn-flat">Register</button>
         </div>
@@ -140,13 +131,6 @@
       </div>
     </form>
 
-<!--     <div class="social-auth-links text-center"> -->
-<!--       <p>- OR -</p> -->
-<!--       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using -->
-<!--         Facebook</a> -->
-<!--       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using -->
-<!--         Google+</a> -->
-<!--     </div> -->
 <br>
 <br>
     <a href="/userLoginForm" class="text-center">I already have a membership</a>
@@ -161,14 +145,6 @@
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="/resources/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
-</script>
+
 </body>
 </html>

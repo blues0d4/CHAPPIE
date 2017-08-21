@@ -52,6 +52,11 @@ public class UserDAOImpl implements IUserDAO{
 		return sqlSession.delete(namespace+"userTodoMemberDelete", member_nickname);
 	}
 
+	@Override
+	public int userPwCheck(UserDTO userDTO) throws Exception {
+		return sqlSession.selectOne(namespace+"userPwCheck", userDTO);
+	}
+
 
 	
 

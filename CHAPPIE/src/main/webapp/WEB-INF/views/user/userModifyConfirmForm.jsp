@@ -3,9 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CHAPPIE</title>
@@ -48,22 +49,23 @@
     <!-- /.lockscreen-image -->
 
     <!-- lockscreen credentials (contains the form) -->
-    <form class="lockscreen-credentials" action="#">
+    <form class="lockscreen-credentials">
       <div class="input-group">
-        <input type="password" class="form-control" placeholder="password">
+        <input type="password" class="form-control" placeholder="password" id="pwinput">
 
         <div class="input-group-btn">
-          <button class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+          <div class="btn" onclick="pwCheck()"><i class="fa fa-arrow-right text-muted"></i></div>
         </div>
       </div>
     </form>
     <!-- /.lockscreen credentials -->
-
   </div>
+  <div class="text-center" id="pwcheck"></div>
   <!-- /.lockscreen-item -->
   <br>
+  
   <div class="help-block text-center">
-    Enter your password to retrieve your session
+    비밀번호를 확인해주세요
   </div>
   <div class="text-center">
 <!--     <a href="login.html">Or sign in as a different user</a> -->
@@ -78,8 +80,34 @@
 </div>
 <!-- /.center -->
 
-<!-- jQuery 2.2.3 -->
-<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+<script type="text/javascript">
+
+
+function pwCheck()
+{
+   var allData = { "user_pw": $("#pwinput").val() };
+   
+   $.ajax({
+      url: "/pwCheck",
+      data: allData,
+      type: "get",
+      success:function(result){
+    	  if(result==1){
+    		  var url = "/userModifyForm"; 
+    		  $(location).attr('href',url);
+    	  }else{
+    		  $("#pwcheck").text("비밀번호가 틀립니다");
+				$("#pwcheck").css("color", "red");
+    	  }
+      }
+   });
+}
+	
+
+</script>
+<script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 </body>

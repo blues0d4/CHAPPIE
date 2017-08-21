@@ -12,4 +12,5 @@ public interface IUserDAO {
 	public int userDelete(String user_id) throws Exception;
 	public int userCategoryMemberDelete(String member_nickname) throws Exception;
 	public int userTodoMemberDelete(String member_nickname) throws Exception;
+	public int userPwCheck(UserDTO userDTO) throws Exception;
 }
