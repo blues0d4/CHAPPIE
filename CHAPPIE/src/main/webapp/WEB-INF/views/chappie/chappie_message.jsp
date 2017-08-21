@@ -132,6 +132,7 @@
 			 cw=screen.availWidth;     //화면 넓이
 			 ch=screen.availHeight;    //화면 높이
 			 ml=(cw-W)/2;        //가운데 띄우기위한 창의 x위치
+			 
 			 mt=(ch-H)/2;         //가운데 띄우기위한 창의 y위치
 			 O="width="+W+",height="+H+",top="+mt+",left="+ml+",scrollbars=yes"; 
 			 imgWin=window.open("","",O); 
@@ -239,7 +240,7 @@ body {
 	right: 70px;
 	width: 400px;
 	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 }
 
 
@@ -563,12 +564,7 @@ height: 600;
 		<div class="popup-messages">
 <!-- 			<iframe width="400" height="530" -->
 <!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 			</iframe> -->
-
-		<div style="positon:fixed; bottom:5px; right: 5px;">	
-			<a href="#responseScroll">		
-			<i class="fa fa-chevron-up "></i></a>	
-			</div>			
+<!-- 			</iframe> -->		
 			
 			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
                     <ul class="chat" id="response">
@@ -647,7 +643,11 @@ height: 600;
 			}
 		
 		})
+		
+		
 
 </script>
+
+
 </body>	
 </html>	
