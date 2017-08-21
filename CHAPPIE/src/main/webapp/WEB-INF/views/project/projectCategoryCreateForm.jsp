@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -91,7 +93,9 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="${URIs.URI_PROJECT_CATEGORY_CREATE }">
+            <form role="form" method="post" onSubmit="return CheckForm(this)" name="frmMember">
+<!--             <form role="form" method="post" action="" onSubmit="return CheckForm(this)" name="frmMember"> -->
+<%--             <form role="form" method="post" action="${URIs.URI_PROJECT_CATEGORY_CREATE }"> --%>
               <div class="box-body">
                 <div class="form-group">
                   <label>카테고리 이름</label>
@@ -104,7 +108,7 @@
                   <div class="checkbox">
 	                  <c:forEach var="projectMember" items="${pmList }">
                		             <label>
-			                      <input type="checkbox" name="member_nickname" value="${projectMember }">
+			                      <input type="checkbox" name="member_nickname" class="member_nickname" value="${projectMember }">
 			                      	${projectMember }
 			                      </label>   
 		              </c:forEach>      
@@ -142,6 +146,33 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<script>
+$(document).ready(function(){
+    function(){
+        alert("Bye! You now leave p1!");
+    }); 
+});
+</script>
+<script>
+
+
+function CheckForm(isChecked){
+    alert("test");
+    //체크박스 체크여부 확인 [하나]
+    var isChecked = $(".member_nickname").prop("checked") ;
+    
+    alert(isChecked);
+    
+    if(!isChecked){
+        alert('멤버를 선택해야 합니다.');
+        return false;
+    } 
+
+
+}
+
+
+</script>
 
 <!-- jQuery 2.2.3 -->
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -154,8 +185,8 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/resources/plugins/morris/morris.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
+<!-- <script src="/resources/plugins/morris/morris.min.js"></script> -->
 <!-- Sparkline -->
 <script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -177,11 +208,11 @@
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/resources/dist/js/pages/dashboard.js"></script>
+<!-- <script src="/resources/dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="/resources/dist/js/demo.js"></script>
 <!-- SlimScroll 1.3.0 -->
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<!--     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script> -->
     <script src="/resources/documentation/docs.js"></script>
 </body>
 </html>
