@@ -227,10 +227,13 @@ function commentWrite(val){
 						<b>#${category.category_name }</b>
 						<!--         <small>Control panel</small> -->
 					</h1>
-					<a class="btn btn-primary btn-xs pull-right"
-						style="margin-right: 15px;"
-						href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
 				</div>
+				<div class="pull-right">
+					<a class="btn btn-lg bg-blue" style="margin-right: 15px;"
+						href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">글쓰기</a>
+
+				</div>
+				<br> <br>
 			</section>
 
 			<!-- Main content -->
@@ -242,7 +245,7 @@ function commentWrite(val){
 					<c:forEach items="${boardList }" var="boardVO" varStatus="status">
 						<c:choose>
 							<c:when test="${boardList[status.index].board_notice eq 'y' }">
-								<li class="time-label"><span class="bg-blue">
+								<li class="time-label"><span class="bg-red">
 										${boardVO.board_write_date_yyyy}년
 										${boardVO.board_write_date_mon}월
 										${boardVO.board_write_date_dd}일
@@ -250,11 +253,11 @@ function commentWrite(val){
 								<!-- timeline item -->
 								<li>
 									<!-- timeline icon --> <i class="fa fa-exclamation bg-aqua"></i>
-									<div class="timeline-item" style="background-color: #b3e6ff">
+									<div class="timeline-item" style="background-color: #ffffe6">
 										<span class="time"><i class="fa fa-clock-o"></i>
 											${boardVO.board_write_date }</span>
 										<h3 class="timeline-header">
-											<b>공지</b>&nbsp;&nbsp;<a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }
+											<b>[공지]</b>&nbsp;&nbsp;<br><br><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }
 										</h3>
 										<!-- 			            <div class="timeline-body" > -->
 										<%-- 			                	${boardVO.board_contents } --%>
@@ -266,52 +269,53 @@ function commentWrite(val){
 											</article>
 										</div>
 										<div class="timeline-footer">
-									<div class="form-inline">
-										<button type="button" class="btn btn-info"
-											data-toggle="collapse" data-target="#demo${status.index }"
-											onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
-											Comments</button>
-										<div class="pull-right">
-										<c:if test="${login.user_id eq boardVO.user_id}">
-											<a
-												href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
-												class="btn btn-info">수정</a>
-											<button type="button" class="btn btn-info"
-												style="margin-right: 10px"
-												onclick="deleteBoard(${boardVO.board_no})">삭제</button>
-										</c:if>
-										</div>
-									</div>
-
-									<div id="demo${status.index }" class="collapse">
-										<div class="form-group">
-
-											<div id="commentList${boardVO.board_no }"></div>
-											<c:if test="${login.user_id != null}">
-												<label for="comment">Comment:</label>
-
-												<form name="commentForm${boardVO.board_no}" action="post">
-													<input type="hidden" value="${login.user_name}"
-														name="user_name" /> <input type="hidden"
-														value=${boardVO.board_no } name="board_no" /> <input
-														type="hidden" value=${login.user_id } name="user_id" />
-													<textarea id="commentText${boardVO.board_no }"
-														class="form-control" rows="2" cols="80"
-														name="comment_contents"></textarea>
-													<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
-													<br>
-												</form>
+											<div class="form-inline">
 												<button type="button" class="btn btn-info"
-													onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
-												<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
+													data-toggle="collapse" data-target="#demo${status.index }"
+													onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
+													댓글</button>
+												<div class="pull-right">
+													<c:if test="${login.user_id eq boardVO.user_id}">
+														<a
+															href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
+															class="btn btn-danger">수정</a>
+														<button type="button" class="btn btn-danger"
+															style="margin-right: 10px"
+															onclick="deleteBoard(${boardVO.board_no})">삭제</button>
+													</c:if>
+												</div>
+											</div>
 
-											</c:if>
+											<div id="demo${status.index }" class="collapse">
+												<div class="form-group">
+
+													<div id="commentList${boardVO.board_no }"></div>
+													<c:if test="${login.user_id != null}">
+														<label for="comment">Comment:</label>
+
+														<form name="commentForm${boardVO.board_no}" action="post">
+															<input type="hidden" value="${login.user_name}"
+																name="user_name" /> <input type="hidden"
+																value=${boardVO.board_no } name="board_no" /> <input
+																type="hidden" value=${login.user_id } name="user_id" />
+															<textarea id="commentText${boardVO.board_no }"
+																class="form-control" rows="2" cols="80"
+																name="comment_contents"></textarea>
+															<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
+															<br>
+														</form>
+														<button type="button" class="btn btn-info"
+															onclick="commentWrite(${boardVO.board_no})">댓글
+															작성</button>
+														<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
+
+													</c:if>
+
+												</div>
+												<!--   </form> -->
+											</div>
 
 										</div>
-										<!--   </form> -->
-									</div>
-
-								</div>
 
 									</div>
 								</li>
@@ -365,16 +369,16 @@ function commentWrite(val){
 										<button type="button" class="btn btn-info"
 											data-toggle="collapse" data-target="#demo${status.index }"
 											onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
-											Comments</button>
+											댓글</button>
 										<div class="pull-right">
-										<c:if test="${login.user_id eq boardVO.user_id}">
-											<a
-												href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
-												class="btn btn-info">수정</a>
-											<button type="button" class="btn btn-info"
-												style="margin-right: 10px"
-												onclick="deleteBoard(${boardVO.board_no})">삭제</button>
-										</c:if>
+											<c:if test="${login.user_id eq boardVO.user_id}">
+												<a
+													href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
+													class="btn btn-danger">수정</a>
+												<button type="button" class="btn btn-danger"
+													style="margin-right: 10px"
+													onclick="deleteBoard(${boardVO.board_no})">삭제</button>
+											</c:if>
 										</div>
 									</div>
 

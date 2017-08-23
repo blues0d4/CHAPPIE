@@ -11,15 +11,15 @@
         </div>
         <div class="pull-left info">
           <p>${ login.user_name }</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+         <i class="fa fa-circle text-success"></i> Online
         </div>
       </div>
       <ul class="sidebar-menu">
-       <li class="header">PROJECTS</li>
+       <li class="header">프로젝트</li>
        
        <li class="treeview">
          <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}">
-            <i class="fa fa-home"></i> <span>MAIN</span>
+            <i class="fa fa-home"></i> <span>메인</span>
           </a>
        </li>
        
@@ -56,7 +56,7 @@
        </li>
          <li class="treeview">
          <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/project_setting">
-            <i class="glyphicon glyphicon-cog"></i> <span>Project Settings</span>
+            <i class="glyphicon glyphicon-cog"></i> <span>프로젝트 관리</span>
             
 <!--             <span class="pull-right-container"> -->
 <!--             </span> -->
@@ -78,7 +78,7 @@
       
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MENU</li>
+        <li class="header">메뉴</li>
 <!--         <li class="header"><br><br> </li> -->
 <!--         <li class="treeview"> -->
 
@@ -88,7 +88,7 @@
           <a href="#">
 <%--          <c:choose> --%>
 <%--             <c:when test="${empty category}"> --%>
-                  <i class="fa fa-commenting"></i> <span>Timeline </span>
+                  <i class="fa fa-commenting"></i> <span>타임라인 </span>
 <%--                </c:when> --%>
 <%--                <c:otherwise> --%>
 <!--                     <i class="fa fa-slack"></i> <span>#${category.category_name}</span> -->
@@ -124,7 +124,7 @@
         
         <li class="treeview">
           <a href="#">
-           <i class="fa fa-check-square-o"></i> <span>To-Do List</span>
+           <i class="fa fa-check-square-o"></i> <span>일정</span>
                <span class="pull-right-container">
                  <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -148,7 +148,7 @@
         <li class="treeview">
           <a href="/project/${project.project_id }/history">
             <i class="fa fa-history"></i>
-            <span>History </span>
+            <span>활동 </span>
             <span class="pull-right-container">
 <!--               <i class="fa fa-angle-left pull-right"></i> -->
             </span>
