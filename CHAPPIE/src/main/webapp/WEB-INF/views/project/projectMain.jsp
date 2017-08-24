@@ -54,12 +54,11 @@
   <style>
   .timeline .comm{
   overflow: scroll;
-    height: 500px;
   }
   .box-body{
   overflow: scroll;
-    height: 150px;
   }
+  
   </style>
 </head>
 
@@ -105,6 +104,106 @@
 		<!-- Main content -->
 		<section class="content">
 			<div class="row">
+			
+<section class="col-lg-8">
+<div class="box box-primary" style="background-color: #D5D5D5">
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- 회전광고판 항목 -->
+  <div class="carousel-inner">
+    <div class="active item"><br><br><ul class="timeline">
+
+							<!-- timeline time label -->
+							<li class="time-label"><span class="bg-red"> 2017년 2월
+									20일 월요일 </span></li>
+							<!-- /.timeline-label -->
+
+							<!-- timeline item -->
+							<li>
+								<!-- timeline icon --> <i class="fa fa-envelope bg-blue"></i>
+								<div class="timeline-item">
+									<span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
+
+									<h3 class="timeline-header">
+										<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다.
+									</h3>
+
+									<div class="timeline-body">
+										<b>#${category.category_name}</b> 게시판 공지입니다.
+									</div>
+
+									<div class="timeline-footer">
+										<a class="btn btn-primary btn-xs">Read more</a>
+									</div>
+								</div>
+							</li>
+						</ul><br><br></div>
+    <div class="item"><br><br><ul class="timeline">
+
+							<!-- timeline time label -->
+							<li class="time-label"><span class="bg-red"> 2017년 2월
+									20일 월요일 </span></li>
+							<!-- /.timeline-label -->
+
+							<!-- timeline item -->
+							<li>
+								<!-- timeline icon --> <i class="fa fa-envelope bg-blue"></i>
+								<div class="timeline-item">
+									<span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
+
+									<h3 class="timeline-header">
+										<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다.
+									</h3>
+
+									<div class="timeline-body">
+										<b>#${category.category_name}</b> 게시판 공지입니다.
+									</div>
+
+									<div class="timeline-footer">
+										<a class="btn btn-primary btn-xs">Read more</a>
+									</div>
+								</div>
+							</li>
+						</ul><br><br></div>
+		<div class="item"><br><br><ul class="timeline">
+
+			<!-- timeline time label -->
+			<li class="time-label"><span class="bg-red"> 2017년 2월
+					20일 월요일 </span></li>
+			<!-- /.timeline-label -->
+
+			<!-- timeline item -->
+			<li>
+				<!-- timeline icon --> <i class="fa fa-envelope bg-blue"></i>
+				<div class="timeline-item">
+					<span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
+
+					<h3 class="timeline-header">
+						<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다.
+					</h3>
+
+					<div class="timeline-body">
+						<b>#${category.category_name}</b> 게시판 공지입니다.
+					</div>
+
+					<div class="timeline-footer">
+						<a class="btn btn-primary btn-xs">Read more</a>
+					</div>
+				</div>
+			</li>
+		</ul><br><br></div>
+  </div>
+  <!-- 회전광고판 탐색 -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+</div>
+</section>
+
 				<section class="col-lg-8">
 					<div class="box box-primary">
 						<br>
