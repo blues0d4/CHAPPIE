@@ -83,22 +83,22 @@
 
 <!-- <script type="text/javascript"> -->
 
-// function boardWriteCheck() {
-//     var form = document.boardWriteForm;
-//     // 제목이 입력이 안되어 있다면
-//     if (form.board_title.value == '') {
-//         alert('제목을 입력하세요.');
-//         // 제목 INPUT BOX 커서가 이동
-//         form.board_title.focus();
-//         return false;
-//     }
-//     if (form.board_contents.value == '') {
-//         alert('내용을 입력하세요');
-//         form.board_contents.focus();
-//         return false;
-//     }
-//     return true;
-// }
+<!-- // function boardWriteCheck() { -->
+<!-- //     var form = document.boardWriteForm; -->
+<!-- //     // 제목이 입력이 안되어 있다면 -->
+<!-- //     if (form.board_title.value == '') { -->
+<!-- //         alert('제목을 입력하세요.'); -->
+<!-- //         // 제목 INPUT BOX 커서가 이동 -->
+<!-- //         form.board_title.focus(); -->
+<!-- //         return false; -->
+<!-- //     } -->
+<!-- //     if (form.board_contents.value == '') { -->
+<!-- //         alert('내용을 입력하세요'); -->
+<!-- //         form.board_contents.focus(); -->
+<!-- //         return false; -->
+<!-- //     } -->
+<!-- //     return true; -->
+<!-- // } -->
 
 
 

@@ -45,27 +45,12 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/resources/dist/css/skins/_all-skins.min.css">
-<!--   <!-- iCheck --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/iCheck/flat/blue.css"> -->
-<!--   <!-- Morris chart --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/morris/morris.css"> -->
-<!--   <!-- jvectormap --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css"> -->
-<!--   <!-- Date Picker --> -->
-<!--   <link rel="stylesheet" href="/resources/plugins/datepicker/datepicker3.css"> -->
-<!--   <!-- Daterange picker --> -->
   <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
   <style>
 	
 /* 	body { */
@@ -344,29 +329,7 @@ function commentWrite(val){
 <!-- ./wrapper -->
 
 
-<!-- jQuery 2.2.3 -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
-<!-- jQuery UI 1.11.4 -->
-<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- Bootstrap 3.3.6 -->
 <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- <!-- Morris.js charts --> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
-<!-- <script src="/resources/plugins/morris/morris.min.js"></script> -->
-<!-- <!-- Sparkline --> -->
-<!-- <script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script> -->
-<!-- <!-- jvectormap --> -->
-<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> -->
-<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
-<!-- <!-- jQuery Knob Chart --> -->
-<!-- <script src="/resources/plugins/knob/jquery.knob.js"></script> -->
-<!-- <!-- daterangepicker --> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script> -->
-<!-- <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script> -->
-<!-- <!-- datepicker --> -->
-<!-- <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script> -->
-<!-- Bootstrap WYSIHTML5 -->
 <script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>

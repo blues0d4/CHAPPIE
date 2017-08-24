@@ -1,75 +1,114 @@
 <%@page import="kr.co.syteam.commons.URIs"%>
 <%@page import="kr.co.syteam.commons.PAGEs"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <!DOCTYPE html>
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CHAPPIE</title>
-  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CHAPPIE</title>
+
 <script src="/resources/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="/resources/dist/sweetalert.css">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 
-  
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap Core CSS -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+<!-- Tell the browser to be responsive to screen width -->
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel='stylesheet'
+	href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap Core CSS -->
+<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
+<!-- Custom CSS -->
+<link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Bootstrap 3.3.6 -->
+<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="/resources/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="/resources/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="/resources/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet"
+	href="/resources/plugins/daterangepicker/daterangepicker.css">
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet"
+	href="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <style>
-	
+<style>
+
 /* 	body { */
 /* 		font: 16px/1.5 sans-serif; */
 /* 	} */
-	
-	/* Show only 4 lines in smaller screens */
-	article {
-		max-height: 6em; /* (4 * 1.5 = 6) */
-	}
-	
-.fixedbutton{position:relative;margin:0 1.25rem}
-#msg_input{overflow:auto;margin:0;width:100%;min-height:42px;height:38px;max-height:180px;border:2px solid #E0E0E0;border-radius:.375rem;outline:0;background:#fff;resize:none;box-shadow:none;color:#3D3C40;font-family:Slack-Lato,appleLogo,sans-serif;font-size:.9375rem;line-height:1.2rem;-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto;padding:9px 30px 10px 50px}
 
+/* Show only 4 lines in smaller screens */
+article {
+	max-height: 6em; /* (4 * 1.5 = 6) */
+}
+
+.fixedbutton {
+	position: relative;
+	margin: 0 1.25rem
+}
+
+#msg_input {
+	overflow: auto;
+	margin: 0;
+	width: 100%;
+	min-height: 42px;
+	height: 38px;
+	max-height: 180px;
+	border: 2px solid #E0E0E0;
+	border-radius: .375rem;
+	outline: 0;
+	background: #fff;
+	resize: none;
+	box-shadow: none;
+	color: #3D3C40;
+	font-family: Slack-Lato, appleLogo, sans-serif;
+	font-size: .9375rem;
+	line-height: 1.2rem;
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
+	padding: 9px 30px 10px 50px
+}
 </style>
 
 <script>
@@ -156,225 +195,309 @@ function commentWrite(val){
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 
-<div class= "wrapper">
+	<div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="${URIs.URI_MAIN }" class="logo treeview-menu">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b><i class="glyphicon glyphicon-home"></i></b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>CHAPPIE</b></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    
-	<nav class="navbar navbar-static-top">
-    <jsp:include page ="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <jsp:include page ="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
-    <!-- /.sidebar -->
-  </aside>
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="${URIs.URI_MAIN }" class="logo treeview-menu"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b><i
+						class="glyphicon glyphicon-home"></i></b></span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>CHAPPIE</b></span>
+			</a>
+			<!-- Header Navbar: style can be found in header.less -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <!-- Contents -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) --> 
-    <section class="content-header">
-    <div>
-      <h1> <b>#${category.category_name }</b>
-<!--         <small>Control panel</small> -->
-      </h1>
-      <a class="btn btn-primary btn-xs pull-right" style="margin-right:15px;" href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">Write</a>
-    </div>
-    </section>
+			<nav class="navbar navbar-static-top">
+				<jsp:include page="${PAGEs.VIEW_NAV_PROJECT}" flush="false" />
+			</nav>
+		</header>
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<jsp:include page="${PAGEs.VIEW_ASIDE_LEFT}" flush="false" />
+			<!-- /.sidebar -->
+		</aside>
 
-    <!-- Main content -->
-    <section class="content">
-    
-	<ul class="timeline">
+		<!-- Content Wrapper. Contains page content -->
+		<!-- Contents -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div>
+					<h1>
+						<b>#${category.category_name }</b>
+						<!--         <small>Control panel</small> -->
+					</h1>
+				</div>
+				<div class="pull-right">
+					<a class="btn btn-lg bg-blue" style="margin-right: 15px;"
+						href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_WRITE_FORM_DEFAULT}">글쓰기</a>
 
-    <!-- timeline time label -->
-    <c:forEach items="${boardList }" var="boardVO" varStatus="status">
-    	<c:choose>
-    		<c:when test="${boardList[status.index].board_notice eq 'y' }">
-    		<li class="time-label">
-		        <span class="bg-red">
-		           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
-		        </span>
-		    </li>
-			    <!-- timeline item -->
-			    <li>
-			        <!-- timeline icon -->
-			        <i class="fa fa-exclamation-circle bg-red"></i>
-			        <div class="timeline-item" style="background-color: #FFF9AA">
-			         <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
-			            <h3 class="timeline-header"><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }</h3>
-			            <div class="timeline-body" >
-			                	${boardVO.board_contents }
-			            </div>
-			
-			        </div>
-			    </li>
-			</c:when>
-	    </c:choose>
-    </c:forEach>
-    </ul>
-    
-    </br>
-    
-    <ul class="timeline">
- <!-- timeline time label -->
-	<c:forEach items="${boardList }" var="boardVO" varStatus="status">
-	
-	<c:choose>
-            <c:when test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
-		
-		    <li class="time-label">
-		        <span class="bg-red">
-		           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon}월 ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
-		        </span>
-		    </li>
-			</c:when>
-	</c:choose>
-				
-    <!-- /.timeline-label -->
+				</div>
+				<br> <br>
+			</section>
 
-    <!-- timeline item -->
-    <li>
-        <!-- timeline icon -->
-        <i class="fa fa-user bg-aqua"></i>
-        <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
+			<!-- Main content -->
+			<section class="content">
 
-            <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	
-	<!-- 줄바꿈 -->
-            <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
-            text-overflow:ellipsis;  margin:10px;" >
-            <article>
-			<p style="white-space: pre;">${boardVO.board_contents }</p>
-			</article>
-            </div>
+				<ul class="timeline">
 
-            <div class="timeline-footer">
-            <div class="form-inline">
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }" onclick="commentList(${boardVO.board_no})">${boardVO.comment_count } Comments</button>
+					<!-- timeline time label -->
+					<c:forEach items="${boardList }" var="boardVO" varStatus="status">
+						<c:choose>
+							<c:when test="${boardList[status.index].board_notice eq 'y' }">
+								<li class="time-label"><span class="bg-red">
+										${boardVO.board_write_date_yyyy}년
+										${boardVO.board_write_date_mon}월
+										${boardVO.board_write_date_dd}일
+										${boardVO.board_write_date_day} </span></li>
+								<!-- timeline item -->
+								<li>
+									<!-- timeline icon --> <i class="fa fa-exclamation bg-aqua"></i>
+									<div class="timeline-item" style="background-color: #ffffe6">
+										<span class="time"><i class="fa fa-clock-o"></i>
+											${boardVO.board_write_date }</span>
+										<h3 class="timeline-header">
+											<b>[공지]</b>&nbsp;&nbsp;<br><br><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }
+										</h3>
+										<!-- 			            <div class="timeline-body" > -->
+										<%-- 			                	${boardVO.board_contents } --%>
+										<!-- 			            </div> -->
+										<div class="timeline-body" id="testrow"
+											style="width: auto; overflow: hidden; white-space: normal; word-break: normal; text-overflow: ellipsis; margin: 10px;">
+											<article>
+												<p style="white-space: pre;">${boardVO.board_contents }</p>
+											</article>
+										</div>
+										<div class="timeline-footer">
+											<div class="form-inline">
+												<button type="button" class="btn btn-info"
+													data-toggle="collapse" data-target="#demo${status.index }"
+													onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
+													댓글</button>
+												<div class="pull-right">
+													<c:if test="${login.user_id eq boardVO.user_id}">
+														<a
+															href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
+															class="btn btn-danger">수정</a>
+														<button type="button" class="btn btn-danger"
+															style="margin-right: 10px"
+															onclick="deleteBoard(${boardVO.board_no})">삭제</button>
+													</c:if>
+												</div>
+											</div>
 
-				<c:if test="${login.user_id eq boardVO.user_id}">
-					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}" class="btn btn-danger">Modify</a>
-                    <button type = "button" class="btn btn-danger" style="margin-right:10px" onclick="deleteBoard(${boardVO.board_no})" >Delete</button>
-				</c:if>
-            </div>
-                
-            <div id="demo${status.index }" class="collapse">
-				    <div class="form-group">
-				 
-				    <div id="commentList${boardVO.board_no }"></div>
-				      <c:if test="${login.user_id != null}">    
-				      <label for="comment">Comment:</label>
-				      
-				      <form name="commentForm${boardVO.board_no}" action="post">
-				      <input type="hidden" value="${login.user_name}" name = "user_name"/>
-				      <input type="hidden" value=${boardVO.board_no } name = "board_no" />
-					  <input type="hidden" value=${login.user_id } name = "user_id" />
-				      <textarea id= "commentText${boardVO.board_no }"class="form-control" rows="2" cols="80" name ="comment_contents"></textarea>
-				<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
-				        <br>
-				      </form>
-				        <button type="button" class="btn btn-info" onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
-				<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
-				        
-				        </c:if>
-				      
-				    </div>
-<!--   </form> -->
-	  			</div>
-	  			
-            </div>
-        </div>
-    </li>
-	</c:forEach>
+											<div id="demo${status.index }" class="collapse">
+												<div class="form-group">
 
-    
-    <!-- END timeline item -->
+													<div id="commentList${boardVO.board_no }"></div>
+													<c:if test="${login.user_id != null}">
+														<label for="comment">Comment:</label>
+
+														<form name="commentForm${boardVO.board_no}" action="post">
+															<input type="hidden" value="${login.user_name}"
+																name="user_name" /> <input type="hidden"
+																value=${boardVO.board_no } name="board_no" /> <input
+																type="hidden" value=${login.user_id } name="user_id" />
+															<textarea id="commentText${boardVO.board_no }"
+																class="form-control" rows="2" cols="80"
+																name="comment_contents"></textarea>
+															<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
+															<br>
+														</form>
+														<button type="button" class="btn btn-info"
+															onclick="commentWrite(${boardVO.board_no})">댓글
+															작성</button>
+														<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
+
+													</c:if>
+
+												</div>
+												<!--   </form> -->
+											</div>
+
+										</div>
+
+									</div>
+								</li>
+							</c:when>
+						</c:choose>
+					</c:forEach>
+				</ul>
+
+				</br>
+
+				<ul class="timeline">
+					<!-- timeline time label -->
+					<c:forEach items="${boardList }" var="boardVO" varStatus="status">
+
+						<c:choose>
+							<c:when
+								test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
+
+								<li class="time-label"><span class="bg-red">
+										${boardVO.board_write_date_yyyy}년
+										${boardVO.board_write_date_mon}월
+										${boardVO.board_write_date_dd}일
+										${boardVO.board_write_date_day} </span></li>
+							</c:when>
+						</c:choose>
+
+						<!-- /.timeline-label -->
+
+						<!-- timeline item -->
+						<li>
+							<!-- timeline icon --> <i class="fa fa-user bg-aqua"></i>
+							<div class="timeline-item">
+								<span class="time"><i class="fa fa-clock-o"></i>
+									${boardVO.board_write_date }</span>
+
+								<h3 class="timeline-header">
+									<a href="#">${boardVO.user_id } </a>&nbsp;&nbsp;&nbsp;&nbsp;
+									${boardVO.board_title }
+								</h3>
+
+								<!-- 줄바꿈 -->
+								<div class="timeline-body" id="testrow"
+									style="width: auto; overflow: hidden; white-space: normal; word-break: normal; text-overflow: ellipsis; margin: 10px;">
+									<article>
+										<p style="white-space: pre;">${boardVO.board_contents }</p>
+									</article>
+								</div>
+
+								<div class="timeline-footer">
+									<div class="form-inline">
+										<button type="button" class="btn btn-info"
+											data-toggle="collapse" data-target="#demo${status.index }"
+											onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
+											댓글</button>
+										<div class="pull-right">
+											<c:if test="${login.user_id eq boardVO.user_id}">
+												<a
+													href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}"
+													class="btn btn-danger">수정</a>
+												<button type="button" class="btn btn-danger"
+													style="margin-right: 10px"
+													onclick="deleteBoard(${boardVO.board_no})">삭제</button>
+											</c:if>
+										</div>
+									</div>
+
+									<div id="demo${status.index }" class="collapse">
+										<div class="form-group">
+
+											<div id="commentList${boardVO.board_no }"></div>
+											<c:if test="${login.user_id != null}">
+												<label for="comment">Comment:</label>
+
+												<form name="commentForm${boardVO.board_no}" action="post">
+													<input type="hidden" value="${login.user_name}"
+														name="user_name" /> <input type="hidden"
+														value=${boardVO.board_no } name="board_no" /> <input
+														type="hidden" value=${login.user_id } name="user_id" />
+													<textarea id="commentText${boardVO.board_no }"
+														class="form-control" rows="2" cols="80"
+														name="comment_contents"></textarea>
+													<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
+													<br>
+												</form>
+												<button type="button" class="btn btn-info"
+													onclick="commentWrite(${boardVO.board_no})">댓글 작성</button>
+												<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
+
+											</c:if>
+
+										</div>
+										<!--   </form> -->
+									</div>
+
+								</div>
+							</div>
+						</li>
+					</c:forEach>
 
 
-</ul>
+					<!-- END timeline item -->
 
-    </section>
-    
-    <!-- /.content -->
-  </div>
-  
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-   	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
-    
-  </footer>
 
-  <!-- Control Sidebar -->
-  
-	<aside class="control-sidebar control-sidebar-dark">
-		
-   	 <jsp:include page ="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
-	
- 	</aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
+				</ul>
+
+			</section>
+
+			<!-- /.content -->
+		</div>
+
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<jsp:include page="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
+
+		</footer>
+
+		<!-- Control Sidebar -->
+
+		<aside class="control-sidebar control-sidebar-dark">
+
+			<jsp:include page="${PAGEs.VIEW_ASIDE_RIGHT}" flush="false" />
+
+		</aside>
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-    
-</div>
+		<div class="control-sidebar-bg"></div>
 
-<!-- 채피 인크루드 -->
-<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+	</div>
 
-	
-<!-- ./wrapper -->
+	<!-- 채피 인크루드 -->
+	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
 
-<!-- jQuery 2.2.3 -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
-<!-- jQuery UI 1.11.4 -->
-<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- Bootstrap 3.3.6 -->
-<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-<!-- <!-- Morris.js charts --> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
-<!-- <script src="/resources/plugins/morris/morris.min.js"></script> -->
-<!-- <!-- Sparkline --> -->
-<!-- <script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script> -->
-<!-- <!-- jvectormap --> -->
-<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> -->
-<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
-<!-- <!-- jQuery Knob Chart --> -->
-<!-- <script src="/resources/plugins/knob/jquery.knob.js"></script> -->
-<!-- <!-- daterangepicker --> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script> -->
-<!-- <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script> -->
-<!-- <!-- datepicker --> -->
-<!-- <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script> -->
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/resources/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/resources/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<!-- <script src="/resources/dist/js/pages/dashboard.js"></script> -->
-<!-- AdminLTE for demo purposes -->
-<script src="/resources/dist/js/demo.js"></script>
+	<!-- ./wrapper -->
 
 
-<script src="/resources/js/readmore.js"></script> 
-<script type="text/javascript">
+	<!-- jQuery 2.2.3 -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+	<!-- jQuery UI 1.11.4 -->
+	<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<!-- Bootstrap 3.3.6 -->
+	<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+	<!-- <!-- Morris.js charts -->
+	-->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
+	<!-- <script src="/resources/plugins/morris/morris.min.js"></script> -->
+	<!-- <!-- Sparkline -->
+	-->
+	<!-- <script src="/resources/plugins/sparkline/jquery.sparkline.min.js"></script> -->
+	<!-- <!-- jvectormap -->
+	-->
+	<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> -->
+	<!-- <script src="/resources/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
+	<!-- <!-- jQuery Knob Chart -->
+	-->
+	<!-- <script src="/resources/plugins/knob/jquery.knob.js"></script> -->
+	<!-- <!-- daterangepicker -->
+	-->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script> -->
+	<!-- <script src="/resources/plugins/daterangepicker/daterangepicker.js"></script> -->
+	<!-- <!-- datepicker -->
+	-->
+	<!-- <script src="/resources/plugins/datepicker/bootstrap-datepicker.js"></script> -->
+	<!-- Bootstrap WYSIHTML5 -->
+	<script
+		src="/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+	<!-- Slimscroll -->
+	<script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- FastClick -->
+	<script src="/resources/plugins/fastclick/fastclick.js"></script>
+	<!-- AdminLTE App -->
+	<script src="/resources/dist/js/app.min.js"></script>
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<!-- <script src="/resources/dist/js/pages/dashboard.js"></script> -->
+	<!-- AdminLTE for demo purposes -->
+	<script src="/resources/dist/js/demo.js"></script>
+
+
+	<script src="/resources/js/readmore.js"></script>
+	<script type="text/javascript">
     $('article').readmore({
 //         	blockCSS: 'display: block; width: 100%;',
 //         	moreLink: '<span><button type="button" class="btn btn-info">Read More</button></span>',
@@ -475,6 +598,6 @@ function commentWrite(val){
   	  }
     
   </script>
-  <!-- Custom Theme JavaScript -->
+	<!-- Custom Theme JavaScript -->
 </body>
 </html>

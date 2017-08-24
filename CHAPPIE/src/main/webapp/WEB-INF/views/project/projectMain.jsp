@@ -459,7 +459,8 @@
 	</div>
 	<!--  채피 아이콘 -->
 
-	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+<%-- 	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" /> --%>
+	<jsp:include page="${PAGEs.VIEW_CHAPPIE_TEST}" flush="false" />
 
 	<footer class="main-footer">
 		<jsp:include page="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
