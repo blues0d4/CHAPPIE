@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html;"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,6 +13,7 @@
 <meta name="author" content="">
 <title>CHAPPIE</title> 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -31,11 +32,10 @@
   <!-- Contact section -->
    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
      <div class="w3-content" style="max-width:600px">
-     <form role="form" method="post" action="/projectCreate">
+     <form role="form" action="/projectCreate" method="post">
      <br>
      <br>
        <h1 class="w3-center"><b>프로젝트 생성</b></h1>
-       <p class = "w3-center"> 이용약관과 개인정보취급방침에 동의합니다. </p>
    
        
          <div class="w3-section">
@@ -43,13 +43,13 @@
            <label>프로젝트 이름</label>
            <input class="w3-input w3-border" type="text" value='' id="project_name" name="project_name" placeholder="프로젝트 이름" required>
          </div>
-
-         
+		<div id="projectCheck" style="width:600px;height:30px">
+		</div>
          
          <div class="form-group">
-         <input type="submit"
+         <input type="submit" id="btn"
 				class="w3-button w3-block w3-black w3-margin-bottom w3-round"
-				value="프로젝트 생성" />
+				value="프로젝트 생성" disabled="disabled" />
 				
 		<a class="w3-button w3-block w3-black w3-margin-bottom w3-round" href="${URIs.URI_MAIN}">메인으로</a>
        </div>
@@ -58,6 +58,36 @@
      </div>
    </div>
   </section>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#project_name").on({
+		"keyup":function(){
+		var project_name = $(this).serialize();
+		
+			$.ajax({
+				url:"/projectCheck",
+				data: project_name,
+				type: "get",
+				success:function(result){
+					btn = document.getElementById('btn');
+					if(result==1){
+						 $("#projectCheck").text("");
+						  btn.disabled = false;
+			    	  }else{
+			    		  btn.disabled = 'disabled';
+			    		  $("#projectCheck").text("이미 존재하는 이름입니다");
+							$("#projectCheck").css("color", "red");
+			    	  }
+					
+				}				 
+			});						
+			}	
+	});
+}); 
+
+</script>
 
 <!-- jQuery 2.2.3 -->
 <script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>

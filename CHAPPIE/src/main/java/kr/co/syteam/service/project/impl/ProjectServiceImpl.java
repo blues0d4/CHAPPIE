@@ -181,4 +181,9 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.selectBoardNotice(category_id);
 	}
 
+	@Override
+	public String projectGetIdService(String project_name) throws Exception {
+		return projectDAO.projectGetId(project_name);
+	}
+
 }

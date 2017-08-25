@@ -37,4 +37,5 @@ public interface ProjectService {
 	public void updateCategoryChoiceService(CategorySelectDTO categorySelectDTO) throws Exception;
 	public String selectCategoryChoiceService(CategorySelectDTO categorySelectDTO) throws Exception;
 	public BoardVO selectBoardNoticeService(String category_id) throws Exception;
+	public String projectGetIdService(String project_name) throws Exception;
 }
