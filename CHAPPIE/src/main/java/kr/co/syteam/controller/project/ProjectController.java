@@ -244,7 +244,6 @@ public class ProjectController {
 	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
 	@ResponseBody
 	public int categoryMemberModify(HttpServletRequest request, String category_id, Model model) throws Exception{
-		System.out.println("djf");
 		String[] value = request.getParameterValues("member_nickname");
 		
 		projectService.categoryMemberModify(value, category_id);

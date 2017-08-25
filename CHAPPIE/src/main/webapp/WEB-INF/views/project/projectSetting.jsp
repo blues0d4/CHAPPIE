@@ -131,7 +131,7 @@
           </div>
     	 <div class="box box-primary">
             <div class="box-header with-border">
-              <h1 class="box-title">카테고리 멤버 변경</h1>
+              <h1 class="box-title">카테고리 수정</h1>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -202,7 +202,7 @@ function popup(frm)
 {
   var url    ="/project/"+${project.project_id}+"/category_setting";
   var title  = "Category Setting";
-  var status = "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=600, height=700, top=0,left=20"; 
+  var status = "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=600, height=330, top=0,left=20"; 
   window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
                                             //인수로  넣어도 동작에는 지장이 없으나 form.action에서 적용하므로 생략
                                             //가능합니다.

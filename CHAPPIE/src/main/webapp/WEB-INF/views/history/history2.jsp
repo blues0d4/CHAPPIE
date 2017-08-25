@@ -211,98 +211,13 @@ function commentWrite(val){
             <strong><p>'${historyVO.member_nickname}'</strong>님이 '${historyVO.category_name}'카테고리 
 							<strong>'${historyVO.kind}'의 '${historyVO.title}'</strong>을(를) '${historyVO.event}'하였습니다 &nbsp &nbsp
 							<small class="label label-primary" style = "margin-bottom:10px;"></small>
-<%-- 							<i class="fa fa-clock-o"></i>  ${historyVO.submit_time}</small></p> --%>
             </h3>       
-   
-        </div>
-    
-    </li>
-    	</c:forEach>
- <!-- timeline time label -->
- 				<c:forEach items="${boardList }" var="boardVO" varStatus="status">
- 				
- 				<c:choose>
- 				
-                <c:when test="${boardList[status.index].board_write_date_yyyymmdd ne  boardList[status.index-1].board_write_date_yyyymmdd}">
-		
-    <li class="time-label">
-        <span class="bg-red">
-           ${boardVO.board_write_date_yyyy}년 ${boardVO.board_write_date_mon} ${boardVO.board_write_date_dd}일 ${boardVO.board_write_date_day}
-        </span>
-    </li>
-				</c:when>
- 				</c:choose>
-				
-    <!-- /.timeline-label -->
-
-    <!-- timeline item -->
-    <li>
-        <!-- timeline icon -->
-        <i class="fa fa-user bg-aqua"></i>
-        <div class="timeline-item">
-            <span class="time"><i class="fa fa-clock-o"></i> ${boardVO.board_write_date }</span>
-
-            <h3 class="timeline-header"><a href="#">${boardVO.user_id }	</a>&nbsp;&nbsp;&nbsp;&nbsp; ${boardVO.board_title }</h3>
-	
-	
-	<!-- 줄바꿈 -->
-            <div class="timeline-body" id="testrow" style="width:auto; overflow:hidden; white-space:normal; word-break:normal;
-            text-overflow:ellipsis;  margin:10px;" >
-            <article>
-			<p style="white-space: pre;">${boardVO.board_contents }</p>
-			</article>
-            </div>
-
-            <div class="timeline-footer">
-            <div class="form-inline">
-<!--             <div style="width: 500px"> -->
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo${status.index }" onclick="commentList(${boardVO.board_no})">${boardVO.comment_count } Comments</button>
-
-<%--                 <button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}">Delete</a>  --%>
-<%--                 <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 				<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </button> -->
-				<c:if test="${login.user_id eq boardVO.user_id}">
-				<button type="button" class="btn btn-danger"><a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}/${boardVO.board_no}">Modify</a>
-                </button>
-<%-- 				 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_MODIFY_FORM_DEFAULT}"> --%>
-<!--                	   <input type="submit" value="Modify" class="btn btn-danger"> -->
-<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </form> -->
-                   <button type = "button" class="btn btn-danger" style="margin-right:10px" onclick="deleteBoard(${boardVO.board_no})" >Delete</button>
-                
-<%--                 <form class="form-group" action="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/${boardVO.board_no}"> --%>
-<!--                	   <input type="submit" value="Delete" class="btn btn-danger"> -->
-<%--                	    <input type="hidden" value=${boardVO.board_no } name = "board_no"> --%>
-<%-- 					<input type="hidden" value=${login.user_id } name = "user_id"> --%>
-<!--                 </form> -->
-               
-				</c:if>
-<!--                 </div> -->
-            </div>
-                
-                <div id="demo${status.index }" class="collapse">
-
-	  			</div>
-	  			
-            </div>
         </div>
     </li>
-				</c:forEach>
-
-    
-    <!-- END timeline item -->
-
-
+   	</c:forEach>
 </ul>
-
     </section>
-    
-    <!-- /.content -->
   </div>
-  
-  <!-- /.content-wrapper -->
   <footer class="main-footer">
    	 <jsp:include page ="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />
     

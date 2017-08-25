@@ -174,7 +174,7 @@ public class TodoController {
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(todoDTO.getTodo_list());
-		historyDTO.setKind("todo-list");
+		historyDTO.setKind("일정");
 //		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 

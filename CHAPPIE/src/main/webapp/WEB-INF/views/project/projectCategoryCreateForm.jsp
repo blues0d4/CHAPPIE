@@ -192,11 +192,11 @@ var str = $('.strCheck').val();
 // 	alert( '최종 : ' + str.value );
 
 	
-	if( str.search(/\W|\s/g) > -1 ){
-	    alert( '특수문자 또는 공백을 입력할 수 없습니다.' );
-	    str.focus();
-	    return false;
-	}
+// 	if( str.search(/\W|\s/g) > -1 ){
+// 	    alert( '특수문자 또는 공백을 입력할 수 없습니다.' );
+// 	    str.focus();
+// 	    return false;
+// 	}
 
 
 
@@ -213,28 +213,6 @@ var str = $('.strCheck').val();
     if(checkedCount < 1){
         alert('멤버를 1명 이상 선택해야 합니다.');
         return false;
-    }else{
-    	$(document).ready(function() 
-    			{
-					alert("test");
-//     				$("#ReadingInfoSelectBtn").click(function()
-//     				{
-//     					var formData = $("#category_form").serialize();
-//     		 			alert(formData);
-//     					$.ajax({
-//     			 					type : "POST",
-//     			 					url : "${URIs.URI_PROJECT_CATEGORY_CREATE }",
-//     			 					cache : false,
-//     			 					data : formData,
-//     			 					success : onSuccess,
-//     			 					error : onError
-//     					});
-//     				});
-    			});
-//     			function onSuccess(json, status){alert($.trim(json));}
-//     			function onError(data, status){alert("error");
-//     			}
-//     	${URIs.URI_PROJECT_CATEGORY_CREATE };
     }
 
 

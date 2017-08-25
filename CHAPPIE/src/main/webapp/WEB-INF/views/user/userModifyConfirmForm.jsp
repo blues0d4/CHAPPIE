@@ -82,7 +82,14 @@
 
 
 <script type="text/javascript">
-
+$(document).ready(function() {
+	$("#pwinput").keypress(function(event) {
+		if (event.which == 13) {
+			event.preventDefault();
+			pwCheck();
+		}
+	});			
+});
 
 function pwCheck()
 {

@@ -357,7 +357,7 @@ function commentWrite(val){
 								</h3>
 
 								<!-- 줄바꿈 -->
-								<div class="timeline-body" id="testrow"
+								<div class="timeline-body" id="board${boardVO.board_no }"
 									style="width: auto; overflow: hidden; white-space: normal; word-break: normal; text-overflow: ellipsis; margin: 10px;">
 									<article>
 										<p style="white-space: pre;">${boardVO.board_contents }</p>

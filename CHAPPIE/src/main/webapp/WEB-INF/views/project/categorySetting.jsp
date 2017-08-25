@@ -47,14 +47,13 @@
 <body class="hold-transition skin-blue sidebar-mini" data-spy="scroll" data-target="#scrollspy" style="height: auto;">
 <div class="wrapper" style="height: auto;">
     <section class="content" >
-		
-<!-- 		content  -->
 
   <!-- Contact section -->
    <div class="row">
   	 <div class="col-md-8">
    		<div class="box box-primary">
-            <form role="form" id="submitTest" method="post">
+            <form role="form" 
+            action="/project/${project.project_id }/categoryMemberModify/<%= request.getParameter("category_id") %>" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label>멤버 변경</label>
@@ -77,7 +76,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="submit" class="btn btn-primary" value="변경">
+                <input type="submit" class="btn btn-primary" value="변경" onclick="modifyComplete();">
               </div>
             </form>
           </div>
@@ -101,6 +100,10 @@
 <!-- ./wrapper -->
 
 <script>
+function modifyComplete(){
+	alert("변경이 완료되었습니다");
+}
+
 function categoryDelete(val)
 {   
    var allData = { "category_id": val };

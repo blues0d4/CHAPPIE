@@ -87,10 +87,21 @@ public class UserController {
 
 	// 회원정보 수정 (테스트 미완료)
 	@RequestMapping(value = URIs.URI_USER_MODIFY, method = RequestMethod.POST)
-	public String doUserModify(Model model, UserDTO userDTO) throws Exception {
+	public String doUserModify(Model model, UserDTO userDTO, HttpServletRequest request) throws Exception {
 
 		userService.userModify(userDTO);
 
+		LoginVO login = (LoginVO)request.getSession().getAttribute("login");
+		
+		LoginVO loginVO = new LoginVO();
+		
+		loginVO.setUser_id(login.getUser_id());
+		loginVO.setUser_project_choice(login.getUser_project_choice());
+		loginVO.setLogindate(login.getLogindate());
+		loginVO.setUser_name(userDTO.getUser_name());
+		loginVO.setUser_phone(userDTO.getUser_phone());
+		
+		request.getSession().setAttribute("login", loginVO);
 		logger.info("doUserModify");
 		return "redirect:"+URIs.URI_MAIN;
 	}

@@ -155,7 +155,7 @@ public class BoardController {
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardDTO.getBoard_title());
-		historyDTO.setKind("게시판");
+		historyDTO.setKind("타임라인");
 //		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 		
@@ -185,7 +185,7 @@ public class BoardController {
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardVO.getBoard_title());
-		historyDTO.setKind("게시판");
+		historyDTO.setKind("타임라인");
 //		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 		boardDTO.setUser_id(loginVO.getUser_id());
@@ -222,7 +222,7 @@ public class BoardController {
 		historyDTO.setMember_nickname(loginVO.getUser_name());
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardDTO.getBoard_title());
-		historyDTO.setKind("게시판");
+		historyDTO.setKind("타임라인");
 //		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 
