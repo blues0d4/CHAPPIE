@@ -433,7 +433,7 @@ animation: 20s slidy ease-in-out infinite;
 	</section>
 	
 <!-- 채피 인크루드 -->
-<jsp:include page ="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+<jsp:include page ="${PAGEs.VIEW_CHAPPIE_INTRO}" flush="false" />
 
 	
 	

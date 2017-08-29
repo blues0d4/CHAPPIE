@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
 
 <script type="text/javascript">
-		var accessToken = "d00e6b22eb5f4b9081f4a220b64c5f27";
+		var accessToken = "00afc8666e3c4b628c78b86d4479cf3f";
 		var baseUrl = "https://api.api.ai/v1/";
 		
 		$(document).ready(function() {
