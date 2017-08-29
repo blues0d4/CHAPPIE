@@ -124,7 +124,7 @@
         
         <li class="treeview">
           <a href="#">
-           <i class="fa fa-check-square-o"></i> <span>일정</span>
+           <i class="fa fa-check-square-o"></i> <span>할 일</span>
                <span class="pull-right-container">
                  <i class="fa fa-angle-left pull-right"></i>
             </span>

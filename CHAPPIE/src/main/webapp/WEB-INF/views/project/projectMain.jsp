@@ -205,36 +205,6 @@
 </section>
 
 				<section class="col-lg-8">
-					<div class="box box-primary">
-						<br>
-						<ul class="timeline">
-
-							<!-- timeline time label -->
-							<li class="time-label"><span class="bg-red"> 2017년 2월
-									20일 월요일 </span></li>
-							<!-- /.timeline-label -->
-
-							<!-- timeline item -->
-							<li>
-								<!-- timeline icon --> <i class="fa fa-envelope bg-blue"></i>
-								<div class="timeline-item">
-									<span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
-
-									<h3 class="timeline-header">
-										<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다.
-									</h3>
-
-									<div class="timeline-body">
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-									</div>
-
-									<div class="timeline-footer">
-										<a class="btn btn-primary btn-xs">Read more</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
 					
 					<div class="box box-primary">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
@@ -383,84 +353,84 @@
             
             
 				</section>
-				<section class="col-lg-4">
-				<div class="box box-primary">
-						<br>
-						<ul class="timeline comm">
+<!-- 				<section class="col-lg-4"> -->
+<!-- 				<div class="box box-primary"> -->
+<!-- 						<br> -->
+<!-- 						<ul class="timeline comm"> -->
 
-							<!-- timeline time label -->
-							<li class="time-label"><span class="bg-red"> 2017년 2월
-									20일 월요일 </span></li>
-							<!-- /.timeline-label -->
+<!-- 							timeline time label -->
+<!-- 							<li class="time-label"><span class="bg-red"> 2017년 2월 -->
+<!-- 									20일 월요일 </span></li> -->
+<!-- 							/.timeline-label -->
 
-							<!-- timeline item -->
-							<li>
-								<!-- timeline icon --> <i class="fa fa-envelope bg-blue"></i>
-								<div class="timeline-item">
-									<span class="time"><i class="fa fa-clock-o"></i> 12:12</span>
+<!-- 							timeline item -->
+<!-- 							<li> -->
+<!-- 								timeline icon <i class="fa fa-envelope bg-blue"></i> -->
+<!-- 								<div class="timeline-item"> -->
+<!-- 									<span class="time"><i class="fa fa-clock-o"></i> 12:12</span> -->
 
-									<h3 class="timeline-header">
-										<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다.
-									</h3>
+<!-- 									<h3 class="timeline-header"> -->
+<!-- 										<a href="#">SY_Team</a> #${category.category_name}게시판 공지입니다. -->
+<!-- 									</h3> -->
 
-									<div class="timeline-body">
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-										<b>#${category.category_name}</b> 게시판 공지입니다.
-									</div>
+<!-- 									<div class="timeline-body"> -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 										<b>#${category.category_name}</b> 게시판 공지입니다. -->
+<!-- 									</div> -->
 
-									<div class="timeline-footer">
-										<a class="btn btn-primary btn-xs">Read more</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
+<!-- 									<div class="timeline-footer"> -->
+<!-- 										<a class="btn btn-primary btn-xs">Read more</a> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 				</section> -->
 			</div>
 	</section>
 	</div>
 	<!--  채피 아이콘 -->
 
-<%-- 	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" /> --%>
-	<jsp:include page="${PAGEs.VIEW_CHAPPIE_TEST}" flush="false" />
+	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+<%-- 	<jsp:include page="${PAGEs.VIEW_CHAPPIE_TEST}" flush="false" /> --%>
 
 	<footer class="main-footer">
 		<jsp:include page="${PAGEs.VIEW_FOOTER_PROJECT}" flush="false" />

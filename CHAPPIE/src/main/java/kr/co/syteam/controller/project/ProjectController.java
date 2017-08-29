@@ -78,6 +78,10 @@ public class ProjectController {
 //		System.out.println(projectVO);
 		
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
+//		System.out.println(categoryList);
+		if(categoryList.isEmpty()) {
+			return "redirect:" + URIs.URI_PROJECT_CATEGORY_CREATE_FORM;
+		}
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
 		
@@ -94,9 +98,13 @@ public class ProjectController {
 		CategorySelectDTO selectDTO = new CategorySelectDTO();
 		selectDTO.setUser_id(user_id);
 		selectDTO.setProject_id(project_id);
-//		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
+		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
 //		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
 		
+//		System.out.println(category_choice);
+//		if(category_choice == null) {
+//			return "redirect:"+URIs.URI_PROJECT_CATEGORY_LIST;
+//		}
 //		model.addAttribute("category_choice", boardVO);
 		
 		return URIs.URI_PROJECT_MAIN_PAGE;
@@ -164,6 +172,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CATEGORY_CREATE_FORM_PAGE;
 	}
 	
+	//프로젝트 카테고리 추가
 	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_CREATE)
 	public String doProjectCategoryCreate(String category_name, HttpServletRequest request) throws Exception{
 		
@@ -182,6 +191,13 @@ public class ProjectController {
 		projectService.categoryMemberModify(value, projectService.categoryIdSelectService());
 		
 		return "redirect:/project/"+project_id;
+	}
+	
+	//카테고리 리스트 페이지
+	@RequestMapping(value=URIs.URI_PROJECT_CATEGORY_LIST)
+	public String projectCategoryListForm() throws Exception{
+		
+		return URIs.URI_PROJECT_CATEGORY_LIST_PAGE;
 	}
 	
 	@RequestMapping(value="/project/{project_id}/project_setting")
