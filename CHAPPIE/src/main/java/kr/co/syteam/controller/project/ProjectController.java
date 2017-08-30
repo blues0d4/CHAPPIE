@@ -258,13 +258,12 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
-	@ResponseBody
-	public int categoryMemberModify(HttpServletRequest request, String category_id, Model model) throws Exception{
+	public String categoryMemberModify(HttpServletRequest request, @PathVariable("category_id")String category_id, Model model) throws Exception{
 		String[] value = request.getParameterValues("member_nickname");
 		
 		projectService.categoryMemberModify(value, category_id);
 		
-		return 1;
+		return "/project/categorySettingClose";
 	}
 	
 	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
@@ -290,9 +289,21 @@ public class ProjectController {
 			projectService.projectDeleteService(project_id);
 		}
 		
-		
 		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 	
+	@RequestMapping(value = "/projectCheck")
+	@ResponseBody
+	public int projectCheck(String project_name, HttpServletRequest request) throws Exception{
+		
+		String result = projectService.projectGetIdService(project_name);
+		int re;
+		if(result == null){
+			re = 1;
+		}else{
+			re = 0;
+		}
+		return re;
+	}
 	
 }

@@ -232,14 +232,18 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_COMMENT_WRITE,  method = RequestMethod.POST)
-	public void doBoardCommentWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id")String category_id, BoardCommentDTO boardCommentDTO) throws Exception   {
+	public void doBoardCommentWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id")String category_id, HttpServletRequest request,BoardCommentDTO boardCommentDTO) throws Exception   {
 
 //		logger.info("doBoardCommentWrite");
 		
 //		System.out.println(user_id);
 //		System.out.println(board_no);
 //		System.out.println(comment_contents);
-//		System.out.println(boardCommentDTO);
+		System.out.println(boardCommentDTO);
+		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
+		
+		boardCommentDTO.setUser_id(loginVO.getUser_id());
+		boardCommentDTO.setUser_name(loginVO.getUser_name());
 		boardService.boardCommentWrite(boardCommentDTO);
 		
 	}

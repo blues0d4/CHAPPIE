@@ -121,6 +121,7 @@ function commentList(val){
 		data: allData,
 		dataType: "json",
 		success:function(result){
+
 			var output = "<table class=\"table table-hover\">";
 				
 	            for(var i in result){
@@ -135,7 +136,7 @@ function commentList(val){
             output += "</table>";
 
 
-            $("#commentList"+val).html(output);
+            $(".commentList"+val).html(output);
 				
 		}
 		
@@ -162,24 +163,39 @@ function commentList(val){
 
 
 function commentWrite(val){
-	var commentForm = $("form[name=commentForm"+val+"]").serialize() ;
-// 	var commentText = $("#commentText"+val).val();
-// 	var commentForm = $("input[name=board_no"+val+"]").val();
-// 	alert(commentText);
+	var commentForm = $(".commentForm"+val).serialize();
 	
-// 		commentList(val);
 	$.ajax({            
 	    type : 'post',
 		url: "${URIs.URI_BOARD_COMMENT_WRITE }",
 		data: commentForm,
 		dataType: "json",
 		complete :function(){
-
-		var test = $("#commentText"+val).val("");
+		
+		$(".commentText"+val).val("");
 		commentList(val);
 			
-//             $("#commentWrite"+val).html(output);
-				
+		}
+		
+		
+	})
+	
+}
+
+
+function commentNoticeWrite(val){
+	var commentForm = $(".commentNoticeForm"+val).serialize();
+	
+	$.ajax({            
+	    type : 'post',
+		url: "${URIs.URI_BOARD_COMMENT_WRITE }",
+		data: commentForm,
+		dataType: "json",
+		complete :function(){
+		
+		$(".commentNoticeText"+val).val("");
+		commentList(val);
+			
 		}
 		
 		
@@ -257,7 +273,9 @@ function commentWrite(val){
 										<span class="time"><i class="fa fa-clock-o"></i>
 											${boardVO.board_write_date }</span>
 										<h3 class="timeline-header">
-											<b>[공지]</b>&nbsp;&nbsp;<br><br><a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }
+											<b>[공지]</b>&nbsp;&nbsp;<br>
+											<br>
+											<a href="#">${boardVO.user_id }</a>&nbsp;&nbsp;&nbsp;&nbsp;${boardVO.board_title }
 										</h3>
 										<!-- 			            <div class="timeline-body" > -->
 										<%-- 			                	${boardVO.board_contents } --%>
@@ -271,7 +289,8 @@ function commentWrite(val){
 										<div class="timeline-footer">
 											<div class="form-inline">
 												<button type="button" class="btn btn-info"
-													data-toggle="collapse" data-target="#demo${status.index }"
+													data-toggle="collapse"
+													data-target="#notice${status.index }"
 													onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
 													댓글</button>
 												<div class="pull-right">
@@ -286,26 +305,27 @@ function commentWrite(val){
 												</div>
 											</div>
 
-											<div id="demo${status.index }" class="collapse">
+											<div id="notice${status.index }" class="collapse">
 												<div class="form-group">
 
-													<div id="commentList${boardVO.board_no }"></div>
+													<div class="commentList${boardVO.board_no }"></div>
 													<c:if test="${login.user_id != null}">
 														<label for="comment">Comment:</label>
 
-														<form name="commentForm${boardVO.board_no}" action="post">
-															<input type="hidden" value="${login.user_name}"
-																name="user_name" /> <input type="hidden"
-																value=${boardVO.board_no } name="board_no" /> <input
-																type="hidden" value=${login.user_id } name="user_id" />
-															<textarea id="commentText${boardVO.board_no }"
-																class="form-control" rows="2" cols="80"
+														<form class="commentNoticeForm${boardVO.board_no}" action="post">
+<%-- 															<input type="hidden" value="${login.user_name}" --%>
+<!-- 																name="user_name" />  -->
+																<input type="hidden"
+																value=${boardVO.board_no } name="board_no" />
+<!-- 																 <input -->
+<%-- 																type="hidden" value=${login.user_id } name="user_id" /> --%>
+															<textarea class="commentNoticeText${boardVO.board_no } form-control" rows="2" cols="80"
 																name="comment_contents"></textarea>
 															<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
 															<br>
 														</form>
 														<button type="button" class="btn btn-info"
-															onclick="commentWrite(${boardVO.board_no})">댓글
+															onclick="commentNoticeWrite(${boardVO.board_no})">댓글
 															작성</button>
 														<!--         <button type="button" class="btn btn-info" id="commentWriteBtn" >댓글 작성</button> -->
 
@@ -385,17 +405,18 @@ function commentWrite(val){
 									<div id="demo${status.index }" class="collapse">
 										<div class="form-group">
 
-											<div id="commentList${boardVO.board_no }"></div>
+											<div class="commentList${boardVO.board_no }"></div>
 											<c:if test="${login.user_id != null}">
 												<label for="comment">Comment:</label>
 
-												<form name="commentForm${boardVO.board_no}" action="post">
-													<input type="hidden" value="${login.user_name}"
-														name="user_name" /> <input type="hidden"
-														value=${boardVO.board_no } name="board_no" /> <input
-														type="hidden" value=${login.user_id } name="user_id" />
-													<textarea id="commentText${boardVO.board_no }"
-														class="form-control" rows="2" cols="80"
+												<form class="commentForm${boardVO.board_no}" action="post">
+<%-- 													<input type="hidden" value="${login.user_name}" --%>
+<!-- 														name="user_name" />  -->
+														<input type="hidden"
+														value=${boardVO.board_no } name="board_no" /> 
+<!-- 														<input -->
+<%-- 														type="hidden" value=${login.user_id } name="user_id" /> --%>
+													<textarea class="commentText${boardVO.board_no } form-control" rows="2" cols="80"
 														name="comment_contents"></textarea>
 													<!--         <textarea rows="5" cols="80" id="replytext" placeholder="댓글을 작성해주세요"></textarea> -->
 													<br>

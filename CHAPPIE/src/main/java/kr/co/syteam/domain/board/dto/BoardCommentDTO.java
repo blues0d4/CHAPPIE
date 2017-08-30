@@ -30,6 +30,13 @@ public class BoardCommentDTO {
 	public void setComment_contents(String comment_contents) {
 		this.comment_contents = comment_contents;
 	}
+	@Override
+	public String toString() {
+		return "BoardCommentDTO [user_id=" + user_id + ", user_name=" + user_name + ", board_no=" + board_no
+				+ ", comment_contents=" + comment_contents + "]";
+	}
+	
+	
 	
 	
 }
