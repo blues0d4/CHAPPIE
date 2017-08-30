@@ -17,11 +17,6 @@
       <ul class="sidebar-menu">
        <li class="header">프로젝트</li>
        
-       <li class="treeview">
-         <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}">
-            <i class="fa fa-home"></i> <span>메인</span>
-          </a>
-       </li>
        
        <li class="treeview">
          <a href="#">

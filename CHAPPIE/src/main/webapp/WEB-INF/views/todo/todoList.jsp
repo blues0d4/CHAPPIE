@@ -131,14 +131,11 @@
       		  <div class="tab-pane active" id="tab_1">
 				<div class="row">
 				<div class="col-xs-12">
-                  <p class="text-center">
-                    <strong>Category Goal Completion</strong>
-                  </p>
 				  
 				  <c:choose>
 				  <c:when test="${empty chart}">
 				  	<p class="text-center">
-                    	<strong>내용이 없습니다.</strong>
+                    	<strong>일정이 없습니다.</strong>
                   	</p>
                   </c:when>
                   <c:otherwise>
@@ -172,14 +169,10 @@
        		 <div class="tab-pane" id="tab_2">
 				<div class="row">
 				<div class="col-xs-12">
-                  <p class="text-center">
-                    <strong>Member Goal Completion</strong>
-                  </p>
-				  
 				  <c:choose>
 				  <c:when test="${empty mcVO}">
 				  	<p class="text-center">
-                    	<strong>내용이 없습니다.</strong>
+                    	<strong>일정이 없습니다.</strong>
                   	</p>
                   </c:when>
                   <c:otherwise>

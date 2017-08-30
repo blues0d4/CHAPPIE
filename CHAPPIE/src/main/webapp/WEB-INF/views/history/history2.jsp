@@ -208,8 +208,8 @@ function commentWrite(val){
             <span class="time"><i class="fa fa-clock-o"></i> ${historyVO.submit_time}</span>
 	
             <h3 class="timeline-header">
-            <strong><p>'${historyVO.member_nickname}'</strong>님이 '${historyVO.category_name}'카테고리 
-							<strong>'${historyVO.kind}'의 '${historyVO.title}'</strong>을(를) '${historyVO.event}'하였습니다 &nbsp &nbsp
+            <b>${historyVO.member_nickname}</b>님이 <strong>${historyVO.category_name}</strong>카테고리 
+							<strong>${historyVO.kind}</strong>의 <strong>${historyVO.title}</strong>을(를) <strong>${historyVO.event}</strong>하였습니다 &nbsp &nbsp
 							<small class="label label-primary" style = "margin-bottom:10px;"></small>
             </h3>       
         </div>

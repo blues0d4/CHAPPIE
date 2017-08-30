@@ -109,7 +109,7 @@
                   <div class="checkbox">
 	                  <c:forEach var="projectMember" items="${pmList }">
                		             <label>
-			                      <input type="checkbox" name="member_nickname" class="member_nickname" value="${projectMember }">
+			                      <input type="checkbox" name="member_nickname" class="member_nickname" value="${projectMember }" checked>
 			                      	${projectMember }
 			                      </label>   
 		              </c:forEach>      

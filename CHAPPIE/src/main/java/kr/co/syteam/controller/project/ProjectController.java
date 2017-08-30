@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.syteam.commons.URIs;
-import kr.co.syteam.domain.board.vo.BoardVO;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
 import kr.co.syteam.domain.chappie.vo.ChappieVO;
@@ -101,13 +100,12 @@ public class ProjectController {
 		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
 //		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
 		
-//		System.out.println(category_choice);
-//		if(category_choice == null) {
-//			return "redirect:"+URIs.URI_PROJECT_CATEGORY_LIST;
-//		}
+		System.out.println(category_choice);
+		if(category_choice == null) {
+		}
 //		model.addAttribute("category_choice", boardVO);
 		
-		return URIs.URI_PROJECT_MAIN_PAGE;
+		return "redirect:/project/"+project_id+"/board/"+category_choice;
 	}
 	
 	//프로젝트 생성 폼
@@ -189,6 +187,14 @@ public class ProjectController {
 		String[] value = request.getParameterValues("member_nickname");
 		projectService.projectCategoryCreate(categoryCreateDTO);
 		projectService.categoryMemberModify(value, projectService.categoryIdSelectService());
+		
+		LoginVO login = (LoginVO)request.getSession().getAttribute("login");
+		CategorySelectDTO selectDTO = new CategorySelectDTO();
+		selectDTO.setCategory_id(projectService.categoryIdSelectService());
+		selectDTO.setProject_id(project_id);
+		selectDTO.setUser_id(login.getUser_id());
+		
+		projectService.updateCategoryChoiceService(selectDTO);
 		
 		return "redirect:/project/"+project_id;
 	}
