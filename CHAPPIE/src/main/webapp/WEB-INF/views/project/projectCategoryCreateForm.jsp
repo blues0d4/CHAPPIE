@@ -175,11 +175,11 @@ var str = $('.strCheck').val();
 	 
 
 	//공백 금지
-	var blank_pattern = /[\s]/g;
-	if( blank_pattern.test( str) == true){
-	    alert( '이름을 입력해주세요' );
-	    return false;
-	}
+// 	var blank_pattern = /[\s]/g;
+// 	if( blank_pattern.test( str) == true){
+// 	    alert( '이름을 입력해주세요' );
+// 	    return false;
+// 	}
 
 
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;

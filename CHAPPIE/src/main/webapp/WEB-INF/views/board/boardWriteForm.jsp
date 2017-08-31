@@ -181,7 +181,7 @@
 							</tr>
 							
 							<tr> 
-									<td colspan="2"><input type="submit" value="Write"
+									<td colspan="2"><input type="submit" value="글쓰기"
 										onclick= "boardWriteCheck();" class="btn btn-default" style="float: left" name="board_write_button"> 
 										<a href="${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id}"
 										class="btn btn-default" style="float: right">글 목록으로 가기</a></td>

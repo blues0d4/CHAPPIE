@@ -35,7 +35,7 @@
      <form role="form" action="/projectCreate" method="post">
      <br>
      <br>
-       <h1 class="w3-center"><b>프로젝트 생성</b></h1>
+       <h1 class="w3-center"><b>새로운 프로젝트 생성</b></h1>
    
        
          <div class="w3-section">

@@ -579,13 +579,13 @@ function commentNoticeWrite(val){
 //   		  alert("/project/${project.project_id }/todo/${category.category_id }/todoDelete?todo_no=${todoVO.todo_no }");
 //   		  alert("alert");
   		  swal({
-  			  title: "Are you sure?",
+  			  title: "정말 삭제하시겠습니까?",
   			  text: "",
   			  type: "warning",
   			  showCancelButton: true,
   			  confirmButtonColor: "#DD6B55",
-  			  confirmButtonText: "Yes, delete it!",
-  			  cancelButtonText: "No, cancel plx!",
+  			  confirmButtonText: "네, 삭제할래요!",
+  			  cancelButtonText: "아니요, 취소할래요!",
   			  closeOnConfirm: false,
   			  closeOnCancel: false
   			},
@@ -593,7 +593,7 @@ function commentNoticeWrite(val){
   			
   			function(isConfirm){
   				if (isConfirm==true) {
-  			    swal("Success!", "", "success");
+  			    swal("완료!", "", "success");
   			    setTimeout( function() {
 				  location.replace("${URIs.PROJECT_DEFAULT }/${project.project_id}${URIs.BOARD_DEFAULT }/${category.category_id }${URIs.URI_BOARD_DELETE_DEFAULT}/"+val);
 				  
@@ -604,7 +604,7 @@ function commentNoticeWrite(val){
   			    
   			    }, 500);
   			  } else {
-  			    swal("Cancelled!", "", "error");
+  			    swal("취소!", "", "error");
   			  }
   			});
   		  
