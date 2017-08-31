@@ -90,6 +90,7 @@
                    <tr>
                       <td width="50px"><strong>완료</strong></td>
                     <td><strong>할 일 목록</strong></td>
+                    <td><strong>중요도</strong></td>
                     <td width="50px"></td>
                    </tr>
             <c:forEach items="${ todoList }" var="todoVO">
@@ -104,10 +105,27 @@
                      </c:otherwise>
           	       </c:choose>
                   
-                  <td style="padding-top:15px"><p>${todoVO.todo_list}</p>   </td>
-					<td>
-                           <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }" class="btn btn-default"><i class="fa fa-ellipsis-h"></i></a>
-                       </td>
+                  <td style="padding-top:15px"><p>
+                           <a href="/project/${project.project_id }/todo/${category.category_id }/todoView?todo_no=${todoVO.todo_no }">
+                  ${todoVO.todo_list}
+</a>
+                  </p>   </td>
+                  <td>
+                  <c:choose>
+                  <c:when test="${todoVO.todo_priority  == '상'}">
+                  <h4><span class="label label-danger">상</span></h4>
+                  </c:when>
+                  <c:when test="${todoVO.todo_priority  == '중'}">
+                  <h4><span class="label label-warning">중</span></h4>
+                  </c:when>
+                  <c:when test="${todoVO.todo_priority  == '하'}">
+                  <h4><span class="label label-success">하</span></h4>
+                  </c:when>
+                  
+                  </c:choose>
+                  </td>
+<!-- 					<td> -->
+<!--                        </td> -->
                  
                </tr>
             </c:forEach>
@@ -115,7 +133,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> Add item</button>
+              <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#todolist_plus"><i class="fa fa-plus"></i> 할 일 추가</button>
             </div>
           </div>
 		</div>
