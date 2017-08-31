@@ -527,7 +527,6 @@ div.slider figure {
          </div>
       </footer>
    </section>
-
    <!-- 채피 인크루드 -->
    <jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
 
@@ -541,49 +540,6 @@ div.slider figure {
    <!-- Bootstrap Core JavaScript -->
    <script src="/js/bootstrap.min.js"></script>
 
-
-						<!--                     <div class="w3-card-2 w3-round w3-white w3-center"> -->
-						<!--                       <div class="w3-container w3-quarter padding-5"> -->
-						<!--                         <span>장예찬</span><br><br> -->
-						<!--                         <img src="/resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br> -->
-
-						<!--                         <ul style="list-style-type:none; float: right"> -->
-						<!--                         <br> -->
-						<!--                         <li> 프론트앤드개발&디자이너 </li> -->
-						<!--                         <li> yc319@naver.com  </li> -->
-						<!--                         </ul> -->
-						<!--                       </div> -->
-						<!--                     </div> -->
-
-						<!--                     <h4><strong>Start Bootstrap</strong> -->
-						<!--                     </h4> -->
-						<!--                     <p>3481 Melrose Place -->
-						<!--                         <br>Beverly Hills, CA 90210</p> -->
-						<!--                     <ul class="list-unstyled"> -->
-						<!--                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li> -->
-						<!--                         <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a> -->
-						<!--                         </li> -->
-						<!--                     </ul> -->
-						<!--                     <br> -->
-						<!--                     <ul class="list-inline"> -->
-						<!--                         <li> -->
-						<!--                             <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a> -->
-						<!--                         </li> -->
-						<!--                         <li> -->
-						<!--                             <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a> -->
-						<!--                         </li> -->
-						<!--                         <li> -->
-						<!--                             <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a> -->
-						<!--                         </li> -->
-						<!--                     </ul> -->
-						<!--                     <hr class="small"> -->
-						<!--                     <p class="text-muted">Copyright &copy; Your Website 2014</p> -->
-					</div>
-				</div>
-			</div>
-		</footer>
-	</section>
-	
 <!-- 채피 인크루드 -->
 <jsp:include page ="${PAGEs.VIEW_CHAPPIE_INTRO}" flush="false" />
 
