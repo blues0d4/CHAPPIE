@@ -100,7 +100,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label>그룹 이름</label>
-                  <input type="text" class="form-control strCheck" id="category_name" name="category_name" placeholder="그룹 이름">
+                  <input type="text" class="form-control inputCheck" id="category_name" name="category_name" placeholder="그룹 이름">
                 </div>
               </div>
               <div class="box-body">
@@ -109,7 +109,7 @@
                   <div class="checkbox">
 	                  <c:forEach var="projectMember" items="${pmList }">
                		             <label>
-			                      <input type="checkbox" name="member_nickname" class="member_nickname" value="${projectMember }" checked>
+			                      <input type="checkbox" name="member_nickname" class="isChecked" value="${projectMember }" checked>
 			                      	${projectMember }
 			                      </label>   
 		              </c:forEach>      
@@ -157,9 +157,8 @@
 function CheckForm(isChecked){
 	
 
-var str = $('.strCheck').val();
+var str = $('.inputCheck').val();
 
-// 	 alert(str);
 
 	if( str == '' || str == null ){
 	    alert( '이름을 입력해주세요' );
@@ -172,16 +171,6 @@ var str = $('.strCheck').val();
 	    return false;
 	}
 
-	 
-
-	//공백 금지
-// 	var blank_pattern = /[\s]/g;
-// 	if( blank_pattern.test( str) == true){
-// 	    alert( '이름을 입력해주세요' );
-// 	    return false;
-// 	}
-
-
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 
 	if( special_pattern.test(str) == true ){
@@ -189,36 +178,22 @@ var str = $('.strCheck').val();
 	    return false;
 	}
 
-// 	alert( '최종 : ' + str.value );
-
-	
-// 	if( str.search(/\W|\s/g) > -1 ){
-// 	    alert( '특수문자 또는 공백을 입력할 수 없습니다.' );
-// 	    str.focus();
-// 	    return false;
-// 	}
-
-
-
 //     alert("CheckForm");
     //체크박스 체크여부 확인 [하나]
 //     var isChecked = $(".member_nickname").prop("checked") ;
     //체크박스 갯수 구하기
-    var checkedCount = $(".member_nickname:checked").length ;
-    
-    
-//     alert(isChecked);
-//     alert(checkedList);
-    
-    if(checkedCount < 1){
-        alert('멤버를 1명 이상 선택해야 합니다.');
-        return false;
-    }
+   
 
+	var checkedCount = $(".isChecked:checked").length;
 
-}
+		//     alert(isChecked);
+		//     alert(checkedList);
 
-
+		if (checkedCount < 1) {
+			alert('멤버를 1명 이상 선택해야 합니다.');
+			return false;
+		}
+	}
 </script>
 
 <!-- jQuery 2.2.3 -->

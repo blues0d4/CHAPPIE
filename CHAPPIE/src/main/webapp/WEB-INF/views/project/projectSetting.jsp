@@ -93,11 +93,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/projectInvite">
+            <form role="form" method="post" onSubmit="return CheckForm(this)" action="/project/${project.project_id }/projectInvite">
               <div class="box-body">
                 <div class="form-group">
                   <label>초대할 아이디</label>
-                  <input type="text" class="form-control" id="user_id" name="user_id">
+                  <input type="text" class="form-control inputCheck" id="user_id" name="user_id">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -113,13 +113,13 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/projectMemberDelete">
+            <form role="form" method="post"  onSubmit="return CheckForm(this)" action="/project/${project.project_id }/projectMemberDelete" class= "strCheck">
               <div class="box-body">
                 <div class="form-group">
                   <label>멤버 삭제</label>
 						<br>
                   	<c:forEach items="${projectM }" var="projectVO">
-                  		<p><input type="radio" name="member_nickname" value="${projectVO}">${projectVO}</p>
+                  		<p><input type="radio" class="isChecked" name="member_nickname" value="${projectVO}">${projectVO}</p>
                   	</c:forEach>
                 </div>
               </div>
@@ -137,11 +137,11 @@
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form">
-              <div class="box-body">
+              <div class="box-body strCheck">
                 <div class="form-group">
                 	<label>그룹 선택</label></br>
 					<c:forEach items="${categoryList }" var="categoryList">
-						<input type="radio" name="category_id" 
+						<input type="radio" name="category_id"  class="isChecked"
 						value="${categoryList.category_id}">${categoryList.category_name}
 					</c:forEach>
                 </div>
@@ -161,7 +161,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/projectDelete">
+            <form role="form" method="post" action="/project/${project.project_id }/projectDelete" >
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-danger">프로젝트 삭제</button>
@@ -212,6 +212,48 @@ function popup(frm)
   frm.method = "post";
   frm.submit();     
   }
+  
+
+	function CheckForm(isChecked) {
+
+			var str = $('.inputCheck').val();
+
+			if (str == '' || str == null) {
+				alert('이름을 입력해주세요');
+				return false;
+			}
+
+			var blank_pattern = /^\s+|\s+$/g;
+			if (str.replace(blank_pattern, '') == "") {
+				alert('이름을 입력해주세요');
+				return false;
+			}
+
+			var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+			if (special_pattern.test(str) == true) {
+				alert('특수문자는 사용할 수 없습니다.');
+				return false;
+			}
+
+			//     alert("CheckForm");
+			//체크박스 체크여부 확인 [하나]
+			//     var isChecked = $(".member_nickname").prop("checked") ;
+			//체크박스 갯수 구하기
+		if ($('.isChecked').length) {
+
+			var checkedCount = $(".isChecked:checked").length;
+
+			//     alert(isChecked);
+			//     alert(checkedList);
+
+			if (checkedCount < 1) {
+				alert('멤버를 1명 이상 선택해야 합니다.');
+				return false;
+			}
+		}
+
+	}
 </script>
 
 <!-- jQuery 2.2.3 -->
