@@ -93,7 +93,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/project_invite">
+            <form role="form" method="post" action="/project/${project.project_id }/projectInvite">
               <div class="box-body">
                 <div class="form-group">
                   <label>초대할 아이디</label>
@@ -113,7 +113,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/project_member_delete">
+            <form role="form" method="post" action="/project/${project.project_id }/projectMemberDelete">
               <div class="box-body">
                 <div class="form-group">
                   <label>멤버 삭제</label>
@@ -161,7 +161,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/project/${project.project_id }/project_delete">
+            <form role="form" method="post" action="/project/${project.project_id }/projectDelete">
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-danger">프로젝트 삭제</button>

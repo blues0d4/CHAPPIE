@@ -50,7 +50,7 @@
           </ul>
        </li>
          <li class="treeview">
-         <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/project_setting">
+         <a href="${URIs.PROJECT_DEFAULT }/${project.project_id}/projectSetting">
             <i class="glyphicon glyphicon-cog"></i> <span>프로젝트 관리</span>
             
 <!--             <span class="pull-right-container"> -->

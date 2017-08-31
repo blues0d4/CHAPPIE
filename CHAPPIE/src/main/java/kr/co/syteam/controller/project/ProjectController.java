@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sun.jndi.toolkit.url.Uri;
+
 import kr.co.syteam.commons.URIs;
 import kr.co.syteam.domain.category.dto.CategoryCreateDTO;
 import kr.co.syteam.domain.category.vo.CategoryVO;
@@ -27,7 +29,6 @@ import kr.co.syteam.domain.user.vo.LoginVO;
 import kr.co.syteam.service.chappie.ChappieService;
 import kr.co.syteam.service.project.ProjectService;
 
-//"/{project}"
 @Controller
 public class ProjectController {
 
@@ -46,11 +47,6 @@ public class ProjectController {
 	
 		logger.info("doProjectMain");
 		
-		//로그인이 안되어 있을 때 "main"으로 리턴
-//		if(request.getSession().getAttribute("login") == null){
-//			return URIs.URI_MAIN_REDIRECT;
-//		}
-
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		
@@ -61,6 +57,7 @@ public class ProjectController {
 		
 		//선택한 project가 있는지 체크
 		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
+		
 		//없으면 "main"으로 리턴
 		if(projectVO == null){
 			projectSelectDTO.setProject_id(null);
@@ -98,12 +95,10 @@ public class ProjectController {
 		selectDTO.setUser_id(user_id);
 		selectDTO.setProject_id(project_id);
 		String category_choice = projectService.selectCategoryChoiceService(selectDTO);
-//		BoardVO boardVO = projectService.selectBoardNoticeService(category_choice);
 		
 		System.out.println(category_choice);
 		if(category_choice == null) {
 		}
-//		model.addAttribute("category_choice", boardVO);
 		
 		return "redirect:/project/"+project_id+"/board/"+category_choice;
 	}
@@ -140,13 +135,11 @@ public class ProjectController {
 		String user_id = loginVO.getUser_id();
 		List<ProjectVO> projectList = projectService.projectList(user_id);
 		
-//		System.out.println(projectList);
 		if(projectList.isEmpty()){
 			return "redirect:"+URIs.URI_PROJECT_CREATE_FORM;
 		}
 		
 		System.out.println(projectList);
-//		model.addAttribute("projectList", projectList);
 		request.getSession().setAttribute("projectList", projectList);
 		
 		String user_project_choice = projectService.projectChoiceGet(user_id);
@@ -178,8 +171,6 @@ public class ProjectController {
 
 		ProjectVO projectVO = (ProjectVO) request.getSession().getAttribute("project");
 		String project_id = projectVO.getProject_id();
-//		String project_name = projectVO.getProject_name();
-//		project_name = URLEncoder.encode(project_name, "UTF-8");
 		CategoryCreateDTO categoryCreateDTO = new CategoryCreateDTO();
 		categoryCreateDTO.setCategory_name(category_name);
 		categoryCreateDTO.setProject_id(project_id);
@@ -206,7 +197,8 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CATEGORY_LIST_PAGE;
 	}
 	
-	@RequestMapping(value="/project/{project_id}/project_setting")
+//	@RequestMapping(value="/project/{project_id}/project_setting")
+	@RequestMapping(value=URIs.URI_PROJECT_SETTING)
 	public String projectSetting(@PathVariable("project_id")String project_id ,Model model, HttpServletRequest request) throws Exception{
 		
 		List<String> list = projectService.projectMemeberListService(project_id);
@@ -215,10 +207,10 @@ public class ProjectController {
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
 		model.addAttribute("chappieVO", chappieVO);
-		return "/project/projectSetting";
+		return URIs.URI_PROJECT_SETTING_PAGE;
 	}
 	
-	@RequestMapping(value="/project/{project_id}/project_invite", method = RequestMethod.POST)
+	@RequestMapping(value=URIs.URI_PROJECT_MEMBER_INVITE, method = RequestMethod.POST)
 	public String projectInvite(@PathVariable("project_id")String project_id, ProjectDTO projectDTO) throws Exception{
 		logger.info("project_invite");
 		
@@ -226,10 +218,10 @@ public class ProjectController {
 		System.out.println(projectDTO.toString());
 		projectService.projectInvite(projectDTO);
 		
-		return "redirect:/project/{project_id}/project_setting";
+		return "redirect:" + URIs.URI_PROJECT_SETTING;
 	}
 	
-	@RequestMapping(value="/project/{project_id}/project_member_delete")
+	@RequestMapping(URIs.URI_PROJECT_MEMBER_DELETE)
 	public String projectMemberDelete(@PathVariable("project_id")String project_id, ProjectDTO projectDTO, HttpServletRequest request) throws Exception{
 		logger.info("project_delete");
 		projectDTO.setProject_id(project_id);
@@ -240,9 +232,9 @@ public class ProjectController {
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
 		request.getSession().setAttribute("categoryList", categoryList);
 		
-		return "redirect:/project/{project_id}/project_setting";
+		return "redirect:" + URIs.URI_PROJECT_SETTING;
 	}
-	@RequestMapping(value="/project/{project_id}/category_setting")
+	@RequestMapping(value=URIs.URI_PROJECT_CATEGORY_SETTING)
 	public String categorySetting(@PathVariable("project_id")String project_id, Model model, 
 			HttpServletRequest request,String category_id) throws Exception{
 		
@@ -260,19 +252,21 @@ public class ProjectController {
 		model.addAttribute("cmList", list2);
 		
 		
-		return "/project/categorySetting";
+		return URIs.URI_PROJECT_CATEGORY_SETTING_PAGE;
 	}
 	
-	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
+//	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
+	@RequestMapping(value= URIs.URI_PROJECT_CATEGORY_MEMBER_MODIFY)
 	public String categoryMemberModify(HttpServletRequest request, @PathVariable("category_id")String category_id, Model model) throws Exception{
 		String[] value = request.getParameterValues("member_nickname");
 		
 		projectService.categoryMemberModify(value, category_id);
 		
-		return "/project/categorySettingClose";
+		return URIs.URI_PROJECT_CATEGORY_CATEGORY_SETTING_CLOSE_PAGE;
 	}
 	
-	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
+//	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
+	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_DELETE)
 	@ResponseBody
 	public int categoryDelete(@PathVariable("project_id")String project_id, 
 			@PathVariable("category_id")String category_id, HttpServletRequest request) throws Exception{
@@ -283,7 +277,7 @@ public class ProjectController {
 		return result;
 	}
 	
-	@RequestMapping(value= "/project/{project_id}/project_delete")
+	@RequestMapping(value= URIs.URI_PROJECT_DELETE)
 	public String projectDelete(@PathVariable("project_id")String project_id, HttpServletRequest request) throws Exception{
 		ProjectDTO projectDTO = new ProjectDTO();
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
@@ -298,7 +292,7 @@ public class ProjectController {
 		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 	
-	@RequestMapping(value = "/projectCheck")
+	@RequestMapping(value = URIs.URI_PROJECT_CHECK)
 	@ResponseBody
 	public int projectCheck(String project_name, HttpServletRequest request) throws Exception{
 		

@@ -119,7 +119,7 @@
                   <h4><span class="label label-warning">중</span></h4>
                   </c:when>
                   <c:when test="${todoVO.todo_priority  == '하'}">
-                  <h4><span class="label label-success">하</span></h4>
+                  <h4><span class="label label-primary">하</span></h4>
                   </c:when>
                   
                   </c:choose>

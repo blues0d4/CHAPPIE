@@ -55,9 +55,6 @@ public class URIs {
 	public static final String URI_PROJECT_LIST = "/projectList";
 	public static final String URI_PROJECT_LIST_PAGE = PROJECT_DEFAULT + URI_PROJECT_LIST;
 	
-//	public static final String URI_PROJECT_SELECT = "/projectSelect";
-//	public static final String URI_PROJECT_SELECT_PAGE = PROJECT_DEFAULT + URI_PROJECT_SELECT;
-
 	public static final String URI_PROJECT_CATEGORY_LIST = "/projectCategoryList";
 	public static final String URI_PROJECT_CATEGORY_LIST_PAGE = PROJECT_DEFAULT + URI_PROJECT_CATEGORY_LIST;
 	
@@ -67,7 +64,29 @@ public class URIs {
 	
 	public static final String URI_PROJECT_CATEGORY_CREATE = PROJECT_DEFAULT + "/projectCategoryCreate";
 	
-
+	public static final String URI_PROJECT_MEMBER_INVITE = URI_PROJECT_MAIN + "/projectInvite";
+	
+	public static final String URI_PROJECT_SETTING_DEFAULT = "/projectSetting";
+	public static final String URI_PROJECT_SETTING = URI_PROJECT_MAIN + URI_PROJECT_SETTING_DEFAULT;
+	public static final String URI_PROJECT_SETTING_PAGE = PROJECT_DEFAULT + URI_PROJECT_SETTING_DEFAULT;
+	
+	public static final String URI_PROJECT_MEMBER_DELETE = URI_PROJECT_MAIN + "/projectMemberDelete";
+	
+	public static final String URI_PROJECT_CATEGORY_SETTING_DEFAULT = "/categorySetting";
+	public static final String URI_PROJECT_CATEGORY_SETTING = URI_PROJECT_MAIN + URI_PROJECT_CATEGORY_SETTING_DEFAULT;
+	public static final String URI_PROJECT_CATEGORY_SETTING_PAGE = PROJECT_DEFAULT + URI_PROJECT_CATEGORY_SETTING_DEFAULT;
+	
+	public static final String URI_PROJECT_CATEGORY_MEMBER_MODIFY = URI_PROJECT_MAIN + "/categoryMemberModify/{category_id}";
+	
+	public static final String URI_PROJECT_CATEGORY_CATEGORY_SETTING_CLOSE_PAGE = PROJECT_DEFAULT+"/categorySettingClose";
+	
+	public static final String URI_PROJECT_CATEGORY_DELETE = URI_PROJECT_MAIN + "categoryDelete/{category_id}";
+	
+	public static final String URI_PROJECT_CHECK = "/projectCheck";
+	
+	public static final String URI_PROJECT_DELETE = URI_PROJECT_MAIN + "/projectDelete";
+	
+	
 	
 	//BOARD URI
 	
