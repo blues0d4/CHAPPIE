@@ -201,7 +201,7 @@
 <script>
 function popup(frm)
 {
-  var url    ="/project/"+${project.project_id}+"/category_setting";
+  var url    ="/project/"+${project.project_id}+"/categorySetting";
   var title  = "Category Setting";
   var status = "toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no,width=600, height=330, top=0,left=20"; 
   window.open("", title,status); //window.open(url,title,status); window.open 함수에 url을 앞에와 같이
