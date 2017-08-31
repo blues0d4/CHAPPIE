@@ -89,7 +89,7 @@
    <div class="col-md-8">
      <div class="box box-primary">
             <div class="box-header with-border">
-              <h1 class="box-title">카테고리 생성</h1>
+              <h1 class="box-title">새로운 그룹 생성</h1>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -99,7 +99,7 @@
 <%--             <form role="form" method="post" action="${URIs.URI_PROJECT_CATEGORY_CREATE }"> --%>
               <div class="box-body">
                 <div class="form-group">
-                  <label>카테고리 이름</label>
+                  <label>그룹 이름</label>
                   <input type="text" class="form-control strCheck" id="category_name" name="category_name" placeholder="카테고리 이름">
                 </div>
               </div>
@@ -119,7 +119,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">확인</button>
               </div>
             </form>
           </div>

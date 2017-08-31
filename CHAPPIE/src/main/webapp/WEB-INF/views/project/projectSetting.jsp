@@ -103,20 +103,21 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Invite</button>
+                <button type="submit" class="btn btn-primary">초대</button>
               </div>
             </form>
           </div>
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h1 class="box-title">프로젝트 멤버 삭제</h1>
+              <h1 class="box-title">프로젝트 멤버 관리</h1>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form" method="post" action="/project/${project.project_id }/project_member_delete">
               <div class="box-body">
                 <div class="form-group">
-                  <label>삭제할 아이디</label></br>
+                  <label>멤버 삭제</label>
+						<br>
                   	<c:forEach items="${projectM }" var="projectVO">
                   		<p><input type="radio" name="member_nickname" value="${projectVO}">${projectVO}</p>
                   	</c:forEach>
@@ -125,20 +126,20 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Delete</button>
+                <button type="submit" class="btn btn-danger">삭제</button>
               </div>
             </form>
           </div>
     	 <div class="box box-primary">
             <div class="box-header with-border">
-              <h1 class="box-title">카테고리 수정</h1>
+              <h1 class="box-title">그룹 관리</h1>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                	<label>카테고리 선택</label></br>
+                	<label>그룹 선택</label></br>
 					<c:forEach items="${categoryList }" var="categoryList">
 						<input type="radio" name="category_id" 
 						value="${categoryList.category_id}">${categoryList.category_name}
@@ -149,7 +150,7 @@
 
               <div class="box-footer">
                 <button type="button" class="btn btn-primary"
-                onclick="javascript:popup(this.form);">선택</button>
+                onclick="javascript:popup(this.form);">관리</button>
               </div>
             </form>
           </div>
@@ -163,7 +164,7 @@
             <form role="form" method="post" action="/project/${project.project_id }/project_delete">
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Project Delete</button>
+                <button type="submit" class="btn btn-danger">프로젝트 삭제</button>
               </div>
             </form>
           </div>
