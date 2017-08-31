@@ -44,57 +44,89 @@ keyframes slidy { 0% {
 20%
 {
 left
+
+
 :
+
  
+
 0%;
 }
 25%
 {
 left
+
+
 :
+
  
+
 -100%;
 }
 45%
 {
 left
+
+
 :
+
  
+
 -100%;
 }
 50%
 {
 left
+
+
 :
+
  
+
 -200%;
 }
 70%
 {
 left
+
+
 :
+
  
+
 -200%;
 }
 75%
 {
 left
+
+
 :
+
  
+
 -300%;
 }
 95%
 {
 left
+
+
 :
+
  
+
 -300%;
 }
 100%
 {
 left
+
+
 :
+
  
+
 -400%;
 }
 }
@@ -144,6 +176,7 @@ div.slider figure {
 		<div class="text-vertical-center">
 
 			<h1>Hello, CHAPPIE</h1>
+			<!-- 			<h3>프로젝트 협업 관리 서비스</h3> -->
 			<h3>Collaboration Management Web Application</h3>
 			<br> <br> <br> <br>
 			<c:choose>
@@ -152,7 +185,7 @@ div.slider figure {
 						Started</a>
 				</c:when>
 				<c:otherwise>
-					<a href="/projectList" class="btn btn-dark btn-lg">Get Started</a>
+					<a href="/projectList" class="btn btn-dark btn-lg">시작하기</a>
 				</c:otherwise>
 			</c:choose>
 			<!--             <br> -->
@@ -166,181 +199,201 @@ div.slider figure {
 	</header>
 	<!-- About -->
 	<section id="about" class="about">
-      <!-- 채피 인크루드 -->
+		<!-- 채피 인크루드 -->
 
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 text-center">
-               <h1>CHAPPIE 소개</h1>
-               <br>
-               <p class="lead" FONT face="Arial Black">비트교육센터 출신의 학생들이 구현한
-                  협업프로그램의 똑똑한 귀요미 "CHAPPIE"</p>
-               <%--                <jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>
+						<b>CHAPPIE 소개</b>
+					</h1>
+					<br> <br>
+					<h3>비트교육센터 출신의 학생들이 구현한 협업프로그램의 똑똑한 귀요미 "CHAPPIE"</h3>
+					<br>
+					<%--                <jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
 
-               <div class="slider">
-                  <figure>
-                     <img src="/resources/img/chappie_intro.png" alt="">
-                     <img src="/resources/img/introduce2-9.png" alt="">
-                     <img src="/resources/img/chappie_intro.png" alt="">
-                     <img src="/resources/img/introduce2-9.png" alt="">
-                     <img src="/resources/img/chappie_intro.png" alt="">
-                  </figure>
-               </div>
-            </div>
-         </div>
-      </div>
-      <br> <br> <br />
-
-<br><br><br><br>
-      <section id="services" class="services bg-primary">
-         <div class="container">
-            <div class="row text-center">
-               <div class="col-lg-10 col-lg-offset-1">
-                  <h2>Our Services</h2>
-                  <!--                     <hr class="small"> -->
-                  <div class="row">
-
-
-                     <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                           <span class="fa-stack fa-4x"> <i
-                              class="fa fa-circle fa-stack-2x"></i> <i
-                              class="fa fa-cloud fa-stack-1x text-primary"></i>
-                           </span>
-                           <h4>
-                              <strong>Timeline</strong>
-                           </h4>
-                           <!--                         <p>멤버들간의 일상을 소통할 수 있습니다.</p> -->
-                           <a href="#timeline" class="btn btn-light">Learn More</a>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                           <span class="fa-stack fa-4x"> <i
-                              class="fa fa-circle fa-stack-2x"></i> <i
-                              class="fa fa-compass fa-stack-1x text-primary"></i>
-                           </span>
-                           <h4>
-                              <strong>To do list</strong>
-                           </h4>
-                           <!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                           <a href="#todolist" class="btn btn-light">Learn More</a>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                           <span class="fa-stack fa-4x"> <i
-                              class="fa fa-circle fa-stack-2x"></i> <i
-                              class="fa fa-flask fa-stack-1x text-primary"></i>
-                           </span>
-                           <h4>
-                              <strong>Chart</strong>
-                           </h4>
-                           <!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                           <a href="#todolist" class="btn btn-light">Learn More</a>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="service-item">
-                           <span class="fa-stack fa-4x"> <i
-                              class="fa fa-circle fa-stack-2x"></i> <i
-                              class="fa fa-shield fa-stack-1x text-primary"></i>
-                           </span>
-                           <h4>
-                              <strong>History</strong>
-                           </h4>
-                           <!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                           <a href="#history" class="btn btn-light">Learn More</a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- /.row (nested) -->
-               </div>
-               <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-         </div>
-         <!-- /.container -->
-      </section>
+					<div class="slider">
+						<figure>
+							<img src="/resources/img/chappie_intro.png" alt="">
+							<img src="/resources/img/introduce2-9.png" alt="">
+							<img src="/resources/img/chappie_intro.png" alt="">
+							<img src="/resources/img/introduce2-9.png" alt="">
+							<img src="/resources/img/chappie_intro.png" alt="">
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br> <br /> <br>
+		<br>
+		<br>
+		<br>
+		<section id="services" class="services bg-primary">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-lg-10 col-lg-offset-1">
+						<br> <br>
+						<br> <br>
+						<h1><b>기능 소개</b></h1>
+						<br> <br>
+						<br> <br>
+						<!--                     <hr class="small"> -->
+						<div class="row">
 
 
-      <br> <br>
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 text-center">
-               <div id="timeline" class="timeline">
-               <br><br><br>
-                  <h2>이슈를 함께 해결하기 위한 커뮤니케이션</h2>
-                  <br>
-                  <h4>
-                     회사 내의 facebook! <br> 회사 내의 일상을 timeline에 담아보세요!
-                  </h4>
-                  <div class="slider">
+							<div class="col-md-3 col-sm-6">
+								<div class="service-item">
+									<span class="fa-stack fa-4x"> <i
+										class="fa fa-circle fa-stack-2x"></i> <i
+										class="fa fa-commenting-o fa-stack-1x text-primary"></i>
+									</span>
+									<h4>
+										<strong>타임라인</strong>
+									</h4>
+									<!--                         <p>멤버들간의 일상을 소통할 수 있습니다.</p> -->
+									<a href="#timeline" class="btn btn-light">더 알아보기</a>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="service-item">
+									<span class="fa-stack fa-4x"> <i
+										class="fa fa-circle fa-stack-2x"></i> <i
+										class="fa fa-check-square-o fa-stack-1x text-primary"></i>
+									</span>
+									<h4>
+										<strong>할 일</strong>
+									</h4>
+									<!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+									<a href="#todolist" class="btn btn-light">더 알아보기</a>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="service-item">
+									<span class="fa-stack fa-4x"> <i
+										class="fa fa-circle fa-stack-2x"></i> <i
+										class="fa fa-bar-chart-o fa-stack-1x text-primary"></i>
+									</span>
+									<h4>
+										<strong>진척도</strong>
+									</h4>
+									<!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+									<a href="#todolist" class="btn btn-light">더 알아보기</a>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="service-item">
+									<span class="fa-stack fa-4x"> <i
+										class="fa fa-circle fa-stack-2x"></i> <i
+										class="fa fa-history fa-stack-1x text-primary"></i>
+									</span>
+									<h4>
+										<strong>활동</strong>
+									</h4>
+									<!--                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+									<a href="#history" class="btn btn-light">더 알아보기</a>
+								</div>
+							</div>
+						</div>
+						<br> <br>
+						<br> <br>
+						<br> <br>
+						<!-- /.row (nested) -->
+					</div>
+					<!-- /.col-lg-10 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
 
-                     <img src="/resources/img/introduce4.png" alt=""
-                        style="width: 100%;">
-                     <!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <br>
-                     <br>
-                  </div>
-               </div>
 
-               <div id="todolist" class="todolist">
-                  <br><br><br>
-                  <h2>한눈에 보기 쉬운 차트</h2>
-                  <br>
-                  <h4>
-                     포스트 잇은 이제 그만! <br> 완료여부에 대한 한눈에 보기 좋은 차트까지 <br> 해야할 일에
-                     대한 메모는 물론, 담당자 선택, 중요도 체크까지 가능합니다.
-                  </h4>
-                  <div class="slider">
-                     <img src="/resources/img/introduce4_1.png" alt=""
-                        style="width: 100%;">
-                     <!-- <figure> -->
-                     <!-- <img src="/resources/img/introduce_todolist.png" alt=""> -->
-                     <!-- <img src="/resources/img/introduce_chart.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <!-- </figure> -->
-                  </div>
-               </div>
+		<br> <br>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div id="timeline" class="timeline">
+						<br>
+						<br>
+						<br>
+						<h1>
+							<b>타임라인</b>
+						</h1>
+						<h3>
+							<!--                   이슈를 함께 해결하기 위한 커뮤니케이션 -->
+							<br> 프로젝트 팀원들과 그룹을 만들고 함께 소통할 수 있습니다.
+						</h3>
+						<div class="slider">
+
+							<img src="/resources/img/introduce4.png" alt=""
+								style="width: 100%;">
+							<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<br> <br>
+						</div>
+					</div>
+
+					<div id="todolist" class="todolist">
+						<br>
+						<br>
+						<br>
+						<h1>
+							<b>할 일 & 진척도</b>
+						</h1>
+						<br>
+						<h3>
+							포스트 잇은 이제 그만! <br> 완료여부를 한눈에 보기 좋은 차트까지 <br> 해야할 일에 대한
+							메모는 물론, 담당자 선택, 중요도 체크까지 가능합니다.
+						</h3>
+						<div class="slider">
+							<img src="/resources/img/introduce4_1.png" alt=""
+								style="width: 100%;">
+							<!-- <figure> -->
+							<!-- <img src="/resources/img/introduce_todolist.png" alt=""> -->
+							<!-- <img src="/resources/img/introduce_chart.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<!-- </figure> -->
+						</div>
+					</div>
 
 
-               <br>
-               <div id="history" class="history">
-                  <br><br><br>
-                  <h2>히스토리</h2>
-                  <br>
-                  <h4>
-                     협업의 기본! <br> 팀원들의 활동내역을 한눈에 볼 수 있습니다. <br>
-                  </h4>
-                  <div class="slider">
-                     <img src="/resources/img/introduce4_2.png" alt=""
-                        style="width: 100%;">
-                     <!-- <figure> -->
-                     <!-- <img src="/resources/img/introduce_todolist.png" alt=""> -->
-                     <!-- <img src="/resources/img/introduce_chart.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
-                     <!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
-                     <!-- </figure> -->
-                  </div>
-               </div>
-               <br />
-               <!--                <iframe width="350" height="430"
+					<br>
+					<div id="history" class="history">
+						<br>
+						<br>
+						<br>
+						<h1>
+							<b>활동</b>
+						</h1>
+						<h3>
+							<br> 팀원들의 활동내역을 한눈에 볼 수 있습니다. <br>
+						</h3>
+						<div class="slider">
+							<img src="/resources/img/introduce4_2.png" alt=""
+								style="width: 100%;">
+							<!-- <figure> -->
+							<!-- <img src="/resources/img/introduce_todolist.png" alt=""> -->
+							<!-- <img src="/resources/img/introduce_chart.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<!-- <img src="/resources/img/introduce2-9.png" alt=""> -->
+							<!-- <img src="/resources/img/chappie_intro.png" alt=""> -->
+							<!-- </figure> -->
+						</div>
+					</div>
+					<br />
+					<!--                <iframe width="350" height="430"
 <!--                   src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> 
 <!--                </iframe> -->
 
-            </div>
-         </div>
-         <!-- /.row -->
-      </div>
-      <!-- /.container -->
-   </section>
+				</div>
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</section>
 
 	<!-- Services -->
 	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
@@ -369,8 +422,10 @@ div.slider figure {
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-10 col-lg-offset-1 text-center">
-						<h1>팀원 소개</h1>
-						<br> <br> <br>
+						<h1>
+							<b>팀원 소개</b>
+						</h1>
+						<br> <br> <br> <br>
 						<div class="box box-primary col-md-3">
 							<div class="box-body box-profile">
 								<img class="profile-user-img img-responsive img-circle"
@@ -428,25 +483,25 @@ div.slider figure {
 							</div>
 							<!-- /.box-body -->
 						</div>
-						  <div class="box box-primary col-md-3">
-                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle"
-                           src="/resources/img/jyc.jpg" alt="User profile picture">
+						<div class="box box-primary col-md-3">
+							<div class="box-body box-profile">
+								<img class="profile-user-img img-responsive img-circle"
+									src="/resources/img/jyc.jpg" alt="User profile picture">
 
-                        <h3 class="profile-username text-center">
-                           <b>팀원</b>&nbsp;장예찬
-                        </h3>
+								<h3 class="profile-username text-center">
+									<b>팀원</b>&nbsp;장예찬
+								</h3>
 
-                        <p class="text-muted text-center">웹앱 &amp; 디자인</p>
+								<p class="text-muted text-center">웹앱 &amp; 디자인</p>
 
 
 
-                        <button type="button" class="btn btn-primary btn-block">
-                           <b>yc319@naver.com</b>
-                        </button>
-                     </div>
-                     <!-- /.box-body -->
-                  </div>
+								<button type="button" class="btn btn-primary btn-block">
+									<b>yc319@naver.com</b>
+								</button>
+							</div>
+							<!-- /.box-body -->
+						</div>
 					</div>
 				</div>
 			</div>

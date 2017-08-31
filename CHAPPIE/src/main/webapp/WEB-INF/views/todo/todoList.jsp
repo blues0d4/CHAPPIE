@@ -123,8 +123,8 @@
 		<div class="col-md-6">
 			<div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab">Category</a></li>
-              <li><a href="#tab_2" data-toggle="tab">Member</a></li>
+              <li class="active"><a href="#tab_1" data-toggle="tab">전체</a></li>
+              <li><a href="#tab_2" data-toggle="tab">멤버</a></li>
             <!-- /.box-header -->
             </ul>
             <div class="tab-content">
@@ -135,7 +135,7 @@
 				  <c:choose>
 				  <c:when test="${empty chart}">
 				  	<p class="text-center">
-                    	<strong>일정이 없습니다.</strong>
+                    	<strong>등록된 일정이 없습니다.</strong>
                   	</p>
                   </c:when>
                   <c:otherwise>

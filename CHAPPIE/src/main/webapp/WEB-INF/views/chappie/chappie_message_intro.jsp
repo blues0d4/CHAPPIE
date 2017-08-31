@@ -87,9 +87,11 @@
 						}
 					});	
 				}
-				$(document).ready(function(){
+// 				$(document).ready(function(){
+					setTimeout( function() {
 					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
-				})
+	  			    }, 80);
+// 				})
 		}
 		
 
