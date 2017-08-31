@@ -83,12 +83,12 @@
           
           <div class="box">
               <div class="box-body">
-                  <label>카테고리 삭제</label>
+                  <label>그룹 삭제</label>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button class="btn btn-primary" onclick="categoryDelete(<%= request.getParameter("category_id")%>)">삭제</button>
+                <button class="btn btn-danger" onclick="categoryDelete(<%= request.getParameter("category_id")%>)">삭제</button>
               </div>
           </div>
   	 </div>

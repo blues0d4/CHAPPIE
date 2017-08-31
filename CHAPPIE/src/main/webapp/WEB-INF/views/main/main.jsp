@@ -2,7 +2,7 @@
 <%@page import="kr.co.syteam.commons.PAGEs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <html lang="en">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +14,11 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
-   href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+	href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet'
-   href='https://fonts.googleapis.com/css?family=Open+Sans'>
+	href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
@@ -28,17 +28,17 @@
 
 <!-- Custom Fonts -->
 <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css"
-   type="text/css">
+	type="text/css">
 <link rel="stylesheet"
-   href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-   type="text/css">
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	type="text/css">
 <link rel="stylesheet"
-   href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <style>
 @
 keyframes slidy { 0% {
-   left: 0%;
+	left: 0%;
 }
 
 20%
@@ -99,73 +99,73 @@ left
 }
 }
 body {
-   margin: 0;
+	margin: 0;
 }
 
 div.slider {
-   overflow: hidden;
+	overflow: hidden;
 }
 
 div.slider figure img {
-   width: 20%;
-   float: left;
+	width: 20%;
+	float: left;
 }
 
 div.slider figure {
-   position: relative;
-   width: 500%;
-   margin: 0;
-   top: 0;
-   left: 0;
-   text-align: left;
-   font-size: 0;
-   -webkit-animation: 20s slidy ease-in-out infinite;
-   animation: 20s slidy ease-in-out infinite;
+	position: relative;
+	width: 500%;
+	margin: 0;
+	top: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	-webkit-animation: 20s slidy ease-in-out infinite;
+	animation: 20s slidy ease-in-out infinite;
 }
 </style>
 </head>
 <body id="page-top" class="index">
 
-   <!-- Navigation -->
-   <nav id="mainNav"
-      class="navbar navbar-default navbar-custom navbar-fixed-top">
-      <jsp:include page="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
-      <%--        <jsp:include page ="/nav/navMain.jsp" flush="false" /> --%>
-      <!--         /.container-fluid -->
-   </nav>
+	<!-- Navigation -->
+	<nav id="mainNav"
+		class="navbar navbar-default navbar-custom navbar-fixed-top">
+		<jsp:include page="${PAGEs.VIEW_NAV_MAIN}" flush="false" />
+		<%--     	<jsp:include page ="/nav/navMain.jsp" flush="false" /> --%>
+		<!--         /.container-fluid -->
+	</nav>
 
-   <!-- Header -->
-
-
+	<!-- Header -->
 
 
 
-   <header id="top" class="header">
-      <div class="text-vertical-center">
 
-         <h1>Hello, CHAPPIE</h1>
-         <h3>Collaboration Management Web Application</h3>
-         <br> <br> <br> <br>
-         <c:choose>
-            <c:when test="${empty login }">
-               <a href="/userLoginForm" class="btn btn-dark btn-lg">Get
-                  Started</a>
-            </c:when>
-            <c:otherwise>
-               <a href="/projectList" class="btn btn-dark btn-lg">Get Started</a>
-            </c:otherwise>
-         </c:choose>
-         <!--             <br> -->
-         <!--             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a> -->
-         <!--             <br> -->
-         <!--             <a href="/projectList" class="btn btn-dark btn-lg">프로젝트 리스트</a> -->
-         <!--             <br> -->
-         <!--             <a href="/todo/todoList" class="btn btn-dark btn-lg">todoList</a> -->
-         <!--             <br> -->
-      </div>
-   </header>
-   <!-- About -->
-   <section id="about" class="about">
+
+	<header id="top" class="header">
+		<div class="text-vertical-center">
+
+			<h1>Hello, CHAPPIE</h1>
+			<h3>Collaboration Management Web Application</h3>
+			<br> <br> <br> <br>
+			<c:choose>
+				<c:when test="${empty login }">
+					<a href="/userLoginForm" class="btn btn-dark btn-lg">Get
+						Started</a>
+				</c:when>
+				<c:otherwise>
+					<a href="/projectList" class="btn btn-dark btn-lg">Get Started</a>
+				</c:otherwise>
+			</c:choose>
+			<!--             <br> -->
+			<!--             <a href="/projectCreateForm" class="btn btn-dark btn-lg">프로젝트</a> -->
+			<!--             <br> -->
+			<!--             <a href="/projectList" class="btn btn-dark btn-lg">프로젝트 리스트</a> -->
+			<!--             <br> -->
+			<!--             <a href="/todo/todoList" class="btn btn-dark btn-lg">todoList</a> -->
+			<!--             <br> -->
+		</div>
+	</header>
+	<!-- About -->
+	<section id="about" class="about">
       <!-- 채피 인크루드 -->
 
       <div class="container">
@@ -342,93 +342,93 @@ div.slider figure {
       <!-- /.container -->
    </section>
 
-   <!-- Services -->
-   <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-   <!--    <div id="about"> -->
-   <%--    <jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
-   <!--    </div> -->
+	<!-- Services -->
+	<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+	<!-- 	<div id="about"> -->
+	<%-- 	<jsp:include page ="${PAGEs.VIEW_MAIN_INTRODUCE}" flush="false" /> --%>
+	<!-- 	</div> -->
 
 
 
-   <!-- Call to Action -->
-   <aside class="call-to-action bg-primary">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12 text-center">
-               <!--                     <h3>The buttons below are impossible to resist.</h3> -->
-               <!--                     <a href="#" class="btn btn-lg btn-light">Click Me!</a> -->
-               <!--                     <a href="#" class="btn btn-lg btn-dark">Look at Me!</a> -->
-            </div>
-         </div>
-      </div>
-   </aside>
+	<!-- Call to Action -->
+	<aside class="call-to-action bg-primary">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<!--                     <h3>The buttons below are impossible to resist.</h3> -->
+					<!--                     <a href="#" class="btn btn-lg btn-light">Click Me!</a> -->
+					<!--                     <a href="#" class="btn btn-lg btn-dark">Look at Me!</a> -->
+				</div>
+			</div>
+		</div>
+	</aside>
 
-   <!-- Footer -->
-   <section id="contact">
-      <footer id="contact">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-10 col-lg-offset-1 text-center">
-                  <h1>팀원 소개</h1>
-                  <br> <br> <br>
-                  <div class="box box-primary col-md-3">
-                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle"
-                           src="/resources/img/hch.jpg" alt="User profile picture">
+	<!-- Footer -->
+	<section id="contact">
+		<footer id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 text-center">
+						<h1>팀원 소개</h1>
+						<br> <br> <br>
+						<div class="box box-primary col-md-3">
+							<div class="box-body box-profile">
+								<img class="profile-user-img img-responsive img-circle"
+									src="/resources/img/hch.jpg" alt="User profile picture">
 
-                        <h3 class="profile-username text-center">
-                           <b>팀장</b>&nbsp;한청화
-                        </h3>
+								<h3 class="profile-username text-center">
+									<b>팀장</b>&nbsp;한청화
+								</h3>
 
-                        <p class="text-muted text-center">웹앱 &amp; 챗봇 개발</p>
-
-
-
-                        <button type="button" class="btn btn-primary btn-block">
-                           <b>buzzbylove@gmail.com</b>
-                        </button>
-                     </div>
-                     <!-- /.box-body -->
-                  </div>
-                  <div class="box box-primary col-md-3">
-                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle"
-                           src="/resources/img/profile-1.jpg" alt="User profile picture">
-
-                        <h3 class="profile-username text-center">
-                           <b>팀원</b>&nbsp;이용현
-                        </h3>
-
-                        <p class="text-muted text-center">웹앱 개발</p>
+								<p class="text-muted text-center">웹앱 &amp; 챗봇 개발</p>
 
 
 
-                        <button type="button" class="btn btn-primary btn-block">
-                           <b>blues0d4@gmail.com</b>
-                        </button>
-                     </div>
-                     <!-- /.box-body -->
-                  </div>
-                  <div class="box box-primary col-md-3">
-                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle"
-                           src="/resources/img/kyh.jpg" alt="User profile picture">
+								<button type="button" class="btn btn-primary btn-block">
+									<b>buzzbylove@gmail.com</b>
+								</button>
+							</div>
+							<!-- /.box-body -->
+						</div>
+						<div class="box box-primary col-md-3">
+							<div class="box-body box-profile">
+								<img class="profile-user-img img-responsive img-circle"
+									src="/resources/img/profile-1.jpg" alt="User profile picture">
 
-                        <h3 class="profile-username text-center">
-                           <b>팀원</b>&nbsp;김용현
-                        </h3>
+								<h3 class="profile-username text-center">
+									<b>팀원</b>&nbsp;이용현
+								</h3>
 
-                        <p class="text-muted text-center">웹앱 &amp; 챗봇 개발</p>
+								<p class="text-muted text-center">웹앱 개발</p>
 
 
 
-                        <button type="button" class="btn btn-primary btn-block">
-                           <b>jin98003@gmail.com</b>
-                        </button>
-                     </div>
-                     <!-- /.box-body -->
-                  </div>
-                  <div class="box box-primary col-md-3">
+								<button type="button" class="btn btn-primary btn-block">
+									<b>blues0d4@gmail.com</b>
+								</button>
+							</div>
+							<!-- /.box-body -->
+						</div>
+						<div class="box box-primary col-md-3">
+							<div class="box-body box-profile">
+								<img class="profile-user-img img-responsive img-circle"
+									src="/resources/img/kyh.jpg" alt="User profile picture">
+
+								<h3 class="profile-username text-center">
+									<b>팀원</b>&nbsp;김용현
+								</h3>
+
+								<p class="text-muted text-center">웹앱 &amp; 챗봇 개발</p>
+
+
+
+								<button type="button" class="btn btn-primary btn-block">
+									<b>jin98003@gmail.com</b>
+								</button>
+							</div>
+							<!-- /.box-body -->
+						</div>
+						  <div class="box box-primary col-md-3">
                      <div class="box-body box-profile">
                         <img class="profile-user-img img-responsive img-circle"
                            src="/resources/img/jyc.jpg" alt="User profile picture">
@@ -447,106 +447,19 @@ div.slider figure {
                      </div>
                      <!-- /.box-body -->
                   </div>
-                  <!--                       <div class="w3-container w3-quarter padding-5"> -->
-                  <!--                         <span>한청화</span><br><br> -->
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
 
-                  <!--                         <img src="/resources/img/hch.jpg" alt="Avatar" style="width:70%"><br> -->
-                  <!--                         <ul style="list-style-type:none; float: right"> -->
-                  <!--                         <br> -->
-                  <!--                         <li> 팀장 & 챗봇 개발자 </li> -->
-                  <!--                         <li> buzzbylove@gmail.com </li> -->
-                  <!--                         </ul> -->
-                  <!--                       </div> -->
-                  <!--                     </div> -->
-
-                  <!--                     <div class="w3-card-2 w3-round w3-white w3-center"> -->
-                  <!--                       <div class="w3-container w3-quarter padding-5"> -->
-                  <!--                         <span>이용현</span><br><br> -->
-                  <!--                         <img src="/resources/img/profile-1.jpg" alt="Avatar" style="width:70%"><br> -->
-
-                  <!--                         <ul style="list-style-type:none; float: right"> -->
-                  <!--                         <br> -->
-                  <!--                         <li> 백엔드개발자 </li> -->
-                  <!--                         <li> blues0d4@gmail.com </li> -->
-                  <!--                         </ul> -->
-                  <!--                       </div> -->
-                  <!--                     </div> -->
-
-                  <!--                     <div class="w3-card-2 w3-round w3-white w3-center"> -->
-                  <!--                       <div class="w3-container w3-quarter padding-5"> -->
-                  <!--                         <span>김용현</span><br><br> -->
-                  <!--                         <img src="/resources/img/kyh.jpg" alt="Avatar" style="width:70%"><br> -->
-
-                  <!--                         <ul style="list-style-type:none; float: right"> -->
-                  <!--                         <br> -->
-                  <!--                         <li> 챗봇 개발자 </li> -->
-                  <!--                         <li> jin98003@gmail.com </li> -->
-                  <!--                         </ul> -->
-                  <!--                       </div> -->
-                  <!--                     </div> -->
-
-
-                  <!--                     <div class="w3-card-2 w3-round w3-white w3-center"> -->
-                  <!--                       <div class="w3-container w3-quarter padding-5"> -->
-                  <!--                         <span>장예찬</span><br><br> -->
-                  <!--                         <img src="/resources/img/jyc.jpg" alt="Avatar" style="width:70%"><br> -->
-
-                  <!--                         <ul style="list-style-type:none; float: right"> -->
-                  <!--                         <br> -->
-                  <!--                         <li> 프론트앤드개발&디자이너 </li> -->
-                  <!--                         <li> yc319@naver.com  </li> -->
-                  <!--                         </ul> -->
-                  <!--                       </div> -->
-                  <!--                     </div> -->
-
-                  <!--                     <h4><strong>Start Bootstrap</strong> -->
-                  <!--                     </h4> -->
-                  <!--                     <p>3481 Melrose Place -->
-                  <!--                         <br>Beverly Hills, CA 90210</p> -->
-                  <!--                     <ul class="list-unstyled"> -->
-                  <!--                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li> -->
-                  <!--                         <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a> -->
-                  <!--                         </li> -->
-                  <!--                     </ul> -->
-                  <!--                     <br> -->
-                  <!--                     <ul class="list-inline"> -->
-                  <!--                         <li> -->
-                  <!--                             <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a> -->
-                  <!--                         </li> -->
-                  <!--                         <li> -->
-                  <!--                             <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a> -->
-                  <!--                         </li> -->
-                  <!--                         <li> -->
-                  <!--                             <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a> -->
-                  <!--                         </li> -->
-                  <!--                     </ul> -->
-                  <!--                     <hr class="small"> -->
-                  <!--                     <p class="text-muted">Copyright &copy; Your Website 2014</p> -->
-               </div>
-            </div>
-         </div>
-      </footer>
-   </section>
-   <!-- 채피 인크루드 -->
-   <jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+	<!-- 채피 인크루드 -->
+	<jsp:include page="${PAGEs.VIEW_CHAPPIE_INTRO}" flush="false" />
 
 
 
-   <a id="to-top" href="#top" class="btn btn-dark btn-lg"> <i
-      class="fa fa-chevron-up fa-fw fa-1x"></i></a>
-   <!-- jQuery -->
-   <script src="/js/jquery.js"></script>
-
-   <!-- Bootstrap Core JavaScript -->
-   <script src="/js/bootstrap.min.js"></script>
-
-<!-- 채피 인크루드 -->
-<jsp:include page ="${PAGEs.VIEW_CHAPPIE_INTRO}" flush="false" />
-
-	
-	
-	<a id="to-top" href="#top" class="btn btn-dark btn-lg">
-	<i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+	<a id="to-top" href="#top" class="btn btn-dark btn-lg"> <i
+		class="fa fa-chevron-up fa-fw fa-1x"></i></a>
 	<!-- jQuery -->
 	<script src="/js/jquery.js"></script>
 

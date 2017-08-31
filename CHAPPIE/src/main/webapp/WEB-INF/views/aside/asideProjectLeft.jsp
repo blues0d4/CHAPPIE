@@ -11,7 +11,7 @@
         </div>
         <div class="pull-left info">
           <p>${ login.user_name }</p>
-         <i class="fa fa-circle text-success"></i> Online
+         <i class="fa fa-circle text-success"></i> 온라인
         </div>
       </div>
       <ul class="sidebar-menu">
@@ -111,7 +111,7 @@
          </c:forEach>
             <li>
 <!--             <a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+            <a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>새로운 그룹 만들기</a> 
             </li>
           </ul>
         </li>        
@@ -134,7 +134,7 @@
 			</c:forEach>
 				<li>
 <!-- 				<a href="#"><i class="fa fa-circle-o"></i>+ Add Categories</a> -->
-					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>Add Categories</a>
+					<a href="${URIs.PROJECT_DEFAULT }/${project.project_id }${URIs.URI_PROJECT_CATEGORY_CREATE_FORM_DEFAULT}"><i class="glyphicon glyphicon-plus"></i>새로운 그룹 만들기</a>
 				</li>
           </ul>
         </li>
