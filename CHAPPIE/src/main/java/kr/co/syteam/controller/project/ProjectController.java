@@ -65,7 +65,9 @@ public class ProjectController {
 			return "redirect:"+URIs.URI_PROJECT_LIST;
 		}
 		
+		loginVO.setUser_project_choice(project_id);
 		projectService.projectChoice(projectSelectDTO);
+		model.addAttribute("login", loginVO);
 		
 //		model.addAttribute("project", projectVO);
 		//세션에 선택한 project를 VO로 저장

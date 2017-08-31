@@ -14,7 +14,7 @@
 <!--   <select id="userLogin"> -->
   <select id="userLogin" parameterType="kr.co.syteam.domain.user.dto.UserDTO" resultType="kr.co.syteam.domain.user.vo.LoginVO">
  	<![CDATA[
-  		SELECT USER_ID, USER_NAME, NOW() AS logindate, USER_PHONE  
+  		SELECT USER_ID, USER_NAME, NOW() AS logindate, USER_PHONE, USER_PROJECT_CHOICE
  		FROM USER_TABLE 
 		WHERE USER_ID = #{user_id} AND USER_PW = #{user_pw}
  	]]>

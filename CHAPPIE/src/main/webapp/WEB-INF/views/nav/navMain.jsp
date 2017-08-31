@@ -51,8 +51,21 @@
 							<li><a href="${URIs.URI_USER_LOGOUT }">로그아웃</a></li>
 						</ul>
 					</li>
+					<c:choose>
+					<c:when test="${login.user_project_choice ne null }">
+					<li>
+                        <a class="page-scroll" href="/project/${login.user_project_choice }"><span class="label label-danger">나의 프로젝트</span></a>
+                    </li>
+					</c:when>
+					<c:otherwise>
+					<li>
+                        <a class="page-scroll" href="/projectCreateForm"><span class="label label-danger">새로운 프로젝트</span></a>
+                    </li>
+					</c:otherwise>
+					</c:choose>
 				</c:otherwise>
 			</c:choose>
+				
             </div>
             <!-- /.navbar-collapse -->
         </div>

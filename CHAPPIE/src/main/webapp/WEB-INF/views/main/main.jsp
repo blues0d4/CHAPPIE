@@ -181,8 +181,7 @@ div.slider figure {
 			<br> <br> <br> <br>
 			<c:choose>
 				<c:when test="${empty login }">
-					<a href="/userLoginForm" class="btn btn-dark btn-lg">Get
-						Started</a>
+					<a href="/userLoginForm" class="btn btn-dark btn-lg">시작하기</a>
 				</c:when>
 				<c:otherwise>
 					<a href="/projectList" class="btn btn-dark btn-lg">시작하기</a>
