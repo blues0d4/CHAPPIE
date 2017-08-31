@@ -232,7 +232,10 @@ div.slider figure {
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-lg-10 col-lg-offset-1">
-						<h2>기능 소개</h2>
+						<br> <br>
+						<br> <br>
+						<h1><b>기능 소개</b></h1>
+						<br> <br>
 						<br> <br>
 						<!--                     <hr class="small"> -->
 						<div class="row">
@@ -291,6 +294,9 @@ div.slider figure {
 								</div>
 							</div>
 						</div>
+						<br> <br>
+						<br> <br>
+						<br> <br>
 						<!-- /.row (nested) -->
 					</div>
 					<!-- /.col-lg-10 -->
