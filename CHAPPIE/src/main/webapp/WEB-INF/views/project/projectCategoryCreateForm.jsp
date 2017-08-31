@@ -100,7 +100,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label>그룹 이름</label>
-                  <input type="text" class="form-control strCheck" id="category_name" name="category_name" placeholder="카테고리 이름">
+                  <input type="text" class="form-control strCheck" id="category_name" name="category_name" placeholder="그룹 이름">
                 </div>
               </div>
               <div class="box-body">
