@@ -291,7 +291,8 @@ function commentNoticeWrite(val){
 												<button type="button" class="btn btn-info"
 													data-toggle="collapse"
 													data-target="#notice${status.index }"
-													onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
+													onclick="commentList(${boardVO.board_no})">
+<%-- 													${boardVO.comment_count } --%>
 													댓글</button>
 												<div class="pull-right">
 													<c:if test="${login.user_id eq boardVO.user_id}">
@@ -388,7 +389,8 @@ function commentNoticeWrite(val){
 									<div class="form-inline">
 										<button type="button" class="btn btn-info"
 											data-toggle="collapse" data-target="#demo${status.index }"
-											onclick="commentList(${boardVO.board_no})">${boardVO.comment_count }
+											onclick="commentList(${boardVO.board_no})">
+<%-- 											${boardVO.comment_count } --%>
 											댓글</button>
 										<div class="pull-right">
 											<c:if test="${login.user_id eq boardVO.user_id}">

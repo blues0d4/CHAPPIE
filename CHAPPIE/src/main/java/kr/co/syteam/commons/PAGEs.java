@@ -28,6 +28,6 @@ public class PAGEs {
 	
 	public static final String VIEW_CHAPPIE = chappie_path + "/chappie_message.jsp";
 	public static final String VIEW_CHAPPIE_INTRO = chappie_path + "/chappie_message_intro.jsp";
-	public static final String VIEW_CHAPPIE_TEST = chappie_path + "/chappie_message2.jsp";
-	public static final String VIEW_MAIN_INTRODUCE = main_introduce_path + "/chappie_introduce.jsp";
+//	public static final String VIEW_CHAPPIE_TEST = chappie_path + "/chappie_message2.jsp";
+//	public static final String VIEW_MAIN_INTRODUCE = main_introduce_path + "/chappie_introduce.jsp";
 }
