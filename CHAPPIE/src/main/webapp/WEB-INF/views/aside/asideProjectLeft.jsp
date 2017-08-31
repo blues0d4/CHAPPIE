@@ -45,7 +45,7 @@
             </c:choose>
          </c:forEach>
             <li>
-                  <a href="${URIs.URI_PROJECT_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>Add Projects</a>
+                  <a href="${URIs.URI_PROJECT_CREATE_FORM }"><i class="glyphicon glyphicon-plus"></i>새로운 프로젝트 만들기</a>
                 </li>
           </ul>
        </li>

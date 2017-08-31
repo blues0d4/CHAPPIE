@@ -237,10 +237,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="${URIs.URI_USER_MODIFY_CONFIRM_FORM }" class="btn btn-default btn-flat">Profile</a>
+                  <a href="${URIs.URI_USER_MODIFY_CONFIRM_FORM }" class="btn btn-default btn-flat">내 정보 수정</a>
                 </div>
                 <div class="pull-right">
-                  <a href="${URIs.URI_USER_LOGOUT}" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="${URIs.URI_USER_LOGOUT}" class="btn btn-default btn-flat">로그아웃</a>
                 </div> 
               </li>
             </ul>
