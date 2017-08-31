@@ -47,39 +47,43 @@ public class ProjectController {
 	
 		logger.info("doProjectMain");
 		
+		//세션에서 loginVO를 가져온다.
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
 		String user_id = loginVO.getUser_id();
 		
+		//projectSelectDTO에 user_id와 project_id를 저장
 		ProjectSelectDTO projectSelectDTO = new ProjectSelectDTO();
-		System.out.println(project_id);
+		
 		projectSelectDTO.setProject_id(project_id);
 		projectSelectDTO.setUser_id(user_id);
 		
 		//선택한 project가 있는지 체크
 		ProjectVO projectVO = projectService.projectSelect(projectSelectDTO);
 		
-		//없으면 "main"으로 리턴
+		//주소에 해당하는 project가 없으면 "main"으로 리턴
 		if(projectVO == null){
 			projectSelectDTO.setProject_id(null);
 			projectService.projectChoice(projectSelectDTO);
 			return "redirect:"+URIs.URI_PROJECT_LIST;
 		}
 		
+		
 		loginVO.setUser_project_choice(project_id);
 		projectService.projectChoice(projectSelectDTO);
 		model.addAttribute("login", loginVO);
 		
-//		model.addAttribute("project", projectVO);
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
 		
-//		System.out.println(projectVO);
 		
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
-//		System.out.println(categoryList);
+		
+		//categoryList가 비어있는지 확인
 		if(categoryList.isEmpty()) {
+			//비어있으면 category 생성 페이지로 이동
 			return "redirect:" + URIs.URI_PROJECT_CATEGORY_CREATE_FORM;
 		}
+		//세션 추가
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
 		
@@ -199,7 +203,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CATEGORY_LIST_PAGE;
 	}
 	
-//	@RequestMapping(value="/project/{project_id}/project_setting")
+	//프로젝트 세팅
 	@RequestMapping(value=URIs.URI_PROJECT_SETTING)
 	public String projectSetting(@PathVariable("project_id")String project_id ,Model model, HttpServletRequest request) throws Exception{
 		
@@ -212,6 +216,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_SETTING_PAGE;
 	}
 	
+	//프로젝트 멤버 초대
 	@RequestMapping(value=URIs.URI_PROJECT_MEMBER_INVITE, method = RequestMethod.POST)
 	public String projectInvite(@PathVariable("project_id")String project_id, ProjectDTO projectDTO) throws Exception{
 		logger.info("project_invite");
@@ -223,6 +228,7 @@ public class ProjectController {
 		return "redirect:" + URIs.URI_PROJECT_SETTING;
 	}
 	
+	//프로젝트 멤버 삭제
 	@RequestMapping(URIs.URI_PROJECT_MEMBER_DELETE)
 	public String projectMemberDelete(@PathVariable("project_id")String project_id, ProjectDTO projectDTO, HttpServletRequest request) throws Exception{
 		logger.info("project_delete");
@@ -236,6 +242,8 @@ public class ProjectController {
 		
 		return "redirect:" + URIs.URI_PROJECT_SETTING;
 	}
+	
+	//프로젝트 카테고리 세팅
 	@RequestMapping(value=URIs.URI_PROJECT_CATEGORY_SETTING)
 	public String categorySetting(@PathVariable("project_id")String project_id, Model model, 
 			HttpServletRequest request,String category_id) throws Exception{
@@ -257,7 +265,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CATEGORY_SETTING_PAGE;
 	}
 	
-//	@RequestMapping(value= "/project/{project_id}/categoryMemberModify/{category_id}")
+	//프로젝트 멤버 변경
 	@RequestMapping(value= URIs.URI_PROJECT_CATEGORY_MEMBER_MODIFY)
 	public String categoryMemberModify(HttpServletRequest request, @PathVariable("category_id")String category_id, Model model) throws Exception{
 		String[] value = request.getParameterValues("member_nickname");
@@ -267,7 +275,7 @@ public class ProjectController {
 		return URIs.URI_PROJECT_CATEGORY_CATEGORY_SETTING_CLOSE_PAGE;
 	}
 	
-//	@RequestMapping(value = "/project/{project_id}/categoryDelete/{category_id}")
+	//프로젝트 카테고리 삭제
 	@RequestMapping(value = URIs.URI_PROJECT_CATEGORY_DELETE)
 	@ResponseBody
 	public int categoryDelete(@PathVariable("project_id")String project_id, 
@@ -279,6 +287,7 @@ public class ProjectController {
 		return result;
 	}
 	
+	//프로젝드 삭제
 	@RequestMapping(value= URIs.URI_PROJECT_DELETE)
 	public String projectDelete(@PathVariable("project_id")String project_id, HttpServletRequest request) throws Exception{
 		ProjectDTO projectDTO = new ProjectDTO();
@@ -294,6 +303,7 @@ public class ProjectController {
 		return "redirect:"+URIs.URI_PROJECT_LIST;
 	}
 	
+	//프로젝트 명 중복 체크
 	@RequestMapping(value = URIs.URI_PROJECT_CHECK)
 	@ResponseBody
 	public int projectCheck(String project_name, HttpServletRequest request) throws Exception{

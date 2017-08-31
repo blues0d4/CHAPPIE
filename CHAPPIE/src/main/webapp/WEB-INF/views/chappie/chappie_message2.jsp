@@ -1,3 +1,4 @@
+<%@page import="kr.co.syteam.commons.URIs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -14,8 +15,9 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
 
 <script type="text/javascript">
-		var accessToken = "00afc8666e3c4b628c78b86d4479cf3f";
+		var accessToken = "164f9b791200484dbb585026512392a4";
 		var baseUrl = "https://api.api.ai/v1/";
+		
 		
 		$(document).ready(function() {
 			$("#input").keypress(function(event) {
@@ -32,6 +34,7 @@
 				return;
 			}
 			
+
 			$.ajax({
 				type: "POST",
 				url: baseUrl + "query?v=20150910",
@@ -87,27 +90,23 @@
 						}
 					});	
 				}
-				$(document).ready(function(){
-					setTimeout( function() {
-					$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
-	  			    }, 150);
-				})
+				
 		}
-		
+		$(document).ready(function(){
+			
+		})
 
 		function setResponse(val) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
 			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p>"+val+"</p></div></li>");
 			document.getElementById('input').value = "";
 			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
-			
-			
 		}
 		
 
 		function setResponseImg(val, data) {
 			$("#response").append("<li class=\"right clearfix\"><span class=\"chat-img pull-right\" ><img src=\"/resources/img/chappie_button_chat2.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><div class=\"chat-body clearfix\"><p align=\"right\">"+$('#input').val()+"</p></div></li>");
-			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><p>"+data+"</p><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"></div></li>");
+			$("#response").append("<li class=\"left clearfix\"><span class=\"chat-img pull-left\" ><img src=\"/resources/img/chappie_button_chat.png\" alt=\"User Avatar\" class=\"img-circle\" style=\"width:50px;height:50px\" /></span><img src=\""+val+"\" style=\"cursor: pointer;\" onclick=\"doImgPop('"+val+"')\" \"></img><div class=\"chat-body clearfix\"><p>"+data+"</p></div></li>");
 			document.getElementById('input').value = "";
 			$("#responseScroll").scrollTop($("#responseScroll")[0].scrollHeight);
 		}
@@ -186,7 +185,7 @@
 	.body-panel
 	{
  		overflow: scroll;
-		height: 400px;
+/* 		height: 450px; */
 	    background-color : #F5F5F5;
 	}
 
@@ -240,7 +239,7 @@ body {
 	right: 70px;
 	width: 400px;
 	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 0px;
+	margin-bottom: 50px;
 }
 
 
@@ -541,75 +540,102 @@ height: 600;
 
 	<!-- 채피 채팅창 -->
 <body>
-		<div class="popup-box chat-popup" id="qnimate">
-		<div class="popup-head" style="border: 1px solid #b0b0b0;">
-			<div class="popup-head-left pull-left">
-				<img src="/resources/img/chappie_button_chat.png" alt="iamgurdeeposahan">
-				CHAPPIE
-			</div>
-			
-			<div class="popup-head-right pull-right">
-				<div class="btn-group">
-
-				</div>
-
-				<button data-widget="remove" id="removeClass"
-					class="chat-header-button pull-right" type="button">
-					<i class="glyphicon glyphicon-remove-circle"></i>
-				</button>
-				
-
-			</div>
-		</div>
-		<div class="popup-messages">
-<!-- 			<iframe width="400" height="530" -->
-<!-- 				src="https://console.api.ai/api-client/demo/embedded/62665667-db9e-446c-844c-087d4e7098c4"> -->
-<!-- 			</iframe> -->
-
-<!-- 		<div style="positon:fixed; bottom:5px; right: 5px;">	 -->
-<!-- 			<a href="#responseScroll">		 -->
-<!-- 			<i class="fa fa-chevron-up "></i></a>	 -->
-<!-- 			</div>			 -->
-			
-			   <div class="panel-body body-panel"  id="responseScroll" style="overflow: auto;">
-                    <ul class="chat" id="response">
-                    	<c:forEach items="${chappieVO }" var="chappieVO">
-	                    	<li class="right clearfix"><span class="chat-img pull-right" >
-	                    	<img src="/resources/img/chappie_button_chat2.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
-	                    	<div class="chat-body clearfix"><p align="right">${chappieVO.user_say }</p></div></li>
-	                    	
-	                    	<c:choose>
-	                    		<c:when test="${chappieVO.bot_img eq null }">
-			                    	<li class="left clearfix"><span class="chat-img pull-left" >
-			                    	<img src="/resources/img/chappie_button_chat.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
-			                    	<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
-		                    	</c:when>
-		                    	<c:otherwise>
-		                    		<li class="left clearfix"><span class="chat-img pull-left" >
-		                    		<img src="/resources/img/chappie_button_chat.png" alt="User Avatar" class="img-circle" style="width:50px;height:50px" /></span>
-		                    		<img src="${chappieVO.bot_img }" style="cursor: pointer;" onclick="doImgPop('${chappieVO.bot_img}')"></img>
-		                    		<div class="chat-body clearfix"><p>${chappieVO.bot_say }</p></div></li>
-		                    	</c:otherwise>
-	                    	</c:choose>
-                    	</c:forEach>
-                    </ul>
-           	   <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
-           	   </span>
-    
-                </div>
-  		 </div>
-		<div class="popup-messages-footer">
 		
-		
-			<input id="input" type="text" class="input_id">	
-			<div class="btn-footer">
-
-			<button class="btn btn-warning btn-lg btn-block" onclick="send()" id="btn-chat">Send</button>
-			</div>
-		</div>
-	</div>
 	
+<!-- 	시작 -->
+<div class="row">
+        <div class="col-md-3 popup-box chat-popup" id="qnimate">
+          <!-- DIRECT CHAT PRIMARY -->
+          <div class="box box-primary direct-chat direct-chat-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Direct Chat</h3>
 
+              <div class="box-tools pull-right">
+                <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
+                  <i class="fa fa-comments"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="display: block;">
+              <!-- Conversations are loaded here -->
+              <div class="direct-chat-messages">
+                <!-- Message. Default to the left -->
+                <div class="direct-chat-msg">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                    <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="../dist/img/user1-128x128.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    Is this template really for free? That's unbelievable!
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+
+                <!-- Message to the right -->
+                <div class="direct-chat-msg right">
+                  <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-right">Sarah Bullock</span>
+                    <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+                  </div>
+                  <!-- /.direct-chat-info -->
+                  <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
+                  <div class="direct-chat-text">
+                    You better believe it!
+                  </div>
+                  <!-- /.direct-chat-text -->
+                </div>
+                <!-- /.direct-chat-msg -->
+              </div>
+              <!--/.direct-chat-messages-->
+
+              <!-- Contacts are loaded here -->
+              <div class="direct-chat-contacts">
+                <ul class="contacts-list">
+                  <li>
+                    <a href="#">
+                      <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg" alt="User Image">
+
+                      <div class="contacts-list-info">
+                            <span class="contacts-list-name">
+                              Count Dracula
+                              <small class="contacts-list-date pull-right">2/28/2015</small>
+                            </span>
+                        <span class="contacts-list-msg">How have you been? I was...</span>
+                      </div>
+                      <!-- /.contacts-list-info -->
+                    </a>
+                  </li>
+                  <!-- End Contact Item -->
+                </ul>
+                <!-- /.contatcts-list -->
+              </div>
+              <!-- /.direct-chat-pane -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer" style="display: block;">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary btn-flat">Send</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-footer-->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+<!-- 끝 -->
 	<!-- 채피 스크립트 -->
 
 <script>

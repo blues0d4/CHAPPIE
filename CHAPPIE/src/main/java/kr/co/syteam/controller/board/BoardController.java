@@ -33,10 +33,8 @@ import kr.co.syteam.service.history.HistoryService;
 import kr.co.syteam.service.project.ProjectService;
 
 @Controller
-//@RequestMapping("/project/*/")
 public class BoardController { 
 
-//	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Autowired
 	private BoardService boardService;
@@ -53,7 +51,6 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_LIST)
 	public String doBoardCategoryList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, Model model,
 			HttpServletRequest request) throws Exception {
-//		logger.info("doBoardCategoryList");
 
 		//세션에서 user_id를 가져온다.
 		LoginVO loginVO = (LoginVO) request.getSession().getAttribute("login");
@@ -70,16 +67,13 @@ public class BoardController {
 		if(projectVO == null){
 			return "redirect:"+URIs.URI_MAIN;
 		}
-//		model.addAttribute("project", projectVO);
+		
 		//세션에 선택한 project를 VO로 저장
 		request.getSession().setAttribute("project", projectVO);
-//		System.out.println(projectVO);
 		List<CategoryVO> categoryList= projectService.projectCategoryList(project_id);
-//		System.out.println(categoryList);
 		request.getSession().setAttribute("categoryList", categoryList);
 		request.getSession().removeAttribute("category");
 		
-//		String project_name = projectVO.getProject_name();
 
 		CategoryDTO categoryDTO = new CategoryDTO();
 
@@ -93,19 +87,6 @@ public class BoardController {
 		request.getSession().setAttribute("category", categoryVO);
 		List<BoardVO> boardList = boardService.boardCategoryListView(categoryDTO);
 		model.addAttribute("boardList", boardList);
-//		System.out.println(boardList);
-		// System.out.println("------");
-		// System.out.println(categoryVO);
-		// System.out.println("------");
-
-		// System.out.println(projectVO);
-		// System.out.println("----");
-		// System.out.println(project_name);
-		// System.out.println("----");
-
-		// List<BoardVO> boardList = boardService.boardList();
-		// model.addAttribute("boardList", boardList);
-		// System.out.println(boardList);
 		
 		List<ChappieVO> chappieVO = chappieService.selectChappieService(loginVO.getUser_id());
 		model.addAttribute("chappieVO", chappieVO);
@@ -119,17 +100,6 @@ public class BoardController {
 		return URIs.URI_BOARD_LIST_PAGE;
 	}
 
-//	@RequestMapping(value = "/board/boardView/{board_no}")
-//	public String doBoardView(@PathVariable("board_no") String board_no, Model model) throws Exception {
-//
-//		BoardVO boardVO = boardService.boardView(board_no);
-//
-//		if (boardVO == null) {
-//			return "redirect:/";
-//		}
-//		model.addAttribute("board", boardVO);
-//		return "board/boardView";
-//	}
 	
 	@RequestMapping(value = URIs.URI_BOARD_WRITE_FORM)
 	public String doBoardWriteForm() throws Exception{
@@ -145,8 +115,6 @@ public class BoardController {
 
 		
 
-//		CategoryVO categoryVO = (CategoryVO) request.getSession().getAttribute("category");
-//		String user_id = loginVO.getUser_id();
 		HistoryDTO historyDTO = new HistoryDTO();
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		CategoryVO categoryVO = (CategoryVO)request.getSession().getAttribute("category");
@@ -186,7 +154,6 @@ public class BoardController {
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardVO.getBoard_title());
 		historyDTO.setKind("타임라인");
-//		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 		boardDTO.setUser_id(loginVO.getUser_id());
 		boardService.boardDelete(boardDTO);
@@ -197,7 +164,6 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY_FORM + "/{board_no}")
 	public String doBoardModifyForm(@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, @PathVariable("board_no") String board_no, Model model) throws Exception {
 		
-//		logger.info("doBoardModifyForm");
 		
 		BoardVO boardVO = boardService.boardView(board_no);
 
@@ -212,7 +178,6 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_MODIFY + "/{board_no}")
 	public String doBoardModify(HttpServletRequest request ,@PathVariable("project_id")String project_id, @PathVariable("category_id") String category_id, BoardDTO boardDTO) throws Exception {
 		
-//		logger.info("doBoardModify");
 		
 		HistoryDTO historyDTO = new HistoryDTO();
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
@@ -223,7 +188,6 @@ public class BoardController {
 		historyDTO.setCategory_name(categoryVO.getCategory_name());
 		historyDTO.setTitle(boardDTO.getBoard_title());
 		historyDTO.setKind("타임라인");
-//		boardDTO.setCategory_id(category_id);
 		historyService.historyInsertService(historyDTO);
 
 		boardService.boardModify(boardDTO);
@@ -234,11 +198,6 @@ public class BoardController {
 	@RequestMapping(value = URIs.URI_BOARD_COMMENT_WRITE,  method = RequestMethod.POST)
 	public void doBoardCommentWrite(@PathVariable("project_id")String project_id, @PathVariable("category_id")String category_id, HttpServletRequest request,BoardCommentDTO boardCommentDTO) throws Exception   {
 
-//		logger.info("doBoardCommentWrite");
-		
-//		System.out.println(user_id);
-//		System.out.println(board_no);
-//		System.out.println(comment_contents);
 		System.out.println(boardCommentDTO);
 		LoginVO loginVO = (LoginVO)request.getSession().getAttribute("login");
 		
@@ -253,11 +212,8 @@ public class BoardController {
 	public List<BoardCommentVO> doBoardCommentList(@PathVariable("project_id") String project_id, @PathVariable("category_id")String category_id, @PathVariable("board_no")String board_no, 
 			Model model, HttpServletRequest request) throws Exception {
 		
-//		logger.info("doBoardCommentList!!!!");
 		List<BoardCommentVO> boardCommentVO = boardService.boardCommentList(board_no);
 		
-//		System.out.println(boardCommentVO.get(0).toString());
-//		model.addAttribute("boardCommentVO", boardCommentVO);
 		
 		return boardCommentVO;
 	}

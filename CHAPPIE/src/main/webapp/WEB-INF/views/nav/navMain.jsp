@@ -54,12 +54,12 @@
 					<c:choose>
 					<c:when test="${login.user_project_choice ne null }">
 					<li>
-                        <a class="page-scroll" href="/project/${login.user_project_choice }"><span class="label label-danger">나의 프로젝트</span></a>
+                        <a class="page-scroll" href="/project/${login.user_project_choice }"><span class="btn btn-primary btn-xs">${login.user_name}의 프로젝트</span></a>
                     </li>
 					</c:when>
 					<c:otherwise>
 					<li>
-                        <a class="page-scroll" href="/projectCreateForm"><span class="label label-danger">새로운 프로젝트</span></a>
+                        <a class="page-scroll" href="/projectCreateForm"><span class="btn btn-primary btn-xs">프로젝트 시작하기</span></a>
                     </li>
 					</c:otherwise>
 					</c:choose>

@@ -89,7 +89,7 @@
   	 <div class="col-md-8">
    		<div class="box box-primary">
             <div class="box-header with-border">
-              <h1 class="box-title">프로젝트 초대하기</h1>
+              <h1 class="box-title">프로젝트 멤버 초대하기</h1>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
