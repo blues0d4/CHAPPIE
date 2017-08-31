@@ -63,7 +63,10 @@
 
 $(document).ready(function(){
 	$("#project_name").on({
-		"keyup":function(){
+		"keyup":function(event){
+			if (event.which == 13) {
+				return false;
+			}
 		var project_name = $(this).serialize();
 		
 			$.ajax({
