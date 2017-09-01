@@ -464,7 +464,8 @@ function commentNoticeWrite(val){
 	</div>
 
 	<!-- 채피 인크루드 -->
-	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" />
+<%-- 	<jsp:include page="${PAGEs.VIEW_CHAPPIE}" flush="false" /> --%>
+	<jsp:include page="/WEB-INF/views/chappie/chappie_message3.jsp" flush="false" />
 
 
 	<!-- ./wrapper -->
